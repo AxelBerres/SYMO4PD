@@ -39,7 +39,7 @@
           name="org.eclipse.rcp.feature.group"
           versionRange="[4.5.0,5.0.0)"/>
       <requirement
-          name="org.eclipse.mylyn.github.feature.feature.group"/>    
+          name="org.eclipse.mylyn.github.feature.feature.group"/>
       <repository
           url="http://download.eclipse.org/releases/mars"/>
       <repository
@@ -48,7 +48,7 @@
     <setupTask
         xsi:type="setup:EclipseIniTask"
         option="-Xmx"
-        value="2048m"
+        value="512m"
         vm="true"/>
     <description>symo4pd for Mars.</description>
   </version>
