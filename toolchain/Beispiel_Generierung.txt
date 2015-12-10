@@ -1,0 +1,13 @@
+premise
+==============
+
+Parameter
+----------
+The premise package is part of the PREMISE Ecore model and  includes all the basic elements to describe system. This includes the description of the system structure and the system behavior. In addition, the organization of systems in system component libraries and project repositories described in premise.
+
+ABalancing
+-----------
+Abstract base class for all balancing classes.
+Known subclasses are, for instance: TransitionBalancing and ABalancingDef (which can be a Balancing or NestedBalancing).
+For getting the target or source parameters casting to a derived class is necessary.
+@see PremiseHelper for methods to get all target or source parameters
