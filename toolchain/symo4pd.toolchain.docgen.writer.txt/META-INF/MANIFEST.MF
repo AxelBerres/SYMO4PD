@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DocGen Text Writer
+Bundle-SymbolicName: symo4pd.toolchain.docgen.writer.txt;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: Bauhaus Luftfahrt e.V.
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.osgi,
+ org.eclipse.core.runtime;bundle-version="3.11.1",
+ symo4pd.toolchain.docgen;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy

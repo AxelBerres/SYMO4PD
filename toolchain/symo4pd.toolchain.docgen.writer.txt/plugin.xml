@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="symo4pd.toolchain.docgen.writers">
+      <docwriter
+            class="symo4pd.toolchain.docgen.writer.txt.TextDocWriter"
+            name="Text Documentation Writer">
+      </docwriter>
+   </extension>
+
+</plugin>

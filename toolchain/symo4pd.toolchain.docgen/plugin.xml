@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="symo4pd.toolchain.docgen.writers" name="DocWriters" schema="schema/symo4pd.toolchain.docgen.writers.exsd"/>
+	<extension
+		point="org.eclipse.ui.menus">
+		<menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.emf.codegen.ecore.genmodel.presentation.GenModelEditorID?before=open-actions">
+         <separator
+               name="symo4pd.toolchain.codegen.separator">
+         </separator>
+         <command
+               commandId="symo4pd.toolchain.codegen.generatecommand"
+               label="Generate Documentation"
+               style="push">
+               <visibleWhen checkEnabled="false">
+                	<iterate>
+                  		<or>
+                     		<instanceof
+                           		value="org.eclipse.emf.codegen.ecore.genmodel.impl.GenModelImpl">
+                     		</instanceof>
+                    	</or>
+                  	</iterate>
+            	</visibleWhen>
+         </command>
+      </menuContribution>
+	</extension>
+	<extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="symo4pd.toolchain.docgen.handler.DocGenHandler"
+            id="symo4pd.toolchain.codegen.generatecommand"
+            name="Generate Documentation">
+      </command>
+   </extension>
+ <extension
+       point="org.eclipse.ui.preferencePages">
+    <page
+          class="symo4pd.toolchain.docgen.preferences.PreferencePage"
+          id="symo4pd.toolchain.docgen.prefpage"
+          name="Ecore DocGen Preferences Page">
+    </page>
+ </extension>
+</plugin>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="symo4pd.toolchain.docgen.feature"
+      label="ECore Documentation Generator"
+      version="1.0.0"
+      provider-name="Bauhaus Luftfahrt e.V.">
+
+   <description>
+      The feature contains a plug-in for Ecore Documentation generation.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      Ecore Documentation Generation Plugin
+      Copyright (c) 2015-2016 Bauhaus Luftfahrt e.V.. All rights reserved.
+      Version 0.1.0
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      Licence
+   </license>
+
+   <plugin
+         id="symo4pd.toolchain.docgen"
+         download-size="0"
+         install-size="0"
+         version="1.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="symo4pd.toolchain.docgen.writer.txt"
+         download-size="0"
+         install-size="0"
+         version="1.0.0"
+         unpack="false"/>
+
+</feature>
