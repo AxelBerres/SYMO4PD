@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated SYMO -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.symo.model.base.presentation.BaseModelWizardID"
+            name="%_UI_BaseModelWizard_label"
+            class="de.symo.model.base.presentation.BaseModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/BaseModelFile.gif">
+         <description>%_UI_BaseModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated SYMO -->
+      <editor
+            id="de.symo.model.base.presentation.BaseEditorID"
+            name="%_UI_BaseEditor_label"
+            icon="icons/full/obj16/BaseModelFile.gif"
+            extensions="base"
+            class="de.symo.model.base.presentation.BaseEditor"
+            contributorClass="de.symo.model.base.presentation.BaseActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated SYMO -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.symo.model.registry.presentation.RegistryModelWizardID"
+            name="%_UI_RegistryModelWizard_label"
+            class="de.symo.model.registry.presentation.RegistryModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RegistryModelFile.gif">
+         <description>%_UI_RegistryModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated SYMO -->
+      <editor
+            id="de.symo.model.registry.presentation.RegistryEditorID"
+            name="%_UI_RegistryEditor_label"
+            icon="icons/full/obj16/RegistryModelFile.gif"
+            extensions="registry"
+            class="de.symo.model.registry.presentation.RegistryEditor"
+            contributorClass="de.symo.model.registry.presentation.RegistryActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated SYMO -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.symo.model.symopd.presentation.SymopdModelWizardID"
+            name="%_UI_SymopdModelWizard_label"
+            class="de.symo.model.symopd.presentation.SymopdModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SymopdModelFile.gif">
+         <description>%_UI_SymopdModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated SYMO -->
+      <editor
+            id="de.symo.model.symopd.presentation.SymopdEditorID"
+            name="%_UI_SymopdEditor_label"
+            icon="icons/full/obj16/SymopdModelFile.gif"
+            extensions="symopd"
+            class="de.symo.model.symopd.presentation.SymopdEditor"
+            contributorClass="de.symo.model.symopd.presentation.SymopdActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

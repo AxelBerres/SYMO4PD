@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="symopd" nsURI="http://www.dlr.de/symo/model/2016/" nsPrefix="symo">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="The symopd package is part of the SYMO4PD Ecore model and  includes all the basic elements to describe a technical system. This includes the description of the system structure and the system behavior. In addition, the organization of systems in system component libraries and project repositories."/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemComponent"/>
+</ecore:EPackage>

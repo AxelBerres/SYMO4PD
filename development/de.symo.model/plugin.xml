@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Base -->
+      <package
+            uri="http://www.dlr.de/symo4pd/base/2016/"
+            class="base.BasePackage"
+            genModel="model/Base.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SYMO -->
+      <package
+            uri="http://www.dlr.de/symo4pd/base/2016/"
+            class="de.symo.model.base.BasePackage"
+            genModel="model/SYMO.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SYMO -->
+      <package
+            uri="http://www.dlr.de/symo4pd/registry/2016/"
+            class="de.symo.model.registry.RegistryPackage"
+            genModel="model/SYMO.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SYMO -->
+      <package
+            uri="http://www.dlr.de/symo/model/2016/"
+            class="de.symo.model.symopd.SymopdPackage"
+            genModel="model/SYMO.genmodel"/>
+   </extension>
+</plugin>
