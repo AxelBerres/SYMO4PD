@@ -96,7 +96,8 @@ public class RegistryItemProvider extends ANameItemItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RegistryPackage.Literals.REGISTRY__UNITS);
 			childrenFeatures.add(RegistryPackage.Literals.REGISTRY__CONSTANTS);
-			childrenFeatures.add(RegistryPackage.Literals.REGISTRY__STERETYPES);
+			childrenFeatures.add(RegistryPackage.Literals.REGISTRY__STEREOTYPES);
+			childrenFeatures.add(RegistryPackage.Literals.REGISTRY__PARAMETERS);
 		}
 		return childrenFeatures;
 	}
@@ -157,7 +158,8 @@ public class RegistryItemProvider extends ANameItemItemProvider {
 				return;
 			case RegistryPackage.REGISTRY__UNITS:
 			case RegistryPackage.REGISTRY__CONSTANTS:
-			case RegistryPackage.REGISTRY__STERETYPES:
+			case RegistryPackage.REGISTRY__STEREOTYPES:
+			case RegistryPackage.REGISTRY__PARAMETERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -178,7 +180,7 @@ public class RegistryItemProvider extends ANameItemItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(RegistryPackage.Literals.REGISTRY__UNITS,
-				 RegistryFactory.eINSTANCE.createMeasuement()));
+				 RegistryFactory.eINSTANCE.createMeasurement()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -187,8 +189,13 @@ public class RegistryItemProvider extends ANameItemItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RegistryPackage.Literals.REGISTRY__STERETYPES,
+				(RegistryPackage.Literals.REGISTRY__STEREOTYPES,
 				 RegistryFactory.eINSTANCE.createStereotype()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RegistryPackage.Literals.REGISTRY__PARAMETERS,
+				 RegistryFactory.eINSTANCE.createParameter()));
 	}
 
 	/**

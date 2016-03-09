@@ -13,20 +13,30 @@
       <details key="documentation" value="The registry contains lists of global definitions of disciplines, units, constants."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="units" upperBound="-1"
-        eType="#//Measuement" containment="true"/>
+        eType="#//Measurement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="constants" upperBound="-1"
         eType="#//Constant" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="steretypes" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stereotypes" upperBound="-1"
         eType="#//Stereotype" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnitRef">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="conversionFactor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetUnit" lowerBound="1"
         eType="ecore:EClass SYMO_Base.ecore#//Unit"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Measuement" eSuperTypes="SYMO_Base.ecore#//Unit">
+  <eClassifiers xsi:type="ecore:EClass" name="Measurement" eSuperTypes="SYMO_Base.ecore#//Unit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="unitRef" upperBound="-1"
         eType="#//UnitRef" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="SYMO_Base.ecore#//AParameterDef">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A parameter defines a property of a system element with a value and a measurement. The value of the parameter may constant, than the value of the parameter is not changeable. This is the case if a parameter is a physical constant."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="estimated" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constant" eSuperTypes="SYMO_Base.ecore#//AParameterDef">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

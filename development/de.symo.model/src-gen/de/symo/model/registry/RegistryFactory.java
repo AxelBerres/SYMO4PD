@@ -40,13 +40,22 @@ public interface RegistryFactory extends EFactory {
 	UnitRef createUnitRef();
 
 	/**
-	 * Returns a new object of class '<em>Measuement</em>'.
+	 * Returns a new object of class '<em>Measurement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Measuement</em>'.
+	 * @return a new object of class '<em>Measurement</em>'.
 	 * @generated
 	 */
-	Measuement createMeasuement();
+	Measurement createMeasurement();
+
+	/**
+	 * Returns a new object of class '<em>Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Parameter</em>'.
+	 * @generated
+	 */
+	Parameter createParameter();
 
 	/**
 	 * Returns a new object of class '<em>Constant</em>'.

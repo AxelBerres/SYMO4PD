@@ -34,12 +34,12 @@ public interface AParameterDef extends ADataItem {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' containment reference.
-	 * @see #setValue(AValueDef)
+	 * @see #setValue(Value)
 	 * @see de.symo.model.base.BasePackage#getAParameterDef_Value()
 	 * @model containment="true"
 	 * @generated
 	 */
-	AValueDef getValue();
+	Value getValue();
 
 	/**
 	 * Sets the value of the '{@link de.symo.model.base.AParameterDef#getValue <em>Value</em>}' containment reference.
@@ -49,7 +49,7 @@ public interface AParameterDef extends ADataItem {
 	 * @see #getValue()
 	 * @generated
 	 */
-	void setValue(AValueDef value);
+	void setValue(Value value);
 
 	/**
 	 * Returns the value of the '<em><b>Unit</b></em>' reference.

@@ -5,6 +5,18 @@
 -->
 
 <plugin>
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            class="de.symo.model.registry.provider.RegistryItemProviderAdapterFactoryExt"
+            uri="http://www.dlr.de/symo4pd/registry/2016/"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource">
+     </factory>
+   </extension>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated SYMO -->

@@ -6,6 +6,8 @@
 
 <plugin>
 
+
+
    <extension point="org.eclipse.ui.newWizards">
       <!-- @generated SYMO -->
       <category
@@ -22,6 +24,7 @@
       </wizard>
    </extension>
 
+
    <extension point="org.eclipse.ui.editors">
       <!-- @generated SYMO -->
       <editor
@@ -33,7 +36,6 @@
             contributorClass="de.symo.model.base.presentation.BaseActionBarContributor">
       </editor>
    </extension>
-
    <extension point="org.eclipse.ui.newWizards">
       <!-- @generated SYMO -->
       <category
@@ -57,7 +59,7 @@
             name="%_UI_RegistryEditor_label"
             icon="icons/full/obj16/RegistryModelFile.gif"
             extensions="registry"
-            class="de.symo.model.registry.presentation.RegistryEditor"
+            class="de.symo.model.registry.presentation.RegistryEditorExt"
             contributorClass="de.symo.model.registry.presentation.RegistryActionBarContributor">
       </editor>
    </extension>

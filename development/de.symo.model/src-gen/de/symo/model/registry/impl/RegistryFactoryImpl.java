@@ -58,7 +58,8 @@ public class RegistryFactoryImpl extends EFactoryImpl implements RegistryFactory
 		switch (eClass.getClassifierID()) {
 			case RegistryPackage.REGISTRY: return createRegistry();
 			case RegistryPackage.UNIT_REF: return createUnitRef();
-			case RegistryPackage.MEASUEMENT: return createMeasuement();
+			case RegistryPackage.MEASUREMENT: return createMeasurement();
+			case RegistryPackage.PARAMETER: return createParameter();
 			case RegistryPackage.CONSTANT: return createConstant();
 			case RegistryPackage.STEREOTYPE: return createStereotype();
 			default:
@@ -91,9 +92,19 @@ public class RegistryFactoryImpl extends EFactoryImpl implements RegistryFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Measuement createMeasuement() {
-		MeasuementImpl measuement = new MeasuementImpl();
-		return measuement;
+	public Measurement createMeasurement() {
+		MeasurementImpl measurement = new MeasurementImpl();
+		return measurement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Parameter createParameter() {
+		ParameterImpl parameter = new ParameterImpl();
+		return parameter;
 	}
 
 	/**

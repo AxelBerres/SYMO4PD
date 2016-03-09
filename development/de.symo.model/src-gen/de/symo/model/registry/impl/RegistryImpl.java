@@ -8,7 +8,8 @@ import de.symo.model.base.BasePackage;
 import de.symo.model.base.impl.ANameItemImpl;
 
 import de.symo.model.registry.Constant;
-import de.symo.model.registry.Measuement;
+import de.symo.model.registry.Measurement;
+import de.symo.model.registry.Parameter;
 import de.symo.model.registry.Registry;
 import de.symo.model.registry.RegistryPackage;
 import de.symo.model.registry.Stereotype;
@@ -39,7 +40,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.symo.model.registry.impl.RegistryImpl#getMetaModel <em>Meta Model</em>}</li>
  *   <li>{@link de.symo.model.registry.impl.RegistryImpl#getUnits <em>Units</em>}</li>
  *   <li>{@link de.symo.model.registry.impl.RegistryImpl#getConstants <em>Constants</em>}</li>
- *   <li>{@link de.symo.model.registry.impl.RegistryImpl#getSteretypes <em>Steretypes</em>}</li>
+ *   <li>{@link de.symo.model.registry.impl.RegistryImpl#getStereotypes <em>Stereotypes</em>}</li>
+ *   <li>{@link de.symo.model.registry.impl.RegistryImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @generated
@@ -82,7 +84,7 @@ public class RegistryImpl extends ANameItemImpl implements Registry {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Measuement> units;
+	protected EList<Measurement> units;
 
 	/**
 	 * The cached value of the '{@link #getConstants() <em>Constants</em>}' containment reference list.
@@ -95,14 +97,24 @@ public class RegistryImpl extends ANameItemImpl implements Registry {
 	protected EList<Constant> constants;
 
 	/**
-	 * The cached value of the '{@link #getSteretypes() <em>Steretypes</em>}' containment reference list.
+	 * The cached value of the '{@link #getStereotypes() <em>Stereotypes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSteretypes()
+	 * @see #getStereotypes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Stereotype> steretypes;
+	protected EList<Stereotype> stereotypes;
+
+	/**
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Parameter> parameters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -174,9 +186,9 @@ public class RegistryImpl extends ANameItemImpl implements Registry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Measuement> getUnits() {
+	public EList<Measurement> getUnits() {
 		if (units == null) {
-			units = new EObjectContainmentEList<Measuement>(Measuement.class, this, RegistryPackage.REGISTRY__UNITS);
+			units = new EObjectContainmentEList<Measurement>(Measurement.class, this, RegistryPackage.REGISTRY__UNITS);
 		}
 		return units;
 	}
@@ -198,11 +210,23 @@ public class RegistryImpl extends ANameItemImpl implements Registry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Stereotype> getSteretypes() {
-		if (steretypes == null) {
-			steretypes = new EObjectContainmentEList<Stereotype>(Stereotype.class, this, RegistryPackage.REGISTRY__STERETYPES);
+	public EList<Stereotype> getStereotypes() {
+		if (stereotypes == null) {
+			stereotypes = new EObjectContainmentEList<Stereotype>(Stereotype.class, this, RegistryPackage.REGISTRY__STEREOTYPES);
 		}
-		return steretypes;
+		return stereotypes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Parameter> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, RegistryPackage.REGISTRY__PARAMETERS);
+		}
+		return parameters;
 	}
 
 	/**
@@ -217,8 +241,10 @@ public class RegistryImpl extends ANameItemImpl implements Registry {
 				return ((InternalEList<?>)getUnits()).basicRemove(otherEnd, msgs);
 			case RegistryPackage.REGISTRY__CONSTANTS:
 				return ((InternalEList<?>)getConstants()).basicRemove(otherEnd, msgs);
-			case RegistryPackage.REGISTRY__STERETYPES:
-				return ((InternalEList<?>)getSteretypes()).basicRemove(otherEnd, msgs);
+			case RegistryPackage.REGISTRY__STEREOTYPES:
+				return ((InternalEList<?>)getStereotypes()).basicRemove(otherEnd, msgs);
+			case RegistryPackage.REGISTRY__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -237,8 +263,10 @@ public class RegistryImpl extends ANameItemImpl implements Registry {
 				return getUnits();
 			case RegistryPackage.REGISTRY__CONSTANTS:
 				return getConstants();
-			case RegistryPackage.REGISTRY__STERETYPES:
-				return getSteretypes();
+			case RegistryPackage.REGISTRY__STEREOTYPES:
+				return getStereotypes();
+			case RegistryPackage.REGISTRY__PARAMETERS:
+				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -257,15 +285,19 @@ public class RegistryImpl extends ANameItemImpl implements Registry {
 				return;
 			case RegistryPackage.REGISTRY__UNITS:
 				getUnits().clear();
-				getUnits().addAll((Collection<? extends Measuement>)newValue);
+				getUnits().addAll((Collection<? extends Measurement>)newValue);
 				return;
 			case RegistryPackage.REGISTRY__CONSTANTS:
 				getConstants().clear();
 				getConstants().addAll((Collection<? extends Constant>)newValue);
 				return;
-			case RegistryPackage.REGISTRY__STERETYPES:
-				getSteretypes().clear();
-				getSteretypes().addAll((Collection<? extends Stereotype>)newValue);
+			case RegistryPackage.REGISTRY__STEREOTYPES:
+				getStereotypes().clear();
+				getStereotypes().addAll((Collection<? extends Stereotype>)newValue);
+				return;
+			case RegistryPackage.REGISTRY__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -288,8 +320,11 @@ public class RegistryImpl extends ANameItemImpl implements Registry {
 			case RegistryPackage.REGISTRY__CONSTANTS:
 				getConstants().clear();
 				return;
-			case RegistryPackage.REGISTRY__STERETYPES:
-				getSteretypes().clear();
+			case RegistryPackage.REGISTRY__STEREOTYPES:
+				getStereotypes().clear();
+				return;
+			case RegistryPackage.REGISTRY__PARAMETERS:
+				getParameters().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -309,8 +344,10 @@ public class RegistryImpl extends ANameItemImpl implements Registry {
 				return units != null && !units.isEmpty();
 			case RegistryPackage.REGISTRY__CONSTANTS:
 				return constants != null && !constants.isEmpty();
-			case RegistryPackage.REGISTRY__STERETYPES:
-				return steretypes != null && !steretypes.isEmpty();
+			case RegistryPackage.REGISTRY__STEREOTYPES:
+				return stereotypes != null && !stereotypes.isEmpty();
+			case RegistryPackage.REGISTRY__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -118,13 +118,22 @@ public interface RegistryPackage extends EPackage {
 	int REGISTRY__CONSTANTS = BasePackage.ANAME_ITEM_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Steretypes</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Stereotypes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRY__STERETYPES = BasePackage.ANAME_ITEM_FEATURE_COUNT + 3;
+	int REGISTRY__STEREOTYPES = BasePackage.ANAME_ITEM_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRY__PARAMETERS = BasePackage.ANAME_ITEM_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Registry</em>' class.
@@ -133,7 +142,7 @@ public interface RegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRY_FEATURE_COUNT = BasePackage.ANAME_ITEM_FEATURE_COUNT + 4;
+	int REGISTRY_FEATURE_COUNT = BasePackage.ANAME_ITEM_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Registry</em>' class.
@@ -191,14 +200,14 @@ public interface RegistryPackage extends EPackage {
 	int UNIT_REF_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link de.symo.model.registry.impl.MeasuementImpl <em>Measuement</em>}' class.
+	 * The meta object id for the '{@link de.symo.model.registry.impl.MeasurementImpl <em>Measurement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.symo.model.registry.impl.MeasuementImpl
-	 * @see de.symo.model.registry.impl.RegistryPackageImpl#getMeasuement()
+	 * @see de.symo.model.registry.impl.MeasurementImpl
+	 * @see de.symo.model.registry.impl.RegistryPackageImpl#getMeasurement()
 	 * @generated
 	 */
-	int MEASUEMENT = 2;
+	int MEASUREMENT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -207,7 +216,7 @@ public interface RegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASUEMENT__NAME = BasePackage.UNIT__NAME;
+	int MEASUREMENT__NAME = BasePackage.UNIT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -216,7 +225,7 @@ public interface RegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASUEMENT__DESCRIPTION = BasePackage.UNIT__DESCRIPTION;
+	int MEASUREMENT__DESCRIPTION = BasePackage.UNIT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
@@ -225,7 +234,7 @@ public interface RegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASUEMENT__SYMBOL = BasePackage.UNIT__SYMBOL;
+	int MEASUREMENT__SYMBOL = BasePackage.UNIT__SYMBOL;
 
 	/**
 	 * The feature id for the '<em><b>Si Unit</b></em>' attribute.
@@ -234,7 +243,7 @@ public interface RegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASUEMENT__SI_UNIT = BasePackage.UNIT__SI_UNIT;
+	int MEASUREMENT__SI_UNIT = BasePackage.UNIT__SI_UNIT;
 
 	/**
 	 * The feature id for the '<em><b>Unit Ref</b></em>' containment reference list.
@@ -243,25 +252,125 @@ public interface RegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASUEMENT__UNIT_REF = BasePackage.UNIT_FEATURE_COUNT + 0;
+	int MEASUREMENT__UNIT_REF = BasePackage.UNIT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Measuement</em>' class.
+	 * The number of structural features of the '<em>Measurement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEASUEMENT_FEATURE_COUNT = BasePackage.UNIT_FEATURE_COUNT + 1;
+	int MEASUREMENT_FEATURE_COUNT = BasePackage.UNIT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Measuement</em>' class.
+	 * The number of operations of the '<em>Measurement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEASUEMENT_OPERATION_COUNT = BasePackage.UNIT_OPERATION_COUNT + 0;
+	int MEASUREMENT_OPERATION_COUNT = BasePackage.UNIT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.symo.model.registry.impl.ParameterImpl <em>Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.symo.model.registry.impl.ParameterImpl
+	 * @see de.symo.model.registry.impl.RegistryPackageImpl#getParameter()
+	 * @generated
+	 */
+	int PARAMETER = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__NAME = BasePackage.APARAMETER_DEF__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__DESCRIPTION = BasePackage.APARAMETER_DEF__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__ID = BasePackage.APARAMETER_DEF__ID;
+
+	/**
+	 * The feature id for the '<em><b>Notes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__NOTES = BasePackage.APARAMETER_DEF__NOTES;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__VALUE = BasePackage.APARAMETER_DEF__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__UNIT = BasePackage.APARAMETER_DEF__UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Estimated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__ESTIMATED = BasePackage.APARAMETER_DEF_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Constant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__CONSTANT = BasePackage.APARAMETER_DEF_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_FEATURE_COUNT = BasePackage.APARAMETER_DEF_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_OPERATION_COUNT = BasePackage.APARAMETER_DEF_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.symo.model.registry.impl.ConstantImpl <em>Constant</em>}' class.
@@ -271,7 +380,7 @@ public interface RegistryPackage extends EPackage {
 	 * @see de.symo.model.registry.impl.RegistryPackageImpl#getConstant()
 	 * @generated
 	 */
-	int CONSTANT = 3;
+	int CONSTANT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -353,7 +462,7 @@ public interface RegistryPackage extends EPackage {
 	 * @see de.symo.model.registry.impl.RegistryPackageImpl#getStereotype()
 	 * @generated
 	 */
-	int STEREOTYPE = 4;
+	int STEREOTYPE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -461,15 +570,26 @@ public interface RegistryPackage extends EPackage {
 	EReference getRegistry_Constants();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.symo.model.registry.Registry#getSteretypes <em>Steretypes</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.symo.model.registry.Registry#getStereotypes <em>Stereotypes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Steretypes</em>'.
-	 * @see de.symo.model.registry.Registry#getSteretypes()
+	 * @return the meta object for the containment reference list '<em>Stereotypes</em>'.
+	 * @see de.symo.model.registry.Registry#getStereotypes()
 	 * @see #getRegistry()
 	 * @generated
 	 */
-	EReference getRegistry_Steretypes();
+	EReference getRegistry_Stereotypes();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.symo.model.registry.Registry#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see de.symo.model.registry.Registry#getParameters()
+	 * @see #getRegistry()
+	 * @generated
+	 */
+	EReference getRegistry_Parameters();
 
 	/**
 	 * Returns the meta object for class '{@link de.symo.model.registry.UnitRef <em>Unit Ref</em>}'.
@@ -504,25 +624,57 @@ public interface RegistryPackage extends EPackage {
 	EReference getUnitRef_TargetUnit();
 
 	/**
-	 * Returns the meta object for class '{@link de.symo.model.registry.Measuement <em>Measuement</em>}'.
+	 * Returns the meta object for class '{@link de.symo.model.registry.Measurement <em>Measurement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Measuement</em>'.
-	 * @see de.symo.model.registry.Measuement
+	 * @return the meta object for class '<em>Measurement</em>'.
+	 * @see de.symo.model.registry.Measurement
 	 * @generated
 	 */
-	EClass getMeasuement();
+	EClass getMeasurement();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.symo.model.registry.Measuement#getUnitRef <em>Unit Ref</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.symo.model.registry.Measurement#getUnitRef <em>Unit Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Unit Ref</em>'.
-	 * @see de.symo.model.registry.Measuement#getUnitRef()
-	 * @see #getMeasuement()
+	 * @see de.symo.model.registry.Measurement#getUnitRef()
+	 * @see #getMeasurement()
 	 * @generated
 	 */
-	EReference getMeasuement_UnitRef();
+	EReference getMeasurement_UnitRef();
+
+	/**
+	 * Returns the meta object for class '{@link de.symo.model.registry.Parameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Parameter</em>'.
+	 * @see de.symo.model.registry.Parameter
+	 * @generated
+	 */
+	EClass getParameter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.symo.model.registry.Parameter#isEstimated <em>Estimated</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Estimated</em>'.
+	 * @see de.symo.model.registry.Parameter#isEstimated()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EAttribute getParameter_Estimated();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.symo.model.registry.Parameter#isConstant <em>Constant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Constant</em>'.
+	 * @see de.symo.model.registry.Parameter#isConstant()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EAttribute getParameter_Constant();
 
 	/**
 	 * Returns the meta object for class '{@link de.symo.model.registry.Constant <em>Constant</em>}'.
@@ -616,12 +768,20 @@ public interface RegistryPackage extends EPackage {
 		EReference REGISTRY__CONSTANTS = eINSTANCE.getRegistry_Constants();
 
 		/**
-		 * The meta object literal for the '<em><b>Steretypes</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Stereotypes</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REGISTRY__STERETYPES = eINSTANCE.getRegistry_Steretypes();
+		EReference REGISTRY__STEREOTYPES = eINSTANCE.getRegistry_Stereotypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGISTRY__PARAMETERS = eINSTANCE.getRegistry_Parameters();
 
 		/**
 		 * The meta object literal for the '{@link de.symo.model.registry.impl.UnitRefImpl <em>Unit Ref</em>}' class.
@@ -650,14 +810,14 @@ public interface RegistryPackage extends EPackage {
 		EReference UNIT_REF__TARGET_UNIT = eINSTANCE.getUnitRef_TargetUnit();
 
 		/**
-		 * The meta object literal for the '{@link de.symo.model.registry.impl.MeasuementImpl <em>Measuement</em>}' class.
+		 * The meta object literal for the '{@link de.symo.model.registry.impl.MeasurementImpl <em>Measurement</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.symo.model.registry.impl.MeasuementImpl
-		 * @see de.symo.model.registry.impl.RegistryPackageImpl#getMeasuement()
+		 * @see de.symo.model.registry.impl.MeasurementImpl
+		 * @see de.symo.model.registry.impl.RegistryPackageImpl#getMeasurement()
 		 * @generated
 		 */
-		EClass MEASUEMENT = eINSTANCE.getMeasuement();
+		EClass MEASUREMENT = eINSTANCE.getMeasurement();
 
 		/**
 		 * The meta object literal for the '<em><b>Unit Ref</b></em>' containment reference list feature.
@@ -665,7 +825,33 @@ public interface RegistryPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MEASUEMENT__UNIT_REF = eINSTANCE.getMeasuement_UnitRef();
+		EReference MEASUREMENT__UNIT_REF = eINSTANCE.getMeasurement_UnitRef();
+
+		/**
+		 * The meta object literal for the '{@link de.symo.model.registry.impl.ParameterImpl <em>Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.symo.model.registry.impl.ParameterImpl
+		 * @see de.symo.model.registry.impl.RegistryPackageImpl#getParameter()
+		 * @generated
+		 */
+		EClass PARAMETER = eINSTANCE.getParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Estimated</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAMETER__ESTIMATED = eINSTANCE.getParameter_Estimated();
+
+		/**
+		 * The meta object literal for the '<em><b>Constant</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAMETER__CONSTANT = eINSTANCE.getParameter_Constant();
 
 		/**
 		 * The meta object literal for the '{@link de.symo.model.registry.impl.ConstantImpl <em>Constant</em>}' class.

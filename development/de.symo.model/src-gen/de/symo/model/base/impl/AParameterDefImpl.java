@@ -3,10 +3,10 @@
 package de.symo.model.base.impl;
 
 import de.symo.model.base.AParameterDef;
-import de.symo.model.base.AValueDef;
 import de.symo.model.base.BasePackage;
 import de.symo.model.base.Unit;
 
+import de.symo.model.base.Value;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -38,7 +38,7 @@ public class AParameterDefImpl extends ADataItemImpl implements AParameterDef {
 	 * @generated
 	 * @ordered
 	 */
-	protected AValueDef value;
+	protected Value value;
 
 	/**
 	 * The cached value of the '{@link #getUnit() <em>Unit</em>}' reference.
@@ -74,7 +74,7 @@ public class AParameterDefImpl extends ADataItemImpl implements AParameterDef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AValueDef getValue() {
+	public Value getValue() {
 		return value;
 	}
 
@@ -83,8 +83,8 @@ public class AParameterDefImpl extends ADataItemImpl implements AParameterDef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetValue(AValueDef newValue, NotificationChain msgs) {
-		AValueDef oldValue = value;
+	public NotificationChain basicSetValue(Value newValue, NotificationChain msgs) {
+		Value oldValue = value;
 		value = newValue;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.APARAMETER_DEF__VALUE, oldValue, newValue);
@@ -98,7 +98,7 @@ public class AParameterDefImpl extends ADataItemImpl implements AParameterDef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(AValueDef newValue) {
+	public void setValue(Value newValue) {
 		if (newValue != value) {
 			NotificationChain msgs = null;
 			if (value != null)
@@ -190,7 +190,7 @@ public class AParameterDefImpl extends ADataItemImpl implements AParameterDef {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BasePackage.APARAMETER_DEF__VALUE:
-				setValue((AValueDef)newValue);
+				setValue((Value)newValue);
 				return;
 			case BasePackage.APARAMETER_DEF__UNIT:
 				setUnit((Unit)newValue);
@@ -208,7 +208,7 @@ public class AParameterDefImpl extends ADataItemImpl implements AParameterDef {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BasePackage.APARAMETER_DEF__VALUE:
-				setValue((AValueDef)null);
+				setValue((Value)null);
 				return;
 			case BasePackage.APARAMETER_DEF__UNIT:
 				setUnit((Unit)null);

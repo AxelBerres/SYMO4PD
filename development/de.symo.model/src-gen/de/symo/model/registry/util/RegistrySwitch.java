@@ -86,11 +86,20 @@ public class RegistrySwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RegistryPackage.MEASUEMENT: {
-				Measuement measuement = (Measuement)theEObject;
-				T result = caseMeasuement(measuement);
-				if (result == null) result = caseUnit(measuement);
-				if (result == null) result = caseANameItem(measuement);
+			case RegistryPackage.MEASUREMENT: {
+				Measurement measurement = (Measurement)theEObject;
+				T result = caseMeasurement(measurement);
+				if (result == null) result = caseUnit(measurement);
+				if (result == null) result = caseANameItem(measurement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RegistryPackage.PARAMETER: {
+				Parameter parameter = (Parameter)theEObject;
+				T result = caseParameter(parameter);
+				if (result == null) result = caseAParameterDef(parameter);
+				if (result == null) result = caseADataItem(parameter);
+				if (result == null) result = caseANameItem(parameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -146,17 +155,32 @@ public class RegistrySwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Measuement</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Measurement</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Measuement</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Measurement</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMeasuement(Measuement object) {
+	public T caseMeasurement(Measurement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParameter(Parameter object) {
 		return null;
 	}
 

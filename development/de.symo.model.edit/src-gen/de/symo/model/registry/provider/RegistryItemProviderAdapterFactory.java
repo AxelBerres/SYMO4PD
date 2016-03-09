@@ -118,26 +118,49 @@ public class RegistryItemProviderAdapterFactory extends RegistryAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.symo.model.registry.Measuement} instances.
+	 * This keeps track of the one adapter used for all {@link de.symo.model.registry.Measurement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MeasuementItemProvider measuementItemProvider;
+	protected MeasurementItemProvider measurementItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.symo.model.registry.Measuement}.
+	 * This creates an adapter for a {@link de.symo.model.registry.Measurement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createMeasuementAdapter() {
-		if (measuementItemProvider == null) {
-			measuementItemProvider = new MeasuementItemProvider(this);
+	public Adapter createMeasurementAdapter() {
+		if (measurementItemProvider == null) {
+			measurementItemProvider = new MeasurementItemProvider(this);
 		}
 
-		return measuementItemProvider;
+		return measurementItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.symo.model.registry.Parameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ParameterItemProvider parameterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.symo.model.registry.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createParameterAdapter() {
+		if (parameterItemProvider == null) {
+			parameterItemProvider = new ParameterItemProvider(this);
+		}
+
+		return parameterItemProvider;
 	}
 
 	/**
@@ -287,7 +310,8 @@ public class RegistryItemProviderAdapterFactory extends RegistryAdapterFactory i
 	public void dispose() {
 		if (registryItemProvider != null) registryItemProvider.dispose();
 		if (unitRefItemProvider != null) unitRefItemProvider.dispose();
-		if (measuementItemProvider != null) measuementItemProvider.dispose();
+		if (measurementItemProvider != null) measurementItemProvider.dispose();
+		if (parameterItemProvider != null) parameterItemProvider.dispose();
 		if (constantItemProvider != null) constantItemProvider.dispose();
 		if (stereotypeItemProvider != null) stereotypeItemProvider.dispose();
 	}

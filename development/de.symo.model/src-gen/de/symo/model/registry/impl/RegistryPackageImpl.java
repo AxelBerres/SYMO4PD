@@ -7,7 +7,8 @@ import de.symo.model.base.BasePackage;
 import de.symo.model.base.impl.BasePackageImpl;
 
 import de.symo.model.registry.Constant;
-import de.symo.model.registry.Measuement;
+import de.symo.model.registry.Measurement;
+import de.symo.model.registry.Parameter;
 import de.symo.model.registry.RegistryFactory;
 import de.symo.model.registry.RegistryPackage;
 import de.symo.model.registry.Stereotype;
@@ -50,7 +51,14 @@ public class RegistryPackageImpl extends EPackageImpl implements RegistryPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass measuementEClass = null;
+	private EClass measurementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass parameterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,8 +175,17 @@ public class RegistryPackageImpl extends EPackageImpl implements RegistryPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRegistry_Steretypes() {
+	public EReference getRegistry_Stereotypes() {
 		return (EReference)registryEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRegistry_Parameters() {
+		return (EReference)registryEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -203,8 +220,8 @@ public class RegistryPackageImpl extends EPackageImpl implements RegistryPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMeasuement() {
-		return measuementEClass;
+	public EClass getMeasurement() {
+		return measurementEClass;
 	}
 
 	/**
@@ -212,8 +229,35 @@ public class RegistryPackageImpl extends EPackageImpl implements RegistryPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMeasuement_UnitRef() {
-		return (EReference)measuementEClass.getEStructuralFeatures().get(0);
+	public EReference getMeasurement_UnitRef() {
+		return (EReference)measurementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getParameter() {
+		return parameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getParameter_Estimated() {
+		return (EAttribute)parameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getParameter_Constant() {
+		return (EAttribute)parameterEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -283,14 +327,19 @@ public class RegistryPackageImpl extends EPackageImpl implements RegistryPackage
 		registryEClass = createEClass(REGISTRY);
 		createEReference(registryEClass, REGISTRY__UNITS);
 		createEReference(registryEClass, REGISTRY__CONSTANTS);
-		createEReference(registryEClass, REGISTRY__STERETYPES);
+		createEReference(registryEClass, REGISTRY__STEREOTYPES);
+		createEReference(registryEClass, REGISTRY__PARAMETERS);
 
 		unitRefEClass = createEClass(UNIT_REF);
 		createEAttribute(unitRefEClass, UNIT_REF__CONVERSION_FACTOR);
 		createEReference(unitRefEClass, UNIT_REF__TARGET_UNIT);
 
-		measuementEClass = createEClass(MEASUEMENT);
-		createEReference(measuementEClass, MEASUEMENT__UNIT_REF);
+		measurementEClass = createEClass(MEASUREMENT);
+		createEReference(measurementEClass, MEASUREMENT__UNIT_REF);
+
+		parameterEClass = createEClass(PARAMETER);
+		createEAttribute(parameterEClass, PARAMETER__ESTIMATED);
+		createEAttribute(parameterEClass, PARAMETER__CONSTANT);
 
 		constantEClass = createEClass(CONSTANT);
 
@@ -332,22 +381,28 @@ public class RegistryPackageImpl extends EPackageImpl implements RegistryPackage
 		// Add supertypes to classes
 		registryEClass.getESuperTypes().add(theBasePackage.getANameItem());
 		registryEClass.getESuperTypes().add(theBasePackage.getAVersionedModelRoot());
-		measuementEClass.getESuperTypes().add(theBasePackage.getUnit());
+		measurementEClass.getESuperTypes().add(theBasePackage.getUnit());
+		parameterEClass.getESuperTypes().add(theBasePackage.getAParameterDef());
 		constantEClass.getESuperTypes().add(theBasePackage.getAParameterDef());
 		stereotypeEClass.getESuperTypes().add(theBasePackage.getADataItem());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(registryEClass, de.symo.model.registry.Registry.class, "Registry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRegistry_Units(), this.getMeasuement(), null, "units", null, 0, -1, de.symo.model.registry.Registry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRegistry_Units(), this.getMeasurement(), null, "units", null, 0, -1, de.symo.model.registry.Registry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRegistry_Constants(), this.getConstant(), null, "constants", null, 0, -1, de.symo.model.registry.Registry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRegistry_Steretypes(), this.getStereotype(), null, "steretypes", null, 0, -1, de.symo.model.registry.Registry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRegistry_Stereotypes(), this.getStereotype(), null, "stereotypes", null, 0, -1, de.symo.model.registry.Registry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRegistry_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, de.symo.model.registry.Registry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(unitRefEClass, UnitRef.class, "UnitRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUnitRef_ConversionFactor(), ecorePackage.getEDoubleObject(), "conversionFactor", null, 0, 1, UnitRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUnitRef_TargetUnit(), theBasePackage.getUnit(), null, "targetUnit", null, 1, 1, UnitRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(measuementEClass, Measuement.class, "Measuement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMeasuement_UnitRef(), this.getUnitRef(), null, "unitRef", null, 0, -1, Measuement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(measurementEClass, Measurement.class, "Measurement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMeasurement_UnitRef(), this.getUnitRef(), null, "unitRef", null, 0, -1, Measurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getParameter_Estimated(), ecorePackage.getEBoolean(), "estimated", "true", 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getParameter_Constant(), ecorePackage.getEBoolean(), "constant", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constantEClass, Constant.class, "Constant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

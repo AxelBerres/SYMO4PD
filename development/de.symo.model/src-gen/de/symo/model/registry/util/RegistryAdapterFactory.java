@@ -82,8 +82,12 @@ public class RegistryAdapterFactory extends AdapterFactoryImpl {
 				return createUnitRefAdapter();
 			}
 			@Override
-			public Adapter caseMeasuement(Measuement object) {
-				return createMeasuementAdapter();
+			public Adapter caseMeasurement(Measurement object) {
+				return createMeasurementAdapter();
+			}
+			@Override
+			public Adapter caseParameter(Parameter object) {
+				return createParameterAdapter();
 			}
 			@Override
 			public Adapter caseConstant(Constant object) {
@@ -162,16 +166,30 @@ public class RegistryAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.symo.model.registry.Measuement <em>Measuement</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.symo.model.registry.Measurement <em>Measurement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.symo.model.registry.Measuement
+	 * @see de.symo.model.registry.Measurement
 	 * @generated
 	 */
-	public Adapter createMeasuementAdapter() {
+	public Adapter createMeasurementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.symo.model.registry.Parameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.symo.model.registry.Parameter
+	 * @generated
+	 */
+	public Adapter createParameterAdapter() {
 		return null;
 	}
 
