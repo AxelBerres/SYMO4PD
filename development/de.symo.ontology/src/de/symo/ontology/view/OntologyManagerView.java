@@ -2,7 +2,7 @@ package de.symo.ontology.view;
 
 import java.io.File;
 
-import org.apache.jena.ontology.OntClass;
+import org.apache.jena.ontology.OntResource;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.ListViewer;
@@ -58,11 +58,11 @@ public class OntologyManagerView extends ViewPart {
 			}
 
 			public String getText(Object element) {
-				return ((OntClass)element).getLocalName();
+				return ((OntResource)element).getLocalName();
 			}
 		});
 		
-		viewer.setInput(OntologyManager.getInstance().getAllConcepts());
+		viewer.setInput(OntologyManager.getInstance().getAllResources());
 		
 		Composite searchRow = new Composite(parent, SWT.FILL);
 		searchRow.setLayout(new RowLayout());
@@ -82,7 +82,7 @@ public class OntologyManagerView extends ViewPart {
 				viewer.addFilter(new ViewerFilter() {
 					@Override
 					public boolean select(Viewer viewer, Object parentElement, Object element) {
-						return ((OntClass)element).getLocalName().contains(searchBox.getText());
+						return ((OntResource)element).getLocalName().contains(searchBox.getText());
 					}
 				});
 			}
@@ -93,8 +93,8 @@ public class OntologyManagerView extends ViewPart {
 		importConceptButton.setLayoutData(new RowData(100, 20));
 		importConceptButton.addSelectionListener(new SelectionListener() {
 			public void widgetSelected(SelectionEvent event) {
-				IStructuredSelection selectedOntClasses = (IStructuredSelection)viewer.getSelection();
-				System.out.println(selectedOntClasses.getFirstElement().toString());
+				IStructuredSelection selectedOntResources = (IStructuredSelection)viewer.getSelection();
+				System.out.println(selectedOntResources.getFirstElement().toString());
 			}
 
 			public void widgetDefaultSelected(SelectionEvent event) {

@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.jena.ontology.OntClass;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
+import org.apache.jena.ontology.OntResource;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.util.iterator.ExtendedIterator;
 
@@ -32,28 +33,36 @@ public class OntologyManager {
 		jenaModel.read(path, null);
 	}
 	
-	public OntClass getThingClass() {
-		ExtendedIterator<OntClass> it = jenaModel.listNamedClasses();
-		
-		while (it.hasNext()) {
-		    OntClass ontclass = it.next();
-		    System.out.println(ontclass.getLocalName());
-		    if (ontclass.getSuperClass() == null)
-		    	return ontclass;
-		}
-		
-		return null;
-	}
+//	public OntClass getThingClass() {
+//		ExtendedIterator<OntClass> it = jenaModel.listNamedClasses();
+//		
+//		while (it.hasNext()) {
+//		    OntClass ontclass = it.next();
+//		    System.out.println(ontclass.getLocalName());
+//		    if (ontclass.getSuperClass() == null)
+//		    	return ontclass;
+//		}
+//		
+//		return null;
+//	}
 	
-	public List<OntClass> getAllConcepts() {
-		List<OntClass> concepts = new ArrayList<OntClass>();
+	public List<OntResource> getAllResources() {
+		List<OntResource> ontologyResources = new ArrayList<OntResource>();
 		
 		ExtendedIterator<OntClass> it = jenaModel.listNamedClasses();
 		
 		while (it.hasNext())
-		    concepts.add(it.next());
+		{
+			OntClass cl = it.next();
+			@SuppressWarnings("unchecked")
+			ExtendedIterator<OntResource> itinst = (ExtendedIterator<OntResource>)cl.listInstances();
+			while (itinst.hasNext())
+				ontologyResources.add(itinst.next());
+			
+		    ontologyResources.add(cl);
+		}
 		
-		return concepts;
+		return ontologyResources;
 	}
 	
 	
@@ -61,7 +70,7 @@ public class OntologyManager {
 		
 		boolean found = false;
 		
-		for(OntClass ontClass : getAllConcepts()) {			
+		for(OntResource ontClass : getAllResources()) {			
 			if (name.equals(ontClass.getLocalName()) == true) {				
 				return true; 
 			}

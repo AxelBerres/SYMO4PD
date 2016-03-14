@@ -7,6 +7,7 @@ import org.eclipse.jface.viewers.Viewer;
 
 public class OntologyStructuredContentProvider implements IStructuredContentProvider {
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public Object[] getElements(Object inputElement) {
         return ((List<Object>)inputElement).toArray();
