@@ -26,7 +26,7 @@ public class TextDocWriter extends ADocWriter {
 	
 	private String lineSeparator;
 	
-	private boolean tabSubElements;
+	private boolean tabSubElements = false;
 	
 	private List<String> consideredDocEntries = new ArrayList<String>();
 
