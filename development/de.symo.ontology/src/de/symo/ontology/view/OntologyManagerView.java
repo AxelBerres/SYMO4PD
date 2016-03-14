@@ -12,9 +12,13 @@ import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.layout.RowData;
+import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.part.ViewPart;
 
@@ -34,7 +38,9 @@ public class OntologyManagerView extends ViewPart {
 		GridLayout layout = new GridLayout(1, true);
 	    parent.setLayout(layout);
 		
-		viewer = new ListViewer(parent, SWT.FILL);	
+		viewer = new ListViewer(parent, SWT.FILL);
+		viewer.getControl().setLayoutData(new GridData(GridData.FILL_VERTICAL));
+		
 		viewer.setContentProvider(new OntologyStructuredContentProvider());
 		
 		viewer.setLabelProvider(new LabelProvider() {
@@ -49,8 +55,14 @@ public class OntologyManagerView extends ViewPart {
 		
 		viewer.setInput(OntologyManager.getInstance().getAllConcepts());
 		
-		searchBox = new Text(parent, SWT.NONE);
-		//searchBox.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
+		Composite searchRow = new Composite(parent, SWT.FILL);
+		searchRow.setLayout(new RowLayout());
+		
+		Label l = new Label(searchRow, SWT.NONE);
+		l.setText("Begriff-Suche: ");
+		
+		searchBox = new Text(searchRow, SWT.FILL);
+		searchBox.setLayoutData(new RowData(200, 20));
 		searchBox.addKeyListener(new KeyListener() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -67,8 +79,9 @@ public class OntologyManagerView extends ViewPart {
 			}
 		});
 
-		importConceptButton = new Button(parent, SWT.NONE);
+		importConceptButton = new Button(searchRow, SWT.NONE);
 		importConceptButton.setText("Import");
+		importConceptButton.setLayoutData(new RowData(100, 20));
 		importConceptButton.addSelectionListener(new SelectionListener() {
 			public void widgetSelected(SelectionEvent event) {
 				IStructuredSelection selectedOntClasses = (IStructuredSelection)viewer.getSelection();

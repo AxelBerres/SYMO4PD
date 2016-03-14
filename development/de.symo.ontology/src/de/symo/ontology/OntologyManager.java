@@ -10,7 +10,7 @@ import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.util.iterator.ExtendedIterator;
 
 public class OntologyManager {
-public final static String PATH = "file:///C:/Users/michael.shamiyeh/Workspace/Symo4PD/development/de.symo.ontology/owl/qu.owl";
+public final static String PATH = "file:///C:/Users/michael.shamiyeh/Workspace/Symo4PD/development/de.symo.ontology/owl/qu-rec20.owl";
 	
 	private OntModel jenaModel;
 	
