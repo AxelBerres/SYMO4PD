@@ -10,8 +10,12 @@ import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.util.iterator.ExtendedIterator;
 
 public class OntologyManager {
-public final static String PATH = "file:///C:/Users/michael.shamiyeh/Workspace/Symo4PD/development/de.symo.ontology/owl/qu-rec20.owl";
-	
+
+	//public final static String PATH = "file:///C:/Users/michael.shamiyeh/Workspace/Symo4PD/development/de.symo.ontology/owl/qu.owl";
+	//public final static String PATH = "file:///C:/Users/michael.shamiyeh/Workspace/Symo4PD/development/de.symo.ontology/owl/qu-rec20.owl";
+
+	public final static String PATH = "file:///D:/git/SYMO4PD/development/de.symo.ontology/owl/qu-rec20.owl";
+
 	private OntModel jenaModel;
 	
 	// Singleton:
@@ -54,4 +58,19 @@ public final static String PATH = "file:///C:/Users/michael.shamiyeh/Workspace/S
 		
 		return concepts;
 	}
+	
+	
+	public boolean isConcept(final String name) {
+		
+		boolean found = false;
+		
+		for(OntClass ontClass : getAllConcepts()) {			
+			if (name.equals(ontClass.getLocalName()) == true) {				
+				return true; 
+			}
+		}			
+
+		return found;
+	}
+	
 }
