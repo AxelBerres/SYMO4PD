@@ -32,7 +32,7 @@
             name="%_UI_BaseEditor_label"
             icon="icons/full/obj16/BaseModelFile.gif"
             extensions="base"
-            class="de.symo.model.base.presentation.BaseEditor"
+            class="de.symo.model.base.presentation.RegistryEditorExt"
             contributorClass="de.symo.model.base.presentation.BaseActionBarContributor">
       </editor>
    </extension>

@@ -16,7 +16,7 @@ import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 
-import de.symo.model.base.provider.BaseItemProviderAdapterFactory;
+import de.symo.model.base.provider.BaseItemProviderAdapterFactoryExt;
 import de.symo.model.registry.provider.RegistryItemProviderAdapterFactoryExt;
 import de.symo.model.symopd.provider.SymopdItemProviderAdapterFactory;
 
@@ -32,7 +32,7 @@ public class RegistryEditorExt extends RegistryEditor {
 		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new BaseItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new BaseItemProviderAdapterFactoryExt());
 		adapterFactory.addAdapterFactory(new RegistryItemProviderAdapterFactoryExt());		
 		adapterFactory.addAdapterFactory(new SymopdItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
