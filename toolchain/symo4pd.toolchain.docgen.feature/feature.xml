@@ -2,35 +2,33 @@
 <feature
       id="symo4pd.toolchain.docgen.feature"
       label="Ecore Documentation Generator"
-      version="1.0.0"
+      version="1.0.1"
       provider-name="Bauhaus Luftfahrt e.V.">
 
-   <description>
-      The feature contains a plug-in for Ecore Documentation generation.
+   <description url="http://www.example.com/description">
+      This plugin contains a simple Ecore documentation generator.
    </description>
 
    <copyright url="http://www.example.com/copyright">
-      Ecore Documentation Generation Plugin
-      Copyright (c) 2015-2016 Bauhaus Luftfahrt e.V.. All rights reserved.
-      Version 0.1.0
+      [Enter Copyright Description here.]
    </copyright>
 
    <license url="http://www.example.com/license">
-      Licence
+      [Enter License Description here.]
    </license>
 
    <plugin
          id="symo4pd.toolchain.docgen"
          download-size="0"
          install-size="0"
-         version="1.0.0"
+         version="1.0.1"
          unpack="false"/>
 
    <plugin
          id="symo4pd.toolchain.docgen.writer.txt"
          download-size="0"
          install-size="0"
-         version="1.0.0"
+         version="1.0.1"
          unpack="false"/>
 
 </feature>
