@@ -3,6 +3,7 @@ package symo4pd.toolchain.docgen;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.StringTokenizer;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenBase;
 import org.eclipse.emf.codegen.ecore.genmodel.GenClass;
@@ -32,6 +33,8 @@ public class DocModelGenerator {
 
 	private Map<String, String> implementsMap = new HashMap<String, String>();
 
+	private String[] annotationNames;
+	
 	public DocModelElement getDocumentationElement() {
 		return documentationElement;
 	}
@@ -52,14 +55,23 @@ public class DocModelGenerator {
 	public void generate() {
 		implementsMap.clear();
 		documentationElement = DocElementFactory.generateEcoreModelDocElement(genModel.getModelName());
+		documentationElement.setCreateDocEntry(Activator.preferences.getBoolean(PreferencesConstants.GENERATE_MODELENTRY));
 
+		String annotationNamesString = Activator.preferences.getString(PreferencesConstants.CONSIDERED_ANNOTATIONS);
+		if (!annotationNamesString.isEmpty())
+			annotationNames = convert(annotationNamesString);
+		else
+			annotationNames = new String[] {"documentation"};
+		
 		for (GenPackage genPackage : genModel.getGenPackages()) {
 			DocModelElement packageElem = generatePackageDocElement(genPackage);
+			packageElem.setCreateDocEntry(Activator.preferences.getBoolean(PreferencesConstants.GENERATE_PACKAGEENTRY));
 			packageElem.setParent(documentationElement);
 			documentationElement.getChildren().add(packageElem);
 		}
 
-		checkAndSetImplementsEntry(documentationElement);
+		if (Activator.preferences.getBoolean(PreferencesConstants.GENERATE_IMPLEMENTSLINE))
+			checkAndSetImplementsEntry(documentationElement);
 	}
 
 	/**
@@ -116,8 +128,12 @@ public class DocModelGenerator {
 	private DocModelElement generateClassDocElement(final GenClass genClass) {
 		DocModelElement classElem = DocElementFactory.generateClassDocElement(genClass.getClassifierAccessorName());
 		generateAnnotationEntries(genClass, classElem);
-		generateBaseEntry(genClass, classElem);
-		generateInterfaceAbstractEntries(genClass, classElem);
+		
+		if (Activator.preferences.getBoolean(PreferencesConstants.GENERATE_SUBCLASSESLINE))
+			generateBaseEntry(genClass, classElem);
+
+		if (Activator.preferences.getBoolean(PreferencesConstants.GENERATE_INTERFACEABSTRACTLINE))
+			generateInterfaceAbstractEntries(genClass, classElem);
 		return classElem;
 	}
 
@@ -158,10 +174,26 @@ public class DocModelGenerator {
 	 *            The associated DocModel element, which stores the entries.
 	 */
 	private void generateAnnotationEntries(GenBase genElement, DocModelElement docElem) {
-		for (EAnnotation annotation : genElement.getEcoreModelElement().getEAnnotations()) {
-			for (Entry<String, String> entry : annotation.getDetails()) {
-				if (entry.getKey().equals(DocModelElement.ENTRYNAME_DESCRIPTION)) {
-					docElem.getDocEntries().put(DocModelElement.ENTRYNAME_DESCRIPTION, entry.getValue());
+		if (annotationNames.length == 0)
+		{
+			// collect all annotations:		
+			for (EAnnotation annotation : genElement.getEcoreModelElement().getEAnnotations()) {
+				for (Entry<String, String> entry : annotation.getDetails()) {
+					if (entry.getKey().equals(DocModelElement.ENTRYNAME_DESCRIPTION)) {
+						docElem.getDocEntries().put(DocModelElement.ENTRYNAME_DESCRIPTION, entry.getValue());
+					}
+				}
+			}
+		}
+		else
+		{
+			// collect only listed annotations:
+			for (EAnnotation annotation : genElement.getEcoreModelElement().getEAnnotations()) {
+				for (Entry<String, String> entry : annotation.getDetails()) {
+					for (int i = 0; i < annotationNames.length; i++) {
+						if (entry.getKey().equals(annotationNames[i]))
+							docElem.getDocEntries().put(annotationNames[i], entry.getValue());
+					}
 				}
 			}
 		}
@@ -233,5 +265,20 @@ public class DocModelGenerator {
 
 		if (genClass.isAbstract())
 			docElement.getDocEntries().put(DocModelElement.MODIFIER_ABSTRACT, "");
+	}
+	
+	/**
+	 * Converts semicolon delimited String to a String array.
+	 */
+	private String[] convert(String preferenceValue) {
+		StringTokenizer tokenizer = new StringTokenizer(preferenceValue, ";");
+		int tokenCount = tokenizer.countTokens();
+		String[] elements = new String[tokenCount];
+		
+		for (int i = 0; i < tokenCount; i++) {
+			elements[i] = tokenizer.nextToken();
+		}
+
+		return elements;
 	}
 }

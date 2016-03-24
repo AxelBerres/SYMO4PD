@@ -4,8 +4,6 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import symo4pd.toolchain.docgen.exception.DocGeneratorException;
 import symo4pd.toolchain.docgen.model.DocModelElement;
@@ -17,8 +15,6 @@ import symo4pd.toolchain.docgen.writer.ADocWriter;
  *
  */
 public class TextDocWriter extends ADocWriter {
-	private final String FILENAME = "EcoreModelDocumentation.txt";
-	
 	private final String TAB_CHAR = "\t";
 	
 	private final char UNDERLINE_CHAR = '-';
@@ -28,8 +24,6 @@ public class TextDocWriter extends ADocWriter {
 	
 	private boolean tabSubElements = false;
 	
-	private List<String> consideredDocEntries = new ArrayList<String>();
-
 	private StringBuilder builder;
 	
 	public TextDocWriter() {
@@ -41,51 +35,49 @@ public class TextDocWriter extends ADocWriter {
 		builder = new StringBuilder();
 		
 		lineSeparator = System.lineSeparator();
-		tabSubElements = true;
-		
-		consideredDocEntries.add(DocModelElement.ENTRYNAME_BASE);
-		consideredDocEntries.add(DocModelElement.ENTRYNAME_KNOWNSUBS);
-		consideredDocEntries.add(DocModelElement.ENTRYNAME_DESCRIPTION);
 	}
 
 	@Override
 	public void writeDocModelElementDocumentation(final DocModelElement docElement) {
-		String headLine = generateHeadLine(docElement);
-		String tabString = generateMultiTab(docElement.getHierarchyLevel());
-		
-		if (tabSubElements)
-			builder.append(tabString);
-
-		builder.append(headLine);
-		builder.append(lineSeparator);
-		
-		if (docElement.getType().equals(DocModelElement.TYPE_EPACKAGE)) {
+		if (docElement.getCreateDocEntry()) {
+			String tabString = generateMultiTab(docElement.getHierarchyLevel());
+			String headLine = generateHeadLine(docElement);
+			
 			if (tabSubElements)
 				builder.append(tabString);
+	
+			builder.append(headLine);
+			builder.append(lineSeparator);
 		
-			builder.append(generateUnderline(headLine, UNDERLINE_CHAR_PACKAGE));
-		}
-		else {
-			if (tabSubElements)
-				builder.append(tabString);
-		
-			builder.append(generateUnderline(headLine, UNDERLINE_CHAR));
-		}
-		
-		builder.append(lineSeparator);
-		
-		for (String consideredKey : consideredDocEntries) {
-			if (docElement.getDocEntries().containsKey(consideredKey)) {
+			if (docElement.getType().equals(DocModelElement.TYPE_EPACKAGE)) {
 				if (tabSubElements)
 					builder.append(tabString);
-				
-				builder.append(consideredKey + ": " + docElement.getDocEntries().get(consideredKey));
-				builder.append(lineSeparator);
+			
+				builder.append(generateUnderline(headLine, UNDERLINE_CHAR_PACKAGE));
 			}
-		}
+			else {
+				if (tabSubElements)
+					builder.append(tabString);
+			
+				builder.append(generateUnderline(headLine, UNDERLINE_CHAR));
+			}
+			
+			builder.append(lineSeparator);
 		
-		builder.append(lineSeparator);
-		builder.append(lineSeparator);
+			for (String key : docElement.getDocEntries().keySet()) {
+				if (!key.equals(DocModelElement.MODIFIER_ABSTRACT) && !key.equals(DocModelElement.MODIFIER_INTERFACE))
+				{
+					if (tabSubElements)
+						builder.append(tabString);
+					
+					//builder.append(key + ": " + docElement.getDocEntries().get(key));
+					builder.append(docElement.getDocEntries().get(key));
+					builder.append(lineSeparator);
+				}
+			}
+			
+			builder.append(lineSeparator);
+		}
 
 		for (DocModelElement subElement : docElement.getChildren()) {
 			writeDocModelElementDocumentation(subElement);
@@ -94,7 +86,7 @@ public class TextDocWriter extends ADocWriter {
 
 	@Override
 	public void finishDocumentation() throws DocGeneratorException {
-		File file = new File(getPath() + "\\" + FILENAME);
+		File file = new File(getPath());
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
 		    writer.append(builder);
 		} catch (IOException e) {

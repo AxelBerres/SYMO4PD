@@ -19,14 +19,16 @@ public class DocModelElement {
 
 	public static final String ENTRYNAME_DESCRIPTION = "Description";
 	public static final String ENTRYNAME_MODIFIER = "Modifier";
-	public static final String ENTRYNAME_BASE = "Base";
-	public static final String ENTRYNAME_KNOWNSUBS = "KnownSubs";
+	public static final String ENTRYNAME_BASE = "Base-Class";
+	public static final String ENTRYNAME_KNOWNSUBS = "Known Sub-Classes";
 
 	public static final String MODIFIER_INTERFACE = "Interface";
 	public static final String MODIFIER_ABSTRACT = "Abstract";
 
 	private String name;
 	private String type;
+	
+	private Boolean createDocEntry = true;
 
 	private Map<String, String> docEntries;
 
@@ -55,6 +57,14 @@ public class DocModelElement {
 
 	void setType(String type) {
 		this.type = type;
+	}
+	
+	public Boolean getCreateDocEntry() {
+		return createDocEntry;
+	}
+
+	public void setCreateDocEntry(Boolean createDocEntry) {
+		this.createDocEntry = createDocEntry;
 	}
 
 	public Map<String, String> getDocEntries() {

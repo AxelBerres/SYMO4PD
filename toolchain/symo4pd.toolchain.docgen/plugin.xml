@@ -39,7 +39,7 @@
     <page
           class="symo4pd.toolchain.docgen.preferences.PreferencePage"
           id="symo4pd.toolchain.docgen.prefpage"
-          name="Ecore DocGen Preferences Page">
+          name="Ecore DocGen">
     </page>
  </extension>
 </plugin>

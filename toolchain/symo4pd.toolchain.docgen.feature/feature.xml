@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="symo4pd.toolchain.docgen.feature"
-      label="ECore Documentation Generator"
+      label="Ecore Documentation Generator"
       version="1.0.0"
       provider-name="Bauhaus Luftfahrt e.V.">
 

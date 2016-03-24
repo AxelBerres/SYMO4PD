@@ -52,9 +52,10 @@ public class EcoreDocGenerator {
 		String writerClassName = Activator.preferences.getString(PreferencesConstants.WRITER);
 		
 		if (writerClassName.isEmpty()) {
-			throw new DocGeneratorException("No Documentation Writer found or selected!");
+			throw new DocGeneratorException("No Doc-Writer found/selected, check the DocGen preferences.");
 		}
-		else {			
+		else {
+			// collect writer extensions:
 			IConfigurationElement[] configElements = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSIONPOINT_ID);
 
 			for (IConfigurationElement elem : configElements) {
@@ -67,7 +68,7 @@ public class EcoreDocGenerator {
 						writer.writeDocModelElementDocumentation(generator.getDocumentationElement());
 						writer.finishDocumentation();
 					} catch (CoreException e) {
-						throw new DocGeneratorException("Documentation Writer '" + elem.getName() + "' could not be created.", e);
+						throw new DocGeneratorException("Doc-Writer '" + elem.getName() + "' could not be created.", e);
 					}
 				}
 			}

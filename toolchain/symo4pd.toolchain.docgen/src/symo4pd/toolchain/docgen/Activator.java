@@ -4,6 +4,8 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
+import symo4pd.toolchain.docgen.preferences.PreferencesConstants;
+
 /**
  * Bundle activator class.
  * 
@@ -45,6 +47,7 @@ public class Activator extends AbstractUIPlugin {
 		Activator.context = bundleContext;
 		plugin = this;
 		Activator.preferences = Activator.getDefault().getPreferenceStore();
+		setDefaultSettings();
 	}
 
 	/*
@@ -65,5 +68,16 @@ public class Activator extends AbstractUIPlugin {
 	 */
 	public static Activator getDefault() {
 		return plugin;
+	}
+	
+	public void setDefaultSettings() {
+		preferences.setDefault(PreferencesConstants.GENERATE_CLASSENTRY, true);
+		preferences.setDefault(PreferencesConstants.GENERATE_DATATYPEENTRY, false);
+		preferences.setDefault(PreferencesConstants.GENERATE_ENUMENTRY, false);
+		preferences.setDefault(PreferencesConstants.GENERATE_IMPLEMENTSLINE, true);
+		preferences.setDefault(PreferencesConstants.GENERATE_INTERFACEABSTRACTLINE, true);
+		preferences.setDefault(PreferencesConstants.GENERATE_MODELENTRY, false);
+		preferences.setDefault(PreferencesConstants.GENERATE_PACKAGEENTRY, true);
+		preferences.setDefault(PreferencesConstants.GENERATE_SUBCLASSESLINE, true);
 	}
 }

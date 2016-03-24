@@ -4,8 +4,11 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.DirectoryDialog;
+import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 import symo4pd.toolchain.docgen.EcoreDocGenerator;
@@ -25,20 +28,24 @@ public class DocGenHandler extends AbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		// Create dialog to select the documentation directory:
-		DirectoryDialog fileDialog = new DirectoryDialog(HandlerUtil.getActiveShell(event));
-		fileDialog.setText("Select Target Folder");
-		String docDirectory = fileDialog.open();
+		FileDialog fileDialog = new FileDialog(HandlerUtil.getActiveShell(event), SWT.SAVE);
+		fileDialog.setText("Select Documentation File");
+		fileDialog.setFilterNames(new String[] { "Text Files", "All Files (*.*)" });
+		fileDialog.setFilterExtensions(new String[] { "*.txt", "*.*" });
+		fileDialog.setFileName("ecore_doc.txt");
+		String fileDirectory = fileDialog.open();
 
-		if (docDirectory != null && !docDirectory.isEmpty()) {
+		if (fileDirectory != null && !fileDirectory.isEmpty()) {
 			// Get the selected GenModel instance:
 			IStructuredSelection selection = (IStructuredSelection)HandlerUtil.getCurrentSelection(event);
 			GenModel selectedGenModel = (GenModel)selection.getFirstElement();
 
 			// Start the documentation generation process:
 			try {
-				EcoreDocGenerator.getInstance().generate(docDirectory, selectedGenModel);
+				EcoreDocGenerator.getInstance().generate(fileDirectory, selectedGenModel);
+				new MessageDialog(HandlerUtil.getActiveShell(event), "Doc-Generator", null, "Documentation file successfully generated!", MessageDialog.INFORMATION, new String[] {"OK"}, 0).open();
 			} catch (DocGeneratorException e) {
-				// TODO Dialog/Messagebox?
+				new MessageDialog(HandlerUtil.getActiveShell(event), "Doc-Generator", null, "Documentation could not be generated:\\n" + e.getMessage(), MessageDialog.ERROR, new String[] {"OK"}, 0).open();
 				e.printStackTrace();
 			}
 		}

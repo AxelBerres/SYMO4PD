@@ -31,9 +31,14 @@ public class PreferencePage extends FieldEditorPreferencePage implements IWorkbe
 		getRegisteredWriterExtensions();
 		addField(new ComboFieldEditor(PreferencesConstants.WRITER, "Documentation Writer:", getRegisteredWriterExtensions(), getFieldEditorParent()));
 
+		addField(new BooleanFieldEditor(PreferencesConstants.GENERATE_MODELENTRY, "Generate Model Entries", getFieldEditorParent()));
+		addField(new BooleanFieldEditor(PreferencesConstants.GENERATE_PACKAGEENTRY, "Generate Package Entries", getFieldEditorParent()));
 		addField(new BooleanFieldEditor(PreferencesConstants.GENERATE_CLASSENTRY, "Generate Class Entries", getFieldEditorParent()));
 		addField(new BooleanFieldEditor(PreferencesConstants.GENERATE_DATATYPEENTRY, "Generate Data-Type Entries", getFieldEditorParent()));
 		addField(new BooleanFieldEditor(PreferencesConstants.GENERATE_ENUMENTRY, "Generate Enumeration Entries", getFieldEditorParent()));
+		addField(new BooleanFieldEditor(PreferencesConstants.GENERATE_IMPLEMENTSLINE, "Write known base classes", getFieldEditorParent()));
+		addField(new BooleanFieldEditor(PreferencesConstants.GENERATE_SUBCLASSESLINE, "Write known subclasses", getFieldEditorParent()));
+		addField(new BooleanFieldEditor(PreferencesConstants.GENERATE_INTERFACEABSTRACTLINE, "Append Interface and/or Abstract keywords", getFieldEditorParent()));
 	}
 	
 	/**
