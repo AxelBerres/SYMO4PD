@@ -12,8 +12,7 @@ public class ParameterItemProviderExt extends ParameterItemProvider {
 	public ParameterItemProviderExt(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
-	
-	
+
 	@Override
 	public String getText(final Object object) {
 		Parameter parameter = (Parameter) object;
@@ -57,5 +56,4 @@ public class ParameterItemProviderExt extends ParameterItemProvider {
 	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("custom/obj16/Parameter.gif"));
 	}
-
 }

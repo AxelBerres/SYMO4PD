@@ -23,10 +23,9 @@ public class RegistryItemProviderExt extends RegistryItemProvider {
 			getString("_UI_Registry_type") + " " + version + " > " + label;
 	}
 
-	
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("custom/obj16/Registry.gif"));
+		return overlayImage(object, getResourceLocator().getImage("custom/obj16/Registry.png"));
 	}
 
 }

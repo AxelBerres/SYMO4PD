@@ -7,7 +7,6 @@ public class StereotypeItemProviderExt extends StereotypeItemProvider {
 	public StereotypeItemProviderExt(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
-
 	
 	@Override
 	public Object getImage(Object object) {

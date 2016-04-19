@@ -10,6 +10,6 @@ public class UnitRefItemProviderExt extends UnitRefItemProvider {
 	
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("custom/obj16/siUnitRef.gif"));
+		return overlayImage(object, getResourceLocator().getImage("custom/obj16/siUnitRef.png"));
 	}
 }

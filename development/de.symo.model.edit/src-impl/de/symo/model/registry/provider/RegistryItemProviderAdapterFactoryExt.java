@@ -43,7 +43,7 @@ public class RegistryItemProviderAdapterFactoryExt extends RegistryItemProviderA
 		}
 		return stereotypeItemProvider;
 	}
-	
+
 	@Override
 	public Adapter createUnitRefAdapter() {
 		if (unitRefItemProvider==null) {

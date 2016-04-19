@@ -32,14 +32,13 @@ public class OntologyManagerView extends ViewPart {
 	private Button importConceptButton;
 	
 	public OntologyManagerView() {
-		File f = new File(OntologyManager.PATH_AXEL);
-		if(f.exists())
+//		File f = new File(OntologyManager.PATH_AXEL);
+//		if (f.exists() == true) {
 			OntologyManager.getInstance().LoadOntology(OntologyManager.PATH_AXEL);
-		else
-		{
-			System.out.println("Path 1 does not exist, using Path 2.");
-			OntologyManager.getInstance().LoadOntology(OntologyManager.PATH_MICHI);
-		}
+//		} else {
+//			System.out.println("Path 1 does not exist, using Path 2.");
+//			OntologyManager.getInstance().LoadOntology(OntologyManager.PATH_MICHI);
+//		}
 	}
 
 	@Override

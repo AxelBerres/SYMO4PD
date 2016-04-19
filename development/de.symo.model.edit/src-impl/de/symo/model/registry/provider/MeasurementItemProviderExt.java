@@ -8,7 +8,6 @@ import de.symo.model.registry.Measurement;
 import de.symo.ontology.OntologyManager;
 
 public class MeasurementItemProviderExt extends MeasurementItemProvider {
-
 	
 	public MeasurementItemProviderExt(AdapterFactory adapterFactory) {
 		super(adapterFactory);
@@ -18,8 +17,6 @@ public class MeasurementItemProviderExt extends MeasurementItemProvider {
 	public String getText(Object object) {
 
 		OntologyManager onManager = OntologyManager.getInstance();
-		
-		
 		Measurement measuement = (Measurement) object;
 		
 		// get type name
@@ -65,9 +62,9 @@ public class MeasurementItemProviderExt extends MeasurementItemProvider {
 		Measurement measurement = (Measurement) object;
 		
 		if (measurement.isSiUnit()) {
-			return overlayImage(object, getResourceLocator().getImage("custom/obj16/siUnit"));			
+			return overlayImage(object, getResourceLocator().getImage("custom/obj16/siUnit.png"));			
 		}
 		
-		return overlayImage(object, getResourceLocator().getImage("custom/obj16/Unit"));
+		return overlayImage(object, getResourceLocator().getImage("custom/obj16/Unit.png"));
 	}
 }
