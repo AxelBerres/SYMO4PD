@@ -25,6 +25,25 @@
             	</visibleWhen>
          </command>
       </menuContribution>
+  <menuContribution
+        allPopups="false"
+        locationURI="menu:org.eclipse.emf.codegen.ecore.genmodel.presentation.GenModelEditorID">
+     <command
+           commandId="symo4pd.toolchain.codegen.generatecommand"
+           label="Generate Documentation"
+           style="push">
+        <visibleWhen
+              checkEnabled="false">
+           <iterate>
+              <or>
+                 <instanceof
+                       value="org.eclipse.emf.codegen.ecore.genmodel.impl.GenModelImpl">
+                 </instanceof>
+              </or>
+           </iterate>
+        </visibleWhen>
+     </command>
+  </menuContribution>
 	</extension>
 	<extension
          point="org.eclipse.ui.commands">

@@ -5,7 +5,7 @@ import org.eclipse.ui.application.WorkbenchAdvisor;
 import org.eclipse.ui.application.WorkbenchWindowAdvisor;
 
 public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
-	private static final String PERSPECTIVE_ID = "net.bhl.cdt.ui.CDTPerspective";
+	private static final String PERSPECTIVE_ID = "de.symo.application.SYMO4PDPerspective";
 	
 	public WorkbenchWindowAdvisor createWorkbenchWindowAdvisor(IWorkbenchWindowConfigurer configurer) {
 		return new ApplicationWorkbenchWindowAdvisor(configurer);
