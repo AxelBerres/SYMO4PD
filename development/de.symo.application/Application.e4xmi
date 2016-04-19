@@ -18,7 +18,7 @@
             </children>
           </children>
           <children xsi:type="basic:PartSashContainer" xmi:id="_bTQ1YNS2EeGBn6dQ9VPexA" elementId="" containerData="10000">
-            <children xsi:type="advanced:Placeholder" xmi:id="_-s3TsP2MEeWzNOl6S1BbDg" elementId="org.eclipse.ui.editorss" ref="_Hmg4kNSjEeGwXp2p959l3w"/>
+            <children xsi:type="advanced:Placeholder" xmi:id="_-s3TsP2MEeWzNOl6S1BbDg" elementId="org.eclipse.ui.editorss" ref="_Hmg4kNSjEeGwXp2p959l3w" closeable="true"/>
             <children xsi:type="basic:PartStack" xmi:id="_qAHrYNS2EeGBn6dQ9VPexA" elementId="org.eclipse.ui.views.PropertySheetMStack" containerData="3400" selectedElement="_soNH8NS2EeGBn6dQ9VPexA">
               <tags>newtablook</tags>
               <tags>org.eclipse.e4.secondaryDataStack</tags>
@@ -73,7 +73,6 @@
     <sharedElements xsi:type="basic:Part" xmi:id="_5b33APsiEeW7XsWqCXP8fA" elementId="org.eclipse.emf.ecp.ui.ModelExplorerView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Model Explorer" iconURI=""/>
     <sharedElements xsi:type="basic:Part" xmi:id="_T7-KMPsmEeWKvKvzdRLMzg" elementId="org.eclipse.emf.ecp.ui.ModelRepositoriesView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="EMF Store"/>
     <sharedElements xsi:type="basic:Part" xmi:id="_FBjvcP2OEeWzNOl6S1BbDg" elementId="org.eclipse.ui.console.ConsoleView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Console" iconURI="platform:/plugin/org.eclipse.ui.console//icons/full/cview16/console_view.gif"/>
-    <sharedElements xsi:type="basic:Part" xmi:id="_TjfT4AYKEeaiROKKK3hRww" elementId="de.symo.registry.presentation.RegistryEditor" contributionURI="bundleclass://de.symo.model.editor/de.symo.model.registry.presentation.RegistryEditor" label="RegistryEditor" iconURI="platform:/plugin/de.symo.model.edit/icons/custom/obj16/Registry.png"/>
     <trimBars xmi:id="_VOV6ANTAEeGTY-uOtVc6Mg" elementId="org.eclipse.ui.main.toolbar"/>
     <trimBars xmi:id="_VP1HwNTAEeGTY-uOtVc6Mg" elementId="org.eclipse.ui.trim.status" side="Bottom">
       <children xsi:type="menu:ToolControl" xmi:id="_VP1u0NTAEeGTY-uOtVc6Mg" elementId="org.eclipse.ui.StatusLine" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.StandardTrim">
@@ -110,8 +109,12 @@
   </descriptors>
   <descriptors xmi:id="_V1KdQPsiEeW7XsWqCXP8fA" elementId="org.eclipse.emf.ecp.ui.ModelExplorerView" label="Model Explorer" category="org.eclipse.e4.primaryNavigationStack" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView"/>
   <descriptors xmi:id="_YGbYcPsmEeWKvKvzdRLMzg" elementId="org.eclipse.emf.ecp.ui.ModelRepositoriesView" label="EMF Store" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView"/>
-  <descriptors xmi:id="_6ykVYPvsEeWCco3rLDpcmQ" elementId="net.bhl.cdt.client.partdescriptor.ospart" label="OSPart" closeable="true" contributionURI="bundleclass://de.symo.application/de.symo.application.parts.OSPart"/>
-  <descriptors xmi:id="_F3wZIAYJEeaiROKKK3hRww" elementId="de.symo.registry.presentation.RegistryEditor" label="RegistryEditor" iconURI="platform:/plugin/de.symo.model.edit/icons/custom/obj16/Registry.png" contributionURI="bundleclass://de.symo.model.editor/de.symo.model.registry.presentation.RegistryEditor"/>
+  <descriptors xmi:id="_6ykVYPvsEeWCco3rLDpcmQ" elementId="net.bhl.cdt.client.partdescriptor.ospart" label="OSPart" category="org.eclipse.e4.primaryDataStack" closeable="true" contributionURI="bundleclass://de.symo.application/de.symo.application.parts.OSPart">
+    <toolbar xmi:id="_STlA0AYuEeaw64jaPwRxXw" elementId="de.symo.application.toolbar.1"/>
+  </descriptors>
+  <descriptors xmi:id="_KvwqEAYuEeaw64jaPwRxXw" elementId="de.symo.application.partdescriptor.registryeditor" label="Registry Editor" allowMultiple="true" category="org.eclipse.e4.primaryDataStack" closeable="true" dirtyable="true" contributionURI="bundleclass://de.symo.model.editor/de.symo.model.registry.presentation.RegistryEditor">
+    <toolbar xmi:id="_Nl2tcAYuEeaw64jaPwRxXw" elementId="de.symo.application.toolbar.0"/>
+  </descriptors>
   <commands xmi:id="_j09PcKJuEeW8H96PiRUoZQ" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
   <commands xmi:id="_t0mvcKJuEeW8H96PiRUoZQ" elementId="org.eclipse.ui.file.open" commandName="openCommand"/>
   <commands xmi:id="_xGJYsKJuEeW8H96PiRUoZQ" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
