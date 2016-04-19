@@ -1,4 +1,4 @@
-package de.symo4pd.application.emfstore;
+package de.symo.application.emfstore;
 
 import java.io.File;
 

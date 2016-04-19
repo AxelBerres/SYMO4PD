@@ -2,33 +2,33 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         id="de.symo4pd.application.comp"
+         id="de.symo.application"
          name="SYMO4PD"
          point="org.eclipse.core.runtime.applications">
       <application
             cardinality="singleton-global"
             thread="main"
             visible="true">
-         <run class="de.symo4pd.application.Application"></run>
+         <run class="de.symo.application.Application"></run>
       </application>
    </extension>
    <extension
-         id="de.symo4pd.application.comp"
+         id="de.symo.application"
          name="SYMO4PD Products"
          point="org.eclipse.core.runtime.products">
-      <product application="de.symo4pd.application.comp" name="SYMO4PD">
-            <property name="applicationXMI" value="de.symo4pd.application.comp/Application.e4xmi"></property>
+      <product application="de.symo.application" name="SYMO4PD">
+            <property name="applicationXMI" value="de.symo.application/Application.e4xmi"></property>
 			<property name="appName" value="SYMO4PD"></property>
 			<property name="preferenceCustomization" value="plugin_customization.ini"></property>
       </product>
    </extension>
    <extension point="org.eclipse.emf.emfstore.server.locationProvider">
-      <LocationProvider providerClass="de.symo4pd.application.emfstore.LocationProvider"></LocationProvider>
+      <LocationProvider providerClass="de.symo.application.emfstore.LocationProvider"></LocationProvider>
    </extension>
    <extension
          point="org.eclipse.emf.emfstore.client.workspaceLocationProvider">
       <LocationProvider
-            providerClass="de.symo4pd.application.emfstore.LocationProvider">
+            providerClass="de.symo.application.emfstore.LocationProvider">
       </LocationProvider>
    </extension>
 </plugin>

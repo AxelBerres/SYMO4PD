@@ -1,4 +1,4 @@
-package de.symo4pd.application;
+package de.symo.application;
 
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
@@ -6,7 +6,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 
-import de.symo4pd.application.ui.ApplicationWorkbenchAdvisor;
+import de.symo.application.ui.ApplicationWorkbenchAdvisor;
 
 public class Application implements IApplication {
 	/* (non-Javadoc)

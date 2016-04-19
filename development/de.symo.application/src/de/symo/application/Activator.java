@@ -1,4 +1,4 @@
-package de.symo4pd.application;
+package de.symo.application;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;

@@ -1,4 +1,4 @@
-package de.symo4pd.application.ui;
+package de.symo.application.ui;
 
 import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
 import org.eclipse.ui.application.WorkbenchAdvisor;
