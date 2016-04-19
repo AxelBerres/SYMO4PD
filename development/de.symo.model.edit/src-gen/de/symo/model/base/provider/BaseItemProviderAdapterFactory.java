@@ -72,26 +72,118 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.symo.model.base.Note} instances.
+	 * This keeps track of the one adapter used for all {@link de.symo.model.base.AParameterDef} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected NoteItemProvider noteItemProvider;
+	protected AParameterDefItemProvider aParameterDefItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.symo.model.base.Note}.
+	 * This creates an adapter for a {@link de.symo.model.base.AParameterDef}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createNoteAdapter() {
-		if (noteItemProvider == null) {
-			noteItemProvider = new NoteItemProvider(this);
+	public Adapter createAParameterDefAdapter() {
+		if (aParameterDefItemProvider == null) {
+			aParameterDefItemProvider = new AParameterDefItemProvider(this);
 		}
 
-		return noteItemProvider;
+		return aParameterDefItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.symo.model.base.MetaData} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MetaDataItemProvider metaDataItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.symo.model.base.MetaData}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMetaDataAdapter() {
+		if (metaDataItemProvider == null) {
+			metaDataItemProvider = new MetaDataItemProvider(this);
+		}
+
+		return metaDataItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.symo.model.base.Mode} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModeItemProvider modeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.symo.model.base.Mode}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModeAdapter() {
+		if (modeItemProvider == null) {
+			modeItemProvider = new ModeItemProvider(this);
+		}
+
+		return modeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.symo.model.base.Parameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ParameterItemProvider parameterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.symo.model.base.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createParameterAdapter() {
+		if (parameterItemProvider == null) {
+			parameterItemProvider = new ParameterItemProvider(this);
+		}
+
+		return parameterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.symo.model.base.Stereotype} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StereotypeItemProvider stereotypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.symo.model.base.Stereotype}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStereotypeAdapter() {
+		if (stereotypeItemProvider == null) {
+			stereotypeItemProvider = new StereotypeItemProvider(this);
+		}
+
+		return stereotypeItemProvider;
 	}
 
 	/**
@@ -115,29 +207,6 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 		}
 
 		return valueItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.symo.model.base.AParameterDef} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AParameterDefItemProvider aParameterDefItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.symo.model.base.AParameterDef}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAParameterDefAdapter() {
-		if (aParameterDefItemProvider == null) {
-			aParameterDefItemProvider = new AParameterDefItemProvider(this);
-		}
-
-		return aParameterDefItemProvider;
 	}
 
 	/**
@@ -239,9 +308,12 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 	 * @generated
 	 */
 	public void dispose() {
-		if (noteItemProvider != null) noteItemProvider.dispose();
-		if (valueItemProvider != null) valueItemProvider.dispose();
 		if (aParameterDefItemProvider != null) aParameterDefItemProvider.dispose();
+		if (metaDataItemProvider != null) metaDataItemProvider.dispose();
+		if (modeItemProvider != null) modeItemProvider.dispose();
+		if (parameterItemProvider != null) parameterItemProvider.dispose();
+		if (stereotypeItemProvider != null) stereotypeItemProvider.dispose();
+		if (valueItemProvider != null) valueItemProvider.dispose();
 	}
 
 }

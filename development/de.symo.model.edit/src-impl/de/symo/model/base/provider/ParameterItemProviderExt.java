@@ -1,11 +1,12 @@
-package de.symo.model.registry.provider;
+package de.symo.model.base.provider;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 
 import de.symo.model.base.Unit;
 import de.symo.model.base.Value;
+import de.symo.model.base.Parameter;
+
 import de.symo.model.help.ItemProviderHelper;
-import de.symo.model.registry.Parameter;
 
 public class ParameterItemProviderExt extends ParameterItemProvider {
 

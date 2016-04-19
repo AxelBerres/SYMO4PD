@@ -2,6 +2,8 @@ package de.symo.application.ui;
 
 import java.net.URL;
 
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.application.IWorkbenchConfigurer;
@@ -13,7 +15,7 @@ import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
 import org.osgi.framework.Bundle;
 
 public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
-	private static final String PERSPECTIVE_ID = "net.bhl.cdt.ui.CDTPerspective";
+	private static final String PERSPECTIVE_ID = "de.symo.application.SYMO4PDPerspective";
 	
 	public WorkbenchWindowAdvisor createWorkbenchWindowAdvisor(IWorkbenchWindowConfigurer configurer) {
 		return new ApplicationWorkbenchWindowAdvisor(configurer);
@@ -38,6 +40,11 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 	        IDE.SharedImages.IMG_OBJ_PROJECT, PATH_OBJECT + "prj_obj.gif", true);
 	    declareWorkbenchImage(configurer, ideBundle,
 	        IDE.SharedImages.IMG_OBJ_PROJECT_CLOSED, PATH_OBJECT + "cprj_obj.gif", true);
+	}
+		
+	@Override
+	public IAdaptable getDefaultPageInput() {
+		return ResourcesPlugin.getWorkspace().getRoot();	
 	}
 	
 	private void declareWorkbenchImage(IWorkbenchConfigurer configurer_p,

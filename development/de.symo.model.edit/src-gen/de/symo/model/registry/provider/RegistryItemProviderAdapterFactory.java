@@ -141,29 +141,6 @@ public class RegistryItemProviderAdapterFactory extends RegistryAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.symo.model.registry.Parameter} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ParameterItemProvider parameterItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.symo.model.registry.Parameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createParameterAdapter() {
-		if (parameterItemProvider == null) {
-			parameterItemProvider = new ParameterItemProvider(this);
-		}
-
-		return parameterItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.symo.model.registry.Constant} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -184,29 +161,6 @@ public class RegistryItemProviderAdapterFactory extends RegistryAdapterFactory i
 		}
 
 		return constantItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.symo.model.registry.Stereotype} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StereotypeItemProvider stereotypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.symo.model.registry.Stereotype}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStereotypeAdapter() {
-		if (stereotypeItemProvider == null) {
-			stereotypeItemProvider = new StereotypeItemProvider(this);
-		}
-
-		return stereotypeItemProvider;
 	}
 
 	/**
@@ -311,9 +265,7 @@ public class RegistryItemProviderAdapterFactory extends RegistryAdapterFactory i
 		if (registryItemProvider != null) registryItemProvider.dispose();
 		if (unitRefItemProvider != null) unitRefItemProvider.dispose();
 		if (measurementItemProvider != null) measurementItemProvider.dispose();
-		if (parameterItemProvider != null) parameterItemProvider.dispose();
 		if (constantItemProvider != null) constantItemProvider.dispose();
-		if (stereotypeItemProvider != null) stereotypeItemProvider.dispose();
 	}
 
 }

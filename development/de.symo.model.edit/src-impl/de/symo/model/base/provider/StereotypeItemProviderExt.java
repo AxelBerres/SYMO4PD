@@ -1,6 +1,8 @@
-package de.symo.model.registry.provider;
+package de.symo.model.base.provider;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
+
+import de.symo.model.base.provider.StereotypeItemProvider;
 
 public class StereotypeItemProviderExt extends StereotypeItemProvider {
 
