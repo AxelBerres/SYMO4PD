@@ -1,4 +1,4 @@
-package de.symo4pd.application.ui;
+package de.symo.application.ui;
 
 import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;

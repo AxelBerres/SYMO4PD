@@ -1,4 +1,4 @@
-package de.symo4pd.application.ui.parts;
+package de.symo.application.ui.parts;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;

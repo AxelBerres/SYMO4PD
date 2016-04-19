@@ -1,4 +1,4 @@
-package de.symo4pd.handler;
+package de.symo.application.handler;
 
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Execute;
