@@ -3,6 +3,7 @@
 package de.symo.model.registry.provider;
 
 
+import de.symo.model.base.BaseFactory;
 import de.symo.model.base.BasePackage;
 
 import de.symo.model.base.provider.ANameItemItemProvider;
@@ -190,12 +191,12 @@ public class RegistryItemProvider extends ANameItemItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(RegistryPackage.Literals.REGISTRY__STEREOTYPES,
-				 RegistryFactory.eINSTANCE.createStereotype()));
+				 BaseFactory.eINSTANCE.createStereotype()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RegistryPackage.Literals.REGISTRY__PARAMETERS,
-				 RegistryFactory.eINSTANCE.createParameter()));
+				 BaseFactory.eINSTANCE.createParameter()));
 	}
 
 	/**

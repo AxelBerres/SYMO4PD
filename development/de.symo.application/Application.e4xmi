@@ -5,13 +5,13 @@
       <children xsi:type="advanced:Perspective" xmi:id="_VnmakNSzEeGBn6dQ9VPexA" elementId="de.symo.application.SYMO4PDPerspective" selectedElement="_VnnBgNSzEeGBn6dQ9VPexA" label="SYMO4PD" iconURI="">
         <tags>Perspective</tags>
         <tags>categoryTag:General</tags>
-        <children xsi:type="basic:PartSashContainer" xmi:id="_VnnBgNSzEeGBn6dQ9VPexA" horizontal="true">
-          <children xsi:type="basic:PartSashContainer" xmi:id="_2YqVQAYFEeaiROKKK3hRww" elementId="de.symo.application.partsashcontainer.0">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_VnnBgNSzEeGBn6dQ9VPexA" containerData="25,75" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_2YqVQAYFEeaiROKKK3hRww" elementId="de.symo.application.partsashcontainer.0" containerData="30,70">
             <children xsi:type="basic:PartStack" xmi:id="_VnnBgdSzEeGBn6dQ9VPexA" containerData="3400">
               <tags>newtablook</tags>
               <tags>org.eclipse.e4.primaryNavigationStack</tags>
-              <children xsi:type="advanced:Placeholder" xmi:id="_QR29cNS2EeGBn6dQ9VPexA" elementId="net.bhl.cdt.client.placeholder.modelexplorer" ref="_5b33APsiEeW7XsWqCXP8fA"/>
               <children xsi:type="advanced:Placeholder" xmi:id="_-ozmgAYFEeaiROKKK3hRww" elementId="de.symo.application.placeholder.0" ref="_sS7Q8NS1EeGBn6dQ9VPexA"/>
+              <children xsi:type="advanced:Placeholder" xmi:id="_QR29cNS2EeGBn6dQ9VPexA" elementId="net.bhl.cdt.client.placeholder.modelexplorer" ref="_5b33APsiEeW7XsWqCXP8fA"/>
             </children>
             <children xsi:type="basic:PartStack" xmi:id="_8NezkAYFEeaiROKKK3hRww" elementId="de.symo.application.partstack.0">
               <children xsi:type="advanced:Placeholder" xmi:id="_jLVQUPsmEeWKvKvzdRLMzg" elementId="net.bhl.cdt.client.placeholder.emfstore" ref="_T7-KMPsmEeWKvKvzdRLMzg"/>

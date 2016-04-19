@@ -61,7 +61,6 @@ public class AValueDefItemProvider
 			super.getPropertyDescriptors(object);
 
 			addValuePropertyDescriptor(object);
-			addUncertaintyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -80,28 +79,6 @@ public class AValueDefItemProvider
 				 getString("_UI_AValueDef_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AValueDef_value_feature", "_UI_AValueDef_type"),
 				 BasePackage.Literals.AVALUE_DEF__VALUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Uncertainty feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUncertaintyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AValueDef_uncertainty_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AValueDef_uncertainty_feature", "_UI_AValueDef_type"),
-				 BasePackage.Literals.AVALUE_DEF__UNCERTAINTY,
 				 true,
 				 false,
 				 false,
@@ -138,7 +115,6 @@ public class AValueDefItemProvider
 
 		switch (notification.getFeatureID(AValueDef.class)) {
 			case BasePackage.AVALUE_DEF__VALUE:
-			case BasePackage.AVALUE_DEF__UNCERTAINTY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

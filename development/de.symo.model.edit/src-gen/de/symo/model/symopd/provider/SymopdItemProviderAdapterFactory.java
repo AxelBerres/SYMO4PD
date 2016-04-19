@@ -72,26 +72,49 @@ public class SymopdItemProviderAdapterFactory extends SymopdAdapterFactory imple
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.symo.model.symopd.SystemComponent} instances.
+	 * This keeps track of the one adapter used for all {@link de.symo.model.symopd.System} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SystemComponentItemProvider systemComponentItemProvider;
+	protected SystemItemProvider systemItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.symo.model.symopd.SystemComponent}.
+	 * This creates an adapter for a {@link de.symo.model.symopd.System}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSystemComponentAdapter() {
-		if (systemComponentItemProvider == null) {
-			systemComponentItemProvider = new SystemComponentItemProvider(this);
+	public Adapter createSystemAdapter() {
+		if (systemItemProvider == null) {
+			systemItemProvider = new SystemItemProvider(this);
 		}
 
-		return systemComponentItemProvider;
+		return systemItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.symo.model.symopd.SystemElement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SystemElementItemProvider systemElementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.symo.model.symopd.SystemElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSystemElementAdapter() {
+		if (systemElementItemProvider == null) {
+			systemElementItemProvider = new SystemElementItemProvider(this);
+		}
+
+		return systemElementItemProvider;
 	}
 
 	/**
@@ -193,7 +216,8 @@ public class SymopdItemProviderAdapterFactory extends SymopdAdapterFactory imple
 	 * @generated
 	 */
 	public void dispose() {
-		if (systemComponentItemProvider != null) systemComponentItemProvider.dispose();
+		if (systemItemProvider != null) systemItemProvider.dispose();
+		if (systemElementItemProvider != null) systemElementItemProvider.dispose();
 	}
 
 }

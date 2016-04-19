@@ -21,14 +21,6 @@ public class RegistryItemProviderAdapterFactoryExt extends RegistryItemProviderA
 	}
 	
 	@Override
-	public Adapter createParameterAdapter() {
-		if (parameterItemProvider == null) {
-			parameterItemProvider = new ParameterItemProviderExt(this);
-		}
-		return parameterItemProvider;
-	}
-	
-	@Override
 	public Adapter createRegistryAdapter() {
 		if (registryItemProvider == null) {
 			registryItemProvider = new RegistryItemProviderExt(this);
@@ -36,14 +28,6 @@ public class RegistryItemProviderAdapterFactoryExt extends RegistryItemProviderA
 		return registryItemProvider;
 	}
 	
-	@Override
-	public Adapter createStereotypeAdapter() {
-		if (stereotypeItemProvider == null) {
-			stereotypeItemProvider = new StereotypeItemProviderExt(this);
-		}
-		return stereotypeItemProvider;
-	}
-
 	@Override
 	public Adapter createUnitRefAdapter() {
 		if (unitRefItemProvider==null) {
