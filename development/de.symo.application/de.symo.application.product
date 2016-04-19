@@ -3,7 +3,6 @@
 
 <product name="SYMO4PD" uid="de.symo.application" id="de.symo.application" application="de.symo.application" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="true">
 
-
    <configIni use="default">
    </configIni>
 
@@ -25,7 +24,6 @@
       </win>
    </launcher>
 
-
    <vm>
    </vm>
 
@@ -34,6 +32,7 @@
       <plugin id="de.symo.application"/>
       <plugin id="de.symo.model"/>
       <plugin id="de.symo.model.edit"/>
+      <plugin id="de.symo.model.editor"/>
       <plugin id="de.symo.ontology"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
