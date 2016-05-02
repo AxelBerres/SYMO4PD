@@ -77,10 +77,6 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Definition of a sereotype. The steretype implies a is a releation of the used object. For a later representation an icons is included."/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="No icon integrated into registry. Enter path to icon here."/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iconBase64" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Unit" abstract="true" eSuperTypes="#//ANameItem">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -89,7 +85,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="siUnit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Value" eSuperTypes="#//AValueDef #//IOCLValidated">
+  <eClassifiers xsi:type="ecore:EClass" name="Value" eSuperTypes="#//AValueDef #//IOclValidated">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Represents the value of a parameter. In addition the value will be checked for correct content. For this model element, change notification is activated."/>
     </eAnnotations>
@@ -100,7 +96,7 @@
       <details key="ValidNumber" value="Tuple {&#xD;&#xA;&#x9;message : String = 'Value must be a valid real number',&#xD;&#xA;&#x9;status : Boolean = value &lt;> null implies value.matches('^-?\\d*(\\d\\.|\\.\\d+)?([eE]-?\\d+)?$')&#xD;&#xA;}.status"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IOCLValidated" abstract="true" interface="true">
+  <eClassifiers xsi:type="ecore:EClass" name="IOclValidated" abstract="true" interface="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This interface provides the functionality to validate model elements."/>
     </eAnnotations>

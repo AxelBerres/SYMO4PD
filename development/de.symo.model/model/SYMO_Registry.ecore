@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="registry" nsURI="http://www.dlr.de/symo4pd/registry/2016/" nsPrefix="reg">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="registry" nsURI="http://www.symo4pd.de/registry/2016/" nsPrefix="reg">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="The package registry contains all model elements to the description of lists of global definitions. These may be, for example, units and constants."/>
   </eAnnotations>

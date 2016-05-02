@@ -5,22 +5,6 @@
 -->
 
 <plugin>
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated SYMO -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="de.symo.model.base.presentation.BaseModelWizardID"
-            name="%_UI_BaseModelWizard_label"
-            class="de.symo.model.base.presentation.BaseModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/BaseModelFile.gif">
-         <description>%_UI_BaseModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
    <extension point="org.eclipse.ui.editors">
       <!-- @generated SYMO -->
       <editor

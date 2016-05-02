@@ -44,6 +44,14 @@
           url="http://download.eclipse.org/releases/mars"/>
       <repository
           url="http://download.eclipse.org/egit/github/updates/"/>
+      <repository
+          url="http://jautodoc.sourceforge.net/update/"/>
+      <repository
+          url="http://moreunit.sourceforge.net"/>
+      <repository
+          url="http://update.eclemma.org/"/>
+      <repository
+          url="http://download.eclipse.org/emf-store/releases_18"/>
     </setupTask>
     <setupTask
         xsi:type="setup:EclipseIniTask"

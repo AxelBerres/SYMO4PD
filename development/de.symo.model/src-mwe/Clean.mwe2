@@ -1,23 +1,22 @@
-module de.dlr.ft.premise.Clean
+module de.symo.model.Clean
 
 import org.eclipse.emf.mwe.utils.*
 
 Workflow {
 
-	// clean generated code of premise plugin includes model code of premise, 
-	// representation and logic
+	// clean generated model code of de.symo.model 
 	component = DirectoryCleaner {
 		directory="src-gen"
 	}
 	
-	// clean generated premise edit code
+	// clean generated edit code of de.symo.model 
 	component = DirectoryCleaner {
-		directory="../de.dlr.ft.premise.edit/src-gen"
+		directory="../de.symo.model.edit/src-gen"
 	}
 	
-	// clean generated premise editor code
+	// clean generated editor code of de.symo.model 
 	component = DirectoryCleaner {
-		directory="../de.dlr.ft.premise.editor/src-gen"
+		directory="../de.symo.model.editor/src-gen"
 	}
 
 }
