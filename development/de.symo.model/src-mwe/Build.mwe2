@@ -1,4 +1,4 @@
-module de.symo.model.Clean
+module de.symo.model.Build
 
 import org.eclipse.emf.mwe.utils.*
 
