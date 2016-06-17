@@ -6,8 +6,8 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: de.symo.application.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.ui;bundle-version="3.107.0",
- org.eclipse.core.runtime;bundle-version="3.11.1",
+Require-Bundle: org.eclipse.core.runtime;bundle-version="3.11.1",
+ org.eclipse.ui;bundle-version="3.107.0",
  org.eclipse.e4.core.services;bundle-version="2.0.0",
  org.eclipse.e4.core.di;bundle-version="1.5.0",
  org.eclipse.e4.ui.services;bundle-version="1.2.0",
@@ -15,7 +15,6 @@ Require-Bundle: org.eclipse.ui;bundle-version="3.107.0",
  org.eclipse.equinox.util;bundle-version="1.0.500",
  org.eclipse.equinox.ds;bundle-version="1.4.300",
  org.eclipse.e4.ui.workbench.addons.swt;bundle-version="1.2.0",
- org.eclipse.e4.tools;bundle-version="4.5.0",
  org.eclipse.core.expressions;bundle-version="3.5.0",
  org.eclipse.emf.ecp.core;bundle-version="1.8.0",
  org.eclipse.emf.ecp.ui;bundle-version="1.8.0",
@@ -177,11 +176,14 @@ Require-Bundle: org.eclipse.ui;bundle-version="3.107.0",
  de.symo.model;bundle-version="1.0.0",
  de.symo.model.edit;bundle-version="1.0.0",
  de.symo.model.editor;bundle-version="1.0.0",
- de.symo.ontology;bundle-version="1.0.0"
+ de.symo.ontology;bundle-version="1.0.0",
+ org.eclipse.emf.emfstore.server;bundle-version="1.8.0",
+ org.eclipse.ui.navigator;bundle-version="3.6.0",
+ org.eclipse.ui.navigator.resources;bundle-version="3.5.1",
+ org.eclipse.ui.console;bundle-version="3.6.100"
 Import-Package: javax.annotation;version="1.1.0",
  javax.inject;version="1.0.0",
  org.eclipse.e4.core.contexts,
  org.eclipse.e4.ui.workbench,
- org.eclipse.e4.ui.workbench.modeling,
- org.eclipse.emf.emfstore.server;version="1.7.0"
+ org.eclipse.e4.ui.workbench.modeling
 Bundle-ClassPath: .

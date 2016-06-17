@@ -12,7 +12,7 @@ import org.apache.jena.util.iterator.ExtendedIterator;
 
 public class OntologyManager {
 	
-	public final static String PATH_MICHI = "file:///C:/Users/michael.shamiyeh/Workspace/Symo4PD/development/de.symo.ontology/owl/qu-rec20.owl";
+	public final static String PATH_MICHI = "file:///C:/Users/michael.shamiyeh/Documents/GIT/Symo4PD/development/de.symo.ontology/owl/qu-rec20.owl";
 	public final static String PATH_AXEL = "file:///D:/git/SYMO4PD/development/de.symo.ontology/owl/qu-rec20.owl";
 
 	private OntModel jenaModel;

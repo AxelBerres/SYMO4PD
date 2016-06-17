@@ -1,7 +1,5 @@
 package de.symo.ontology.view;
 
-import java.io.File;
-
 import org.apache.jena.ontology.OntResource;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
@@ -34,7 +32,7 @@ public class OntologyManagerView extends ViewPart {
 	public OntologyManagerView() {
 //		File f = new File(OntologyManager.PATH_AXEL);
 //		if (f.exists() == true) {
-			OntologyManager.getInstance().LoadOntology(OntologyManager.PATH_AXEL);
+			OntologyManager.getInstance().LoadOntology(OntologyManager.PATH_MICHI);
 //		} else {
 //			System.out.println("Path 1 does not exist, using Path 2.");
 //			OntologyManager.getInstance().LoadOntology(OntologyManager.PATH_MICHI);

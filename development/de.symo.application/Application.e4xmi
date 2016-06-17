@@ -11,10 +11,6 @@
               <tags>newtablook</tags>
               <tags>org.eclipse.e4.primaryNavigationStack</tags>
               <children xsi:type="advanced:Placeholder" xmi:id="_-ozmgAYFEeaiROKKK3hRww" elementId="de.symo.application.placeholder.0" ref="_sS7Q8NS1EeGBn6dQ9VPexA"/>
-              <children xsi:type="advanced:Placeholder" xmi:id="_QR29cNS2EeGBn6dQ9VPexA" elementId="net.bhl.cdt.client.placeholder.modelexplorer" ref="_5b33APsiEeW7XsWqCXP8fA"/>
-            </children>
-            <children xsi:type="basic:PartStack" xmi:id="_8NezkAYFEeaiROKKK3hRww" elementId="de.symo.application.partstack.0">
-              <children xsi:type="advanced:Placeholder" xmi:id="_jLVQUPsmEeWKvKvzdRLMzg" elementId="net.bhl.cdt.client.placeholder.emfstore" ref="_T7-KMPsmEeWKvKvzdRLMzg"/>
             </children>
           </children>
           <children xsi:type="basic:PartSashContainer" xmi:id="_bTQ1YNS2EeGBn6dQ9VPexA" elementId="" containerData="10000">
@@ -106,11 +102,6 @@
   <descriptors xmi:id="_W63zcdSjEeGgKvWHVYtRxQ" elementId="org.eclipse.ui.views.PropertySheet" label="Properties" iconURI="platform:/plugin/org.eclipse.ui.views//icons/full/eview16/prop_ps.gif" allowMultiple="true" category="org.eclipse.e4.secondaryDataStack" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
     <tags>View</tags>
     <tags>categoryTag:General</tags>
-  </descriptors>
-  <descriptors xmi:id="_V1KdQPsiEeW7XsWqCXP8fA" elementId="org.eclipse.emf.ecp.ui.ModelExplorerView" label="Model Explorer" category="org.eclipse.e4.primaryNavigationStack" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView"/>
-  <descriptors xmi:id="_YGbYcPsmEeWKvKvzdRLMzg" elementId="org.eclipse.emf.ecp.ui.ModelRepositoriesView" label="EMF Store" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView"/>
-  <descriptors xmi:id="_6ykVYPvsEeWCco3rLDpcmQ" elementId="net.bhl.cdt.client.partdescriptor.ospart" label="OSPart" category="org.eclipse.e4.primaryDataStack" closeable="true" contributionURI="bundleclass://de.symo.application/de.symo.application.parts.OSPart">
-    <toolbar xmi:id="_STlA0AYuEeaw64jaPwRxXw" elementId="de.symo.application.toolbar.1"/>
   </descriptors>
   <descriptors xmi:id="_KvwqEAYuEeaw64jaPwRxXw" elementId="de.symo.application.partdescriptor.registryeditor" label="Registry Editor" allowMultiple="true" category="org.eclipse.e4.primaryDataStack" closeable="true" dirtyable="true" contributionURI="bundleclass://de.symo.model.editor/de.symo.model.registry.presentation.RegistryEditor">
     <toolbar xmi:id="_Nl2tcAYuEeaw64jaPwRxXw" elementId="de.symo.application.toolbar.0"/>
