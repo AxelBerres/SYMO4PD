@@ -1,4 +1,4 @@
-package de.symo.model.base.provider;
+package de.symo.model.element.provider;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 

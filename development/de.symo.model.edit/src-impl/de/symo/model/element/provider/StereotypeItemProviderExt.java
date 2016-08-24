@@ -1,4 +1,4 @@
-package de.symo.model.base.provider;
+package de.symo.model.element.provider;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 
@@ -10,9 +10,9 @@ public class StereotypeItemProviderExt extends StereotypeItemProvider {
 		super(adapterFactory);
 	}
 	
-//	@Override
-//	public Object getImage(Object object) {
-//		return overlayImage(object, getResourceLocator().getImage("custom/obj16/Stereotype.gif"));
-//	}
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("custom/obj16/Stereotype.gif"));
+	}
 
 }

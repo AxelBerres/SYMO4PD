@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
-
-<!--
--->
-
 <plugin>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated Base -->
-      <package
-            uri="http://www.dlr.de/symo4pd/base/2016/"
-            class="base.BasePackage"
-            genModel="model/symo.genmodel"/>
-   </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated SYMO -->
@@ -54,11 +43,4 @@
             genModel="model/symo.genmodel"/>
    </extension>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated SYMO -->
-      <package
-            uri="http://www.dlr.de/symo/model/2016/"
-            class="de.symo.model.symopd.SymopdPackage"
-            genModel="model/symo.genmodel"/>
-   </extension>
 </plugin>
