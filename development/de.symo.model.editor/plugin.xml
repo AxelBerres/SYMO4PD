@@ -16,6 +16,18 @@
             contributorClass="de.symo.model.base.presentation.BaseActionBarContributor">
       </editor>
    </extension>
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated symo -->
+      <editor
+            id="de.symo.model.element.presentation.ElementEditorID"
+            name="%_UI_ElementEditor_label"
+            icon="icons/full/obj16/ElementModelFile.gif"
+            extensions="element"
+            class="de.symo.model.element.presentation.ElementEditor"
+            contributorClass="de.symo.model.element.presentation.ElementActionBarContributor">
+      </editor>
+   </extension>
+
    <extension point="org.eclipse.ui.newWizards">
       <!-- @generated SYMO -->
       <category
@@ -39,8 +51,64 @@
             name="%_UI_RegistryEditor_label"
             icon="icons/full/obj16/RegistryModelFile.gif"
             extensions="registry"
-            class="de.symo.model.registry.presentation.RegistryEditorExt"
+            class="de.symo.model.registry.presentation.RegistryEditor"
             contributorClass="de.symo.model.registry.presentation.RegistryActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated symo -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.symo.model.usecase.presentation.UsecaseModelWizardID"
+            name="%_UI_UsecaseModelWizard_label"
+            class="de.symo.model.usecase.presentation.UsecaseModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UsecaseModelFile.gif">
+         <description>%_UI_UsecaseModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated symo -->
+      <editor
+            id="de.symo.model.usecase.presentation.UsecaseEditorID"
+            name="%_UI_UsecaseEditor_label"
+            icon="icons/full/obj16/UsecaseModelFile.gif"
+            extensions="usecase"
+            class="de.symo.model.usecase.presentation.UsecaseEditor"
+            contributorClass="de.symo.model.usecase.presentation.UsecaseActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated symo -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.symo.model.symo.presentation.SymoModelWizardID"
+            name="%_UI_SymoModelWizard_label"
+            class="de.symo.model.symo.presentation.SymoModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SymoModelFile.gif">
+         <description>%_UI_SymoModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated symo -->
+      <editor
+            id="de.symo.model.symo.presentation.SymoEditorID"
+            name="%_UI_SymoEditor_label"
+            icon="icons/full/obj16/SymoModelFile.gif"
+            extensions="symo"
+            class="de.symo.model.symo.presentation.SymoEditor"
+            contributorClass="de.symo.model.symo.presentation.SymoActionBarContributor">
       </editor>
    </extension>
 

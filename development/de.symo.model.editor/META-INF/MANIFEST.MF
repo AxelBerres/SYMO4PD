@@ -9,8 +9,10 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: de.symo.model.base.presentation,
+ de.symo.model.element.presentation,
  de.symo.model.registry.presentation,
- de.symo.model.symopd.presentation
+ de.symo.model.symo.presentation,
+ de.symo.model.usecase.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  de.symo.model.edit;visibility:=reexport,

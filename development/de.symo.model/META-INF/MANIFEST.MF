@@ -10,12 +10,18 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: de.symo.model.base,
  de.symo.model.base.impl,
  de.symo.model.base.util,
+ de.symo.model.element,
+ de.symo.model.element.impl,
+ de.symo.model.element.util,
  de.symo.model.registry,
  de.symo.model.registry.impl,
  de.symo.model.registry.util,
- de.symo.model.symopd,
- de.symo.model.symopd.impl,
- de.symo.model.symopd.util
+ de.symo.model.symo,
+ de.symo.model.symo.impl,
+ de.symo.model.symo.util,
+ de.symo.model.usecase,
+ de.symo.model.usecase.impl,
+ de.symo.model.usecase.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Eclipse-LazyStart: true

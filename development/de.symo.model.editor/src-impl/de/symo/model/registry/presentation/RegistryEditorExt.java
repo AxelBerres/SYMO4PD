@@ -18,7 +18,7 @@ import org.eclipse.ui.views.properties.PropertySheetPage;
 
 import de.symo.model.base.provider.BaseItemProviderAdapterFactoryExt;
 import de.symo.model.registry.provider.RegistryItemProviderAdapterFactoryExt;
-import de.symo.model.symopd.provider.SymopdItemProviderAdapterFactory;
+import de.symo.model.symo.provider.SymoItemProviderAdapterFactory;
 
 public class RegistryEditorExt extends RegistryEditor {
 
@@ -34,7 +34,7 @@ public class RegistryEditorExt extends RegistryEditor {
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new BaseItemProviderAdapterFactoryExt());
 		adapterFactory.addAdapterFactory(new RegistryItemProviderAdapterFactoryExt());		
-		adapterFactory.addAdapterFactory(new SymopdItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new SymoItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

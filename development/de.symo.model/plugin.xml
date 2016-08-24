@@ -11,7 +11,7 @@
       <package
             uri="http://www.dlr.de/symo4pd/base/2016/"
             class="base.BasePackage"
-            genModel="model/SYMO.genmodel"/>
+            genModel="model/symo.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -19,7 +19,15 @@
       <package
             uri="http://www.dlr.de/symo4pd/base/2016/"
             class="de.symo.model.base.BasePackage"
-            genModel="model/SYMO.genmodel"/>
+            genModel="model/symo.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated symo -->
+      <package
+            uri="http://www.dlr.de/symo4pd/element/2016/"
+            class="de.symo.model.element.ElementPackage"
+            genModel="model/symo.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -27,7 +35,23 @@
       <package
             uri="http://www.symo4pd.de/registry/2016/"
             class="de.symo.model.registry.RegistryPackage"
-            genModel="model/SYMO.genmodel"/>
+            genModel="model/symo.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated symo -->
+      <package
+            uri="http://www.dlr.de/symo4pd/usecasel/2016/"
+            class="de.symo.model.usecase.UsecasePackage"
+            genModel="model/symo.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated symo -->
+      <package
+            uri="http://www.dlr.de/symo4pd/model/2016/"
+            class="de.symo.model.symo.SymoPackage"
+            genModel="model/symo.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -35,6 +59,6 @@
       <package
             uri="http://www.dlr.de/symo/model/2016/"
             class="de.symo.model.symopd.SymopdPackage"
-            genModel="model/SYMO.genmodel"/>
+            genModel="model/symo.genmodel"/>
    </extension>
 </plugin>
