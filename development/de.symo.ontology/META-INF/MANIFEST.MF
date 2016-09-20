@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Ontology Manager
-Bundle-SymbolicName: de.symo.ontology;singleton:=true
+Bundle-SymbolicName: de.symo.semantics;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Bauhaus Luftfahrt e.V.
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
@@ -34,4 +34,5 @@ Bundle-ClassPath: lib/commons-cli-1.3.jar,
  lib/xercesImpl-2.11.0.jar,
  lib/xml-apis-1.4.01.jar,
  .
-Export-Package: de.symo.ontology
+Export-Package: com.fasterxml.jackson.annotation,
+ de.symo.ontology

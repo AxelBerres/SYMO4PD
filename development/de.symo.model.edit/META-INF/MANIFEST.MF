@@ -15,6 +15,5 @@ Export-Package: de.symo.model.base.provider,
  de.symo.model.usecase.provider
 Require-Bundle: org.eclipse.core.runtime,
  de.symo.model;visibility:=reexport,
- org.eclipse.emf.edit;visibility:=reexport,
- de.symo.ontology;bundle-version="1.0.0"
+ org.eclipse.emf.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

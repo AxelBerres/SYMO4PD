@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Adasi User Interface
+Bundle-SymbolicName: de.symo.adasi.ui
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: SYMO4PD
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

@@ -48,7 +48,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated SYMO -->
       <factory
-            uri="http://www.symo4pd.de/registry/2016/"
+            uri="http://www.dlr.de/symo4pd/registry/2016/"
             class="de.symo.model.registry.provider.RegistryItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

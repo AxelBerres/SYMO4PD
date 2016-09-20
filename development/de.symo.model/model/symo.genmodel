@@ -2,10 +2,11 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.symo.model/src-gen" creationSubmenus="true"
     editDirectory="/de.symo.model.edit/src-gen" editorDirectory="/de.symo.model.editor/src-gen"
-    modelPluginID="de.symo.model" modelName="SYMO" modelPluginClass="" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    testsDirectory="/de.model.symo.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="8.0" copyrightFields="false" language="" interfaceNamePattern=""
-    decoration="Live">
+    modelPluginID="de.symo.model" runtimeJar="true" modelName="SYMO" modelPluginClass=""
+    editorPluginClass="de.symo.model.base.provider.SYMOEditorPlugin" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    runtimeCompatibility="true" testsDirectory="/de.model.symo.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" runtimeVersion="2.10" language=""
+    interfaceNamePattern="" runtimePlatform="RCP" decoration="Live">
   <foreignModel>symo_base.ecore</foreignModel>
   <foreignModel>symo_element.ecore</foreignModel>
   <foreignModel>symo_registry.ecore</foreignModel>
@@ -39,7 +40,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference symo_base.ecore#//AEdge/target"/>
     </genClasses>
     <genClasses image="false" ecoreClass="symo_base.ecore#//ATrigger"/>
-    <genClasses image="false" ecoreClass="symo_base.ecore#//ABalancing"/>
   </genPackages>
   <genPackages prefix="Element" basePackage="de.symo.model" multipleEditorPages="false"
       generateModelWizard="false" ecorePackage="symo_element.ecore#/">
@@ -63,7 +63,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference symo_element.ecore#//ADiscussedItem/notes"/>
     </genClasses>
     <genClasses image="false" ecoreClass="symo_element.ecore#//AParameterDef">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference symo_element.ecore#//AParameterDef/value"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference symo_element.ecore#//AParameterDef/unit"/>
     </genClasses>
     <genClasses image="false" ecoreClass="symo_element.ecore#//AModeCombination">
@@ -95,26 +94,24 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute symo_element.ecore#//Note/text"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference symo_element.ecore#//Note/children"/>
     </genClasses>
-    <genClasses ecoreClass="symo_element.ecore#//AStereoTypeRep">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute symo_element.ecore#//AStereoTypeRep/iconBase64"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute symo_element.ecore#//AStereoTypeRep/icon"/>
-    </genClasses>
     <genClasses ecoreClass="symo_element.ecore#//Stereotype">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute symo_element.ecore#//Stereotype/ontologyRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute symo_element.ecore#//Stereotype/icon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute symo_element.ecore#//Stereotype/iconBase64"/>
     </genClasses>
     <genClasses ecoreClass="symo_element.ecore#//Measurement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference symo_element.ecore#//Measurement/units"/>
     </genClasses>
     <genClasses ecoreClass="symo_element.ecore#//Unit">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference symo_element.ecore#//Unit/parent"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute symo_element.ecore#//Unit/symbol"/>
     </genClasses>
     <genClasses ecoreClass="symo_element.ecore#//RequiredParameter">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference symo_element.ecore#//RequiredParameter/unit"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference symo_element.ecore#//RequiredParameter/evaluationWeight"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute symo_element.ecore#//RequiredParameter/evaluationWeight"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute symo_element.ecore#//RequiredParameter/optimum"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference symo_element.ecore#//RequiredParameter/valueConstraint"/>
     </genClasses>
     <genClasses ecoreClass="symo_element.ecore#//Parameter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference symo_element.ecore#//Parameter/value"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference symo_element.ecore#//Parameter/modeValues"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference symo_element.ecore#//Parameter/satisfies"/>
     </genClasses>
@@ -134,9 +131,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute symo_element.ecore#//Mode/entryMode"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference symo_element.ecore#//Mode/type"/>
     </genClasses>
-    <genClasses ecoreClass="symo_element.ecore#//Balancing">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference symo_element.ecore#//Balancing/target"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference symo_element.ecore#//Balancing/source"/>
+    <genClasses ecoreClass="symo_element.ecore#//Calculation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference symo_element.ecore#//Calculation/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference symo_element.ecore#//Calculation/source"/>
     </genClasses>
     <genClasses ecoreClass="symo_element.ecore#//TransitionConstraint">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference symo_element.ecore#//TransitionConstraint/trigger"/>
@@ -147,9 +144,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference symo_element.ecore#//NestedTransitionConstraint/children"/>
     </genClasses>
     <genClasses ecoreClass="symo_element.ecore#//State"/>
-    <genClasses ecoreClass="symo_element.ecore#//Value"/>
     <genClasses image="false" ecoreClass="symo_element.ecore#//AConstraint"/>
-    <genClasses ecoreClass="symo_element.ecore#//ModeValueRef"/>
+    <genClasses ecoreClass="symo_element.ecore#//Value"/>
+    <genClasses ecoreClass="symo_element.ecore#//ModeValueRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference symo_element.ecore#//ModeValueRef/mode"/>
+    </genClasses>
   </genPackages>
   <genPackages prefix="Registry" basePackage="de.symo.model" multipleEditorPages="false"
       ecorePackage="symo_registry.ecore#/">
@@ -158,7 +157,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference symo_registry.ecore#//Registry/constants"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference symo_registry.ecore#//Registry/stereotypes"/>
     </genClasses>
-    <genClasses ecoreClass="symo_registry.ecore#//Constant"/>
+    <genClasses ecoreClass="symo_registry.ecore#//Constant">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference symo_registry.ecore#//Constant/value"/>
+    </genClasses>
   </genPackages>
   <genPackages prefix="Usecase" basePackage="de.symo.model" multipleEditorPages="false"
       ecorePackage="symo_usecase.ecore#/">
@@ -179,7 +180,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute symo_usecase.ecore#//ARange/upper"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute symo_usecase.ecore#//ARange/lower"/>
     </genClasses>
-    <genClasses ecoreClass="symo_usecase.ecore#//RangeContraint"/>
+    <genClasses ecoreClass="symo_usecase.ecore#//RangeConstraint"/>
     <genClasses ecoreClass="symo_usecase.ecore#//ModeRangeConstraint"/>
   </genPackages>
   <genPackages prefix="Symo" basePackage="de.symo.model" multipleEditorPages="false"
@@ -194,15 +195,17 @@
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference symo.ecore#//SystemElement/parameters"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference symo.ecore#//SystemElement/connections"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference symo.ecore#//SystemElement/relations"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference symo.ecore#//SystemElement/balancings"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference symo.ecore#//SystemElement/calculations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference symo.ecore#//SystemElement/children"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference symo.ecore#//SystemElement/parent"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference symo.ecore#//SystemElement/behaviors"/>
       <genOperations ecoreOperation="symo.ecore#//SystemElement/isSystemElement"/>
     </genClasses>
     <genClasses ecoreClass="symo.ecore#//StateMaschine">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference symo.ecore#//StateMaschine/parents"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference symo.ecore#//StateMaschine/parent"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference symo.ecore#//StateMaschine/transitions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference symo.ecore#//StateMaschine/stereoTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference symo.ecore#//StateMaschine/metaData"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -4,11 +4,11 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: de.symo.model.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.symo.model.base.presentation.SYMOEditorPlugin$Implementation
+Bundle-Activator: de.symo.model.base.provider.SYMOEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: de.symo.model.base.presentation,
+Export-Package: de.symo.model.base.provider,
  de.symo.model.element.presentation,
  de.symo.model.registry.presentation,
  de.symo.model.symo.presentation,

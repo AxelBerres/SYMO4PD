@@ -8,7 +8,7 @@
       <package
             uri="http://www.dlr.de/symo4pd/base/2016/"
             class="de.symo.model.base.BasePackage"
-            genModel="model/symo.genmodel"/>
+            genModel="model/SYMO.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -22,9 +22,9 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated SYMO -->
       <package
-            uri="http://www.symo4pd.de/registry/2016/"
+            uri="http://www.dlr.de/symo4pd/registry/2016/"
             class="de.symo.model.registry.RegistryPackage"
-            genModel="model/symo.genmodel"/>
+            genModel="model/SYMO.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
