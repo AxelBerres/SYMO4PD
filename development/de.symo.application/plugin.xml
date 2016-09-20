@@ -16,6 +16,10 @@
                name="appName"
                value="de.symo.application">
          </property>
+         <property
+               name="appName"
+               value="de.symo.application">
+         </property>
       </product>
    </extension>
 
