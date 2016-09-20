@@ -6,6 +6,7 @@
         <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.partsashcontainer.sample">
           <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.partstack.sample">
             <children xsi:type="basic:Part" xmi:id="_6wlLlMgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.part.sample" contributionURI="bundleclass://de.symo.application/de.symo.application.e4.parts.SamplePart" label="Sample Part"/>
+            <children xsi:type="basic:Part" xmi:id="_14dRcH82EeawkbqY0vmJFQ" elementId="de.symo.application.part.projectbrowser" contributionURI="bundleclass://de.symo.application/de.symo.application.e4.parts.FileBrowserPart" label="Project Browser"/>
           </children>
         </children>
       </children>

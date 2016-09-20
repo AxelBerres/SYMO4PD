@@ -6,15 +6,15 @@
          id="product"
          point="org.eclipse.core.runtime.products">
       <product
-            name="de.symo.application.e4"
+            name="de.symo.application"
             application="org.eclipse.e4.ui.workbench.swt.E4Application">
          <property
                name="lifeCycleURI"
                value="bundleclass://de.symo.application/de.symo.application.e4.E4LifeCycle">
          </property>
          <property
-               name="applicationCSS"
-               value="platform:/plugin/de.symo.application/css/default.css">
+               name="appName"
+               value="de.symo.application">
          </property>
       </product>
    </extension>
