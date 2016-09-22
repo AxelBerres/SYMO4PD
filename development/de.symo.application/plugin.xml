@@ -13,8 +13,8 @@
                value="bundleclass://de.symo.application/de.symo.application.e4.E4LifeCycle">
          </property>
          <property
-               name="applicationCSS"
-               value="platform:/plugin/de.symo.application/css/default.css">
+               name="appName"
+               value="de.symo.application">
          </property>
          <property
                name="appName"
