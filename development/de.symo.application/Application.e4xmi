@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_6wlLcMgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.application" bindingContexts="_6wlLecgZEeSyMNYR5xypkQ">
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_6wlLccgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.window.main" label="SYMO4PD" iconURI="platform:/plugin/de.symo.application/icons/symo4pd_16.png" width="500" height="400">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_6wlLccgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.window.main" label="SYMO4PD" iconURI="platform:/plugin/de.symo.application/icons/symo4pd_16.png" width="1600" height="1000">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.ide.perspectivestack">
       <children xsi:type="advanced:Perspective" xmi:id="_6wlLkcgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.perspective.sample" label="Projects">
         <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.partsashcontainer.sample">
@@ -10,8 +10,8 @@
         </children>
       </children>
       <children xsi:type="advanced:Perspective" xmi:id="_17D2UH8yEeagldnMi4Rzjg" elementId="de.symo.application.perspective.modelling" label="Modelling">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_50vdoH8yEeagldnMi4Rzjg" elementId="de.symo.application.partsashcontainer.0">
-          <children xsi:type="basic:PartStack" xmi:id="_6k7kcH8yEeagldnMi4Rzjg" elementId="de.symo.application.partstack.0">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_50vdoH8yEeagldnMi4Rzjg" elementId="de.symo.application.partsashcontainer.0" horizontal="true">
+          <children xsi:type="basic:PartStack" xmi:id="_6k7kcH8yEeagldnMi4Rzjg" elementId="de.symo.application.partstack.modelling.left" containerData="20">
             <children xsi:type="basic:Part" xmi:id="_67qCYH8yEeagldnMi4Rzjg" elementId="org.eclipse.emf.ecp.e4.application.part.navigator" contributionURI="bundleclass://org.eclipse.emf.ecp.ui.e4/org.eclipse.emf.ecp.ui.e4.view.ECPModelView" label="Model Explorer" iconURI="platform:/plugin/de.symo.application/icons/folder_brick.png">
               <menus xsi:type="menu:PopupMenu" xmi:id="_dAsF4JgZEeKJoJcmiy2C6w" elementId="org.eclipse.emf.ecp.e4.application.popupmenu.navigator" label="Navigator menu">
                 <children xsi:type="menu:DynamicMenuContribution" xmi:id="_amzu4ErKEeOavfZiWcfdwA" elementId="org.eclipse.emf.ecp.application.e4.childrenDescriptorElements" contributionURI="bundleclass://org.eclipse.emf.ecp.ui.e4/org.eclipse.emf.ecp.ui.e4.view.DynamicCreateChildrenElementsMenuContribution"/>
@@ -33,6 +33,8 @@
               </toolbar>
             </children>
           </children>
+          <children xsi:type="basic:PartStack" xmi:id="_m_xwYIC_Eea_QKNEvJua0A" elementId="de.symo.application.partstack.modelling.center" containerData="60"/>
+          <children xsi:type="basic:PartStack" xmi:id="_najn4IC_Eea_QKNEvJua0A" elementId="de.symo.application.partstack.modelling.right" containerData="20"/>
         </children>
       </children>
       <children xsi:type="advanced:Perspective" xmi:id="_2SHrcH8yEeagldnMi4Rzjg" elementId="de.symo.application.perspective.knowledgeediting" label="Knowledge Editing"/>

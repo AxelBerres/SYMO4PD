@@ -1,7 +1,5 @@
 package de.symo.ontology.view;
 
-import java.io.File;
-
 import org.apache.jena.ontology.OntResource;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
@@ -22,11 +20,10 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.part.ViewPart;
 
 import de.symo.ontology.OntologyManager;
 
-public class OntologyManagerView extends ViewPart {
+public class OntologyManagerView {
 	private ListViewer viewer;
 	private Text searchBox;
 	private Button importConceptButton;
@@ -41,7 +38,6 @@ public class OntologyManagerView extends ViewPart {
 //		}
 	}
 
-	@Override
 	public void createPartControl(Composite parent) {
 		GridLayout layout = new GridLayout(1, true);
 	    parent.setLayout(layout);
@@ -99,9 +95,5 @@ public class OntologyManagerView extends ViewPart {
 			public void widgetDefaultSelected(SelectionEvent event) {
 			}
 		});
-	}
-
-	@Override
-	public void setFocus() {
 	}
 }

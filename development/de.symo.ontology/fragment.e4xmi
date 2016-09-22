@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_xV4XgH_NEeazx8SCQED8Nw">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_fIhgQIC_Eea_QKNEvJua0A" featurename="children" parentElementId="de.symo.application.partstack.modelling.right">
+    <elements xsi:type="basic:Part" xmi:id="_cmt1YIDAEea_QKNEvJua0A" elementId="de.symo.semantics.part.ontologymanager" contributionURI="bundleclass://de.symo.semantics/de.symo.semantics.view.OntologyManagerView" label="Ontology Manager">
+      <handlers xmi:id="_Ma5RkIDBEea_QKNEvJua0A" elementId="de.symo.semantics.handler.0" contributionURI="bundleclass://de.symo.semantics/de.symo.semantics.handler.AddOntologyHandler" command="_AUe5YIDBEea_QKNEvJua0A"/>
+      <toolbar xmi:id="_48NrUIDAEea_QKNEvJua0A" elementId="de.symo.semantics.toolbar.0">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_5r-7YIDAEea_QKNEvJua0A" elementId="de.symo.semantics.handledtoolitem.0" iconURI="platform:/plugin/de.symo.semantics/icons/modelelement_add.gif" command="_AUe5YIDBEea_QKNEvJua0A"/>
+      </toolbar>
+    </elements>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_7smIQIDAEea_QKNEvJua0A" featurename="commands" parentElementId="de.symo.application.e4.application">
+    <elements xsi:type="commands:Command" xmi:id="_AUe5YIDBEea_QKNEvJua0A" elementId="de.symo.semantics.command.addontology" commandName="AddOntology"/>
+  </fragments>
+</fragment:ModelFragments>
