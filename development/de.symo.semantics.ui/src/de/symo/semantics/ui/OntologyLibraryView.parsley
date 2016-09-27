@@ -1,0 +1,38 @@
+import de.symo.semantics.ui.OntologyLibraryView
+import model.ModelFactory
+import model.OntologyLibrary
+import model.OntologyRepository
+
+/* de.symo.semantics.ui Emf Parsley Dsl Module file */
+module de.symo.semantics.ui {
+	parts {
+		viewpart de.symo.semantics.ui {
+			viewname "Ontology Library"
+			viewclass OntologyLibraryView
+		}
+	}
+	
+	resourceManager {
+		initializeResource {
+			it.getContents += ModelFactory.eINSTANCE.createOntologyLibrary();
+		}
+	}
+	
+	viewerContentProvider {
+		children {
+			OntologyLibrary -> {
+				name
+			}
+			OntologyRepository -> {
+				ontology
+			}
+		}
+	}
+	
+	labelProvider {
+		text {
+			OntologyLibrary -> name
+			OntologyRepository -> ontology
+		}
+	}
+}
