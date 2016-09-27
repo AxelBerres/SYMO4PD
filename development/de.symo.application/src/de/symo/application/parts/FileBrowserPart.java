@@ -1,4 +1,4 @@
-package de.symo.application.e4.parts;
+package de.symo.application.parts;
 
 import java.io.File;
 import java.net.URL;

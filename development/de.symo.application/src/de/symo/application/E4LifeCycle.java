@@ -1,4 +1,4 @@
-package de.symo.application.e4;
+package de.symo.application;
 
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.ui.workbench.lifecycle.PostContextCreate;
