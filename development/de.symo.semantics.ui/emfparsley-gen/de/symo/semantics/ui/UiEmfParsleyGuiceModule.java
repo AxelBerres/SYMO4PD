@@ -1,12 +1,10 @@
 package de.symo.semantics.ui;
 
 import de.symo.semantics.ui.edit.ui.provider.UiViewerContentProvider;
-import de.symo.semantics.ui.resource.UiResourceManager;
-import de.symo.semantics.ui.ui.provider.UiLabelProvider;
+import de.symo.semantics.ui.ui.provider.UiFeaturesProvider;
 import org.eclipse.emf.parsley.EmfParsleyGuiceModule;
-import org.eclipse.emf.parsley.resource.ResourceManager;
+import org.eclipse.emf.parsley.ui.provider.FeaturesProvider;
 import org.eclipse.jface.viewers.IContentProvider;
-import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
@@ -19,17 +17,12 @@ public class UiEmfParsleyGuiceModule extends EmfParsleyGuiceModule {
   }
   
   @Override
-  public Class<? extends ILabelProvider> bindILabelProvider() {
-    return UiLabelProvider.class;
+  public Class<? extends FeaturesProvider> bindFeaturesProvider() {
+    return UiFeaturesProvider.class;
   }
   
   @Override
   public Class<? extends IContentProvider> bindIContentProvider() {
     return UiViewerContentProvider.class;
-  }
-  
-  @Override
-  public Class<? extends ResourceManager> bindResourceManager() {
-    return UiResourceManager.class;
   }
 }

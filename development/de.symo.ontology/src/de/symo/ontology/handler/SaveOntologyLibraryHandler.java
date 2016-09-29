@@ -1,5 +1,5 @@
  
-package de.symo.semantics.handler;
+package de.symo.ontology.handler;
 
 import javax.inject.Named;
 

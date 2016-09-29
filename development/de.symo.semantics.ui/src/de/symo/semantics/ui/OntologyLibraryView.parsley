@@ -1,5 +1,4 @@
 import de.symo.semantics.ui.OntologyLibraryView
-import model.ModelFactory
 import model.OntologyLibrary
 import model.OntologyRepository
 
@@ -9,12 +8,6 @@ module de.symo.semantics.ui {
 		viewpart de.symo.semantics.ui {
 			viewname "Ontology Library"
 			viewclass OntologyLibraryView
-		}
-	}
-	
-	resourceManager {
-		initializeResource {
-			it.getContents += ModelFactory.eINSTANCE.createOntologyLibrary();
 		}
 	}
 	
@@ -29,10 +22,9 @@ module de.symo.semantics.ui {
 		}
 	}
 	
-	labelProvider {
-		text {
-			OntologyLibrary -> name
-			OntologyRepository -> ontology
+	featuresProvider {
+		features {
+			OntologyRepository -> ontology, active
 		}
 	}
 }

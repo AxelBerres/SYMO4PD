@@ -210,7 +210,7 @@ public class OntologyRepositoryItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/OntologyRepository"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/OntologyRepository.png"));
 	}
 
 	/**

@@ -1,30 +1,100 @@
+
 package de.symo.ontology.view;
 
-import org.apache.jena.ontology.OntResource;
-import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.LabelProvider;
-import org.eclipse.jface.viewers.ListViewer;
-import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.viewers.ViewerFilter;
+import java.io.IOException;
+import java.util.EventObject;
+
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+
+import org.eclipse.e4.ui.di.Persist;
+import org.eclipse.e4.ui.model.application.ui.MDirtyable;
+import org.eclipse.emf.common.command.CommandStackListener;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.emf.parsley.composite.TableFormComposite;
+import org.eclipse.emf.parsley.composite.TableFormFactory;
+import org.eclipse.emf.parsley.edit.ui.dnd.ViewerDragAndDropHelper;
+import org.eclipse.emf.parsley.menus.ViewerContextMenuHelper;
+import org.eclipse.emf.parsley.resource.ResourceLoader;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.KeyEvent;
-import org.eclipse.swt.events.KeyListener;
-import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.events.SelectionListener;
-import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
-import org.eclipse.swt.layout.RowData;
-import org.eclipse.swt.layout.RowLayout;
-import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Text;
 
-import de.symo.ontology.OntologyManager;
+import com.google.inject.Injector;
 
+import de.symo.ontology.Activator;
+import de.symo.semantics.ui.UiInjectorProvider;
+import model.ModelPackage;
+
+/**
+ * Ontology Manager View
+ * 
+ * @author Michael.Shamiyeh
+ * @since 22.09.2016
+ */
 public class OntologyManagerView {
-	private ListViewer viewer;
+
+	// the EMF Parley composite for showing a tree and a detail form
+	private TableFormComposite tableFormComposite;
+	// the EMF Resource
+	private Resource resource;
+
+	@Inject
+	private MDirtyable dirty;
+
+	public OntologyManagerView() {
+
+	}
+
+	@PostConstruct
+	public void postConstruct(Composite parent) {
+//		GridLayout gridLayout = new GridLayout();
+//	    gridLayout.numColumns = 1;
+//	    parent.setLayout(gridLayout);
+		
+		// Guice injector
+		Injector injector = UiInjectorProvider.getInjector();
+
+		// The EditingDomain is needed for context menu and drag and drop
+		EditingDomain editingDomain = injector.getInstance(EditingDomain.class);
+
+		resource = Activator.repositoryManager.getResource();
+
+		TableFormFactory tableFormFactory = injector.getInstance(TableFormFactory.class);
+		// create the tree-form composite
+		tableFormComposite = tableFormFactory.createTableFormMasterDetailComposite(parent, SWT.NONE, ModelPackage.Literals.ONTOLOGY_REPOSITORY);
+
+		// Guice injected viewer context menu helper
+		ViewerContextMenuHelper contextMenuHelper = injector.getInstance(ViewerContextMenuHelper.class);
+		// Guice injected viewer drag and drop helper
+		ViewerDragAndDropHelper dragAndDropHelper = injector.getInstance(ViewerDragAndDropHelper.class);
+
+		// set context menu and drag and drop
+		contextMenuHelper.addViewerContextMenu(tableFormComposite.getViewer(), editingDomain);
+		dragAndDropHelper.addDragAndDrop(tableFormComposite.getViewer(), editingDomain);
+
+		// update the composite
+		tableFormComposite.update(resource);
+
+		editingDomain.getCommandStack().addCommandStackListener(new CommandStackListener() {
+			public void commandStackChanged(EventObject event) {
+				if (dirty != null)
+					dirty.setDirty(true);
+			}
+		});
+	}
+
+	@Persist
+	public void save(MDirtyable dirty) throws IOException {
+		resource.save(null);
+		if (dirty != null) {
+			dirty.setDirty(false);
+		}
+	}
+	
+	/*
+	 * private ListViewer viewer;
 	private Text searchBox;
 	private Button importConceptButton;
 	
@@ -95,5 +165,5 @@ public class OntologyManagerView {
 			public void widgetDefaultSelected(SelectionEvent event) {
 			}
 		});
-	}
+	}*/
 }
