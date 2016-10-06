@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_6wlLcMgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.application" bindingContexts="_6wlLecgZEeSyMNYR5xypkQ">
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_6wlLccgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.window.main" label="SYMO4PD" iconURI="platform:/plugin/de.symo.application/icons/symo4pd_16.png" width="500" height="400">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_6wlLccgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.window.main" label="SYMO4PD" iconURI="platform:/plugin/de.symo.application/icons/symo4pd_16.png" width="1600" height="1000">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.ide.perspectivestack">
       <children xsi:type="advanced:Perspective" xmi:id="_6wlLkcgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.perspective.sample" label="Projects">
         <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.partsashcontainer.sample">
           <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.partstack.sample">
-            <children xsi:type="basic:Part" xmi:id="_6wlLlMgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.part.sample" contributionURI="bundleclass://de.symo.application/de.symo.application.e4.parts.SamplePart" label="Sample Part"/>
-            <children xsi:type="basic:Part" xmi:id="_14dRcH82EeawkbqY0vmJFQ" elementId="de.symo.application.part.projectbrowser" contributionURI="bundleclass://de.symo.application/de.symo.application.e4.parts.FileBrowserPart" label="Project Browser"/>
+            <children xsi:type="basic:Part" xmi:id="_14dRcH82EeawkbqY0vmJFQ" elementId="de.symo.application.part.projectbrowser" contributionURI="bundleclass://de.symo.application/de.symo.application.parts.FileBrowserPart" label="Project Browser"/>
           </children>
         </children>
       </children>
       <children xsi:type="advanced:Perspective" xmi:id="_17D2UH8yEeagldnMi4Rzjg" elementId="de.symo.application.perspective.modelling" label="Modelling">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_50vdoH8yEeagldnMi4Rzjg" elementId="de.symo.application.partsashcontainer.0">
-          <children xsi:type="basic:PartStack" xmi:id="_6k7kcH8yEeagldnMi4Rzjg" elementId="de.symo.application.partstack.0">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_50vdoH8yEeagldnMi4Rzjg" elementId="de.symo.application.partsashcontainer.0" horizontal="true">
+          <children xsi:type="basic:PartStack" xmi:id="_6k7kcH8yEeagldnMi4Rzjg" elementId="de.symo.application.partstack.modelling.left" containerData="20">
             <children xsi:type="basic:Part" xmi:id="_67qCYH8yEeagldnMi4Rzjg" elementId="org.eclipse.emf.ecp.e4.application.part.navigator" contributionURI="bundleclass://org.eclipse.emf.ecp.ui.e4/org.eclipse.emf.ecp.ui.e4.view.ECPModelView" label="Model Explorer" iconURI="platform:/plugin/de.symo.application/icons/folder_brick.png">
               <menus xsi:type="menu:PopupMenu" xmi:id="_dAsF4JgZEeKJoJcmiy2C6w" elementId="org.eclipse.emf.ecp.e4.application.popupmenu.navigator" label="Navigator menu">
                 <children xsi:type="menu:DynamicMenuContribution" xmi:id="_amzu4ErKEeOavfZiWcfdwA" elementId="org.eclipse.emf.ecp.application.e4.childrenDescriptorElements" contributionURI="bundleclass://org.eclipse.emf.ecp.ui.e4/org.eclipse.emf.ecp.ui.e4.view.DynamicCreateChildrenElementsMenuContribution"/>
@@ -34,23 +33,18 @@
               </toolbar>
             </children>
           </children>
+          <children xsi:type="basic:PartStack" xmi:id="_m_xwYIC_Eea_QKNEvJua0A" elementId="de.symo.application.partstack.modelling.center" containerData="60"/>
+          <children xsi:type="basic:PartStack" xmi:id="_najn4IC_Eea_QKNEvJua0A" elementId="de.symo.application.partstack.modelling.right" containerData="20"/>
         </children>
       </children>
       <children xsi:type="advanced:Perspective" xmi:id="_2SHrcH8yEeagldnMi4Rzjg" elementId="de.symo.application.perspective.knowledgeediting" label="Knowledge Editing"/>
     </children>
     <mainMenu xmi:id="_6wlLicgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.menu">
-      <children xsi:type="menu:Menu" xmi:id="_6wlLisgZEeSyMNYR5xypkQ" elementId="file" label="File">
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_6wlLjMgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.handleditem.save" label="Save" iconURI="platform:/plugin/de.symo.application/icons/save_edit.png"/>
-      </children>
-      <children xsi:type="menu:Menu" xmi:id="_6wlLjsgZEeSyMNYR5xypkQ" elementId="help" label="Help">
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_6wlLj8gZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.handleditem.about" label="About"/>
-      </children>
+      <children xsi:type="menu:Menu" xmi:id="_6wlLisgZEeSyMNYR5xypkQ" elementId="file" label="File"/>
+      <children xsi:type="menu:Menu" xmi:id="_6wlLjsgZEeSyMNYR5xypkQ" elementId="help" label="Help"/>
     </mainMenu>
     <trimBars xmi:id="_6wlLlcgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.trimbar.top">
-      <children xsi:type="menu:ToolBar" xmi:id="_6wlLlsgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.toolbar">
-        <children xsi:type="menu:HandledToolItem" xmi:id="_6wlLl8gZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.handleditem.trimbar.top.open" iconURI="platform:/plugin/de.symo.application/icons/sample.png"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_6wlLmMgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.handleditem.trimbar.top.save" iconURI="platform:/plugin/de.symo.application/icons/save_edit.png"/>
-      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_6wlLlsgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.toolbar"/>
       <children xsi:type="menu:ToolControl" xmi:id="_-FGGEH8SEea1vc9SY93ecw" elementId="de.symo.application.e4.toolcontrol.spacer" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
         <tags>stretch</tags>
       </children>

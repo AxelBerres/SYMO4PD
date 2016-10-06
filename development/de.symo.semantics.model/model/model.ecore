@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model" nsURI="http://de.symo.semantics/model" nsPrefix="model">
+  <eClassifiers xsi:type="ecore:EClass" name="OntologyRepository">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="URL" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Username" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Active" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Ontology" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="MaintenanceOntology" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Library" eType="#//OntologyLibrary"
+        eOpposite="#//OntologyLibrary/Repositories" eKeys="#//OntologyLibrary/Name"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OntologyLibrary">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Repositories" upperBound="-1"
+        eType="#//OntologyRepository" containment="true" eOpposite="#//OntologyRepository/Library"
+        eKeys="#//OntologyRepository/URL"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ActiveRepository" eType="#//OntologyRepository"
+        eKeys="#//OntologyRepository/URL"/>
+  </eClassifiers>
+</ecore:EPackage>
