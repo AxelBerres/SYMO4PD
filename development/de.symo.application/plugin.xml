@@ -15,6 +15,10 @@
                name="applicationCSS"
                value="platform:/plugin/de.symo.application/css/default.css">
          </property>
+         <property
+               name="appName"
+               value="de.symo.application">
+         </property>
       </product>
    </extension>
 </plugin>

@@ -7,11 +7,14 @@ import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.resource.LocalResourceManager;
 import org.eclipse.jface.resource.ResourceManager;
 import org.eclipse.jface.viewers.LabelProvider;
-import org.eclipse.jface.viewers.StyledString;
-import org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider.IStyledLabelProvider;
+import org.eclipse.swt.graphics.Device;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.ImageData;
+import org.eclipse.swt.program.Program;
 
-class ViewLabelProvider extends LabelProvider implements IStyledLabelProvider {
+import com.google.common.io.Files;
+
+public class ViewLabelProvider extends LabelProvider {
 
 	private ImageDescriptor directoryImage;
 	private ResourceManager resourceManager;
@@ -21,26 +24,27 @@ class ViewLabelProvider extends LabelProvider implements IStyledLabelProvider {
 	}
 
 	@Override
-	public StyledString getStyledText(Object element) {
+	public String getText(Object element) {
+		
 		if(element instanceof File) {
-			File file = (File) element;
-			StyledString styledString = new StyledString(getFileName(file));
-			String[] files = file.list();
-			if (files != null) {
-				styledString.append(" ( " + files.length + " ) ",
-						StyledString.COUNTER_STYLER);
-			}
-			return styledString;
-		}
+			return ((File) element).getName();
+		}		
+		
 		return null;
 	}
 
 	@Override
 	public Image getImage(Object element) {
 		if(element instanceof File) {
-			if(((File) element).isDirectory()) {
+			File file = (File) element;
+			if(file.isDirectory()) {
 				return getResourceManager().createImage(directoryImage);
-			}
+			} else {
+				String ext = Files.getFileExtension(file.getName());				
+				ImageData imageData = Program.findProgram(ext).getImageData();
+				Device device = getResourceManager().getDevice();
+				return new Image(device, imageData);
+			}			
 		}
 
 		return super.getImage(element);
@@ -60,11 +64,6 @@ class ViewLabelProvider extends LabelProvider implements IStyledLabelProvider {
 			resourceManager = new LocalResourceManager(JFaceResources.getResources());
 		}
 		return resourceManager;
-	}
-
-	private String getFileName(File file) {
-		String name = file.getName();
-		return name.isEmpty() ? file.getPath() : name;
 	}
 }
 
