@@ -1,4 +1,4 @@
-package de.symo.application.parts;
+package de.symo.application.e4.parts;
 
 import java.io.File;
 import java.net.URL;
@@ -22,11 +22,7 @@ import org.eclipse.swt.widgets.TreeItem;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
-import de.symo.application.e4.parts.ProjectComperator;
-import de.symo.application.e4.parts.ViewContentProvider;
-import de.symo.application.e4.parts.ViewLabelProvider;
-
-public class FileBrowserPart {
+public class ProjectBrowser {
 
 	private TreeViewer viewer;
 
