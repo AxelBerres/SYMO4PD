@@ -7,7 +7,9 @@ import javax.annotation.PostConstruct;
 
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.services.EMenuService;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
@@ -24,13 +26,18 @@ import org.osgi.framework.FrameworkUtil;
 
 public class ProjectBrowser {
 
-	private TreeViewer viewer;
+	private static final String POPUPMENU = "de.symo.application.popupmenu.0";
+
+	private static File projectRoot;
+	private static TreeViewer viewer;
+
+	private static String projectBase = "D:\\tmp\\SYMO4PD\\projects\\";
 
 	@PostConstruct
-	public void createControls(Composite parent) {
+	public void createControls(Composite parent, IEclipseContext ctx, EMenuService menuService) {
 
-		File projectRoot = new File("D:\\tmp\\SYMO4PD\\projects\\");
-
+		projectRoot = new File(projectBase);
+		
 		viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
 		viewer.setContentProvider(new ViewContentProvider());
 		viewer.setLabelProvider(new ViewLabelProvider(createImageDescriptor()));
@@ -61,13 +68,13 @@ public class ProjectBrowser {
 						!viewer.getExpandedState(selectedNode));
 			}
 		});
+		
+		menuService.registerContextMenu(tree,POPUPMENU);		
 	}
 
 	private ImageDescriptor createImageDescriptor() {
-
 		Bundle bundle = FrameworkUtil.getBundle(ViewLabelProvider.class);
 		URL url = FileLocator.find(bundle, new Path("icons/folder.png"), null);
-
 		return ImageDescriptor.createFromURL(url);
 	}
 
@@ -75,4 +82,28 @@ public class ProjectBrowser {
 	public void setFocus() {
 		viewer.getControl().setFocus();
 	}
+
+	public static File getProjectRoot() {
+		return projectRoot;
+	}
+	
+	public static void refresh() {
+		viewer.refresh();
+	}
+
+	public static void setProjectsRoot(String fileName) {
+		projectRoot = new File(fileName);
+		viewer.setInput(projectRoot);
+		viewer.refresh();		
+	}
+
+//	private void initWatching() {
+//		try {
+//		    WatchService watcher = FileSystems.getDefault().newWatchService();
+//		    java.nio.file.Path dir = Paths.get(projectRoot.getAbsolutePath());
+//		    dir.register(watcher, ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY);		
+//		} catch (IOException e) {
+//			
+//		}
+//	}
 }
