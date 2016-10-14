@@ -64,8 +64,7 @@ public class ProjectBrowser {
 				TreeViewer viewer = (TreeViewer) event.getViewer();
 				IStructuredSelection thisSelection = (IStructuredSelection) event.getSelection();
 				Object selectedNode = thisSelection.getFirstElement();
-				viewer.setExpandedState(selectedNode,
-						!viewer.getExpandedState(selectedNode));
+				viewer.setExpandedState(selectedNode, !viewer.getExpandedState(selectedNode));
 			}
 		});
 		
@@ -96,14 +95,4 @@ public class ProjectBrowser {
 		viewer.setInput(projectRoot);
 		viewer.refresh();		
 	}
-
-//	private void initWatching() {
-//		try {
-//		    WatchService watcher = FileSystems.getDefault().newWatchService();
-//		    java.nio.file.Path dir = Paths.get(projectRoot.getAbsolutePath());
-//		    dir.register(watcher, ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY);		
-//		} catch (IOException e) {
-//			
-//		}
-//	}
 }

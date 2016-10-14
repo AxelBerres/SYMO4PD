@@ -7,17 +7,24 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Shell;
 
+import com.google.common.base.Strings;
+
 import de.symo.application.e4.parts.ProjectBrowser;
 
 public class SetProjectsRootHandler {
 	
 	@Execute
 	public void execute() {	
+		
+		// open dialog
 		Shell shell = new Shell(SWT.SHELL_TRIM);		
 		DirectoryDialog dialog = new DirectoryDialog(shell);
         String path = dialog.open();
-		
-		ProjectBrowser.setProjectsRoot(path);
+
+        // check given path
+        if (Strings.isNullOrEmpty(path) == false) {
+    		ProjectBrowser.setProjectsRoot(path);
+        }        
 	}
 
 	@CanExecute

@@ -4,7 +4,7 @@
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.ide.perspectivestack">
       <children xsi:type="advanced:Perspective" xmi:id="_6wlLkcgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.perspective.sample" label="Projects">
         <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="de.symo.application.partsashcontainer.projects" horizontal="true">
-          <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="de.symo.application.partstack.projects.left">
+          <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="de.symo.application.partstack.projects.left" containerData="25">
             <children xsi:type="basic:Part" xmi:id="_14dRcH82EeawkbqY0vmJFQ" elementId="de.symo.application.part.projectbrowser" contributionURI="bundleclass://de.symo.application/de.symo.application.e4.parts.ProjectBrowser" label="Project Browser" iconURI="platform:/plugin/de.symo.application/icons/project_16.png">
               <handlers xmi:id="_jPvLkJCJEea8nfDNys_Bag" elementId="de.symo.application.handler.0" contributionURI="bundleclass://de.symo.application/de.symo.application.e4.parts.projectbrowser.commands.SetProjectsRootHandler" command="_X5N_QJCJEea8nfDNys_Bag"/>
               <handlers xmi:id="_4YJoYJCMEeaUgaWBETksnQ" elementId="de.symo.application.handler.1" contributionURI="bundleclass://de.symo.application/de.symo.application.e4.parts.projectbrowser.commands.DeleteProjectHandler" command="_zbLYEJCMEeaUgaWBETksnQ"/>
@@ -17,7 +17,7 @@
               </toolbar>
             </children>
           </children>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_xDQiYI6zEeafcrpaRNwdWQ" elementId="de.symo.application.partsashcontainer.1" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_xDQiYI6zEeafcrpaRNwdWQ" elementId="de.symo.application.partsashcontainer.1" containerData="75">
             <children xsi:type="basic:PartStack" xmi:id="_Wc688I6zEeafcrpaRNwdWQ" elementId="de.symo.application.partstack.projects.editors"/>
             <children xsi:type="basic:PartStack" xmi:id="_XROuwI6zEeafcrpaRNwdWQ" elementId="de.symo.application.partstack.projects.button"/>
           </children>

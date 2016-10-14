@@ -43,10 +43,15 @@ public class ViewContentProvider implements ITreeContentProvider {
 	}
 	
 	private Object[] filterFiles(File file) {
-		
+
 		Vector<Object> elements = new Vector<Object>();		
+
+		if (file == null) {
+			return elements.toArray();
+		}
+
 		Object[] objects = file.listFiles();
-		for (Object object : objects) {		
+		for (Object object : objects) {
 			File cFile = (File) object;
 			String name = cFile.getName();
 			if ((name.charAt(0) == '.') == false) {

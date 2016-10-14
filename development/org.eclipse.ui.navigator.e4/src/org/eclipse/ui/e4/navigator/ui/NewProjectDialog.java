@@ -1,4 +1,4 @@
-package de.symo.application.e4.parts.projectbrowser.ui;
+package org.eclipse.ui.e4.navigator.ui;
 
 import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
@@ -13,7 +13,6 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.wb.swt.ResourceManager;
 
 public class NewProjectDialog extends TitleAreaDialog {
 
@@ -41,7 +40,7 @@ public class NewProjectDialog extends TitleAreaDialog {
 	@Override
 	protected Control createDialogArea(Composite parent) {
 		setMessage("Enter a project name.");
-		setTitleImage(ResourceManager.getPluginImage("de.symo.application", "icons/symo4pd_a_icon.png"));
+		setTitleImage(null);
 		Composite area = (Composite) super.createDialogArea(parent);
 		container = new Composite(area, SWT.NONE);
 		container.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
