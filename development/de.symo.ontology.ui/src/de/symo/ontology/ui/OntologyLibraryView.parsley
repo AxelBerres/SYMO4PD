@@ -1,0 +1,56 @@
+import de.symo.ontology.ui.OntologyLibraryView
+import model.ModelFactory
+import model.Ontology
+import model.OntologyLibrary
+import model.OntologyRepository
+import org.eclipse.swt.SWT
+
+module de.symo.ontology.ui {
+	
+	parts {
+		viewpart de.symo.ontology.ui {
+			viewname "Ontology Library"
+			viewclass OntologyLibraryView
+		}
+	}
+	
+	labelProvider {
+			text {
+				OntologyLibrary -> "Library"
+				Ontology -> fileName + " (local)"
+				OntologyRepository -> fileName + " (git)"
+			}
+			image {
+				OntologyLibrary -> "OntologyLibrary_16.png"
+				Ontology -> "OntologyLocal_16.png"
+				OntologyRepository -> "OntologyRepository_16.png"
+			}
+	}
+	
+	resourceManager {
+		initializeResource {
+			it.getContents += ModelFactory.eINSTANCE.createOntologyLibrary
+		}
+	}
+	
+	formControlFactory {
+		control {
+			OntologyRepository : password -> {
+				createText("", SWT::PASSWORD)
+			} target observeText(SWT::Modify)
+		}
+	}
+	
+	menuBuilder {
+		emfMenus {
+			Ontology ont -> #[
+				actionChange("Set Active", ont.eContainer as OntologyLibrary,
+					[
+						ontologyLibrary |
+						ontologyLibrary.activeOntology = ont;	
+					]
+				)
+			]
+		}
+	}
+}

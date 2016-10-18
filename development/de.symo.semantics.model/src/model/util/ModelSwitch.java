@@ -69,12 +69,19 @@ public class ModelSwitch<T> extends Switch<T> {
 			case ModelPackage.ONTOLOGY_REPOSITORY: {
 				OntologyRepository ontologyRepository = (OntologyRepository)theEObject;
 				T result = caseOntologyRepository(ontologyRepository);
+				if (result == null) result = caseOntology(ontologyRepository);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ModelPackage.ONTOLOGY_LIBRARY: {
 				OntologyLibrary ontologyLibrary = (OntologyLibrary)theEObject;
 				T result = caseOntologyLibrary(ontologyLibrary);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModelPackage.ONTOLOGY: {
+				Ontology ontology = (Ontology)theEObject;
+				T result = caseOntology(ontology);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -109,6 +116,21 @@ public class ModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOntologyLibrary(OntologyLibrary object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ontology</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ontology</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOntology(Ontology object) {
 		return null;
 	}
 

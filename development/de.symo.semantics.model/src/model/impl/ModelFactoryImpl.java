@@ -58,6 +58,7 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 		switch (eClass.getClassifierID()) {
 			case ModelPackage.ONTOLOGY_REPOSITORY: return createOntologyRepository();
 			case ModelPackage.ONTOLOGY_LIBRARY: return createOntologyLibrary();
+			case ModelPackage.ONTOLOGY: return createOntology();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -81,6 +82,16 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	public OntologyLibrary createOntologyLibrary() {
 		OntologyLibraryImpl ontologyLibrary = new OntologyLibraryImpl();
 		return ontologyLibrary;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Ontology createOntology() {
+		OntologyImpl ontology = new OntologyImpl();
+		return ontology;
 	}
 
 	/**

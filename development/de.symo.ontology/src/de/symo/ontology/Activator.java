@@ -3,11 +3,7 @@ package de.symo.ontology;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
-import de.symo.ontology.repository.RepositoryManager;
-
 public class Activator implements BundleActivator {
-
-	public static RepositoryManager repositoryManager; 
 	
 	private static BundleContext context;
 
@@ -21,7 +17,6 @@ public class Activator implements BundleActivator {
 	 */
 	public void start(BundleContext bundleContext) throws Exception {
 		Activator.context = bundleContext;
-		repositoryManager = new RepositoryManager();
 	}
 
 	/*

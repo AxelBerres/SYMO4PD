@@ -57,6 +57,70 @@ public interface ModelPackage extends EPackage {
 	ModelPackage eINSTANCE = model.impl.ModelPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link model.impl.OntologyImpl <em>Ontology</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see model.impl.OntologyImpl
+	 * @see model.impl.ModelPackageImpl#getOntology()
+	 * @generated
+	 */
+	int ONTOLOGY = 2;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONTOLOGY__PATH = 0;
+
+	/**
+	 * The feature id for the '<em><b>File Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONTOLOGY__FILE_NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Maintenance File Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONTOLOGY__MAINTENANCE_FILE_NAME = 2;
+
+	/**
+	 * The feature id for the '<em><b>Library</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONTOLOGY__LIBRARY = 3;
+
+	/**
+	 * The number of structural features of the '<em>Ontology</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONTOLOGY_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Ontology</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONTOLOGY_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link model.impl.OntologyRepositoryImpl <em>Ontology Repository</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,58 +131,31 @@ public interface ModelPackage extends EPackage {
 	int ONTOLOGY_REPOSITORY = 0;
 
 	/**
-	 * The feature id for the '<em><b>URL</b></em>' attribute.
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ONTOLOGY_REPOSITORY__URL = 0;
+	int ONTOLOGY_REPOSITORY__PATH = ONTOLOGY__PATH;
 
 	/**
-	 * The feature id for the '<em><b>Username</b></em>' attribute.
+	 * The feature id for the '<em><b>File Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ONTOLOGY_REPOSITORY__USERNAME = 1;
+	int ONTOLOGY_REPOSITORY__FILE_NAME = ONTOLOGY__FILE_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Password</b></em>' attribute.
+	 * The feature id for the '<em><b>Maintenance File Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ONTOLOGY_REPOSITORY__PASSWORD = 2;
-
-	/**
-	 * The feature id for the '<em><b>Active</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ONTOLOGY_REPOSITORY__ACTIVE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Ontology</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ONTOLOGY_REPOSITORY__ONTOLOGY = 4;
-
-	/**
-	 * The feature id for the '<em><b>Maintenance Ontology</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ONTOLOGY_REPOSITORY__MAINTENANCE_ONTOLOGY = 5;
+	int ONTOLOGY_REPOSITORY__MAINTENANCE_FILE_NAME = ONTOLOGY__MAINTENANCE_FILE_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Library</b></em>' container reference.
@@ -127,7 +164,34 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ONTOLOGY_REPOSITORY__LIBRARY = 6;
+	int ONTOLOGY_REPOSITORY__LIBRARY = ONTOLOGY__LIBRARY;
+
+	/**
+	 * The feature id for the '<em><b>URL</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONTOLOGY_REPOSITORY__URL = ONTOLOGY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Username</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONTOLOGY_REPOSITORY__USERNAME = ONTOLOGY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Password</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONTOLOGY_REPOSITORY__PASSWORD = ONTOLOGY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Ontology Repository</em>' class.
@@ -136,7 +200,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ONTOLOGY_REPOSITORY_FEATURE_COUNT = 7;
+	int ONTOLOGY_REPOSITORY_FEATURE_COUNT = ONTOLOGY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Ontology Repository</em>' class.
@@ -145,7 +209,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ONTOLOGY_REPOSITORY_OPERATION_COUNT = 0;
+	int ONTOLOGY_REPOSITORY_OPERATION_COUNT = ONTOLOGY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link model.impl.OntologyLibraryImpl <em>Ontology Library</em>}' class.
@@ -158,31 +222,22 @@ public interface ModelPackage extends EPackage {
 	int ONTOLOGY_LIBRARY = 1;
 
 	/**
-	 * The feature id for the '<em><b>Repositories</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Ontologies</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ONTOLOGY_LIBRARY__REPOSITORIES = 0;
+	int ONTOLOGY_LIBRARY__ONTOLOGIES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Active Ontology</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ONTOLOGY_LIBRARY__NAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Active Repository</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ONTOLOGY_LIBRARY__ACTIVE_REPOSITORY = 2;
+	int ONTOLOGY_LIBRARY__ACTIVE_ONTOLOGY = 1;
 
 	/**
 	 * The number of structural features of the '<em>Ontology Library</em>' class.
@@ -191,7 +246,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ONTOLOGY_LIBRARY_FEATURE_COUNT = 3;
+	int ONTOLOGY_LIBRARY_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Ontology Library</em>' class.
@@ -247,50 +302,6 @@ public interface ModelPackage extends EPackage {
 	EAttribute getOntologyRepository_Password();
 
 	/**
-	 * Returns the meta object for the attribute '{@link model.OntologyRepository#isActive <em>Active</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Active</em>'.
-	 * @see model.OntologyRepository#isActive()
-	 * @see #getOntologyRepository()
-	 * @generated
-	 */
-	EAttribute getOntologyRepository_Active();
-
-	/**
-	 * Returns the meta object for the attribute '{@link model.OntologyRepository#getOntology <em>Ontology</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ontology</em>'.
-	 * @see model.OntologyRepository#getOntology()
-	 * @see #getOntologyRepository()
-	 * @generated
-	 */
-	EAttribute getOntologyRepository_Ontology();
-
-	/**
-	 * Returns the meta object for the attribute '{@link model.OntologyRepository#getMaintenanceOntology <em>Maintenance Ontology</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Maintenance Ontology</em>'.
-	 * @see model.OntologyRepository#getMaintenanceOntology()
-	 * @see #getOntologyRepository()
-	 * @generated
-	 */
-	EAttribute getOntologyRepository_MaintenanceOntology();
-
-	/**
-	 * Returns the meta object for the container reference '{@link model.OntologyRepository#getLibrary <em>Library</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Library</em>'.
-	 * @see model.OntologyRepository#getLibrary()
-	 * @see #getOntologyRepository()
-	 * @generated
-	 */
-	EReference getOntologyRepository_Library();
-
-	/**
 	 * Returns the meta object for class '{@link model.OntologyLibrary <em>Ontology Library</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -301,37 +312,80 @@ public interface ModelPackage extends EPackage {
 	EClass getOntologyLibrary();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link model.OntologyLibrary#getRepositories <em>Repositories</em>}'.
+	 * Returns the meta object for the containment reference list '{@link model.OntologyLibrary#getOntologies <em>Ontologies</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Repositories</em>'.
-	 * @see model.OntologyLibrary#getRepositories()
+	 * @return the meta object for the containment reference list '<em>Ontologies</em>'.
+	 * @see model.OntologyLibrary#getOntologies()
 	 * @see #getOntologyLibrary()
 	 * @generated
 	 */
-	EReference getOntologyLibrary_Repositories();
+	EReference getOntologyLibrary_Ontologies();
 
 	/**
-	 * Returns the meta object for the attribute '{@link model.OntologyLibrary#getName <em>Name</em>}'.
+	 * Returns the meta object for the reference '{@link model.OntologyLibrary#getActiveOntology <em>Active Ontology</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see model.OntologyLibrary#getName()
+	 * @return the meta object for the reference '<em>Active Ontology</em>'.
+	 * @see model.OntologyLibrary#getActiveOntology()
 	 * @see #getOntologyLibrary()
 	 * @generated
 	 */
-	EAttribute getOntologyLibrary_Name();
+	EReference getOntologyLibrary_ActiveOntology();
 
 	/**
-	 * Returns the meta object for the reference '{@link model.OntologyLibrary#getActiveRepository <em>Active Repository</em>}'.
+	 * Returns the meta object for class '{@link model.Ontology <em>Ontology</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Active Repository</em>'.
-	 * @see model.OntologyLibrary#getActiveRepository()
-	 * @see #getOntologyLibrary()
+	 * @return the meta object for class '<em>Ontology</em>'.
+	 * @see model.Ontology
 	 * @generated
 	 */
-	EReference getOntologyLibrary_ActiveRepository();
+	EClass getOntology();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.Ontology#getPath <em>Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Path</em>'.
+	 * @see model.Ontology#getPath()
+	 * @see #getOntology()
+	 * @generated
+	 */
+	EAttribute getOntology_Path();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.Ontology#getFileName <em>File Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>File Name</em>'.
+	 * @see model.Ontology#getFileName()
+	 * @see #getOntology()
+	 * @generated
+	 */
+	EAttribute getOntology_FileName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.Ontology#getMaintenanceFileName <em>Maintenance File Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Maintenance File Name</em>'.
+	 * @see model.Ontology#getMaintenanceFileName()
+	 * @see #getOntology()
+	 * @generated
+	 */
+	EAttribute getOntology_MaintenanceFileName();
+
+	/**
+	 * Returns the meta object for the container reference '{@link model.Ontology#getLibrary <em>Library</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Library</em>'.
+	 * @see model.Ontology#getLibrary()
+	 * @see #getOntology()
+	 * @generated
+	 */
+	EReference getOntology_Library();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -391,38 +445,6 @@ public interface ModelPackage extends EPackage {
 		EAttribute ONTOLOGY_REPOSITORY__PASSWORD = eINSTANCE.getOntologyRepository_Password();
 
 		/**
-		 * The meta object literal for the '<em><b>Active</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ONTOLOGY_REPOSITORY__ACTIVE = eINSTANCE.getOntologyRepository_Active();
-
-		/**
-		 * The meta object literal for the '<em><b>Ontology</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ONTOLOGY_REPOSITORY__ONTOLOGY = eINSTANCE.getOntologyRepository_Ontology();
-
-		/**
-		 * The meta object literal for the '<em><b>Maintenance Ontology</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ONTOLOGY_REPOSITORY__MAINTENANCE_ONTOLOGY = eINSTANCE.getOntologyRepository_MaintenanceOntology();
-
-		/**
-		 * The meta object literal for the '<em><b>Library</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ONTOLOGY_REPOSITORY__LIBRARY = eINSTANCE.getOntologyRepository_Library();
-
-		/**
 		 * The meta object literal for the '{@link model.impl.OntologyLibraryImpl <em>Ontology Library</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -433,28 +455,62 @@ public interface ModelPackage extends EPackage {
 		EClass ONTOLOGY_LIBRARY = eINSTANCE.getOntologyLibrary();
 
 		/**
-		 * The meta object literal for the '<em><b>Repositories</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Ontologies</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ONTOLOGY_LIBRARY__REPOSITORIES = eINSTANCE.getOntologyLibrary_Repositories();
+		EReference ONTOLOGY_LIBRARY__ONTOLOGIES = eINSTANCE.getOntologyLibrary_Ontologies();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Active Ontology</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ONTOLOGY_LIBRARY__NAME = eINSTANCE.getOntologyLibrary_Name();
+		EReference ONTOLOGY_LIBRARY__ACTIVE_ONTOLOGY = eINSTANCE.getOntologyLibrary_ActiveOntology();
 
 		/**
-		 * The meta object literal for the '<em><b>Active Repository</b></em>' reference feature.
+		 * The meta object literal for the '{@link model.impl.OntologyImpl <em>Ontology</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see model.impl.OntologyImpl
+		 * @see model.impl.ModelPackageImpl#getOntology()
+		 * @generated
+		 */
+		EClass ONTOLOGY = eINSTANCE.getOntology();
+
+		/**
+		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ONTOLOGY_LIBRARY__ACTIVE_REPOSITORY = eINSTANCE.getOntologyLibrary_ActiveRepository();
+		EAttribute ONTOLOGY__PATH = eINSTANCE.getOntology_Path();
+
+		/**
+		 * The meta object literal for the '<em><b>File Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ONTOLOGY__FILE_NAME = eINSTANCE.getOntology_FileName();
+
+		/**
+		 * The meta object literal for the '<em><b>Maintenance File Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ONTOLOGY__MAINTENANCE_FILE_NAME = eINSTANCE.getOntology_MaintenanceFileName();
+
+		/**
+		 * The meta object literal for the '<em><b>Library</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ONTOLOGY__LIBRARY = eINSTANCE.getOntology_Library();
 
 	}
 

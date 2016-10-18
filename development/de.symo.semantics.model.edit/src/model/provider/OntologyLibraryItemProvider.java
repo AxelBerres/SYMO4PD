@@ -64,7 +64,7 @@ public class OntologyLibraryItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addActiveRepositoryPropertyDescriptor(object);
+			addActiveOntologyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -92,19 +92,19 @@ public class OntologyLibraryItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Active Repository feature.
+	 * This adds a property descriptor for the Active Ontology feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addActiveRepositoryPropertyDescriptor(Object object) {
+	protected void addActiveOntologyPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_OntologyLibrary_ActiveRepository_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OntologyLibrary_ActiveRepository_feature", "_UI_OntologyLibrary_type"),
-				 ModelPackage.Literals.ONTOLOGY_LIBRARY__ACTIVE_REPOSITORY,
+				 getString("_UI_OntologyLibrary_ActiveOntology_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OntologyLibrary_ActiveOntology_feature", "_UI_OntologyLibrary_type"),
+				 ModelPackage.Literals.ONTOLOGY_LIBRARY__ACTIVE_ONTOLOGY,
 				 true,
 				 false,
 				 true,
@@ -125,7 +125,7 @@ public class OntologyLibraryItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ModelPackage.Literals.ONTOLOGY_LIBRARY__REPOSITORIES);
+			childrenFeatures.add(ModelPackage.Literals.ONTOLOGY_LIBRARY__ONTOLOGIES);
 		}
 		return childrenFeatures;
 	}
@@ -184,7 +184,7 @@ public class OntologyLibraryItemProvider
 			case ModelPackage.ONTOLOGY_LIBRARY__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ModelPackage.ONTOLOGY_LIBRARY__REPOSITORIES:
+			case ModelPackage.ONTOLOGY_LIBRARY__ONTOLOGIES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -204,7 +204,12 @@ public class OntologyLibraryItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ModelPackage.Literals.ONTOLOGY_LIBRARY__REPOSITORIES,
+				(ModelPackage.Literals.ONTOLOGY_LIBRARY__ONTOLOGIES,
+				 ModelFactory.eINSTANCE.createOntology()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ONTOLOGY_LIBRARY__ONTOLOGIES,
 				 ModelFactory.eINSTANCE.createOntologyRepository()));
 	}
 

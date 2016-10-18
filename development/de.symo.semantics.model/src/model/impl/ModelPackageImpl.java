@@ -4,6 +4,7 @@ package model.impl;
 
 import model.ModelFactory;
 import model.ModelPackage;
+import model.Ontology;
 import model.OntologyLibrary;
 import model.OntologyRepository;
 
@@ -34,6 +35,13 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * @generated
 	 */
 	private EClass ontologyLibraryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ontologyEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -137,42 +145,6 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getOntologyRepository_Active() {
-		return (EAttribute)ontologyRepositoryEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getOntologyRepository_Ontology() {
-		return (EAttribute)ontologyRepositoryEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getOntologyRepository_MaintenanceOntology() {
-		return (EAttribute)ontologyRepositoryEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getOntologyRepository_Library() {
-		return (EReference)ontologyRepositoryEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getOntologyLibrary() {
 		return ontologyLibraryEClass;
 	}
@@ -182,7 +154,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOntologyLibrary_Repositories() {
+	public EReference getOntologyLibrary_Ontologies() {
 		return (EReference)ontologyLibraryEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -191,8 +163,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getOntologyLibrary_Name() {
-		return (EAttribute)ontologyLibraryEClass.getEStructuralFeatures().get(1);
+	public EReference getOntologyLibrary_ActiveOntology() {
+		return (EReference)ontologyLibraryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -200,8 +172,44 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOntologyLibrary_ActiveRepository() {
-		return (EReference)ontologyLibraryEClass.getEStructuralFeatures().get(2);
+	public EClass getOntology() {
+		return ontologyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOntology_Path() {
+		return (EAttribute)ontologyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOntology_FileName() {
+		return (EAttribute)ontologyEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOntology_MaintenanceFileName() {
+		return (EAttribute)ontologyEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOntology_Library() {
+		return (EReference)ontologyEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -236,15 +244,16 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEAttribute(ontologyRepositoryEClass, ONTOLOGY_REPOSITORY__URL);
 		createEAttribute(ontologyRepositoryEClass, ONTOLOGY_REPOSITORY__USERNAME);
 		createEAttribute(ontologyRepositoryEClass, ONTOLOGY_REPOSITORY__PASSWORD);
-		createEAttribute(ontologyRepositoryEClass, ONTOLOGY_REPOSITORY__ACTIVE);
-		createEAttribute(ontologyRepositoryEClass, ONTOLOGY_REPOSITORY__ONTOLOGY);
-		createEAttribute(ontologyRepositoryEClass, ONTOLOGY_REPOSITORY__MAINTENANCE_ONTOLOGY);
-		createEReference(ontologyRepositoryEClass, ONTOLOGY_REPOSITORY__LIBRARY);
 
 		ontologyLibraryEClass = createEClass(ONTOLOGY_LIBRARY);
-		createEReference(ontologyLibraryEClass, ONTOLOGY_LIBRARY__REPOSITORIES);
-		createEAttribute(ontologyLibraryEClass, ONTOLOGY_LIBRARY__NAME);
-		createEReference(ontologyLibraryEClass, ONTOLOGY_LIBRARY__ACTIVE_REPOSITORY);
+		createEReference(ontologyLibraryEClass, ONTOLOGY_LIBRARY__ONTOLOGIES);
+		createEReference(ontologyLibraryEClass, ONTOLOGY_LIBRARY__ACTIVE_ONTOLOGY);
+
+		ontologyEClass = createEClass(ONTOLOGY);
+		createEAttribute(ontologyEClass, ONTOLOGY__PATH);
+		createEAttribute(ontologyEClass, ONTOLOGY__FILE_NAME);
+		createEAttribute(ontologyEClass, ONTOLOGY__MAINTENANCE_FILE_NAME);
+		createEReference(ontologyEClass, ONTOLOGY__LIBRARY);
 	}
 
 	/**
@@ -275,24 +284,25 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		ontologyRepositoryEClass.getESuperTypes().add(this.getOntology());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(ontologyRepositoryEClass, OntologyRepository.class, "OntologyRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOntologyRepository_URL(), ecorePackage.getEString(), "URL", null, 1, 1, OntologyRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOntologyRepository_URL(), ecorePackage.getEString(), "URL", null, 1, 1, OntologyRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOntologyRepository_Username(), ecorePackage.getEString(), "Username", null, 0, 1, OntologyRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getOntologyRepository_Password(), ecorePackage.getEString(), "Password", null, 0, 1, OntologyRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOntologyRepository_Active(), ecorePackage.getEBoolean(), "Active", null, 0, 1, OntologyRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getOntologyRepository_Ontology(), ecorePackage.getEString(), "Ontology", null, 1, 1, OntologyRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getOntologyRepository_MaintenanceOntology(), ecorePackage.getEString(), "MaintenanceOntology", null, 1, 1, OntologyRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getOntologyRepository_Library(), this.getOntologyLibrary(), this.getOntologyLibrary_Repositories(), "Library", null, 0, 1, OntologyRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getOntologyRepository_Library().getEKeys().add(this.getOntologyLibrary_Name());
 
 		initEClass(ontologyLibraryEClass, OntologyLibrary.class, "OntologyLibrary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOntologyLibrary_Repositories(), this.getOntologyRepository(), this.getOntologyRepository_Library(), "Repositories", null, 0, -1, OntologyLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getOntologyLibrary_Repositories().getEKeys().add(this.getOntologyRepository_URL());
-		initEAttribute(getOntologyLibrary_Name(), ecorePackage.getEString(), "Name", null, 0, 1, OntologyLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOntologyLibrary_ActiveRepository(), this.getOntologyRepository(), null, "ActiveRepository", null, 0, 1, OntologyLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getOntologyLibrary_ActiveRepository().getEKeys().add(this.getOntologyRepository_URL());
+		initEReference(getOntologyLibrary_Ontologies(), this.getOntology(), this.getOntology_Library(), "Ontologies", null, 0, -1, OntologyLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getOntologyLibrary_Ontologies().getEKeys().add(this.getOntology_Path());
+		initEReference(getOntologyLibrary_ActiveOntology(), this.getOntology(), null, "ActiveOntology", null, 0, 1, OntologyLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getOntologyLibrary_ActiveOntology().getEKeys().add(this.getOntology_Path());
+
+		initEClass(ontologyEClass, Ontology.class, "Ontology", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOntology_Path(), ecorePackage.getEString(), "Path", null, 1, 1, Ontology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOntology_FileName(), ecorePackage.getEString(), "FileName", null, 1, 1, Ontology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOntology_MaintenanceFileName(), ecorePackage.getEString(), "MaintenanceFileName", null, 1, 1, Ontology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOntology_Library(), this.getOntologyLibrary(), this.getOntologyLibrary_Ontologies(), "Library", null, 0, 1, Ontology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

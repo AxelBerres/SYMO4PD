@@ -24,9 +24,9 @@
       <plugin id="de.symo.model"/>
       <plugin id="de.symo.model.edit"/>
       <plugin id="de.symo.ontology"/>
-      <plugin id="de.symo.semantics.model"/>
-      <plugin id="de.symo.semantics.model.edit"/>
-      <plugin id="de.symo.semantics.ui"/>
+      <plugin id="de.symo.ontology.model"/>
+      <plugin id="de.symo.ontology.model.edit"/>
+      <plugin id="de.symo.ontology.ui"/>
       <plugin id="javaewah"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>

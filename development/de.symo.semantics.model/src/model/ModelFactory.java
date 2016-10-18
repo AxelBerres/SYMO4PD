@@ -40,6 +40,15 @@ public interface ModelFactory extends EFactory {
 	OntologyLibrary createOntologyLibrary();
 
 	/**
+	 * Returns a new object of class '<em>Ontology</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ontology</em>'.
+	 * @generated
+	 */
+	Ontology createOntology();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
