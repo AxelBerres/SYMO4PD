@@ -10,12 +10,5 @@
             name="Ontology Library"
             restorable="true">
       </view>
-      <view
-            category="org.eclipse.emf.parsley"
-            class="de.symo.semantics.ui.UiExecutableExtensionFactory:de.symo.semantics.ui.OntologyLibraryView"
-            id="de.symo.semantics.ui"
-            name="Ontology Library"
-            restorable="true">
-      </view>
    </extension>
 </plugin>
