@@ -1,0 +1,3 @@
+[submodule "development/external"]
+	path = development/external
+	url = https://github.com/vogellacompany/e4-perspective-switcher.git

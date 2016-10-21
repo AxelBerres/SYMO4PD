@@ -7,10 +7,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.URI;
 
+import OntologyManagerModel.OntologyEntry;
 import de.symo.ontology.io.Owl;
-import model.ModelPackage;
-import model.Ontology;
-import model.OntologyLibrary;
 
 public class ActiveOntologyManager extends AdapterImpl {
 	
@@ -29,14 +27,14 @@ public class ActiveOntologyManager extends AdapterImpl {
 	}
 	
 	public void notifyChanged(Notification notification) {
-		if (ModelPackage.Literals.ONTOLOGY_LIBRARY__ACTIVE_ONTOLOGY.getFeatureID() == notification.getFeatureID(OntologyLibrary.class)) {
-			loadOntology((Ontology)notification.getNewValue());
-		}
+//		if (OntologyManagerModel.OntologyManagerModelPackage.Literals.LIBRARY__ACTIVE_ONTOLOGY_ENTRY.getFeatureID() == notification.getFeatureID(OntologyManagerModel.Library.class)) {
+//			loadOntology((OntologyEntry)notification.getNewValue());
+//		}
 	}
 	
-	private void loadOntology(Ontology ontology) {
+	private void loadOntology(OntologyEntry ontologyEntry) {
 		try {
-			Owl.loadFromOwl(URI.createURI("http://www.bauhaus-luftfahrt.net/ont/ology"), new URL(ontology.getFileName()));
+			Owl.loadFromOwl(URI.createURI("http://www.bauhaus-luftfahrt.net/ont/ology"), new URL(ontologyEntry.getFile()));
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

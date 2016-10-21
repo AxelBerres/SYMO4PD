@@ -23,10 +23,8 @@
       <plugin id="de.symo.application"/>
       <plugin id="de.symo.model"/>
       <plugin id="de.symo.model.edit"/>
-      <plugin id="de.symo.ontology"/>
-      <plugin id="de.symo.ontology.model"/>
-      <plugin id="de.symo.ontology.model.edit"/>
-      <plugin id="de.symo.ontology.ui"/>
+      <plugin id="de.symo.ontology.manager.model"/>
+      <plugin id="de.symo.ontology.manager.ui"/>
       <plugin id="javaewah"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
