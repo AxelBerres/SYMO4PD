@@ -58,6 +58,7 @@ public class OntologyManagerModelFactoryImpl extends EFactoryImpl implements Ont
 		switch (eClass.getClassifierID()) {
 			case OntologyManagerModelPackage.LIBRARY: return createLibrary();
 			case OntologyManagerModelPackage.ONTOLOGY_ENTRY: return createOntologyEntry();
+			case OntologyManagerModelPackage.ONTOLOGY_REPO_ENTRY: return createOntologyRepoEntry();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -81,6 +82,16 @@ public class OntologyManagerModelFactoryImpl extends EFactoryImpl implements Ont
 	public OntologyEntry createOntologyEntry() {
 		OntologyEntryImpl ontologyEntry = new OntologyEntryImpl();
 		return ontologyEntry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OntologyRepoEntry createOntologyRepoEntry() {
+		OntologyRepoEntryImpl ontologyRepoEntry = new OntologyRepoEntryImpl();
+		return ontologyRepoEntry;
 	}
 
 	/**

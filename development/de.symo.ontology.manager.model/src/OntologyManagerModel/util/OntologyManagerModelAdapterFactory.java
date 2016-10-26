@@ -76,6 +76,10 @@ public class OntologyManagerModelAdapterFactory extends AdapterFactoryImpl {
 				return createOntologyEntryAdapter();
 			}
 			@Override
+			public Adapter caseOntologyRepoEntry(OntologyRepoEntry object) {
+				return createOntologyRepoEntryAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -120,6 +124,20 @@ public class OntologyManagerModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOntologyEntryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link OntologyManagerModel.OntologyRepoEntry <em>Ontology Repo Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see OntologyManagerModel.OntologyRepoEntry
+	 * @generated
+	 */
+	public Adapter createOntologyRepoEntryAdapter() {
 		return null;
 	}
 

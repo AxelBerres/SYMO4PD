@@ -1,7 +1,4 @@
 package de.symo.ontology.manager.ui;
 
-import org.eclipse.emf.parsley.views.SaveableTreeFormView;
-
-public class OntologyLibraryView extends SaveableTreeFormView {
-
+public class OntologyLibraryView extends org.eclipse.emf.parsley.views.SaveableTreeFormView {
 }

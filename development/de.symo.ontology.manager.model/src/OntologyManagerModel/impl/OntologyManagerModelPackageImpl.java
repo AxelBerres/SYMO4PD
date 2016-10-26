@@ -7,6 +7,7 @@ import OntologyManagerModel.OntologyEntry;
 import OntologyManagerModel.OntologyManagerModelFactory;
 import OntologyManagerModel.OntologyManagerModelPackage;
 
+import OntologyManagerModel.OntologyRepoEntry;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -34,6 +35,13 @@ public class OntologyManagerModelPackageImpl extends EPackageImpl implements Ont
 	 * @generated
 	 */
 	private EClass ontologyEntryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ontologyRepoEntryEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -173,6 +181,42 @@ public class OntologyManagerModelPackageImpl extends EPackageImpl implements Ont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getOntologyRepoEntry() {
+		return ontologyRepoEntryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOntologyRepoEntry_RepoURL() {
+		return (EAttribute)ontologyRepoEntryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOntologyRepoEntry_GitServerUsername() {
+		return (EAttribute)ontologyRepoEntryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOntologyRepoEntry_GitServerPassword() {
+		return (EAttribute)ontologyRepoEntryEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public OntologyManagerModelFactory getOntologyManagerModelFactory() {
 		return (OntologyManagerModelFactory)getEFactoryInstance();
 	}
@@ -205,6 +249,11 @@ public class OntologyManagerModelPackageImpl extends EPackageImpl implements Ont
 		createEAttribute(ontologyEntryEClass, ONTOLOGY_ENTRY__PATH);
 		createEAttribute(ontologyEntryEClass, ONTOLOGY_ENTRY__FILE);
 		createEAttribute(ontologyEntryEClass, ONTOLOGY_ENTRY__MAINTENANCE_FILE);
+
+		ontologyRepoEntryEClass = createEClass(ONTOLOGY_REPO_ENTRY);
+		createEAttribute(ontologyRepoEntryEClass, ONTOLOGY_REPO_ENTRY__REPO_URL);
+		createEAttribute(ontologyRepoEntryEClass, ONTOLOGY_REPO_ENTRY__GIT_SERVER_USERNAME);
+		createEAttribute(ontologyRepoEntryEClass, ONTOLOGY_REPO_ENTRY__GIT_SERVER_PASSWORD);
 	}
 
 	/**
@@ -235,17 +284,23 @@ public class OntologyManagerModelPackageImpl extends EPackageImpl implements Ont
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		ontologyRepoEntryEClass.getESuperTypes().add(this.getOntologyEntry());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(libraryEClass, Library.class, "Library", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLibrary_Owner(), ecorePackage.getEString(), "Owner", null, 0, 1, Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLibrary_CreationDate(), ecorePackage.getEDate(), "CreationDate", null, 0, 1, Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLibrary_OntologyEntries(), this.getOntologyEntry(), null, "OntologyEntries", null, 0, -1, Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLibrary_Owner(), ecorePackage.getEString(), "owner", null, 0, 1, Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLibrary_CreationDate(), ecorePackage.getEDate(), "creationDate", null, 0, 1, Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLibrary_OntologyEntries(), this.getOntologyEntry(), null, "ontologyEntries", null, 0, -1, Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ontologyEntryEClass, OntologyEntry.class, "OntologyEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOntologyEntry_Path(), ecorePackage.getEString(), "Path", null, 0, 1, OntologyEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOntologyEntry_File(), ecorePackage.getEString(), "File", null, 0, 1, OntologyEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOntologyEntry_MaintenanceFile(), ecorePackage.getEString(), "MaintenanceFile", null, 0, 1, OntologyEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOntologyEntry_Path(), ecorePackage.getEString(), "path", null, 0, 1, OntologyEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOntologyEntry_File(), ecorePackage.getEString(), "file", null, 0, 1, OntologyEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOntologyEntry_MaintenanceFile(), ecorePackage.getEString(), "maintenanceFile", null, 0, 1, OntologyEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(ontologyRepoEntryEClass, OntologyRepoEntry.class, "OntologyRepoEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOntologyRepoEntry_RepoURL(), ecorePackage.getEString(), "repoURL", null, 0, 1, OntologyRepoEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOntologyRepoEntry_GitServerUsername(), ecorePackage.getEString(), "gitServerUsername", null, 0, 1, OntologyRepoEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOntologyRepoEntry_GitServerPassword(), ecorePackage.getEString(), "gitServerPassword", null, 0, 1, OntologyRepoEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

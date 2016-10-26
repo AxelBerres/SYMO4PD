@@ -4,17 +4,10 @@
    <extension
          point="org.eclipse.ui.views">
       <view
-            category="de.symo.ontology.manager.ui.libraryview"
-            class="de.symo.ontology.manager.ui.UiExecutableExtensionFactory:de.symo.ontology.manager.ui.views.OntologyLibraryView"
-            id="de.symo.ontology.manager.ui.views.libraryview"
-            name="Ontology Library View"
-            restorable="true">
-      </view>
-      <view
-            category="de.symo.ontology.manager.ui.libraryview"
+            category="de.symo.ontology.manager.ui"
             class="de.symo.ontology.manager.ui.UiExecutableExtensionFactory:de.symo.ontology.manager.ui.OntologyLibraryView"
-            id="de.symo.ontology.manager.ui.libraryview"
-            name="Ontology Library View"
+            id="de.symo.ontology.manager.ui"
+            name="Ontology Library"
             restorable="true">
       </view>
    </extension>

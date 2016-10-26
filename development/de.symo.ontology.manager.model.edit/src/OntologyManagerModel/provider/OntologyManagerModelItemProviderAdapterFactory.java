@@ -118,6 +118,29 @@ public class OntologyManagerModelItemProviderAdapterFactory extends OntologyMana
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link OntologyManagerModel.OntologyRepoEntry} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OntologyRepoEntryItemProvider ontologyRepoEntryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link OntologyManagerModel.OntologyRepoEntry}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOntologyRepoEntryAdapter() {
+		if (ontologyRepoEntryItemProvider == null) {
+			ontologyRepoEntryItemProvider = new OntologyRepoEntryItemProvider(this);
+		}
+
+		return ontologyRepoEntryItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -218,6 +241,7 @@ public class OntologyManagerModelItemProviderAdapterFactory extends OntologyMana
 	public void dispose() {
 		if (libraryItemProvider != null) libraryItemProvider.dispose();
 		if (ontologyEntryItemProvider != null) ontologyEntryItemProvider.dispose();
+		if (ontologyRepoEntryItemProvider != null) ontologyRepoEntryItemProvider.dispose();
 	}
 
 }

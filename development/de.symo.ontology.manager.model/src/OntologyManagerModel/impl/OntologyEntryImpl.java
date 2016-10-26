@@ -258,11 +258,11 @@ public class OntologyEntryImpl extends MinimalEObjectImpl.Container implements O
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (Path: ");
+		result.append(" (path: ");
 		result.append(path);
-		result.append(", File: ");
+		result.append(", file: ");
 		result.append(file);
-		result.append(", MaintenanceFile: ");
+		result.append(", maintenanceFile: ");
 		result.append(maintenanceFile);
 		result.append(')');
 		return result.toString();

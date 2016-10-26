@@ -40,6 +40,15 @@ public interface OntologyManagerModelFactory extends EFactory {
 	OntologyEntry createOntologyEntry();
 
 	/**
+	 * Returns a new object of class '<em>Ontology Repo Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ontology Repo Entry</em>'.
+	 * @generated
+	 */
+	OntologyRepoEntry createOntologyRepoEntry();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -168,6 +168,89 @@ public interface OntologyManagerModelPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link OntologyManagerModel.impl.OntologyRepoEntryImpl <em>Ontology Repo Entry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see OntologyManagerModel.impl.OntologyRepoEntryImpl
+	 * @see OntologyManagerModel.impl.OntologyManagerModelPackageImpl#getOntologyRepoEntry()
+	 * @generated
+	 */
+	int ONTOLOGY_REPO_ENTRY = 2;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONTOLOGY_REPO_ENTRY__PATH = ONTOLOGY_ENTRY__PATH;
+
+	/**
+	 * The feature id for the '<em><b>File</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONTOLOGY_REPO_ENTRY__FILE = ONTOLOGY_ENTRY__FILE;
+
+	/**
+	 * The feature id for the '<em><b>Maintenance File</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONTOLOGY_REPO_ENTRY__MAINTENANCE_FILE = ONTOLOGY_ENTRY__MAINTENANCE_FILE;
+
+	/**
+	 * The feature id for the '<em><b>Repo URL</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONTOLOGY_REPO_ENTRY__REPO_URL = ONTOLOGY_ENTRY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Git Server Username</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONTOLOGY_REPO_ENTRY__GIT_SERVER_USERNAME = ONTOLOGY_ENTRY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Git Server Password</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONTOLOGY_REPO_ENTRY__GIT_SERVER_PASSWORD = ONTOLOGY_ENTRY_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Ontology Repo Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONTOLOGY_REPO_ENTRY_FEATURE_COUNT = ONTOLOGY_ENTRY_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Ontology Repo Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONTOLOGY_REPO_ENTRY_OPERATION_COUNT = ONTOLOGY_ENTRY_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link OntologyManagerModel.Library <em>Library</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -252,6 +335,49 @@ public interface OntologyManagerModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getOntologyEntry_MaintenanceFile();
+
+	/**
+	 * Returns the meta object for class '{@link OntologyManagerModel.OntologyRepoEntry <em>Ontology Repo Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ontology Repo Entry</em>'.
+	 * @see OntologyManagerModel.OntologyRepoEntry
+	 * @generated
+	 */
+	EClass getOntologyRepoEntry();
+
+	/**
+	 * Returns the meta object for the attribute '{@link OntologyManagerModel.OntologyRepoEntry#getRepoURL <em>Repo URL</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Repo URL</em>'.
+	 * @see OntologyManagerModel.OntologyRepoEntry#getRepoURL()
+	 * @see #getOntologyRepoEntry()
+	 * @generated
+	 */
+	EAttribute getOntologyRepoEntry_RepoURL();
+
+	/**
+	 * Returns the meta object for the attribute '{@link OntologyManagerModel.OntologyRepoEntry#getGitServerUsername <em>Git Server Username</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Git Server Username</em>'.
+	 * @see OntologyManagerModel.OntologyRepoEntry#getGitServerUsername()
+	 * @see #getOntologyRepoEntry()
+	 * @generated
+	 */
+	EAttribute getOntologyRepoEntry_GitServerUsername();
+
+	/**
+	 * Returns the meta object for the attribute '{@link OntologyManagerModel.OntologyRepoEntry#getGitServerPassword <em>Git Server Password</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Git Server Password</em>'.
+	 * @see OntologyManagerModel.OntologyRepoEntry#getGitServerPassword()
+	 * @see #getOntologyRepoEntry()
+	 * @generated
+	 */
+	EAttribute getOntologyRepoEntry_GitServerPassword();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -343,6 +469,40 @@ public interface OntologyManagerModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ONTOLOGY_ENTRY__MAINTENANCE_FILE = eINSTANCE.getOntologyEntry_MaintenanceFile();
+
+		/**
+		 * The meta object literal for the '{@link OntologyManagerModel.impl.OntologyRepoEntryImpl <em>Ontology Repo Entry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see OntologyManagerModel.impl.OntologyRepoEntryImpl
+		 * @see OntologyManagerModel.impl.OntologyManagerModelPackageImpl#getOntologyRepoEntry()
+		 * @generated
+		 */
+		EClass ONTOLOGY_REPO_ENTRY = eINSTANCE.getOntologyRepoEntry();
+
+		/**
+		 * The meta object literal for the '<em><b>Repo URL</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ONTOLOGY_REPO_ENTRY__REPO_URL = eINSTANCE.getOntologyRepoEntry_RepoURL();
+
+		/**
+		 * The meta object literal for the '<em><b>Git Server Username</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ONTOLOGY_REPO_ENTRY__GIT_SERVER_USERNAME = eINSTANCE.getOntologyRepoEntry_GitServerUsername();
+
+		/**
+		 * The meta object literal for the '<em><b>Git Server Password</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ONTOLOGY_REPO_ENTRY__GIT_SERVER_PASSWORD = eINSTANCE.getOntologyRepoEntry_GitServerPassword();
 
 	}
 

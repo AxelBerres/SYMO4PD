@@ -78,6 +78,13 @@ public class OntologyManagerModelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case OntologyManagerModelPackage.ONTOLOGY_REPO_ENTRY: {
+				OntologyRepoEntry ontologyRepoEntry = (OntologyRepoEntry)theEObject;
+				T result = caseOntologyRepoEntry(ontologyRepoEntry);
+				if (result == null) result = caseOntologyEntry(ontologyRepoEntry);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -109,6 +116,21 @@ public class OntologyManagerModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOntologyEntry(OntologyEntry object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ontology Repo Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ontology Repo Entry</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOntologyRepoEntry(OntologyRepoEntry object) {
 		return null;
 	}
 

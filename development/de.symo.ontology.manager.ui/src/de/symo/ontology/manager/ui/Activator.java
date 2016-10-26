@@ -6,15 +6,15 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 /**
  * The activator class controls the plug-in life cycle
  */
-public class OntologyManagerUIActivator extends AbstractUIPlugin {
+public class Activator extends AbstractUIPlugin {
 
 	// The plug-in ID
 	public static final String PLUGIN_ID = "de.symo.ontology.manager.ui"; //$NON-NLS-1$
 
 	// The shared instance
-	private static OntologyManagerUIActivator plugin;
+	private static Activator plugin;
 
-	public OntologyManagerUIActivator() {
+	public Activator() {
 	}
 
 	/*
@@ -40,7 +40,7 @@ public class OntologyManagerUIActivator extends AbstractUIPlugin {
 	 *
 	 * @return the shared instance
 	 */
-	public static OntologyManagerUIActivator getDefault() {
+	public static Activator getDefault() {
 		return plugin;
 	}
 

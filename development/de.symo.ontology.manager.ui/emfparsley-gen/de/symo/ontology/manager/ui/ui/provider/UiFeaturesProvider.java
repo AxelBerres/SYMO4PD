@@ -13,5 +13,7 @@ public class UiFeaturesProvider extends FeaturesProvider {
       "owner", "creationDate");
     stringMap.mapTo("OntologyManagerModel.OntologyEntry",
       "path", "file", "maintenanceFile");
+    stringMap.mapTo("OntologyManagerModel.OntologyRepoEntry",
+      "path", "file", "maintenanceFile", "repoURL", "gitServerUsername", "gitServerPassword");
   }
 }

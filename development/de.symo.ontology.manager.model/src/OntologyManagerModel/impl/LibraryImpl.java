@@ -266,9 +266,9 @@ public class LibraryImpl extends MinimalEObjectImpl.Container implements Library
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (Owner: ");
+		result.append(" (owner: ");
 		result.append(owner);
-		result.append(", CreationDate: ");
+		result.append(", creationDate: ");
 		result.append(creationDate);
 		result.append(')');
 		return result.toString();

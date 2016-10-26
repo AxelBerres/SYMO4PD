@@ -3,8 +3,8 @@
 package OntologyManagerModel.provider;
 
 
-import OntologyManagerModel.OntologyEntry;
 import OntologyManagerModel.OntologyManagerModelPackage;
+import OntologyManagerModel.OntologyRepoEntry;
 
 import java.util.Collection;
 import java.util.List;
@@ -12,40 +12,25 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link OntologyManagerModel.OntologyEntry} object.
+ * This is the item provider adapter for a {@link OntologyManagerModel.OntologyRepoEntry} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class OntologyEntryItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class OntologyRepoEntryItemProvider extends OntologyEntryItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OntologyEntryItemProvider(AdapterFactory adapterFactory) {
+	public OntologyRepoEntryItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,27 +45,27 @@ public class OntologyEntryItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPathPropertyDescriptor(object);
-			addFilePropertyDescriptor(object);
-			addMaintenanceFilePropertyDescriptor(object);
+			addRepoURLPropertyDescriptor(object);
+			addGitServerUsernamePropertyDescriptor(object);
+			addGitServerPasswordPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Path feature.
+	 * This adds a property descriptor for the Repo URL feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPathPropertyDescriptor(Object object) {
+	protected void addRepoURLPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_OntologyEntry_path_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OntologyEntry_path_feature", "_UI_OntologyEntry_type"),
-				 OntologyManagerModelPackage.Literals.ONTOLOGY_ENTRY__PATH,
+				 getString("_UI_OntologyRepoEntry_repoURL_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OntologyRepoEntry_repoURL_feature", "_UI_OntologyRepoEntry_type"),
+				 OntologyManagerModelPackage.Literals.ONTOLOGY_REPO_ENTRY__REPO_URL,
 				 true,
 				 false,
 				 false,
@@ -90,19 +75,19 @@ public class OntologyEntryItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the File feature.
+	 * This adds a property descriptor for the Git Server Username feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFilePropertyDescriptor(Object object) {
+	protected void addGitServerUsernamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_OntologyEntry_file_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OntologyEntry_file_feature", "_UI_OntologyEntry_type"),
-				 OntologyManagerModelPackage.Literals.ONTOLOGY_ENTRY__FILE,
+				 getString("_UI_OntologyRepoEntry_gitServerUsername_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OntologyRepoEntry_gitServerUsername_feature", "_UI_OntologyRepoEntry_type"),
+				 OntologyManagerModelPackage.Literals.ONTOLOGY_REPO_ENTRY__GIT_SERVER_USERNAME,
 				 true,
 				 false,
 				 false,
@@ -112,19 +97,19 @@ public class OntologyEntryItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Maintenance File feature.
+	 * This adds a property descriptor for the Git Server Password feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMaintenanceFilePropertyDescriptor(Object object) {
+	protected void addGitServerPasswordPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_OntologyEntry_maintenanceFile_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OntologyEntry_maintenanceFile_feature", "_UI_OntologyEntry_type"),
-				 OntologyManagerModelPackage.Literals.ONTOLOGY_ENTRY__MAINTENANCE_FILE,
+				 getString("_UI_OntologyRepoEntry_gitServerPassword_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OntologyRepoEntry_gitServerPassword_feature", "_UI_OntologyRepoEntry_type"),
+				 OntologyManagerModelPackage.Literals.ONTOLOGY_REPO_ENTRY__GIT_SERVER_PASSWORD,
 				 true,
 				 false,
 				 false,
@@ -134,14 +119,14 @@ public class OntologyEntryItemProvider
 	}
 
 	/**
-	 * This returns OntologyEntry.gif.
+	 * This returns OntologyRepoEntry.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/OntologyEntry"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/OntologyRepoEntry"));
 	}
 
 	/**
@@ -152,10 +137,10 @@ public class OntologyEntryItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((OntologyEntry)object).getPath();
+		String label = ((OntologyRepoEntry)object).getGitServerUsername();
 		return label == null || label.length() == 0 ?
-			getString("_UI_OntologyEntry_type") :
-			getString("_UI_OntologyEntry_type") + " " + label;
+			getString("_UI_OntologyRepoEntry_type") :
+			getString("_UI_OntologyRepoEntry_type") + " " + label;
 	}
 	
 
@@ -170,10 +155,10 @@ public class OntologyEntryItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(OntologyEntry.class)) {
-			case OntologyManagerModelPackage.ONTOLOGY_ENTRY__PATH:
-			case OntologyManagerModelPackage.ONTOLOGY_ENTRY__FILE:
-			case OntologyManagerModelPackage.ONTOLOGY_ENTRY__MAINTENANCE_FILE:
+		switch (notification.getFeatureID(OntologyRepoEntry.class)) {
+			case OntologyManagerModelPackage.ONTOLOGY_REPO_ENTRY__REPO_URL:
+			case OntologyManagerModelPackage.ONTOLOGY_REPO_ENTRY__GIT_SERVER_USERNAME:
+			case OntologyManagerModelPackage.ONTOLOGY_REPO_ENTRY__GIT_SERVER_PASSWORD:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -190,17 +175,6 @@ public class OntologyEntryItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return OntologyManagerModelEditPlugin.INSTANCE;
 	}
 
 }

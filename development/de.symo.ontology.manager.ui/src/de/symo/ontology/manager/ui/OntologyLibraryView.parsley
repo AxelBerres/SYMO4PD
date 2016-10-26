@@ -1,0 +1,79 @@
+import OntologyManagerModel.Library
+import OntologyManagerModel.OntologyEntry
+import OntologyManagerModel.OntologyManagerModelFactory
+import OntologyManagerModel.OntologyRepoEntry
+import de.symo.ontology.manager.ui.OntologyLibraryView
+import java.util.Date
+import org.eclipse.swt.SWT
+
+/* de.symo.ontology.manager.ui Emf Parsley Dsl Module file */
+module de.symo.ontology.manager.ui {
+	
+	parts {
+		viewpart de.symo.ontology.manager.ui {
+			viewname "Ontology Library"
+			viewclass OntologyLibraryView
+			viewcategory de.symo.ontology.manager.ui
+		}
+	}
+	
+	bindings {
+		value int TreeFormSashStyle -> SWT.HORIZONTAL
+	}
+	
+	resourceManager {
+		initializeResource {
+			val l = OntologyManagerModelFactory.eINSTANCE.createLibrary
+			l.creationDate = new Date()
+			
+			it.getContents += l
+		}
+	}
+	
+	featuresProvider {
+		features {
+			Library -> owner, creationDate
+			OntologyEntry -> path, file, maintenanceFile
+			OntologyRepoEntry -> path, file, maintenanceFile, repoURL, gitServerUsername, gitServerPassword
+		}
+	}
+	
+	labelProvider {
+		text {
+			Library -> "Listed Ontologies"
+			OntologyEntry e -> e.file
+			OntologyRepoEntry e -> e.file
+		}
+		image {
+			Library -> "OntologyLibrary_16.png"
+			OntologyEntry -> "OntologyLocal_16.png"
+			OntologyRepoEntry -> "OntologyRepository_16.png"
+		}
+	}
+	
+	featureCaptionProvider {
+		text {
+			Library : owner -> "Owner: "
+			Library : creationDate -> "Created on: "
+			
+			OntologyEntry : path -> "Path: "
+			OntologyEntry : file -> "File: "
+			OntologyEntry : maintenanceFile -> "Maintenance Ontology: "
+			
+			OntologyRepoEntry : path -> "Path: "
+			OntologyRepoEntry : file -> "File: "
+			OntologyRepoEntry : maintenanceFile -> "Maintenance Ontology: "
+			OntologyRepoEntry : repoURL -> "Git Repository URL: "
+			OntologyRepoEntry : gitServerUsername -> "Username: "
+			OntologyRepoEntry : gitServerPassword -> "Password: "
+		}
+	}
+	
+	formControlFactory {
+		control {
+			Library : owner -> { createText(parent, SWT.READ_ONLY) } target { observeText }
+			Library : creationDate -> { createText(parent, SWT.READ_ONLY) } target { observeText }
+			OntologyRepoEntry : gitServerPassword -> { createText(parent, SWT.PASSWORD) } target { observeText }
+		}
+	}
+}

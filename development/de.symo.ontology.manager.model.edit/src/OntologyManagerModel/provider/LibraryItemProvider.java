@@ -80,8 +80,8 @@ public class LibraryItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Library_Owner_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Library_Owner_feature", "_UI_Library_type"),
+				 getString("_UI_Library_owner_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Library_owner_feature", "_UI_Library_type"),
 				 OntologyManagerModelPackage.Literals.LIBRARY__OWNER,
 				 true,
 				 false,
@@ -102,8 +102,8 @@ public class LibraryItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Library_CreationDate_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Library_CreationDate_feature", "_UI_Library_type"),
+				 getString("_UI_Library_creationDate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Library_creationDate_feature", "_UI_Library_type"),
 				 OntologyManagerModelPackage.Literals.LIBRARY__CREATION_DATE,
 				 true,
 				 false,
@@ -207,6 +207,11 @@ public class LibraryItemProvider
 			(createChildParameter
 				(OntologyManagerModelPackage.Literals.LIBRARY__ONTOLOGY_ENTRIES,
 				 OntologyManagerModelFactory.eINSTANCE.createOntologyEntry()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OntologyManagerModelPackage.Literals.LIBRARY__ONTOLOGY_ENTRIES,
+				 OntologyManagerModelFactory.eINSTANCE.createOntologyRepoEntry()));
 	}
 
 	/**
