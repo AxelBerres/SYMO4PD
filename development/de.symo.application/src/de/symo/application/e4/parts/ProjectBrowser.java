@@ -5,6 +5,7 @@ import java.net.URL;
 
 import javax.annotation.PostConstruct;
 
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.e4.core.contexts.IEclipseContext;
@@ -31,11 +32,10 @@ public class ProjectBrowser {
 	private static File projectRoot;
 	private static TreeViewer viewer;
 
-	private static String projectBase = "D:\\tmp\\SYMO4PD\\projects\\";
+	private static String projectBase = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString();
 
 	@PostConstruct
 	public void createControls(Composite parent, IEclipseContext ctx, EMenuService menuService) {
-
 		projectRoot = new File(projectBase);
 		
 		viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);

@@ -23,12 +23,13 @@
       <plugin id="de.symo.application"/>
       <plugin id="de.symo.model"/>
       <plugin id="de.symo.model.edit"/>
-      <plugin id="de.symo.ontology.manager.model"/>
-      <plugin id="de.symo.ontology.manager.ui"/>
       <plugin id="javaewah"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
       <plugin id="javax.xml"/>
+      <plugin id="oida.ontology.manager.model"/>
+      <plugin id="oida.ontology.manager.model.edit"/>
+      <plugin id="oida.ontology.manager.ui"/>
       <plugin id="org.apache.batik.css"/>
       <plugin id="org.apache.batik.util"/>
       <plugin id="org.apache.batik.util.gui"/>
@@ -125,6 +126,7 @@
       <plugin id="org.eclipse.emf.emfstore.server.model.edit"/>
       <plugin id="org.eclipse.emf.parsley"/>
       <plugin id="org.eclipse.emf.parsley.common"/>
+      <plugin id="org.eclipse.emf.parsley.examples.eclipse4.parsleypart"/>
       <plugin id="org.eclipse.emf.parsley.runtime"/>
       <plugin id="org.eclipse.emf.parsley.runtime.common"/>
       <plugin id="org.eclipse.emf.parsley.views"/>

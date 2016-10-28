@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_6wlLcMgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.application" bindingContexts="_6wlLecgZEeSyMNYR5xypkQ">
   <children xsi:type="basic:TrimmedWindow" xmi:id="_6wlLccgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.window.main" label="SYMO4PD" iconURI="platform:/plugin/de.symo.application/icons/symo4pd_16.png" width="1600" height="1000">
-    <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.ide.perspectivestack" selectedElement="_17D2UH8yEeagldnMi4Rzjg">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.ide.perspectivestack" selectedElement="_2SHrcH8yEeagldnMi4Rzjg">
       <children xsi:type="advanced:Perspective" xmi:id="_6wlLkcgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.perspective.sample" label="Projects">
         <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="de.symo.application.partsashcontainer.projects" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="de.symo.application.partstack.projects.left" containerData="25">
@@ -52,7 +52,15 @@
           <children xsi:type="basic:PartStack" xmi:id="_najn4IC_Eea_QKNEvJua0A" elementId="de.symo.application.partstack.modelling.right" containerData="20"/>
         </children>
       </children>
-      <children xsi:type="advanced:Perspective" xmi:id="_2SHrcH8yEeagldnMi4Rzjg" elementId="de.symo.application.perspective.knowledgeediting" label="Knowledge Editing"/>
+      <children xsi:type="advanced:Perspective" xmi:id="_2SHrcH8yEeagldnMi4Rzjg" elementId="de.symo.application.perspective.knowledgemanagement" label="Knowledge Management">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_I-8_8Jq8EeaelOAnCMy4mw" elementId="de.symo.application.partsashcontainer.2" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_GHPPIJrAEeaelOAnCMy4mw" elementId="de.symo.application.partsashcontainer.3" containerData="60">
+            <children xsi:type="basic:PartStack" xmi:id="_KSRB8Jq8EeaelOAnCMy4mw" elementId="de.symo.application.partstack.knowledgemangement.lefttop" containerData="50"/>
+            <children xsi:type="basic:PartStack" xmi:id="_Klm0sJq8EeaelOAnCMy4mw" elementId="de.symo.application.partstack.1" containerData="50"/>
+          </children>
+          <children xsi:type="basic:PartStack" xmi:id="_K7oIAJq8EeaelOAnCMy4mw" elementId="de.symo.application.partstack.2" containerData="40"/>
+        </children>
+      </children>
     </children>
     <handlers xmi:id="__KqL4Je8EeamRpv6HrtgRg" elementId="de.symo.application.handler.2"/>
     <mainMenu xmi:id="_6wlLicgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.menu">
