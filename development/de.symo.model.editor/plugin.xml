@@ -16,76 +16,6 @@
             contributorClass="de.symo.model.base.presentation.BaseActionBarContributor">
       </editor>
    </extension>
-   <extension
-         point="org.eclipse.core.runtime.applications"
-         id="SYMOEditorAdvisorApplication">
-      <!-- @generated symo -->
-      <application>
-         <run class="de.symo.model.base.provider.SYMOEditorAdvisor$Application"/>
-      </application>
-   </extension>
-
-
-   <extension point="org.eclipse.ui.perspectives">
-      <!-- @generated symo -->
-      <perspective
-            name="%_UI_Perspective_label"
-            class="de.symo.model.base.provider.SYMOEditorAdvisor$Perspective"
-            id="de.symo.model.base.provider.SYMOEditorAdvisorPerspective">
-      </perspective>
-   </extension>
-
-   <extension point="org.eclipse.ui.commands">
-      <!-- @generated symo -->
-      <command
-            name="%_UI_Menu_OpenURI_label"
-            description="%_UI_Menu_OpenURI_description"
-            categoryId="org.eclipse.ui.category.file"
-            id="de.symo.model.base.provider.SYMOEditorAdvisorOpenURICommand"/>
-      <command
-            name="%_UI_Menu_Open_label"
-            description="%_UI_Menu_Open_description"
-            categoryId="org.eclipse.ui.category.file"
-            id="de.symo.model.base.provider.SYMOEditorAdvisorOpenCommand"/>
-   </extension>
-
-   <extension point="org.eclipse.ui.bindings">
-      <!-- @generated symo -->
-      <key
-            commandId="de.symo.model.base.provider.SYMOEditorAdvisorOpenURICommand"
-            sequence="M1+U"
-            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
-      <key
-            commandId="de.symo.model.base.provider.SYMOEditorAdvisorOpenCommand"
-            sequence="M1+O"
-            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
-   </extension>
-
-   <extension point="org.eclipse.ui.actionSets">
-      <!-- @generated symo -->
-      <actionSet
-            label="%_UI_SYMOEditorAdvisor_ActionSet_label"
-            visible="true"
-            id="SYMOEditorAdvisorActionSet">
-         <action
-               label="%_UI_Menu_About_label"
-               class="de.symo.model.base.provider.SYMOEditorAdvisor$AboutAction"
-               menubarPath="help/additions"
-               id="de.symo.model.base.provider.SYMOEditorAdvisorAboutAction"/>
-         <action
-               label="%_UI_Menu_OpenURI_label"
-               definitionId="de.symo.model.base.provider.SYMOEditorAdvisorOpenURICommand"
-               class="de.symo.model.base.provider.SYMOEditorAdvisor$OpenURIAction"
-               menubarPath="file/additions"
-               id="de.symo.model.base.provider.SYMOEditorAdvisorOpenURIAction"/>
-         <action
-               label="%_UI_Menu_Open_label"
-               definitionId="de.symo.model.base.provider.SYMOEditorAdvisorOpenCommand"
-               class="de.symo.model.base.provider.SYMOEditorAdvisor$OpenAction"
-               menubarPath="file/additions"
-               id="de.symo.model.base.provider.SYMOEditorAdvisorOpenAction"/>
-      </actionSet>
-   </extension>
    <extension point="org.eclipse.ui.editors">
       <!-- @generated symo -->
       <editor
@@ -96,20 +26,6 @@
             class="de.symo.model.element.presentation.ElementEditor"
             contributorClass="de.symo.model.element.presentation.ElementActionBarContributor">
       </editor>
-   </extension>
-
-   <extension point="org.eclipse.ui.actionSets">
-      <!-- @generated symo -->
-      <actionSet
-            label="%_UI_RegistryModelWizard_ActionSet_label"
-            visible="true"
-            id="de.symo.model.registry.presentation.RegistryActionBarContributorActionSet">
-         <action
-               label="%_UI_RegistryModelWizard_label"
-               class="de.symo.model.registry.presentation.RegistryActionBarContributor$NewAction"
-               menubarPath="file/new/additions"
-               id="de.symo.model.registry.presentation.RegistryActionBarContributorNewAction"/>
-      </actionSet>
    </extension>
 
    <extension point="org.eclipse.ui.newWizards">
@@ -140,18 +56,20 @@
       </editor>
    </extension>
 
-   <extension point="org.eclipse.ui.actionSets">
+   <extension point="org.eclipse.ui.newWizards">
       <!-- @generated symo -->
-      <actionSet
-            label="%_UI_UsecaseModelWizard_ActionSet_label"
-            visible="true"
-            id="de.symo.model.usecase.presentation.UsecaseActionBarContributorActionSet">
-         <action
-               label="%_UI_UsecaseModelWizard_label"
-               class="de.symo.model.usecase.presentation.UsecaseActionBarContributor$NewAction"
-               menubarPath="file/new/additions"
-               id="de.symo.model.usecase.presentation.UsecaseActionBarContributorNewAction"/>
-      </actionSet>
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.symo.model.usecase.presentation.UsecaseModelWizardID"
+            name="%_UI_UsecaseModelWizard_label"
+            class="de.symo.model.usecase.presentation.UsecaseModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UsecaseModelFile.gif">
+         <description>%_UI_UsecaseModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
    </extension>
 
    <extension point="org.eclipse.ui.editors">
@@ -166,18 +84,20 @@
       </editor>
    </extension>
 
-   <extension point="org.eclipse.ui.actionSets">
+   <extension point="org.eclipse.ui.newWizards">
       <!-- @generated symo -->
-      <actionSet
-            label="%_UI_SymoModelWizard_ActionSet_label"
-            visible="true"
-            id="de.symo.model.symo.presentation.SymoActionBarContributorActionSet">
-         <action
-               label="%_UI_SymoModelWizard_label"
-               class="de.symo.model.symo.presentation.SymoActionBarContributor$NewAction"
-               menubarPath="file/new/additions"
-               id="de.symo.model.symo.presentation.SymoActionBarContributorNewAction"/>
-      </actionSet>
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.symo.model.symo.presentation.SymoModelWizardID"
+            name="%_UI_SymoModelWizard_label"
+            class="de.symo.model.symo.presentation.SymoModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SymoModelFile.gif">
+         <description>%_UI_SymoModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
    </extension>
 
    <extension point="org.eclipse.ui.editors">

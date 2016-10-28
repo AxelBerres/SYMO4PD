@@ -40,6 +40,7 @@
                 <children xsi:type="menu:HandledMenuItem" xmi:id="_c1wWwJoSEeKJoJcmiy2C6w" elementId="org.eclipse.emf.ecp.e4.application.handledmenuitem.project.newModelElement" label="New Model Element" iconURI="platform:/plugin/de.symo.application/icons/modelelement_add.gif" command="_StwzEJoSEeKJoJcmiy2C6w"/>
                 <children xsi:type="menu:HandledMenuItem" xmi:id="_ZEtI8H3NEeOH4sahiLvWWw" elementId="org.eclipse.emf.ecp.e4.application.handledmenuitem.import" label="Import Child" command="_Q7bUsH3NEeOH4sahiLvWWw"/>
                 <children xsi:type="menu:HandledMenuItem" xmi:id="_n6kRUH3KEeOH4sahiLvWWw" elementId="org.eclipse.emf.ecp.e4.application.handledmenuitem.export" label="Export" iconURI="platform:/plugin/de.symo.application/icons/database_go.png" command="_AbdpsH3KEeOH4sahiLvWWw"/>
+                <children xsi:type="menu:HandledMenuItem" xmi:id="_uF9-AJfLEeamRpv6HrtgRg" elementId="de.symo.application.handledmenuitem.referenceobject" label="Reference Object" command="_JkcsYJfMEeamRpv6HrtgRg"/>
               </menus>
               <toolbar xmi:id="_uWMcwJoUEeKJoJcmiy2C6w" elementId="org.eclipse.emf.ecp.e4.application.toolbar.0">
                 <children xsi:type="menu:HandledToolItem" xmi:id="_W0NKYHq2EeOKPMuLiPS6LA" elementId="org.eclipse.emf.ecp.application.e4.handledtoolitem.0" label="Save Project" iconURI="platform:/plugin/de.symo.application/icons/save_edit.png" command="_FrvNkHq2EeOKPMuLiPS6LA"/>
@@ -53,6 +54,7 @@
       </children>
       <children xsi:type="advanced:Perspective" xmi:id="_2SHrcH8yEeagldnMi4Rzjg" elementId="de.symo.application.perspective.knowledgeediting" label="Knowledge Editing"/>
     </children>
+    <handlers xmi:id="__KqL4Je8EeamRpv6HrtgRg" elementId="de.symo.application.handler.2"/>
     <mainMenu xmi:id="_6wlLicgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.menu">
       <children xsi:type="menu:Menu" xmi:id="_6wlLisgZEeSyMNYR5xypkQ" elementId="file" label="File">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_FTrGwI7kEeaDgdc5FdvuVQ" elementId="de.symo.application.handledmenuitem.new" label="New" command="_nOBTEI7pEeaDgdc5FdvuVQ"/>
@@ -118,6 +120,7 @@
   <commands xmi:id="_6cZm0JCGEea8nfDNys_Bag" elementId="de.symo.application.command.exit" commandName="Exit"/>
   <commands xmi:id="_X5N_QJCJEea8nfDNys_Bag" elementId="de.symo.application.command.setprojectroot" commandName="SetProjectRoot"/>
   <commands xmi:id="_zbLYEJCMEeaUgaWBETksnQ" elementId="de.symo.application.command.entferneProject" commandName="Entferne Projekt"/>
+  <commands xmi:id="_JkcsYJfMEeamRpv6HrtgRg" elementId="de.symo.application.command.referenceObject" commandName="ReferenceObject"/>
   <addons xmi:id="_6wlLcsgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_6wlLc8gZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_6wlLdMgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
