@@ -64,7 +64,12 @@ public class ProjectBrowser {
 				TreeViewer viewer = (TreeViewer) event.getViewer();
 				IStructuredSelection thisSelection = (IStructuredSelection) event.getSelection();
 				Object selectedNode = thisSelection.getFirstElement();
-				viewer.setExpandedState(selectedNode, !viewer.getExpandedState(selectedNode));
+			
+				if (selectedNode instanceof File) {
+					if(((File) selectedNode).isDirectory() == true) {
+						viewer.setExpandedState(selectedNode, !viewer.getExpandedState(selectedNode));						
+					}
+				}
 			}
 		});
 		
