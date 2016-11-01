@@ -64,10 +64,13 @@ public class ProjectBrowser {
 				TreeViewer viewer = (TreeViewer) event.getViewer();
 				IStructuredSelection thisSelection = (IStructuredSelection) event.getSelection();
 				Object selectedNode = thisSelection.getFirstElement();
-			
 				if (selectedNode instanceof File) {
-					if(((File) selectedNode).isDirectory() == true) {
+					File file = (File) selectedNode;
+					if(file.isDirectory() == true) {
 						viewer.setExpandedState(selectedNode, !viewer.getExpandedState(selectedNode));						
+					} else {
+						// ToDo open registered editor
+						System.out.println("Try to open " + file.getName());
 					}
 				}
 			}

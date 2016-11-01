@@ -24,7 +24,5 @@ public class ReferenceObjectHandler {
 	public void execute(@Named(IServiceConstants.ACTIVE_SELECTION)
   	@Optional Object selection) {
 		EObject selectedEObject=(EObject) selection;
-		
 	}
-
 }

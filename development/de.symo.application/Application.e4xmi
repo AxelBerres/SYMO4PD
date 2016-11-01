@@ -3,12 +3,14 @@
   <children xsi:type="basic:TrimmedWindow" xmi:id="_6wlLccgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.window.main" label="SYMO4PD" iconURI="platform:/plugin/de.symo.application/icons/symo4pd_16.png" width="1600" height="1000">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.ide.perspectivestack" selectedElement="_2SHrcH8yEeagldnMi4Rzjg">
       <children xsi:type="advanced:Perspective" xmi:id="_6wlLkcgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.perspective.sample" label="Projects">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="de.symo.application.partsashcontainer.projects" horizontal="true">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="de.symo.application.partsashcontainer.projects" containerData="" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="de.symo.application.partstack.projects.left" containerData="25">
             <children xsi:type="basic:Part" xmi:id="_14dRcH82EeawkbqY0vmJFQ" elementId="de.symo.application.part.projectbrowser" contributionURI="bundleclass://de.symo.application/de.symo.application.e4.parts.ProjectBrowser" label="Project Browser" iconURI="platform:/plugin/de.symo.application/icons/project_16.png">
               <handlers xmi:id="_jPvLkJCJEea8nfDNys_Bag" elementId="de.symo.application.handler.0" contributionURI="bundleclass://de.symo.application/de.symo.application.e4.parts.projectbrowser.commands.SetProjectsRootHandler" command="_X5N_QJCJEea8nfDNys_Bag"/>
               <handlers xmi:id="_4YJoYJCMEeaUgaWBETksnQ" elementId="de.symo.application.handler.1" contributionURI="bundleclass://de.symo.application/de.symo.application.e4.parts.projectbrowser.commands.DeleteProjectHandler" command="_zbLYEJCMEeaUgaWBETksnQ"/>
               <menus xsi:type="menu:PopupMenu" xmi:id="_6xO9cJB9Eea8nfDNys_Bag" elementId="de.symo.application.popupmenu.0">
+                <children xsi:type="menu:HandledMenuItem" xmi:id="_tuppgKA3Eea8ErhzIPv9Xg" elementId="de.symo.application.projectbrowser.popup.handledmenuitem.newProject" label="New" iconURI="platform:/plugin/de.symo.application/icons/project_new.gif" command="_nOBTEI7pEeaDgdc5FdvuVQ"/>
+                <children xsi:type="menu:HandledMenuItem" xmi:id="_NX4kQKA8Eea8ErhzIPv9Xg" elementId="de.symo.application.projectbrowser.popup.handledmenuitem.newFolder" label="New Folder" command="_1B7tEKA7Eea8ErhzIPv9Xg"/>
                 <children xsi:type="menu:HandledMenuItem" xmi:id="_CKGWgJCAEea8nfDNys_Bag" elementId="de.symo.application.handledmenuitem.delete" label="Delete" iconURI="platform:/plugin/de.symo.application/icons/delete.gif" command="_W9PdAJB6Eea8nfDNys_Bag"/>
               </menus>
               <toolbar xmi:id="_TXPB0JCJEea8nfDNys_Bag" elementId="de.symo.application.toolbar.0">
@@ -18,8 +20,8 @@
             </children>
           </children>
           <children xsi:type="basic:PartSashContainer" xmi:id="_xDQiYI6zEeafcrpaRNwdWQ" elementId="de.symo.application.partsashcontainer.1" containerData="75">
-            <children xsi:type="basic:PartStack" xmi:id="_Wc688I6zEeafcrpaRNwdWQ" elementId="de.symo.application.partstack.projects.editors"/>
-            <children xsi:type="basic:PartStack" xmi:id="_XROuwI6zEeafcrpaRNwdWQ" elementId="de.symo.application.partstack.projects.button"/>
+            <children xsi:type="basic:PartStack" xmi:id="_Wc688I6zEeafcrpaRNwdWQ" elementId="de.symo.application.partstack.projects.editors" containerData="75"/>
+            <children xsi:type="basic:PartStack" xmi:id="_XROuwI6zEeafcrpaRNwdWQ" elementId="de.symo.application.partstack.projects.button" containerData="25"/>
           </children>
         </children>
       </children>
@@ -62,7 +64,6 @@
         </children>
       </children>
     </children>
-    <handlers xmi:id="__KqL4Je8EeamRpv6HrtgRg" elementId="de.symo.application.handler.2"/>
     <mainMenu xmi:id="_6wlLicgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.menu">
       <children xsi:type="menu:Menu" xmi:id="_6wlLisgZEeSyMNYR5xypkQ" elementId="file" label="File">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_FTrGwI7kEeaDgdc5FdvuVQ" elementId="de.symo.application.handledmenuitem.new" label="New" command="_nOBTEI7pEeaDgdc5FdvuVQ"/>
@@ -100,7 +101,9 @@
   <handlers xmi:id="_DlNB0H3KEeOH4sahiLvWWw" elementId="org.eclipse.emf.ecp.application.e4.handler.0" contributionURI="bundleclass://org.eclipse.emf.ecp.ui.e4/org.eclipse.emf.ecp.ui.e4.handlers.ExportHandler" command="_AbdpsH3KEeOH4sahiLvWWw"/>
   <handlers xmi:id="_UOExMH3NEeOH4sahiLvWWw" elementId="org.eclipse.emf.ecp.e4.application.handler.import" contributionURI="bundleclass://org.eclipse.emf.ecp.ui.e4/org.eclipse.emf.ecp.ui.e4.handlers.ImportHandler" command="_Q7bUsH3NEeOH4sahiLvWWw"/>
   <handlers xmi:id="_wf_0wI7pEeaDgdc5FdvuVQ" elementId="de.symo.application.command.e4.parts.projectbrowser.newProject" contributionURI="bundleclass://de.symo.application/de.symo.application.e4.parts.projectbrowser.commands.NewProjectHandler" command="_nOBTEI7pEeaDgdc5FdvuVQ"/>
+  <handlers xmi:id="_OGWbgKA2Eea8ErhzIPv9Xg" elementId="de.symo.application.command.e4.parts.projectbrowser.deleteProject" contributionURI="bundleclass://de.symo.application/de.symo.application.e4.parts.projectbrowser.commands.DeleteProjectHandler" command="_zbLYEJCMEeaUgaWBETksnQ"/>
   <handlers xmi:id="_-5ePEJCGEea8nfDNys_Bag" elementId="de.symo.application.handler.exit" contributionURI="bundleclass://de.symo.application/de.symo.application.commands.ExitHandler" command="_6cZm0JCGEea8nfDNys_Bag"/>
+  <handlers xmi:id="_7Ma5YKA7Eea8ErhzIPv9Xg" elementId="de.symo.application.command.e4.parts.projectbrowser.newFolder" contributionURI="bundleclass://de.symo.application/de.symo.application.e4.parts.projectbrowser.commands.NewFolderHandler" command="_1B7tEKA7Eea8ErhzIPv9Xg"/>
   <bindingTables xmi:id="_6wlLfsgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.bindingtable" bindingContext="_6wlLecgZEeSyMNYR5xypkQ">
     <bindings xmi:id="_6wlLf8gZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.keybinding.m1q" keySequence="M1+Q"/>
     <bindings xmi:id="_6wlLgsgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.keybinding.m1o" keySequence="M1+O"/>
@@ -127,8 +130,9 @@
   <commands xmi:id="_W9PdAJB6Eea8nfDNys_Bag" elementId="de.symo.application.command.e4.parts.projectbrowser.removeProject" commandName="Remove Project"/>
   <commands xmi:id="_6cZm0JCGEea8nfDNys_Bag" elementId="de.symo.application.command.exit" commandName="Exit"/>
   <commands xmi:id="_X5N_QJCJEea8nfDNys_Bag" elementId="de.symo.application.command.setprojectroot" commandName="SetProjectRoot"/>
-  <commands xmi:id="_zbLYEJCMEeaUgaWBETksnQ" elementId="de.symo.application.command.entferneProject" commandName="Entferne Projekt"/>
+  <commands xmi:id="_zbLYEJCMEeaUgaWBETksnQ" elementId="de.symo.application.command.entferneProject" commandName="Remove Projekt"/>
   <commands xmi:id="_JkcsYJfMEeamRpv6HrtgRg" elementId="de.symo.application.command.referenceObject" commandName="ReferenceObject"/>
+  <commands xmi:id="_1B7tEKA7Eea8ErhzIPv9Xg" elementId="de.symo.application.command.e4.parts.projectbrowser.newFolder" commandName="New Folder"/>
   <addons xmi:id="_6wlLcsgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_6wlLc8gZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_6wlLdMgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
