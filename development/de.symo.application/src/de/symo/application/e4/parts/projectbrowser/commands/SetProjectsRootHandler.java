@@ -19,6 +19,7 @@ public class SetProjectsRootHandler {
 		// open dialog
 		Shell shell = new Shell(SWT.SHELL_TRIM);		
 		DirectoryDialog dialog = new DirectoryDialog(shell);
+		dialog.setFilterPath("d:\\tmp\\SYMO4PD\\");
         String path = dialog.open();
 
         // check given path

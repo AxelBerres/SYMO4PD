@@ -35,7 +35,7 @@ public class NewProjectHandler {
 			}
 		}
 		
-		ProjectBrowser.refresh();		
+//		ProjectBrowser.refresh();		
 	}
 
 	private void createDefaultProject(final String projectName) {

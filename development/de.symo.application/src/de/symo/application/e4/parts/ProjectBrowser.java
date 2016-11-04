@@ -4,6 +4,8 @@ import java.io.File;
 import java.net.URL;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.inject.Inject;
 
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.FileLocator;
@@ -11,10 +13,13 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.services.EMenuService;
+import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -34,10 +39,19 @@ public class ProjectBrowser {
 
 	private static String projectBase = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString();
 
+	private RootDirWatcher watcher; 
+	
+	
+	@Inject
+	private ESelectionService selectionService;
+
 	@PostConstruct
 	public void createControls(Composite parent, IEclipseContext ctx, EMenuService menuService) {
+
 		projectRoot = new File(projectBase);
-		
+		watcher = new RootDirWatcher(this);
+		(new Thread(watcher)).start();
+
 		viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
 		viewer.setContentProvider(new ViewContentProvider());
 		viewer.setLabelProvider(new ViewLabelProvider(createImageDescriptor()));
@@ -75,8 +89,19 @@ public class ProjectBrowser {
 				}
 			}
 		});
-		
+
+		// add context menu
 		menuService.registerContextMenu(tree,POPUPMENU);		
+
+		// attach a selection listener to our jface viewer
+		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
+			public void selectionChanged(SelectionChangedEvent event) {
+				IStructuredSelection selection = (IStructuredSelection) event.getSelection();
+				// set the selection to the service
+				selectionService.setSelection(
+						selection.size() == 1 ? selection.getFirstElement() : selection.toArray());
+			}
+		});
 	}
 
 	private ImageDescriptor createImageDescriptor() {
@@ -93,7 +118,7 @@ public class ProjectBrowser {
 	public static File getProjectRoot() {
 		return projectRoot;
 	}
-	
+
 	public static void refresh() {
 		viewer.refresh();
 	}
@@ -102,5 +127,10 @@ public class ProjectBrowser {
 		projectRoot = new File(fileName);
 		viewer.setInput(projectRoot);
 		viewer.refresh();		
+	}
+	
+	@PreDestroy
+	public void destroy () {
+		watcher.exit();
 	}
 }

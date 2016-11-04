@@ -11,7 +11,10 @@
               <menus xsi:type="menu:PopupMenu" xmi:id="_6xO9cJB9Eea8nfDNys_Bag" elementId="de.symo.application.popupmenu.0">
                 <children xsi:type="menu:HandledMenuItem" xmi:id="_tuppgKA3Eea8ErhzIPv9Xg" elementId="de.symo.application.projectbrowser.popup.handledmenuitem.newProject" label="New" iconURI="platform:/plugin/de.symo.application/icons/project_new.gif" command="_nOBTEI7pEeaDgdc5FdvuVQ"/>
                 <children xsi:type="menu:HandledMenuItem" xmi:id="_NX4kQKA8Eea8ErhzIPv9Xg" elementId="de.symo.application.projectbrowser.popup.handledmenuitem.newFolder" label="New Folder" command="_1B7tEKA7Eea8ErhzIPv9Xg"/>
-                <children xsi:type="menu:HandledMenuItem" xmi:id="_CKGWgJCAEea8nfDNys_Bag" elementId="de.symo.application.handledmenuitem.delete" label="Delete" iconURI="platform:/plugin/de.symo.application/icons/delete.gif" command="_W9PdAJB6Eea8nfDNys_Bag"/>
+                <children xsi:type="menu:MenuSeparator" xmi:id="_4xppQKJuEeaJOK_ATXImlg" elementId="de.symo.application.menuseparator.3"/>
+                <children xsi:type="menu:HandledMenuItem" xmi:id="_5oWAsKJuEeaJOK_ATXImlg" elementId="de.symo.application.projectbrowser.popup.handledmenuitem.openDefaultEditor" label="Open Default" command="_iAmTUKJuEeaJOK_ATXImlg"/>
+                <children xsi:type="menu:MenuSeparator" xmi:id="_HSv7MKJvEeaJOK_ATXImlg" elementId="de.symo.application.menuseparator.4"/>
+                <children xsi:type="menu:HandledMenuItem" xmi:id="_CKGWgJCAEea8nfDNys_Bag" elementId="de.symo.application.handledmenuitem.delete" label="Delete" iconURI="platform:/plugin/de.symo.application/icons/delete.gif" command="_zbLYEJCMEeaUgaWBETksnQ"/>
               </menus>
               <toolbar xmi:id="_TXPB0JCJEea8nfDNys_Bag" elementId="de.symo.application.toolbar.0">
                 <children xsi:type="menu:HandledToolItem" xmi:id="_UpFEMJCJEea8nfDNys_Bag" elementId="de.symo.application.handledtoolitem.setrootdir" label="SetRootDir" iconURI="platform:/plugin/de.symo.application/icons/project_16.png" command="_X5N_QJCJEea8nfDNys_Bag"/>
@@ -104,6 +107,7 @@
   <handlers xmi:id="_OGWbgKA2Eea8ErhzIPv9Xg" elementId="de.symo.application.command.e4.parts.projectbrowser.deleteProject" contributionURI="bundleclass://de.symo.application/de.symo.application.e4.parts.projectbrowser.commands.DeleteProjectHandler" command="_zbLYEJCMEeaUgaWBETksnQ"/>
   <handlers xmi:id="_-5ePEJCGEea8nfDNys_Bag" elementId="de.symo.application.handler.exit" contributionURI="bundleclass://de.symo.application/de.symo.application.commands.ExitHandler" command="_6cZm0JCGEea8nfDNys_Bag"/>
   <handlers xmi:id="_7Ma5YKA7Eea8ErhzIPv9Xg" elementId="de.symo.application.command.e4.parts.projectbrowser.newFolder" contributionURI="bundleclass://de.symo.application/de.symo.application.e4.parts.projectbrowser.commands.NewFolderHandler" command="_1B7tEKA7Eea8ErhzIPv9Xg"/>
+  <handlers xmi:id="_qTG8EKJuEeaJOK_ATXImlg" elementId="de.symo.application.command.e4.parts.projectbrowser.openDefaultEditor" contributionURI="bundleclass://de.symo.application/de.symo.application.e4.parts.projectbrowser.commands.OpenDefaultEditorHandler" command="_iAmTUKJuEeaJOK_ATXImlg"/>
   <bindingTables xmi:id="_6wlLfsgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.bindingtable" bindingContext="_6wlLecgZEeSyMNYR5xypkQ">
     <bindings xmi:id="_6wlLf8gZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.keybinding.m1q" keySequence="M1+Q"/>
     <bindings xmi:id="_6wlLgsgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.keybinding.m1o" keySequence="M1+O"/>
@@ -133,6 +137,7 @@
   <commands xmi:id="_zbLYEJCMEeaUgaWBETksnQ" elementId="de.symo.application.command.entferneProject" commandName="Remove Projekt"/>
   <commands xmi:id="_JkcsYJfMEeamRpv6HrtgRg" elementId="de.symo.application.command.referenceObject" commandName="ReferenceObject"/>
   <commands xmi:id="_1B7tEKA7Eea8ErhzIPv9Xg" elementId="de.symo.application.command.e4.parts.projectbrowser.newFolder" commandName="New Folder"/>
+  <commands xmi:id="_iAmTUKJuEeaJOK_ATXImlg" elementId="de.symo.application.command.e4.parts.projectbrowser.openDefaultEditor" commandName="Open Default"/>
   <addons xmi:id="_6wlLcsgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_6wlLc8gZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_6wlLdMgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
