@@ -4,24 +4,7 @@
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.ide.perspectivestack" selectedElement="_2SHrcH8yEeagldnMi4Rzjg">
       <children xsi:type="advanced:Perspective" xmi:id="_6wlLkcgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.perspective.sample" label="Projects">
         <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="de.symo.application.partsashcontainer.projects" containerData="" horizontal="true">
-          <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="de.symo.application.partstack.projects.left" containerData="25">
-            <children xsi:type="basic:Part" xmi:id="_14dRcH82EeawkbqY0vmJFQ" elementId="de.symo.application.part.projectbrowser" contributionURI="bundleclass://de.symo.application/de.symo.application.e4.parts.ProjectBrowser" label="Project Browser" iconURI="platform:/plugin/de.symo.application/icons/project_16.png">
-              <handlers xmi:id="_jPvLkJCJEea8nfDNys_Bag" elementId="de.symo.application.handler.0" contributionURI="bundleclass://de.symo.application/de.symo.application.e4.parts.projectbrowser.commands.SetProjectsRootHandler" command="_X5N_QJCJEea8nfDNys_Bag"/>
-              <handlers xmi:id="_4YJoYJCMEeaUgaWBETksnQ" elementId="de.symo.application.handler.1" contributionURI="bundleclass://de.symo.application/de.symo.application.e4.parts.projectbrowser.commands.DeleteProjectHandler" command="_zbLYEJCMEeaUgaWBETksnQ"/>
-              <menus xsi:type="menu:PopupMenu" xmi:id="_6xO9cJB9Eea8nfDNys_Bag" elementId="de.symo.application.popupmenu.0">
-                <children xsi:type="menu:HandledMenuItem" xmi:id="_tuppgKA3Eea8ErhzIPv9Xg" elementId="de.symo.application.projectbrowser.popup.handledmenuitem.newProject" label="New" iconURI="platform:/plugin/de.symo.application/icons/project_new.gif" command="_nOBTEI7pEeaDgdc5FdvuVQ"/>
-                <children xsi:type="menu:HandledMenuItem" xmi:id="_NX4kQKA8Eea8ErhzIPv9Xg" elementId="de.symo.application.projectbrowser.popup.handledmenuitem.newFolder" label="New Folder" command="_1B7tEKA7Eea8ErhzIPv9Xg"/>
-                <children xsi:type="menu:MenuSeparator" xmi:id="_4xppQKJuEeaJOK_ATXImlg" elementId="de.symo.application.menuseparator.3"/>
-                <children xsi:type="menu:HandledMenuItem" xmi:id="_5oWAsKJuEeaJOK_ATXImlg" elementId="de.symo.application.projectbrowser.popup.handledmenuitem.openDefaultEditor" label="Open Default" command="_iAmTUKJuEeaJOK_ATXImlg"/>
-                <children xsi:type="menu:MenuSeparator" xmi:id="_HSv7MKJvEeaJOK_ATXImlg" elementId="de.symo.application.menuseparator.4"/>
-                <children xsi:type="menu:HandledMenuItem" xmi:id="_CKGWgJCAEea8nfDNys_Bag" elementId="de.symo.application.handledmenuitem.delete" label="Delete" iconURI="platform:/plugin/de.symo.application/icons/delete.gif" command="_zbLYEJCMEeaUgaWBETksnQ"/>
-              </menus>
-              <toolbar xmi:id="_TXPB0JCJEea8nfDNys_Bag" elementId="de.symo.application.toolbar.0">
-                <children xsi:type="menu:HandledToolItem" xmi:id="_UpFEMJCJEea8nfDNys_Bag" elementId="de.symo.application.handledtoolitem.setrootdir" label="SetRootDir" iconURI="platform:/plugin/de.symo.application/icons/project_16.png" command="_X5N_QJCJEea8nfDNys_Bag"/>
-                <children xsi:type="menu:HandledToolItem" xmi:id="_kwPDEJCLEeaUgaWBETksnQ" elementId="de.symo.application.handledtoolitem.delete" label="Delete" iconURI="platform:/plugin/de.symo.application/icons/delete.gif" command="_zbLYEJCMEeaUgaWBETksnQ"/>
-              </toolbar>
-            </children>
-          </children>
+          <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="de.symo.application.partstack.projects.left" containerData="25"/>
           <children xsi:type="basic:PartSashContainer" xmi:id="_xDQiYI6zEeafcrpaRNwdWQ" elementId="de.symo.application.partsashcontainer.1" containerData="75">
             <children xsi:type="basic:PartStack" xmi:id="_Wc688I6zEeafcrpaRNwdWQ" elementId="de.symo.application.partstack.projects.editors" containerData="75"/>
             <children xsi:type="basic:PartStack" xmi:id="_XROuwI6zEeafcrpaRNwdWQ" elementId="de.symo.application.partstack.projects.button" containerData="25"/>
@@ -59,11 +42,11 @@
       </children>
       <children xsi:type="advanced:Perspective" xmi:id="_2SHrcH8yEeagldnMi4Rzjg" elementId="de.symo.application.perspective.knowledgemanagement" label="Knowledge Management">
         <children xsi:type="basic:PartSashContainer" xmi:id="_I-8_8Jq8EeaelOAnCMy4mw" elementId="de.symo.application.partsashcontainer.2" horizontal="true">
+          <children xsi:type="basic:PartStack" xmi:id="_K7oIAJq8EeaelOAnCMy4mw" elementId="de.symo.application.partstack.2" containerData="40"/>
           <children xsi:type="basic:PartSashContainer" xmi:id="_GHPPIJrAEeaelOAnCMy4mw" elementId="de.symo.application.partsashcontainer.3" containerData="60">
             <children xsi:type="basic:PartStack" xmi:id="_KSRB8Jq8EeaelOAnCMy4mw" elementId="de.symo.application.partstack.knowledgemangement.lefttop" containerData="50"/>
             <children xsi:type="basic:PartStack" xmi:id="_Klm0sJq8EeaelOAnCMy4mw" elementId="de.symo.application.partstack.1" containerData="50"/>
           </children>
-          <children xsi:type="basic:PartStack" xmi:id="_K7oIAJq8EeaelOAnCMy4mw" elementId="de.symo.application.partstack.2" containerData="40"/>
         </children>
       </children>
     </children>

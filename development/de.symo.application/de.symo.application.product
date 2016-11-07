@@ -23,6 +23,7 @@
       <plugin id="de.symo.application"/>
       <plugin id="de.symo.model"/>
       <plugin id="de.symo.model.edit"/>
+      <plugin id="de.symo.projectbrowser.e4"/>
       <plugin id="javaewah"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
@@ -78,7 +79,6 @@
       <plugin id="org.eclipse.e4.ui.workbench"/>
       <plugin id="org.eclipse.e4.ui.workbench.addons.swt"/>
       <plugin id="org.eclipse.e4.ui.workbench.perspectiveswitcher"/>
-      <plugin id="org.eclipse.e4.ui.workbench.projectexplorer"/>
       <plugin id="org.eclipse.e4.ui.workbench.renderers.swt"/>
       <plugin id="org.eclipse.e4.ui.workbench.renderers.swt.cocoa" fragment="true"/>
       <plugin id="org.eclipse.e4.ui.workbench.swt"/>
