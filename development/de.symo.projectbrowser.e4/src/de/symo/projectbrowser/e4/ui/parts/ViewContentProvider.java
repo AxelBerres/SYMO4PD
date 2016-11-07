@@ -1,4 +1,4 @@
-package de.symo.application.e4.parts;
+package de.symo.projectbrowser.e4.ui.parts;
 
 import java.io.File;
 import java.util.Vector;

@@ -1,4 +1,4 @@
-package de.symo.application.e4.parts.projectbrowser.commands;
+package de.symo.projectbrowser.e4.ui.handlers;
 
 import java.awt.Desktop;
 import java.io.File;
@@ -12,7 +12,8 @@ import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.swt.widgets.Shell;
 
-public class OpenDefaultEditorHandler {
+
+public class ProjectOpenWithDefaultHandler {
 
 	@Execute
 	public void execute(@Optional @Named(IServiceConstants.ACTIVE_SELECTION) Object selection, Shell shell) {

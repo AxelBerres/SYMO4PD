@@ -1,4 +1,4 @@
-package de.symo.application.e4.parts.projectbrowser.commands;
+package de.symo.projectbrowser.e4.ui.handlers;
 
 import java.io.File;
 
@@ -12,9 +12,11 @@ import org.eclipse.jface.dialogs.IInputValidator;
 import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.swt.widgets.Shell;
 
-import de.symo.application.e4.parts.projectbrowser.ui.validator.NameValidator;
+import de.symo.projectbrowser.e4.ui.NameValidator;
+import de.symo.projectbrowser.e4.ui.parts.ProjectBrowserPart;
 
-public class NewFolderHandler {
+public class ProjectNewFolderHandler {
+
 
 	@Execute
 	public void execute(@Optional @Named(IServiceConstants.ACTIVE_SELECTION) Object selection, Shell shell) {
@@ -38,6 +40,9 @@ public class NewFolderHandler {
 	    String folderName = id.getValue();
 	    File folder = new File(file, folderName);
 	    folder.mkdir();
+
+		// ### FIXME HACK
+		ProjectBrowserPart.refresh();
 	}
 
 	@CanExecute

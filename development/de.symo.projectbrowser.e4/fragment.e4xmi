@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_QPtTUKTZEea0GYlVIP9ujQ">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_jC53IKTaEea0GYlVIP9ujQ" featurename="commands" parentElementId="de.symo.application.e4.application">
+    <elements xsi:type="commands:Command" xmi:id="_xtbVYKTbEea0GYlVIP9ujQ" elementId="de.symo.projectbrowser.e4.command.project.setroot" commandName="Set Project Root" description="Set the root of the project directory."/>
+    <elements xsi:type="commands:Command" xmi:id="_m1FiwKTvEea0GYlVIP9ujQ" elementId="de.symo.projectbrowser.e4.command.project.new" commandName="New Project" description="Creates a new project."/>
+    <elements xsi:type="commands:Command" xmi:id="_5VwvAKT3EeaUwL2DBkQXsg" elementId="de.symo.projectbrowser.e4.command.project.newfolder" commandName="New Folder" description="Adds a new folder into a project."/>
+    <elements xsi:type="commands:Command" xmi:id="_UXO70KT5EeaUwL2DBkQXsg" elementId="de.symo.projectbrowser.e4.command.project.delete" commandName="Delete" description="Deletes the selected project."/>
+    <elements xsi:type="commands:Command" xmi:id="_wD-EcKUAEeaUwL2DBkQXsg" elementId="de.symo.projectbrowser.e4.command.project.opendefault" commandName="Open Default" description="Open with default editor."/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_d94BkKTbEea0GYlVIP9ujQ" featurename="handlers" parentElementId="de.symo.application.e4.application">
+    <elements xsi:type="commands:Handler" xmi:id="_kdBUoKTuEea0GYlVIP9ujQ" elementId="de.symo.projectbrowser.e4.handler.project.setroot" contributionURI="bundleclass://de.symo.projectbrowser.e4/de.symo.projectbrowser.e4.ui.handlers.ProjectSetRootHandler" command="_xtbVYKTbEea0GYlVIP9ujQ"/>
+    <elements xsi:type="commands:Handler" xmi:id="_DjPeYKTyEeaUwL2DBkQXsg" elementId="de.symo.projectbrowser.e4.handler.project.new" contributionURI="bundleclass://de.symo.projectbrowser.e4/de.symo.projectbrowser.e4.ui.handlers.ProjectNewHandler" command="_m1FiwKTvEea0GYlVIP9ujQ"/>
+    <elements xsi:type="commands:Handler" xmi:id="_NLva8KT4EeaUwL2DBkQXsg" elementId="de.symo.projectbrowser.e4.handler.project.newfolder" contributionURI="bundleclass://de.symo.projectbrowser.e4/de.symo.projectbrowser.e4.ui.handlers.ProjectNewFolderHandler" command="_5VwvAKT3EeaUwL2DBkQXsg"/>
+    <elements xsi:type="commands:Handler" xmi:id="_noHWoKT5EeaUwL2DBkQXsg" elementId="de.symo.projectbrowser.e4.handler.project.delete" contributionURI="bundleclass://de.symo.projectbrowser.e4/de.symo.projectbrowser.e4.ui.handlers.ProjectDeleteHandler" command="_UXO70KT5EeaUwL2DBkQXsg"/>
+    <elements xsi:type="commands:Handler" xmi:id="_6cxrUKUAEeaUwL2DBkQXsg" elementId="de.symo.projectbrowser.e4.handler.project.opendefault" contributionURI="bundleclass://de.symo.projectbrowser.e4/de.symo.projectbrowser.e4.ui.handlers.ProjectOpenWithDefaultHandler" command="_wD-EcKUAEeaUwL2DBkQXsg"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_NBZJ8KTpEea0GYlVIP9ujQ" featurename="children" parentElementId="de.symo.application.partstack.projects.left">
+    <elements xsi:type="basic:Part" xmi:id="_aRoQ8KTpEea0GYlVIP9ujQ" elementId="de.symo.projectbrowser.e4.ui.part" contributionURI="bundleclass://de.symo.projectbrowser.e4/de.symo.projectbrowser.e4.ui.parts.ProjectBrowserPart" label="ProjectBrowser" iconURI="platform:/plugin/de.symo.projectbrowser.e4/icons/project_16.png">
+      <menus xsi:type="menu:PopupMenu" xmi:id="_3S840KTuEea0GYlVIP9ujQ" elementId="de.symo.projectbrowser.e4.popupmenu.project">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_GuGYMKTvEea0GYlVIP9ujQ" elementId="de.symo.projectbrowser.e4.handledmenuitem.project.setroot" label="Set Root" iconURI="platform:/plugin/de.symo.projectbrowser.e4/icons/project_16.png" command="_xtbVYKTbEea0GYlVIP9ujQ"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_613UAKTwEear9b14Lb2Avw" elementId="de.symo.projectbrowser.e4.menuseparator.0"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_g9Z9sKTvEea0GYlVIP9ujQ" elementId="de.symo.projectbrowser.e4.handledmenuitem.project.new" label="New Project" iconURI="platform:/plugin/de.symo.projectbrowser.e4/icons/project_new.gif" command="_m1FiwKTvEea0GYlVIP9ujQ"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_WgpU0KT4EeaUwL2DBkQXsg" elementId="de.symo.projectbrowser.e4.handledmenuitem.project.newfolder" label="New Folder" iconURI="platform:/plugin/de.symo.projectbrowser.e4/icons/project_new.gif" command="_5VwvAKT3EeaUwL2DBkQXsg"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_qOgs8KUAEeaUwL2DBkQXsg" elementId="de.symo.projectbrowser.e4.menuseparator.2"/>
+        <children xsi:type="menu:Menu" xmi:id="_Whn2IKUBEeaUwL2DBkQXsg" elementId="de.symo.projectbrowser.e4.menu.open" label="Open">
+          <children xsi:type="menu:HandledMenuItem" xmi:id="_rvBdcKUAEeaUwL2DBkQXsg" elementId="de.symo.projectbrowser.e4.handledmenuitem.project.opendefault" label="Open With Default" command="_wD-EcKUAEeaUwL2DBkQXsg"/>
+        </children>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_zDw6kKT5EeaUwL2DBkQXsg" elementId="de.symo.projectbrowser.e4.menuseparator.1"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_erYFIKT5EeaUwL2DBkQXsg" elementId="de.symo.projectbrowser.e4.handledmenuitem.project.delete" label="Delete" iconURI="platform:/plugin/de.symo.projectbrowser.e4/icons/delete.gif" command="_UXO70KT5EeaUwL2DBkQXsg"/>
+      </menus>
+    </elements>
+  </fragments>
+</fragment:ModelFragments>

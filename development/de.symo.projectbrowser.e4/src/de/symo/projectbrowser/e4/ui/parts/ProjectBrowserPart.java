@@ -1,4 +1,4 @@
-package de.symo.application.e4.parts;
+package de.symo.projectbrowser.e4.ui.parts;
 
 import java.io.File;
 import java.net.URL;
@@ -30,18 +30,17 @@ import org.eclipse.swt.widgets.TreeItem;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
-public class ProjectBrowser {
+public class ProjectBrowserPart {
 
-	private static final String POPUPMENU = "de.symo.application.popupmenu.0";
+	public static final String PROJECTBROWSER_ID = "de.symo.projectbrowser.e4.parts.projectbrowser";
+
+	private static final String POPUPMENU = "de.symo.projectbrowser.e4.popupmenu.project";
 
 	private static File projectRoot;
 	private static TreeViewer viewer;
 
 	private static String projectBase = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString();
 
-	private RootDirWatcher watcher; 
-	
-	
 	@Inject
 	private ESelectionService selectionService;
 
@@ -49,8 +48,6 @@ public class ProjectBrowser {
 	public void createControls(Composite parent, IEclipseContext ctx, EMenuService menuService) {
 
 		projectRoot = new File(projectBase);
-		watcher = new RootDirWatcher(this);
-		(new Thread(watcher)).start();
 
 		viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
 		viewer.setContentProvider(new ViewContentProvider());
@@ -93,7 +90,7 @@ public class ProjectBrowser {
 		// add context menu
 		menuService.registerContextMenu(tree,POPUPMENU);		
 
-		// attach a selection listener to our jface viewer
+		// attach a selection listener to our JFace viewer
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
 			public void selectionChanged(SelectionChangedEvent event) {
 				IStructuredSelection selection = (IStructuredSelection) event.getSelection();
@@ -131,6 +128,5 @@ public class ProjectBrowser {
 	
 	@PreDestroy
 	public void destroy () {
-		watcher.exit();
 	}
 }
