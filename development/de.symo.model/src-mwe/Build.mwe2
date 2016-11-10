@@ -1,8 +1,17 @@
-module de.symo.model.Build
+module de.symo.model
 
 import org.eclipse.emf.mwe.utils.*
+import org.eclipse.xtext.generator.*
+import org.eclipse.xtext.ui.generator.*
+import org.eclipse.emf.mwe2.ecore.*
 
 Workflow {
+
+	// setup system model for preliminary design model
+	bean = StandaloneSetup {
+		platformUri = ".."
+		registerGenModelFile = "platform:/resource/de.symo.model/model/symo.genmodel"
+	}
 
 	// clean generated model code of de.symo.model 
 	component = DirectoryCleaner {
@@ -19,4 +28,11 @@ Workflow {
 		directory="../de.symo.model.editor/src-gen"
 	}
 
+	// generate representation model, edit and editor code
+	component = EcoreGenerator {
+		genModel = "platform:/resource/de.symo.model/model/symo.genmodel"
+		srcPath ="platform:/resource/de.symo.model/src-gen"
+		generateEdit=true
+		generateEditor=true	
+	}
 }

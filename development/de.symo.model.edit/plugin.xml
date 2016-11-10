@@ -6,23 +6,11 @@
 
 <plugin>
 
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <!-- @generated SYMO -->
-      <factory
-            uri="http://www.dlr.de/symo4pd/base/2016/"
-            class="de.symo.model.base.provider.BaseItemProviderAdapterFactory"
-            supportedTypes=
-              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
-               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
-               org.eclipse.emf.edit.provider.ITreeItemContentProvider
-               org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource"/>
-   </extension>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <!-- @generated symo -->
+      <!-- @generated symo_element -->
       <factory
-            uri="http://www.dlr.de/symo4pd/element/2016/"
+            uri="http://de.symo.model/element/2016/"
             class="de.symo.model.element.provider.ElementItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -33,20 +21,7 @@
    </extension>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <factory
-            class="de.symo.model.registry.provider.RegistryItemProviderAdapterFactoryExt"
-            uri="http://www.dlr.de/symo4pd/registry/2016/"
-            supportedTypes=
-              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
-               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
-               org.eclipse.emf.edit.provider.ITreeItemContentProvider
-               org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource">
-     </factory>
-   </extension>
-
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <!-- @generated SYMO -->
+      <!-- @generated symo -->
       <factory
             uri="http://www.dlr.de/symo4pd/registry/2016/"
             class="de.symo.model.registry.provider.RegistryItemProviderAdapterFactory"
@@ -72,6 +47,18 @@
    </extension>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated symo_element -->
+      <factory
+            uri="http://de.symo.model/base/2016/"
+            class="de.symo.model.base.provider.BaseItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated symo -->
       <factory
             uri="http://www.dlr.de/symo4pd/model/2016/"
@@ -83,6 +70,8 @@
                org.eclipse.emf.edit.provider.IItemLabelProvider
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
+
+
 
 
 </plugin>

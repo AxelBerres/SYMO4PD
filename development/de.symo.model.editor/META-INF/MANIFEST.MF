@@ -8,8 +8,7 @@ Bundle-Activator: de.symo.model.base.presentation.SYMOEditorPlugin$Implementatio
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: de.symo.model.base.provider,
- de.symo.model.base.presentation,
+Export-Package: de.symo.model.base.presentation,
  de.symo.model.element.presentation,
  de.symo.model.registry.presentation,
  de.symo.model.symo.presentation,

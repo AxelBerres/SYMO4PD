@@ -2,17 +2,16 @@
 <?eclipse version="3.0"?>
 <plugin>
 
-
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated SYMO -->
+      <!-- @generated symo -->
       <package
-            uri="http://www.dlr.de/symo4pd/base/2016/"
-            class="de.symo.model.base.BasePackage"
-            genModel="model/SYMO.genmodel"/>
+            uri="http://www.dlr.de/symo4pd/model/2016/"
+            class="de.symo.model.symo.SymoPackage"
+            genModel="model/symo.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated symo -->
+      <!-- @generated symo_element -->
       <package
             uri="http://www.dlr.de/symo4pd/element/2016/"
             class="de.symo.model.element.ElementPackage"
@@ -20,11 +19,11 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated SYMO -->
+      <!-- @generated symo -->
       <package
             uri="http://www.dlr.de/symo4pd/registry/2016/"
             class="de.symo.model.registry.RegistryPackage"
-            genModel="model/SYMO.genmodel"/>
+            genModel="model/symo.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -36,10 +35,10 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated symo -->
+      <!-- @generated symo_element -->
       <package
-            uri="http://www.dlr.de/symo4pd/model/2016/"
-            class="de.symo.model.symo.SymoPackage"
+            uri="http://www.dlr.de/symo4pd/base/2016/"
+            class="de.symo.model.base.BasePackage"
             genModel="model/symo.genmodel"/>
    </extension>
 
