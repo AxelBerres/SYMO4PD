@@ -21,11 +21,13 @@
       <plugin id="ch.qos.logback.slf4j" fragment="true"/>
       <plugin id="com.google.guava"/>
       <plugin id="com.google.inject"/>
+      <plugin id="com.google.inject.multibindings" fragment="true"/>
       <plugin id="com.ibm.icu"/>
       <plugin id="com.jcraft.jsch"/>
       <plugin id="de.symo.application"/>
       <plugin id="de.symo.model"/>
       <plugin id="de.symo.model.edit"/>
+      <plugin id="de.symo.model.editor.registry"/>
       <plugin id="de.symo.projectbrowser.e4"/>
       <plugin id="javaewah"/>
       <plugin id="javax.annotation"/>
