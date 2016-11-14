@@ -4,10 +4,8 @@ import java.io.File;
 import java.net.URL;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.e4.core.contexts.IEclipseContext;
@@ -39,15 +37,14 @@ public class ProjectBrowserPart {
 	private static File projectRoot;
 	private static TreeViewer viewer;
 
-	private static String projectBase = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString();
-
 	@Inject
 	private ESelectionService selectionService;
 
+	
 	@PostConstruct
 	public void createControls(Composite parent, IEclipseContext ctx, EMenuService menuService) {
 
-		projectRoot = new File(projectBase);
+		projectRoot = ProjectPreference.getProjectBase();
 
 		viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
 		viewer.setContentProvider(new ViewContentProvider());
@@ -101,12 +98,6 @@ public class ProjectBrowserPart {
 		});
 	}
 
-	private ImageDescriptor createImageDescriptor() {
-		Bundle bundle = FrameworkUtil.getBundle(ViewLabelProvider.class);
-		URL url = FileLocator.find(bundle, new Path("icons/folder.png"), null);
-		return ImageDescriptor.createFromURL(url);
-	}
-
 	@Focus
 	public void setFocus() {
 		viewer.getControl().setFocus();
@@ -121,12 +112,19 @@ public class ProjectBrowserPart {
 	}
 
 	public static void setProjectsRoot(String fileName) {
-		projectRoot = new File(fileName);
+		
+		// delegate storage of project root
+		ProjectPreference.setProjectBase(fileName);
+		projectRoot = ProjectPreference.getProjectBase();
+		
+		// set new project root and refresh the browser
 		viewer.setInput(projectRoot);
 		viewer.refresh();		
 	}
-	
-	@PreDestroy
-	public void destroy () {
+
+	private ImageDescriptor createImageDescriptor() {
+		Bundle bundle = FrameworkUtil.getBundle(ViewLabelProvider.class);
+		URL url = FileLocator.find(bundle, new Path("icons/folder.png"), null);
+		return ImageDescriptor.createFromURL(url);
 	}
 }
