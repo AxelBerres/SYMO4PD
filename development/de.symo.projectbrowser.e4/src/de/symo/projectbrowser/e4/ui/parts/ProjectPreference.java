@@ -15,12 +15,12 @@ public class ProjectPreference {
 
 	private static String defaultBase = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString();
 	private static File projectBase;
-		
-	
+
+
 	public static File getProjectBase() {
-		
+
 		load();
-		
+
 		// use default base if no preference exists
 		if (projectBase == null) {
 			projectBase = new File(defaultBase);
@@ -28,7 +28,7 @@ public class ProjectPreference {
 
 		return projectBase;
 	}
-		
+
 	public static void setProjectBase(final String fileName) {
 		projectBase = new File(fileName);
 		save();
@@ -50,13 +50,11 @@ public class ProjectPreference {
 			prop.store(output, null);
 
 		} catch (IOException io) {
-			io.printStackTrace();
 		} finally {
 			if (output != null) {
 				try {
 					output.close();
 				} catch (IOException e) {
-					e.printStackTrace();
 				}
 			}
 
@@ -77,26 +75,22 @@ public class ProjectPreference {
 
 			// get the property value and print it out			
 			projectBase = new File(prop.getProperty("projectBase"));
-			System.out.println(projectBase.getAbsolutePath());
 
 		} catch (IOException ex) {
-			ex.printStackTrace();
+
 		} finally {
 			if (input != null) {
 				try {
 					input.close();
 				} catch (IOException e) {
-					e.printStackTrace();
 				}
 			}
 		}
-		
 	}
-	
+
 	private static String getPropertyFile() {
-		String path = System.getProperty("user.home");
 		String fileName = "config.properties";
-		
+		File path = new File(System.getProperty("user.home"), ".symo");
 		File file = new File(path, fileName);
 		return file.getAbsolutePath();
 	}
