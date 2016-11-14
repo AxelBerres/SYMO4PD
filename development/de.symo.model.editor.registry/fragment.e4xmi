@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_9jgHcKXLEeaRi90kUc4JEw">
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_J6NlcKXMEeaRi90kUc4JEw" featurename="children" parentElementId="de.symo.application.partstack.projects.editors">
-    <elements xsi:type="basic:Part" xmi:id="_ze5ugKdWEeaTTrZLLjiC-w" elementId="de.symo.model.editor.registry.tree" contributionURI="bundleclass://de.symo.model.editor.registry/de.symo.model.editor.registry.RegistryPart" label="Registry" iconURI="platform:/plugin/de.symo.model.editor.registry/icons/Registry.png" closeable="true"/>
+    <elements xsi:type="basic:Part" xmi:id="_ze5ugKdWEeaTTrZLLjiC-w" elementId="de.symo.model.editor.registry.tree" contributionURI="bundleclass://de.symo.model.editor.registry/de.symo.model.editor.registry.ui.parts.RegistryEditorPart" label="Registry" iconURI="platform:/plugin/de.symo.model.editor.registry/icons/Registry.png" closeable="true"/>
   </fragments>
 </fragment:ModelFragments>

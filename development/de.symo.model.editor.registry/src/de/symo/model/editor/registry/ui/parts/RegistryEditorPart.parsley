@@ -1,0 +1,46 @@
+import de.symo.model.editor.registry.ui.^parts.RegistryEditorView
+import de.symo.model.registry.RegistryFactory
+import de.symo.model.registry.Registry
+
+import org.eclipse.emf.parsley.edit.IEditingStrategy
+import org.eclipse.emf.parsley.edit.UndoableEditingStrategy
+import org.eclipse.swt.SWT
+
+/**
+ * @since 2016-11-07
+ * @author Axel.Berres@...
+ */
+module de.symo.model.editor.registry.tree.e4 {	
+		
+	parts {
+		viewpart de.symo.model.editor.registry.tree.e4 {
+			viewname "Registry Editor"
+			viewclass RegistryEditorView
+		}
+	}
+	
+	bindings {
+		type IEditingStrategy -> UndoableEditingStrategy
+		value int TreeFormSashStyle -> SWT.VERTICAL
+	}
+		
+	resourceManager {
+		initializeResource {
+			val registry = RegistryFactory.eINSTANCE.createRegistry
+			registry.name = "Base"
+			it.getContents += registry
+		}
+	}
+	
+	featuresProvider {
+		features {
+			Registry -> name
+		}
+	}
+	
+	labelProvider {
+		text {
+			Registry r -> r.name
+		}
+	}	
+}

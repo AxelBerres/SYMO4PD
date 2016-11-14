@@ -29,6 +29,7 @@ public class RegistryPart {
 	@Inject
 	private MDirtyable dirty;
 
+//	@Inject ViewerFactory viewerFactory;
 	
 	@PostConstruct
 	public void createControls(Composite parent) {
@@ -49,6 +50,14 @@ public class RegistryPart {
 		tableViewer.setContentProvider(ArrayContentProvider.getInstance());
 		tableViewer.setInput(createInitialDataModel());
 		tableViewer.getTable().setLayoutData(new GridData(GridData.FILL_BOTH));
+		
+//		try {
+//			TreeViewer treeViewer = new TreeViewer(parent);
+//			EObject element = null;
+//			viewerFactory.initialize(treeViewer, element);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 	}
 	
 	@Focus
