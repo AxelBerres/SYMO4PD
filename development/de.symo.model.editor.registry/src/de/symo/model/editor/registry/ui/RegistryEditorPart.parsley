@@ -1,7 +1,6 @@
-import de.symo.model.editor.registry.ui.^parts.RegistryEditorView
-import de.symo.model.registry.RegistryFactory
+import de.symo.model.editor.registry.ui.RegistryEditorView
 import de.symo.model.registry.Registry
-
+import de.symo.model.registry.RegistryFactory
 import org.eclipse.emf.parsley.edit.IEditingStrategy
 import org.eclipse.emf.parsley.edit.UndoableEditingStrategy
 import org.eclipse.swt.SWT
@@ -10,10 +9,10 @@ import org.eclipse.swt.SWT
  * @since 2016-11-07
  * @author Axel.Berres@...
  */
-module de.symo.model.editor.registry.tree.e4 {	
+module de.symo.model.editor.registry.ui {	
 		
 	parts {
-		viewpart de.symo.model.editor.registry.tree.e4 {
+		viewpart de.symo.model.editor.registry.ui {
 			viewname "Registry Editor"
 			viewclass RegistryEditorView
 		}

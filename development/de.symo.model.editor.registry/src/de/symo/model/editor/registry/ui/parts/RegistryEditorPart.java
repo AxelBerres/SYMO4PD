@@ -24,7 +24,7 @@ import org.eclipse.swt.widgets.Composite;
 
 import com.google.inject.Injector;
 
-import de.symo.model.editor.registry.tree.e4.E4InjectorProvider;
+import de.symo.model.editor.registry.ui.UiInjectorProvider;
 
 public class RegistryEditorPart {
 
@@ -38,9 +38,8 @@ public class RegistryEditorPart {
 	
 	@PostConstruct
 	public void postConstruct(Composite parent) {
-		
 		// get injector
-		Injector injector = E4InjectorProvider.getInjector();
+		Injector injector = UiInjectorProvider.getInjector();
 
 		// The EditingDomain is needed for context menu and drag and drop
 		EditingDomain editingDomain = injector.getInstance(EditingDomain.class);
