@@ -12,9 +12,9 @@
          point="org.eclipse.ui.views">
       <view
             category="org.eclipse.emf.parsley"
-            class="de.symo.model.editor.registry.tree.e4.E4ExecutableExtensionFactory:de.symo.model.editor.registry.ui.parts.RegistryEditorView"
-            id="de.symo.model.editor.registry.tree.e4"
-            name="Registry Editor"
+            class="de.symo.model.editor.registry.ui.UiExecutableExtensionFactory:de.symo.model.editor.registry.ui.RegistryEditorView"
+            id="de.symo.model.editor.registry.ui"
+            name="Registry"
             restorable="true">
       </view>
    </extension>
