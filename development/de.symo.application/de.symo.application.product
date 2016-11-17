@@ -34,7 +34,9 @@
       <plugin id="javax.servlet"/>
       <plugin id="javax.xml"/>
       <plugin id="oida.ontology"/>
-      <plugin id="oida.ontology.edit"/>
+      <plugin id="oida.ontology.model"/>
+      <plugin id="oida.ontology.model.edit"/>
+      <plugin id="oida.ontology.reference"/>
       <plugin id="oida.ontology.ui.e4"/>
       <plugin id="org.apache.batik.css"/>
       <plugin id="org.apache.batik.util"/>
