@@ -1,6 +1,7 @@
 package de.symo.projectbrowser.e4.ui.parts;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import java.util.Vector;
 
 import org.eclipse.jface.viewers.ITreeContentProvider;
@@ -8,9 +9,10 @@ import org.eclipse.jface.viewers.Viewer;
 
 public class ViewContentProvider implements ITreeContentProvider {
 
+	private final Object[] EMPTY_ARRAY = new Vector<Object>().toArray();	 
+	
 	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		System.out.println("Changed");
 	}
 
 	@Override
@@ -27,38 +29,46 @@ public class ViewContentProvider implements ITreeContentProvider {
 	}
 
 	@Override
-	public Object getParent(Object element) {
-		File file = (File) element;
-		return file.getParentFile();
+	public Object getParent(Object element) {	
+		if (element instanceof File) {
+			File file = (File) element;
+			return file.getParentFile();
+		}
+		return null;
 	}
 
 	@Override
-	public Object[] getElements(Object inputElement) {
-		return filterFiles((File) inputElement);
+	public Object[] getElements(Object inputElement) {		
+		return getChildren(inputElement);
 	}
 
 	@Override
 	public Object[] getChildren(Object parentElement) {
+		if ((parentElement instanceof File) == false) {
+			return EMPTY_ARRAY;
+		}
+
 		return filterFiles((File) parentElement);
 	}
 	
 	private Object[] filterFiles(File file) {
 
-		Vector<Object> elements = new Vector<Object>();		
-
+		// check input and return empty array if required
 		if (file == null) {
-			return elements.toArray();
+			return EMPTY_ARRAY;
 		}
 
-		Object[] objects = file.listFiles();
-		for (Object object : objects) {
-			File cFile = (File) object;
-			String name = cFile.getName();
-			if ((name.charAt(0) == '.') == false) {
-				elements.add(object);
+		// get all files
+		FilenameFilter filter = new FilenameFilter() {
+			
+			@Override
+			public boolean accept(File dir, String name) {
+				if (name.startsWith(".")) { return false; }
+				return true;
 			}
-		}
+		};
 		
-		return elements.toArray();		
+		return file.listFiles(filter);
+		
 	}
 }

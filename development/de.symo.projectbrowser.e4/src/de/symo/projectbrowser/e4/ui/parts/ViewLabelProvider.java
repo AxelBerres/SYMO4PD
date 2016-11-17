@@ -24,13 +24,12 @@ public class ViewLabelProvider extends LabelProvider {
 	}
 
 	@Override
-	public String getText(Object element) {
+	public String getText(Object element) {		
+		if((element instanceof File) == false) {			
+			return null;
+		}
 		
-		if(element instanceof File) {
-			return ((File) element).getName();
-		}		
-		
-		return null;
+		return ((File) element).getName();
 	}
 
 	@Override
@@ -40,9 +39,10 @@ public class ViewLabelProvider extends LabelProvider {
 			if(file.isDirectory()) {
 				return getResourceManager().createImage(directoryImage);
 			} else {
-				String ext = Files.getFileExtension(file.getName());				
+				String ext = Files.getFileExtension(file.getName());
 				ImageData imageData = Program.findProgram(ext).getImageData();
 				Device device = getResourceManager().getDevice();
+				if ((imageData != null) && (device != null))
 				return new Image(device, imageData);
 			}			
 		}

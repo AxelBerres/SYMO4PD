@@ -12,7 +12,6 @@ import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.swt.widgets.Shell;
 
-
 public class ProjectOpenWithDefaultHandler {
 
 	@Execute
