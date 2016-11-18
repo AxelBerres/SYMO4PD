@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="Symo4PD MacOS Target Platform" sequenceNumber="299">
+<locations>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.equinox.sdk.feature.group" version="3.12.0.v20160606-1311"/>
+<unit id="org.eclipse.e4.core.tools.feature.feature.group" version="4.5.100.v20160503-0947"/>
+<unit id="org.eclipse.emf.ecore.feature.group" version="2.12.0.v20160420-0247"/>
+<unit id="org.eclipse.emf.common.feature.group" version="2.12.0.v20160420-0247"/>
+<unit id="org.eclipse.platform.sdk" version="4.6.0.I20160606-1100"/>
+<unit id="org.eclipse.e4.core.tools.feature.source.feature.group" version="4.5.100.v20160503-0947"/>
+<repository location="http://download.eclipse.org/eclipse/updates/4.6"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf.ecp.view.table.celleditor.rcp.feature.source.feature.group" version="1.9.0.20160606-1526"/>
+<unit id="org.eclipse.emfforms.swt.control.text.autocomplete.feature.source.feature.group" version="1.9.0.20160606-1526"/>
+<unit id="org.eclipse.emf.ecp.e4.feature.source.feature.group" version="1.9.0.20160606-1526"/>
+<unit id="org.eclipse.emf.ecp.sdk.e4.feature.feature.group" version="1.9.0.20160606-1526"/>
+<unit id="org.eclipse.emf.ecp.ecore.feature.source.feature.group" version="1.9.0.20160606-1526"/>
+<repository location="http://download.eclipse.org/ecp/releases/releases_target_19/"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf.parsley.sdk.feature.group" version="1.0.1.v20160706-1123"/>
+<unit id="org.eclipse.emf.validation.sdk.feature.group" version="1.10.0.201606071713"/>
+<unit id="org.eclipse.emf.sdk.feature.group" version="2.12.0.v20160526-0356"/>
+<unit id="org.eclipse.emf.transaction.sdk.feature.group" version="1.10.0.201606071900"/>
+<unit id="org.eclipse.emf.parsley.sdk.source.feature.group" version="1.0.1.v20160706-1123"/>
+<repository location="http://download.eclipse.org/releases/neon/"/>
+</location>
+</locations>
+<environment>
+<os>macosx</os>
+<ws>cocoa</ws>
+<arch>x86_64</arch>
+<nl>de</nl>
+</environment>
+</target>

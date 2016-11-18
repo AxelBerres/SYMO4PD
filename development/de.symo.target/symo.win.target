@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="Symo4PD Target Platform" sequenceNumber="297">
+<?pde version="3.8"?><target name="Symo4PD Windows Target Platform" sequenceNumber="3">
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.equinox.sdk.feature.group" version="3.12.0.v20160606-1311"/>
@@ -19,22 +19,18 @@
 <repository location="http://download.eclipse.org/ecp/releases/releases_target_19/"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.emf.parsley.sdk.source.feature.group" version="1.0.0.v20160608-1623"/>
+<unit id="org.eclipse.emf.parsley.sdk.feature.group" version="1.0.1.v20160706-1123"/>
 <unit id="org.eclipse.emf.validation.sdk.feature.group" version="1.10.0.201606071713"/>
-<unit id="org.eclipse.jgit.source.feature.group" version="4.4.0.201606070830-r"/>
 <unit id="org.eclipse.emf.sdk.feature.group" version="2.12.0.v20160526-0356"/>
-<unit id="org.eclipse.emf.parsley.sdk.feature.group" version="1.0.0.v20160608-1623"/>
 <unit id="org.eclipse.emf.transaction.sdk.feature.group" version="1.10.0.201606071900"/>
-<unit id="org.eclipse.emf.ecp.emfforms.sdk.feature.feature.group" version="1.9.0.20160606-1526"/>
-<unit id="org.eclipse.jgit.feature.group" version="4.4.0.201606070830-r"/>
-<unit id="org.eclipse.emf.emfstore.sdk.feature.feature.group" version="1.8.0.v20160606-1028"/>
-<repository location="http://download.eclipse.org/releases/neon"/>
+<unit id="org.eclipse.emf.parsley.sdk.source.feature.group" version="1.0.1.v20160706-1123"/>
+<repository location="http://download.eclipse.org/releases/neon/"/>
 </location>
 </locations>
 <environment>
-<os>macosx</os>
-<ws>cocoa</ws>
+<os>win32</os>
+<ws>win32</ws>
 <arch>x86_64</arch>
-<nl>de</nl>
+<nl>de_DE</nl>
 </environment>
 </target>
