@@ -37,6 +37,8 @@ import org.osgi.framework.FrameworkUtil;
 
 public class ProjectBrowserPart {
 
+	private static final String ICONS_FOLDER = "icons/16_Folder.png";
+
 	public static final String PROJECTBROWSER_ID = "de.symo.projectbrowser.e4.parts.projectbrowser";
 
 	private static final String POPUPMENU = "de.symo.projectbrowser.e4.popupmenu.project";
@@ -142,7 +144,7 @@ public class ProjectBrowserPart {
 
 	private ImageDescriptor createImageDescriptor() {
 		Bundle bundle = FrameworkUtil.getBundle(ViewLabelProvider.class);
-		URL url = FileLocator.find(bundle, new Path("icons/folder.png"), null);
+		URL url = FileLocator.find(bundle, new Path(ICONS_FOLDER), null);
 		return ImageDescriptor.createFromURL(url);
 	}
 	
