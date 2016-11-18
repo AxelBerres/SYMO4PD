@@ -14,7 +14,7 @@
             category="org.eclipse.emf.parsley"
             class="de.symo.model.editor.registry.ui.UiExecutableExtensionFactory:de.symo.model.editor.registry.ui.RegistryEditorView"
             id="de.symo.model.editor.registry.ui"
-            name="Registry Editor"
+            name="Registry"
             restorable="true">
       </view>
    </extension>
