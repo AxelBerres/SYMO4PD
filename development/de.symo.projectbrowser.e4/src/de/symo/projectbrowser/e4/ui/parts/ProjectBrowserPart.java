@@ -44,6 +44,8 @@ public class ProjectBrowserPart {
 	private static final String POPUPMENU = "de.symo.projectbrowser.e4.popupmenu.project";
 
 	private static File projectRoot;
+	private static File selectedFolder;
+	
 	private static TreeViewer viewer;
 
 	@Inject
@@ -73,11 +75,24 @@ public class ProjectBrowserPart {
 
 		tree.addSelectionListener(new SelectionAdapter() {
 			@Override
-			public void widgetSelected(SelectionEvent e) {
-				TreeItem item = (TreeItem) e.item;
+			public void widgetSelected(SelectionEvent event) {
+				
+				// expand selection
+				TreeItem item = (TreeItem) event.item;
 				if (item.getItemCount() > 0) {
 					item.setExpanded(!item.getExpanded());
 					viewer.refresh();
+				}
+
+				// store selected folders
+				IStructuredSelection thisSelection = (IStructuredSelection) viewer.getSelection();
+				Object selectedNode = thisSelection.getFirstElement();
+				
+				if (selectedNode instanceof File) {
+					File selection = (File) selectedNode;
+					if (selection.isDirectory()) {
+						selectedFolder = selection;
+					}
 				}
 			}
 		});
@@ -127,10 +142,6 @@ public class ProjectBrowserPart {
 		return projectRoot;
 	}
 
-	public static void refresh() {
-		viewer.refresh();
-	}
-
 	public static void setProjectsRoot(String fileName) {
 		
 		// delegate storage of project root
@@ -140,6 +151,14 @@ public class ProjectBrowserPart {
 		// set new project root and refresh the browser
 		viewer.setInput(projectRoot);
 		viewer.refresh();		
+	}
+
+	public static File getSelection() {
+		return selectedFolder;
+	}
+	
+	public static void refresh() {
+		viewer.refresh();
 	}
 
 	private ImageDescriptor createImageDescriptor() {

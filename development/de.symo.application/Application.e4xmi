@@ -54,7 +54,7 @@
       </children>
     </children>
     <mainMenu xmi:id="_6wlLicgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.menu">
-      <children xsi:type="menu:Menu" xmi:id="_6wlLisgZEeSyMNYR5xypkQ" elementId="file" label="File">
+      <children xsi:type="menu:Menu" xmi:id="_6wlLisgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.menu.file" label="File">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_FTrGwI7kEeaDgdc5FdvuVQ" elementId="de.symo.application.handledmenuitem.new" label="New" command="_nOBTEI7pEeaDgdc5FdvuVQ"/>
         <children xsi:type="menu:MenuSeparator" xmi:id="_LqWU8I7kEeaDgdc5FdvuVQ" elementId="de.symo.application.menuseparator.0"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_HG0fYI7kEeaDgdc5FdvuVQ" elementId="de.symo.application.handledmenuitem.open" toBeRendered="false" label="Open" enabled="false"/>
@@ -68,7 +68,9 @@
       <children xsi:type="menu:Menu" xmi:id="_6wlLjsgZEeSyMNYR5xypkQ" elementId="help" label="Help"/>
     </mainMenu>
     <trimBars xmi:id="_6wlLlcgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.trimbar.top">
-      <children xsi:type="menu:ToolBar" xmi:id="_6wlLlsgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.toolbar"/>
+      <children xsi:type="menu:ToolBar" xmi:id="_6wlLlsgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.toolbar">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_MMP04K2gEea-scV-LdCPUw" elementId="de.symo.application.handledtoolitem.save" label="Save" iconURI="platform:/plugin/de.symo.application/icons/save_edit.png" command="_FrvNkHq2EeOKPMuLiPS6LA"/>
+      </children>
       <children xsi:type="menu:ToolControl" xmi:id="_-FGGEH8SEea1vc9SY93ecw" elementId="de.symo.application.e4.toolcontrol.spacer" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
         <tags>stretch</tags>
       </children>
