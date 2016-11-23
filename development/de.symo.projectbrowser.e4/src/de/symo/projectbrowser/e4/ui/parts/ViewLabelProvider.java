@@ -34,6 +34,7 @@ public class ViewLabelProvider extends LabelProvider {
 
 	@Override
 	public Image getImage(Object element) {
+		
 		if(element instanceof File) {
 			File file = (File) element;
 			if(file.isDirectory()) {

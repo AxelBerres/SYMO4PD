@@ -1,8 +1,8 @@
-package de.symo.model.editor.registry.ui;
+package de.symo.model.editor.e4.ui;
 
+import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -12,15 +12,14 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.wb.swt.ResourceManager;
 
-public class NewRegistryDialog extends TitleAreaDialog {
+public class NewUsecaseDialog extends TitleAreaDialog {
 
-	private static String TITLE = "New Registry";
-	private static String MESSAGE = "Enter a registry file name.";
-
+	private String 	name;
+	
+	private Composite container;
 	private Text 	txtFirstName;
-	private String 	Name;
 
-	public NewRegistryDialog(Shell parentShell) {
+	public NewUsecaseDialog(Shell parentShell) {
 		super(parentShell);
 		setShellStyle(SWT.SYSTEM_MODAL);
 		setHelpAvailable(false);
@@ -29,23 +28,29 @@ public class NewRegistryDialog extends TitleAreaDialog {
 	@Override
 	public void create() {
 		super.create();
+		setTitle("New Usecase");
+		setMessage("Enter a name for a project", IMessageProvider.INFORMATION);
 	}
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
 		
-		setTitle(TITLE);
-		setMessage(MESSAGE);
-		setTitleImage(getTitleImage());
-		
+		setMessage("Enter a usecase name.");
+		setTitleImage(ResourceManager.getPluginImage("de.symo.application", "icons/symo4pd_a_icon.png"));
 		Composite area = (Composite) super.createDialogArea(parent);
-		Composite container = new Composite(area, SWT.NONE);
+		container = new Composite(area, SWT.NONE);
 		container.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		GridLayout gl_container_1 = new GridLayout(2, false);
 		container.setLayout(gl_container_1);
 
+		createName(container);
+
+		return area;
+	}
+
+	private void createName(Composite container) {
 		Label lbtFirstName = new Label(container, SWT.NONE);
-		lbtFirstName.setText("Name");
+		lbtFirstName.setText("Usecase Name");
 
 		GridData dataFirstName = new GridData();
 		dataFirstName.grabExcessHorizontalSpace = true;
@@ -53,27 +58,21 @@ public class NewRegistryDialog extends TitleAreaDialog {
 
 		txtFirstName = new Text(container, SWT.BORDER);
 		txtFirstName.setLayoutData(dataFirstName);
-
-		return area;
-	}
-
-	private Image getTitleImage() {
-		return ResourceManager.getPluginImage("de.symo.application", "icons/symo4pd_a_icon.png");
 	}
 
 	// save content of the Text fields because they get disposed
 	// as soon as the Dialog closes
-	private void getName() {
-		Name = txtFirstName.getText();
+	private void saveInput() {
+		name = txtFirstName.getText();
 	}
 
 	@Override
 	protected void okPressed() {
-		getName();
+		saveInput();
 		super.okPressed();
 	}
 
-	public String getRegistryName() {
-		return Name;
+	public String getName() {
+		return name;
 	}
 }

@@ -1,0 +1,31 @@
+import org.eclipse.emf.parsley.edit.IEditingStrategy
+import org.eclipse.emf.parsley.edit.UndoableEditingStrategy
+import org.eclipse.swt.SWT
+import de.symo.model.symo.SymoFactory
+import de.symo.model.editor.e4.ui.SymoEditorView
+
+/**
+ * @since 2016-11-21
+ * @author Axel.Berres@...
+ */
+module de.symo.model.editor.e4.symo.ui {	
+		
+	parts {
+		viewpart de.symo.model.editor.e4.symo.ui {
+			viewname "Symo"
+			viewclass SymoEditorView
+		}
+	}
+	
+	bindings {
+		type IEditingStrategy -> UndoableEditingStrategy
+		value int TreeFormSashStyle -> SWT.VERTICAL
+	}
+	
+	resourceManager {
+		initializeResource {
+			val symo = SymoFactory.eINSTANCE.createProjectRepository
+			it.getContents += symo
+		}
+	}	
+}

@@ -1,0 +1,65 @@
+import de.symo.model.editor.e4.ui.RegistryEditorView
+import de.symo.model.registry.Registry
+import de.symo.model.registry.RegistryFactory
+import org.eclipse.emf.parsley.edit.IEditingStrategy
+import org.eclipse.emf.parsley.edit.UndoableEditingStrategy
+import org.eclipse.swt.SWT
+import de.symo.model.registry.Constant
+import de.symo.model.element.MetaData
+import de.symo.model.element.Stereotype
+import de.symo.model.element.Measurement
+import de.symo.model.element.Unit
+
+/**
+ * @since 2016-11-07
+ * @author Axel.Berres@...
+ */
+module de.symo.model.editor.e4.ui.registry {	
+		
+	parts {
+		viewpart de.symo.model.editor.e4.ui.registry {
+			viewname "Registry"
+			viewclass RegistryEditorView
+		}
+	}
+	
+	bindings {
+		type IEditingStrategy -> UndoableEditingStrategy
+		value int TreeFormSashStyle -> SWT.VERTICAL
+	}
+	
+	resourceManager {
+		initializeResource {
+			val registry = RegistryFactory.eINSTANCE.createRegistry
+			registry.name = "Base"
+			it.getContents += registry
+		}
+	}
+	
+	featuresProvider {
+		features {
+			Registry -> name
+			Measurement -> name, units
+			Constant -> name, ^value
+			Unit -> name, description, symbol
+		}
+	}
+	
+	labelProvider {
+		text {
+			Registry r -> r.name + " [" + r.metaModel + "]"
+			Measurement m -> m.name
+			Constant c-> c.name 
+			Unit u ->  u.name + " " + u.symbol
+		}
+		
+		image {
+			Registry -> "Registry.png"
+			Constant -> "Constant.png"
+			MetaData -> "Stereotype.gif"
+			Stereotype -> "Stereotype.gif"
+			Unit -> "Unit.gif"
+			Measurement -> "Unit.gif"
+		}
+	}	
+}

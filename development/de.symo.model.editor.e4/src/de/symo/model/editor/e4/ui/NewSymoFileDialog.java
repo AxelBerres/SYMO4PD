@@ -1,4 +1,4 @@
-package de.symo.model.editor.registry.ui;
+package de.symo.model.editor.e4.ui;
 
 import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.swt.SWT;
@@ -12,15 +12,15 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.wb.swt.ResourceManager;
 
-public class NewRegistryDialog extends TitleAreaDialog {
+public class NewSymoFileDialog extends TitleAreaDialog {
 
-	private static String TITLE = "New Registry";
-	private static String MESSAGE = "Enter a registry file name.";
+	private static String TITLE = "New Symo";
+	private static String MESSAGE = "Enter a symo name.";
 
 	private Text 	txtFirstName;
-	private String 	Name;
+	private String 	name;
 
-	public NewRegistryDialog(Shell parentShell) {
+	public NewSymoFileDialog(Shell parentShell) {
 		super(parentShell);
 		setShellStyle(SWT.SYSTEM_MODAL);
 		setHelpAvailable(false);
@@ -64,7 +64,7 @@ public class NewRegistryDialog extends TitleAreaDialog {
 	// save content of the Text fields because they get disposed
 	// as soon as the Dialog closes
 	private void getName() {
-		Name = txtFirstName.getText();
+		name = txtFirstName.getText();
 	}
 
 	@Override
@@ -73,7 +73,7 @@ public class NewRegistryDialog extends TitleAreaDialog {
 		super.okPressed();
 	}
 
-	public String getRegistryName() {
-		return Name;
-	}
+	public String getFileName() {
+		return name;
+	}	
 }

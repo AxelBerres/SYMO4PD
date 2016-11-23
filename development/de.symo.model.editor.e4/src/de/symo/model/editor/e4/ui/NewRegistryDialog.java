@@ -1,4 +1,4 @@
-package de.symo.model.editor.registry.ui;
+package de.symo.model.editor.e4.ui;
 
 import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.swt.SWT;

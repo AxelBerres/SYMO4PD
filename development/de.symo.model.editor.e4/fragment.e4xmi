@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_8WGA4K_WEeaRTJNyxte8wA">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_GGDNIK_ZEeaRTJNyxte8wA" featurename="children" parentElementId="de.symo.application.partstack.projects.editors">
+    <elements xsi:type="basic:Part" xmi:id="_LXbQ8LFqEeahHd75gomQ8w" elementId="de.symo.model.editor.registry.tree" contributionURI="bundleclass://de.symo.model.editor.e4/de.symo.model.editor.e4.parts.RegistryEditorPart" label="Registry" iconURI="platform:/plugin/de.symo.model.edit/icons/custom/obj16/Registry.png" closeable="true"/>
+    <elements xsi:type="basic:Part" xmi:id="_bW6McLFqEeahHd75gomQ8w" elementId="de.symo.model.editor.usecase.tree" contributionURI="bundleclass://de.symo.model.editor.e4/de.symo.model.editor.e4.parts.UsecaseEditorPart" label="Usecase" iconURI="platform:/plugin/de.symo.model.edit/icons/full/obj16/UseCaseRepository.gif" closeable="true"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_rdDf0K_ZEeaRTJNyxte8wA" featurename="commands" parentElementId="de.symo.application.e4.application">
+    <elements xsi:type="commands:Command" xmi:id="_xfnI8LFqEeahHd75gomQ8w" elementId="de.symo.model.editor.registry.command.new" commandName="New Registry"/>
+    <elements xsi:type="commands:Command" xmi:id="_0WSbILFqEeahHd75gomQ8w" elementId="de.symo.model.editor.usecase.command.new" commandName="New Usecase"/>
+    <elements xsi:type="commands:Command" xmi:id="_ybo24LFrEeahHd75gomQ8w" elementId="de.symo.model.editor.system.command.new" commandName="New System"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_z_JcsK_ZEeaRTJNyxte8wA" featurename="handlers" parentElementId="de.symo.application.e4.application">
+    <elements xsi:type="commands:Handler" xmi:id="__GWrcLFqEeahHd75gomQ8w" elementId="de.symo.model.editor.registry.handler.newregistry" contributionURI="bundleclass://de.symo.model.editor.e4/de.symo.model.editor.e4.handlers.RegistryNewHandler" command="_xfnI8LFqEeahHd75gomQ8w"/>
+    <elements xsi:type="commands:Handler" xmi:id="_EzZt0LFrEeahHd75gomQ8w" elementId="de.symo.model.editor.usecase.handler.newusecase" contributionURI="bundleclass://de.symo.model.editor.e4/de.symo.model.editor.e4.handlers.UsecaseNewHandler" command="_0WSbILFqEeahHd75gomQ8w"/>
+    <elements xsi:type="commands:Handler" xmi:id="_3i-kILFrEeahHd75gomQ8w" elementId="de.symo.model.editor.system.handler.new" contributionURI="bundleclass://de.symo.model.editor.e4/de.symo.model.editor.e4.handlers.SymoNewHandler" command="_ybo24LFrEeahHd75gomQ8w"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_H9r4gLFrEeahHd75gomQ8w" featurename="children" parentElementId="org.eclipse.ui.main.menu.file">
+    <elements xsi:type="menu:Menu" xmi:id="_Mpp4YLFrEeahHd75gomQ8w" elementId="de.symo.model.editor.e4.menu.new" label="New">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_TDIi8LFrEeahHd75gomQ8w" elementId="de.symo.model.editor.e4.new.handledmenuitem.newregistry" label="New Registry" iconURI="platform:/plugin/de.symo.model.edit/icons/custom/obj16/Registry.png" command="_xfnI8LFqEeahHd75gomQ8w"/>
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_Z0hXMLFrEeahHd75gomQ8w" elementId="de.symo.model.editor.e4.new.handledmenuitem.newusecase" label="New Usecase" iconURI="platform:/plugin/de.symo.model.edit/icons/full/obj16/UseCaseRepository.gif" command="_0WSbILFqEeahHd75gomQ8w"/>
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_ElxsELFsEeahHd75gomQ8w" elementId="de.symo.model.editor.e4.new.handledmenuitem.newsystem" label="New System" iconURI="platform:/plugin/de.symo.model.edit/icons/full/obj16/ProjectRepository.gif" command="_ybo24LFrEeahHd75gomQ8w"/>
+    </elements>
+  </fragments>
+</fragment:ModelFragments>

@@ -175,11 +175,14 @@ public class ProjectBrowserPart {
 		// Add to editor part stack
 		MPartStack editorStack = (MPartStack) modelService.find("de.symo.application.partstack.projects.editors", application);
 
+		// if the file is already open don't open a new editor
 		MPart part = null;
 		for (MStackElement element : editorStack.getChildren()) {
 			if (element instanceof MPart) {
-				part = (MPart) element; 
-				if (part.getLabel().equals(label) == true) {
+				part = (MPart) element;
+				File partFile = (File) part.getTransientData().get("data");
+				if ((partFile != null) &&
+				    (partFile.getAbsolutePath().equals(file.getAbsolutePath()) == true)) {
 					break;
 				}
 				part = null;
@@ -191,10 +194,15 @@ public class ProjectBrowserPart {
 			return;
 		}
 
-		// Create the part and set the transient input data		
+		String ext = getExtension(file.getName());
+		if (ext == null) {
+			// TODO add default MPart for open
+			return;
+		}
+
+		// Create the part and set the transient input data
 		part = modelService.createModelElement(MPart.class);
-		part.setElementId("de.symo.model.editor.registry.tree" + 0);
-		part.setContributionURI("bundleclass://de.symo.model.editor.registry/" + "de.symo.model.editor.registry.ui.parts.RegistryEditorPart");
+		part = getEditorPart(part, ext);
 		part.setCloseable(true);
 		part.setLabel(label);
 		part.getTags().add(EPartService.REMOVE_ON_HIDE_TAG);
@@ -222,5 +230,42 @@ public class ProjectBrowserPart {
         } 
 
        	return fileName.substring(0, pos);
+	}
+	
+	
+	/**
+	 * @param fileName
+	 * @return
+	 */
+	private String getExtension(final String fileName) {
+		
+        // Get position of last '.'.
+        int pos = fileName.lastIndexOf(".");
+        if (pos == -1) {
+        	return null;
+        }
+
+		String ext = fileName.substring(pos+1,fileName.length());
+		return ext;
+	}
+	
+	private MPart getEditorPart(MPart part, final String extension) {
+		
+		if (extension.equals("registry") == true) {
+			part.setElementId("de.symo.model.editor.registry.tree");
+			part.setContributionURI("bundleclass://de.symo.model.editor.e4/" + "de.symo.model.editor.e4.parts.RegistryEditorPart");			
+		}
+
+		if (extension.equals("usecase") == true) {
+			part.setElementId("de.symo.model.editor.usecase.tree");
+			part.setContributionURI("bundleclass://de.symo.model.editor.e4/" + "de.symo.model.editor.e4.parts.UsecaseEditorPart");			
+		}
+
+		if (extension.equals("symo") == true) {
+			part.setElementId("de.symo.model.editor.e4.ui.symo");
+			part.setContributionURI("bundleclass://de.symo.model.editor.e4/" + "de.symo.model.editor.e4.parts.SymoEditorPart");			
+		}
+
+		return part;
 	}
 }

@@ -1,0 +1,32 @@
+import org.eclipse.emf.parsley.edit.IEditingStrategy
+import org.eclipse.emf.parsley.edit.UndoableEditingStrategy
+import org.eclipse.swt.SWT
+import de.symo.model.usecase.UsecaseFactory
+import de.symo.model.editor.e4.ui.UseCaseEditorView
+
+/**
+ * @since 2016-11-21
+ * @author Axel.Berres@...
+ */
+module de.symo.model.editor.registry.ui {	
+		
+	parts {
+		viewpart de.symo.model.editor.registry.ui {
+			viewname "Usecase"
+			viewclass UseCaseEditorView
+		}
+	}
+	
+	bindings {
+		type IEditingStrategy -> UndoableEditingStrategy
+		value int TreeFormSashStyle -> SWT.VERTICAL
+	}
+	
+	resourceManager {
+		initializeResource {
+			val usecase = UsecaseFactory.eINSTANCE.createUseCase
+			usecase.name = "Base"
+			it.getContents += usecase
+		}
+	}	
+}
