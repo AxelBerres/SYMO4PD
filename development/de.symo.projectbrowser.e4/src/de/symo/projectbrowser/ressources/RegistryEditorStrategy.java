@@ -12,7 +12,7 @@ import org.eclipse.e4.ui.workbench.modeling.EModelService;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.e4.ui.workbench.modeling.EPartService.PartState;
 
-public class RegistryEditorStrategy implements IOpenStrategy {
+public class RegistryEditorStrategy { // implements IOpenStrategy
 
 	@Inject
 	private EPartService partService;
