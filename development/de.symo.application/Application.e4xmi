@@ -40,18 +40,6 @@
           <children xsi:type="basic:PartStack" xmi:id="_najn4IC_Eea_QKNEvJua0A" elementId="de.symo.application.partstack.modelling.right" containerData="20"/>
         </children>
       </children>
-      <children xsi:type="advanced:Perspective" xmi:id="_2SHrcH8yEeagldnMi4Rzjg" elementId="de.symo.application.perspective.knowledgemanagement" label="Knowledge Management">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_I-8_8Jq8EeaelOAnCMy4mw" elementId="de.symo.application.partsashcontainer.2" horizontal="true">
-          <children xsi:type="basic:PartSashContainer" xmi:id="_GHPPIJrAEeaelOAnCMy4mw" elementId="de.symo.application.partsashcontainer.3" containerData="20">
-            <children xsi:type="basic:PartStack" xmi:id="_KSRB8Jq8EeaelOAnCMy4mw" elementId="de.symo.application.partstack.knowledgemangement.lefttop" containerData="50"/>
-            <children xsi:type="basic:PartStack" xmi:id="_Klm0sJq8EeaelOAnCMy4mw" elementId="de.symo.application.partstack.1" containerData="50"/>
-          </children>
-          <children xsi:type="basic:PartStack" xmi:id="_K7oIAJq8EeaelOAnCMy4mw" elementId="de.symo.application.partstack.2" containerData="60"/>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_SgSKsKaNEea4d_GmOhDBEg" elementId="de.symo.application.partsashcontainer.4" containerData="20">
-            <children xsi:type="basic:PartStack" xmi:id="_T3-WYKaNEea4d_GmOhDBEg" elementId="de.symo.application.partstack.0"/>
-          </children>
-        </children>
-      </children>
     </children>
     <mainMenu xmi:id="_6wlLicgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.menu">
       <children xsi:type="menu:Menu" xmi:id="_6wlLisgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.menu.file" label="File">
