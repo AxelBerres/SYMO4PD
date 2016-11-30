@@ -11,7 +11,7 @@
           </children>
         </children>
       </children>
-      <children xsi:type="advanced:Perspective" xmi:id="_17D2UH8yEeagldnMi4Rzjg" elementId="de.symo.application.perspective.modelling" label="Modelling">
+      <children xsi:type="advanced:Perspective" xmi:id="_17D2UH8yEeagldnMi4Rzjg" elementId="de.symo.application.perspective.modelling" label="Modelling" iconURI="platform:/plugin/de.symo.application/icons/16_File_Text.png">
         <children xsi:type="basic:PartSashContainer" xmi:id="_50vdoH8yEeagldnMi4Rzjg" elementId="de.symo.application.partsashcontainer.0" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_6k7kcH8yEeagldnMi4Rzjg" elementId="de.symo.application.partstack.modelling.left" containerData="20">
             <children xsi:type="basic:Part" xmi:id="_67qCYH8yEeagldnMi4Rzjg" elementId="org.eclipse.emf.ecp.e4.application.part.navigator" contributionURI="bundleclass://org.eclipse.emf.ecp.ui.e4/org.eclipse.emf.ecp.ui.e4.view.ECPModelView" label="Model Explorer" iconURI="platform:/plugin/de.symo.application/icons/folder_brick.png">
@@ -40,7 +40,7 @@
           <children xsi:type="basic:PartStack" xmi:id="_najn4IC_Eea_QKNEvJua0A" elementId="de.symo.application.partstack.modelling.right" containerData="20"/>
         </children>
       </children>
-      <children xsi:type="advanced:Perspective" xmi:id="_2SHrcH8yEeagldnMi4Rzjg" elementId="de.symo.application.perspective.knowledgemanagement" label="Knowledge Management">
+      <children xsi:type="advanced:Perspective" xmi:id="_2SHrcH8yEeagldnMi4Rzjg" elementId="de.symo.application.perspective.knowledgemanagement" label="Knowledge Management" iconURI="platform:/plugin/de.symo.application/icons/16_Ontology.png">
         <children xsi:type="basic:PartSashContainer" xmi:id="_I-8_8Jq8EeaelOAnCMy4mw" elementId="de.symo.application.partsashcontainer.2" horizontal="true">
           <children xsi:type="basic:PartSashContainer" xmi:id="_GHPPIJrAEeaelOAnCMy4mw" elementId="de.symo.application.partsashcontainer.3" containerData="20">
             <children xsi:type="basic:PartStack" xmi:id="_KSRB8Jq8EeaelOAnCMy4mw" elementId="de.symo.application.partstack.knowledgemangement.lefttop" containerData="50"/>
@@ -65,7 +65,7 @@
     </mainMenu>
     <trimBars xmi:id="_6wlLlcgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.trimbar.top">
       <children xsi:type="menu:ToolBar" xmi:id="_6wlLlsgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.toolbar">
-        <children xsi:type="menu:HandledToolItem" xmi:id="_MMP04K2gEea-scV-LdCPUw" elementId="de.symo.application.handledtoolitem.save" label="Save" iconURI="platform:/plugin/de.symo.application/icons/save_edit.png" command="_yLHO8LFoEeahHd75gomQ8w"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_MMP04K2gEea-scV-LdCPUw" elementId="de.symo.application.handledtoolitem.save" label="Save" iconURI="platform:/plugin/de.symo.application/icons/16_Save.png" command="_yLHO8LFoEeahHd75gomQ8w"/>
       </children>
       <children xsi:type="menu:ToolControl" xmi:id="_-FGGEH8SEea1vc9SY93ecw" elementId="de.symo.application.e4.toolcontrol.spacer" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
         <tags>stretch</tags>
