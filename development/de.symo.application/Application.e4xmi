@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_6wlLcMgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.application" bindingContexts="_6wlLecgZEeSyMNYR5xypkQ">
   <children xsi:type="basic:TrimmedWindow" xmi:id="_6wlLccgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.window.main" label="SYMO4PD" iconURI="platform:/plugin/de.symo.application/icons/symo4pd_16.png" width="1600" height="1000">
-    <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.ide.perspectivestack" selectedElement="_6wlLkcgZEeSyMNYR5xypkQ">
-      <children xsi:type="advanced:Perspective" xmi:id="_6wlLkcgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.perspective.projects" label="Projects" iconURI="platform:/plugin/de.symo.application/icons/16_Browser.png">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="de.symo.application.partsashcontainer.projects" containerData="" horizontal="true">
-          <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="de.symo.application.partstack.projects.left" containerData="25"/>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_xDQiYI6zEeafcrpaRNwdWQ" elementId="de.symo.application.partsashcontainer.editors" containerData="75">
-            <children xsi:type="basic:PartStack" xmi:id="_Wc688I6zEeafcrpaRNwdWQ" elementId="de.symo.application.partstack.projects.editors" containerData="75"/>
-            <children xsi:type="basic:PartStack" xmi:id="_XROuwI6zEeafcrpaRNwdWQ" elementId="de.symo.application.partstack.projects.button" containerData="25"/>
-          </children>
-        </children>
-      </children>
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.ide.perspectivestack">
       <children xsi:type="advanced:Perspective" xmi:id="_17D2UH8yEeagldnMi4Rzjg" elementId="de.symo.application.perspective.modelling" label="Modelling" iconURI="platform:/plugin/de.symo.application/icons/16_File_Text.png">
         <children xsi:type="basic:PartSashContainer" xmi:id="_50vdoH8yEeagldnMi4Rzjg" elementId="de.symo.application.partsashcontainer.0" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_6k7kcH8yEeagldnMi4Rzjg" elementId="de.symo.application.partstack.modelling.left" containerData="20">
