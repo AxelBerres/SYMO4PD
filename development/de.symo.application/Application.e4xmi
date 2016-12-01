@@ -31,7 +31,7 @@
                 <children xsi:type="menu:HandledMenuItem" xmi:id="_uF9-AJfLEeamRpv6HrtgRg" elementId="de.symo.application.handledmenuitem.referenceobject" label="Reference Object" command="_JkcsYJfMEeamRpv6HrtgRg"/>
               </menus>
               <toolbar xmi:id="_uWMcwJoUEeKJoJcmiy2C6w" elementId="org.eclipse.emf.ecp.e4.application.toolbar.0">
-                <children xsi:type="menu:HandledToolItem" xmi:id="_W0NKYHq2EeOKPMuLiPS6LA" elementId="org.eclipse.emf.ecp.application.e4.handledtoolitem.0" label="Save Project" iconURI="platform:/plugin/de.symo.application/icons/save_edit.png" command="_FrvNkHq2EeOKPMuLiPS6LA"/>
+                <children xsi:type="menu:HandledToolItem" xmi:id="_W0NKYHq2EeOKPMuLiPS6LA" elementId="org.eclipse.emf.ecp.application.e4.handledtoolitem.0" label="Save Project" iconURI="platform:/plugin/de.symo.application/icons/16_Save.png" command="_FrvNkHq2EeOKPMuLiPS6LA"/>
                 <children xsi:type="menu:HandledToolItem" xmi:id="_qBe0sHvAEeOKPMuLiPS6LA" elementId="org.eclipse.emf.ecp.application.e4.handledtoolitem.link" label="Link" iconURI="platform:/plugin/de.symo.application/icons/link_with_editor.gif" tooltip="Link With Editor" selected="true" type="Check" command="_fDbLsHvAEeOKPMuLiPS6LA"/>
               </toolbar>
             </children>
