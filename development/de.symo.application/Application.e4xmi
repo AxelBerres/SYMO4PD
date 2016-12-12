@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_6wlLcMgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.application" bindingContexts="_6wlLecgZEeSyMNYR5xypkQ">
   <children xsi:type="basic:TrimmedWindow" xmi:id="_6wlLccgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.window.main" label="SYMO4PD" iconURI="platform:/plugin/de.symo.application/icons/symo4pd_16.png" width="1600" height="1000">
-    <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.ide.perspectivestack" selectedElement="_6wlLkcgZEeSyMNYR5xypkQ">
-      <children xsi:type="advanced:Perspective" xmi:id="_6wlLkcgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.perspective.projects" label="Projects" iconURI="platform:/plugin/de.symo.application/icons/16_Browser.png">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="de.symo.application.partsashcontainer.projects" containerData="" horizontal="true">
-          <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="de.symo.application.partstack.projects.left" containerData="25"/>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_xDQiYI6zEeafcrpaRNwdWQ" elementId="de.symo.application.partsashcontainer.editors" containerData="75">
-            <children xsi:type="basic:PartStack" xmi:id="_Wc688I6zEeafcrpaRNwdWQ" elementId="de.symo.application.partstack.projects.editors" containerData="75"/>
-            <children xsi:type="basic:PartStack" xmi:id="_XROuwI6zEeafcrpaRNwdWQ" elementId="de.symo.application.partstack.projects.button" containerData="25"/>
-          </children>
-        </children>
-      </children>
-      <children xsi:type="advanced:Perspective" xmi:id="_17D2UH8yEeagldnMi4Rzjg" elementId="de.symo.application.perspective.modelling" label="Modelling">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.ide.perspectivestack">
+      <children xsi:type="advanced:Perspective" xmi:id="_17D2UH8yEeagldnMi4Rzjg" elementId="de.symo.application.perspective.modelling" label="Modelling" iconURI="platform:/plugin/de.symo.application/icons/16_File_Text.png">
         <children xsi:type="basic:PartSashContainer" xmi:id="_50vdoH8yEeagldnMi4Rzjg" elementId="de.symo.application.partsashcontainer.0" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_6k7kcH8yEeagldnMi4Rzjg" elementId="de.symo.application.partstack.modelling.left" containerData="20">
             <children xsi:type="basic:Part" xmi:id="_67qCYH8yEeagldnMi4Rzjg" elementId="org.eclipse.emf.ecp.e4.application.part.navigator" contributionURI="bundleclass://org.eclipse.emf.ecp.ui.e4/org.eclipse.emf.ecp.ui.e4.view.ECPModelView" label="Model Explorer" iconURI="platform:/plugin/de.symo.application/icons/folder_brick.png">
@@ -31,7 +22,7 @@
                 <children xsi:type="menu:HandledMenuItem" xmi:id="_uF9-AJfLEeamRpv6HrtgRg" elementId="de.symo.application.handledmenuitem.referenceobject" label="Reference Object" command="_JkcsYJfMEeamRpv6HrtgRg"/>
               </menus>
               <toolbar xmi:id="_uWMcwJoUEeKJoJcmiy2C6w" elementId="org.eclipse.emf.ecp.e4.application.toolbar.0">
-                <children xsi:type="menu:HandledToolItem" xmi:id="_W0NKYHq2EeOKPMuLiPS6LA" elementId="org.eclipse.emf.ecp.application.e4.handledtoolitem.0" label="Save Project" iconURI="platform:/plugin/de.symo.application/icons/save_edit.png" command="_FrvNkHq2EeOKPMuLiPS6LA"/>
+                <children xsi:type="menu:HandledToolItem" xmi:id="_W0NKYHq2EeOKPMuLiPS6LA" elementId="org.eclipse.emf.ecp.application.e4.handledtoolitem.0" label="Save Project" iconURI="platform:/plugin/de.symo.application/icons/16_Save.png" command="_FrvNkHq2EeOKPMuLiPS6LA"/>
                 <children xsi:type="menu:HandledToolItem" xmi:id="_qBe0sHvAEeOKPMuLiPS6LA" elementId="org.eclipse.emf.ecp.application.e4.handledtoolitem.link" label="Link" iconURI="platform:/plugin/de.symo.application/icons/link_with_editor.gif" tooltip="Link With Editor" selected="true" type="Check" command="_fDbLsHvAEeOKPMuLiPS6LA"/>
               </toolbar>
             </children>
@@ -45,7 +36,7 @@
       <children xsi:type="menu:Menu" xmi:id="_6wlLisgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.menu.file" label="File">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_FTrGwI7kEeaDgdc5FdvuVQ" elementId="de.symo.application.handledmenuitem.new" label="New"/>
         <children xsi:type="menu:MenuSeparator" xmi:id="_LqWU8I7kEeaDgdc5FdvuVQ" elementId="de.symo.application.menuseparator.0"/>
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_JD0XkI7kEeaDgdc5FdvuVQ" elementId="de.symo.application.handledmenuitem.save" label="Save" iconURI="platform:/plugin/de.symo.application/icons/save_edit.png" tooltip="Save" mnemonics="Ctrl + S" command="_FrvNkHq2EeOKPMuLiPS6LA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_JD0XkI7kEeaDgdc5FdvuVQ" elementId="de.symo.application.handledmenuitem.save" label="Save" iconURI="platform:/plugin/de.symo.application/icons/16_Save.png" tooltip="Save" mnemonics="Ctrl + S" command="_FrvNkHq2EeOKPMuLiPS6LA"/>
         <children xsi:type="menu:MenuSeparator" xmi:id="_QlotwI7lEeaDgdc5FdvuVQ" elementId="de.symo.application.menuseparator.2"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_NJ4OAI7kEeaDgdc5FdvuVQ" elementId="de.symo.application.handledmenuitem.exit" label="Exit" iconURI="platform:/plugin/de.symo.application/icons/delete.gif" command="_6cZm0JCGEea8nfDNys_Bag"/>
       </children>
@@ -53,7 +44,7 @@
     </mainMenu>
     <trimBars xmi:id="_6wlLlcgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.trimbar.top">
       <children xsi:type="menu:ToolBar" xmi:id="_6wlLlsgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.toolbar">
-        <children xsi:type="menu:HandledToolItem" xmi:id="_MMP04K2gEea-scV-LdCPUw" elementId="de.symo.application.handledtoolitem.save" label="Save" iconURI="platform:/plugin/de.symo.application/icons/save_edit.png" command="_yLHO8LFoEeahHd75gomQ8w"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_MMP04K2gEea-scV-LdCPUw" elementId="de.symo.application.handledtoolitem.save" label="Save" iconURI="platform:/plugin/de.symo.application/icons/16_Save.png" command="_yLHO8LFoEeahHd75gomQ8w"/>
       </children>
       <children xsi:type="menu:ToolControl" xmi:id="_-FGGEH8SEea1vc9SY93ecw" elementId="de.symo.application.e4.toolcontrol.spacer" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
         <tags>stretch</tags>

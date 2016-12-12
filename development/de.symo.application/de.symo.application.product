@@ -21,6 +21,7 @@
       <plugin id="ch.qos.logback.slf4j" fragment="true"/>
       <plugin id="com.google.guava"/>
       <plugin id="com.google.inject"/>
+      <plugin id="com.google.inject.multibindings" fragment="true"/>
       <plugin id="com.ibm.icu"/>
       <plugin id="com.jcraft.jsch"/>
       <plugin id="de.symo.application"/>
@@ -28,6 +29,7 @@
       <plugin id="de.symo.model.edit"/>
       <plugin id="de.symo.model.editor.e4"/>
       <plugin id="de.symo.projectbrowser.e4"/>
+      <plugin id="javaewah"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
       <plugin id="javax.servlet"/>
@@ -35,7 +37,6 @@
       <plugin id="oida.ontology"/>
       <plugin id="oida.ontology.model"/>
       <plugin id="oida.ontology.model.edit"/>
-      <plugin id="oida.ontology.owl"/>
       <plugin id="oida.ontology.reference"/>
       <plugin id="oida.ontology.ui.e4"/>
       <plugin id="org.antlr.runtime"/>
@@ -137,6 +138,9 @@
       <plugin id="org.eclipse.emf.emfstore.server.model.edit"/>
       <plugin id="org.eclipse.emf.mwe.core"/>
       <plugin id="org.eclipse.emf.mwe.utils"/>
+      <plugin id="org.eclipse.emf.mwe2.language"/>
+      <plugin id="org.eclipse.emf.mwe2.launch"/>
+      <plugin id="org.eclipse.emf.mwe2.lib"/>
       <plugin id="org.eclipse.emf.mwe2.runtime"/>
       <plugin id="org.eclipse.emf.parsley"/>
       <plugin id="org.eclipse.emf.parsley.common"/>
@@ -163,13 +167,10 @@
       <plugin id="org.eclipse.equinox.p2.metadata.repository"/>
       <plugin id="org.eclipse.equinox.p2.repository"/>
       <plugin id="org.eclipse.equinox.preferences"/>
-      <plugin id="org.eclipse.equinox.region" fragment="true"/>
       <plugin id="org.eclipse.equinox.registry"/>
       <plugin id="org.eclipse.equinox.security"/>
       <plugin id="org.eclipse.equinox.security.win32.x86_64" fragment="true"/>
-      <plugin id="org.eclipse.equinox.transforms.hook" fragment="true"/>
       <plugin id="org.eclipse.equinox.util"/>
-      <plugin id="org.eclipse.equinox.weaving.hook" fragment="true"/>
       <plugin id="org.eclipse.help"/>
       <plugin id="org.eclipse.jdt.compiler.apt" fragment="true"/>
       <plugin id="org.eclipse.jdt.compiler.tool" fragment="true"/>
@@ -180,6 +181,7 @@
       <plugin id="org.eclipse.jface"/>
       <plugin id="org.eclipse.jface.databinding"/>
       <plugin id="org.eclipse.jface.text"/>
+      <plugin id="org.eclipse.jgit"/>
       <plugin id="org.eclipse.ltk.core.refactoring"/>
       <plugin id="org.eclipse.m2e.archetype.common"/>
       <plugin id="org.eclipse.m2e.core"/>
@@ -209,6 +211,7 @@
       <plugin id="org.eclipse.ui.workbench.texteditor"/>
       <plugin id="org.eclipse.wst.common.core"/>
       <plugin id="org.eclipse.wst.common.emf"/>
+      <plugin id="org.eclipse.wst.common.emfworkbench.integration"/>
       <plugin id="org.eclipse.wst.common.environment"/>
       <plugin id="org.eclipse.wst.common.frameworks"/>
       <plugin id="org.eclipse.wst.common.project.facet.core"/>
@@ -244,7 +247,6 @@
    </plugins>
 
    <configurations>
-      <plugin id="oida.ontology.owl" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
