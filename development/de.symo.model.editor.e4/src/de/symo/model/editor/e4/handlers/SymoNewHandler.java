@@ -3,6 +3,8 @@ package de.symo.model.editor.e4.handlers;
 import java.io.File;
 import java.io.IOException;
 
+import javax.inject.Inject;
+
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.e4.core.di.annotations.Execute;
@@ -19,12 +21,22 @@ import de.symo.model.editor.e4.ui.NewSymoFileDialog;
 import de.symo.model.symo.ProjectRepository;
 import de.symo.model.symo.SymoFactory;
 import de.symo.projectbrowser.e4.ui.parts.ProjectBrowserPart;
+import de.symo.service.SymoModelService;
 
+/**
+ * 
+ * @author Axel Berres, Michael Shamiyeh
+ * 
+ */
 public class SymoNewHandler {
+	@Inject
+	SymoModelService symoModelService;
+	
+	public SymoNewHandler() {
+	}
 
 	@Execute
 	public void execute() {
-
 		// create the new project Dialog
 		Shell shell = new Shell(SWT.SHELL_TRIM);
 		NewSymoFileDialog dialog =  new NewSymoFileDialog(shell);
@@ -42,7 +54,6 @@ public class SymoNewHandler {
 	}
 
 	private void createSymo(final String symoName) {
-
 		String prjRepo = symoName + ".symo";		
 		ProjectRepository prj = SymoFactory.eINSTANCE.createProjectRepository();
 
@@ -69,6 +80,8 @@ public class SymoNewHandler {
 			resource.save(null);
 		} catch (IOException e) {
 			e.printStackTrace();
-		}		
+		}
+		
+		symoModelService.reportModelCreatedEvent(prj, folder.toString(), prjRepo);
 	}
 }

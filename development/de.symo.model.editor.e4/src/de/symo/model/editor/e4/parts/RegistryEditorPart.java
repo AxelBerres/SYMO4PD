@@ -52,6 +52,7 @@ public class RegistryEditorPart {
 			if (mPart.getLabel().equals("Registry")); {
 				mPart.setLabel(UUID.randomUUID().toString());
 			}
+			
 			partService.hidePart(mPart);
 			return;
 		}

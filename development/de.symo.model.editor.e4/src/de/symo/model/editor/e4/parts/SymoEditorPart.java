@@ -8,6 +8,7 @@ import java.util.UUID;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Persist;
 import org.eclipse.e4.ui.model.application.ui.MDirtyable;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
@@ -28,6 +29,7 @@ import org.eclipse.swt.widgets.Composite;
 import com.google.inject.Injector;
 
 import de.symo.model.editor.registry.ui.UiInjectorProvider;
+import de.symo.service.SymoModelService;
 
 public class SymoEditorPart {
 	
@@ -44,8 +46,7 @@ public class SymoEditorPart {
 	EPartService partService;
 
 	@PostConstruct
-	public void postConstruct(Composite parent) {
-
+	public void postConstruct(Composite parent, @Optional SymoModelService modelService ) {
 		File file = (File) mPart.getTransientData().get("data");
 		if (file == null) {			
 			// ### Hack
@@ -71,7 +72,7 @@ public class SymoEditorPart {
 		// load the resource
 		resource = resourceLoader.getResource(editingDomain, uri).getResource();
 		resource.getContents().size();
-
+		
 		// create the tree form
 		TreeFormFactory treeFromFactory = injector.getInstance(TreeFormFactory.class);
 		treeFormComposite = treeFromFactory.createTreeFormComposite(parent, SWT.NONE);		
@@ -93,9 +94,15 @@ public class SymoEditorPart {
 			@Override
 			public void commandStackChanged(EventObject event) {
 				if (dirty != null)
-					dirty.setDirty(true);				
+					dirty.setDirty(true);
 			}
 		});
+		
+		String path = uri.toFileString().substring(0, uri.toFileString().lastIndexOf("\\"));
+		String fileName = uri.toFileString().substring(uri.toFileString().lastIndexOf("\\"));
+		
+		if (modelService != null)
+			modelService.reportModelOpenedEvent(resource.getContents().get(0), path, fileName);
 	}
 	
 	@Persist

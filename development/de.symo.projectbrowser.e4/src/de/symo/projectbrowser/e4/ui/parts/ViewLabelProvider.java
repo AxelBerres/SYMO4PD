@@ -41,10 +41,14 @@ public class ViewLabelProvider extends LabelProvider {
 				return getResourceManager().createImage(directoryImage);
 			} else {
 				String ext = Files.getFileExtension(file.getName());
-				ImageData imageData = Program.findProgram(ext).getImageData();
+				
+				ImageData imageData = null;
+				if (Program.findProgram(ext) != null)
+					imageData = Program.findProgram(ext).getImageData();
+				
 				Device device = getResourceManager().getDevice();
 				if ((imageData != null) && (device != null))
-				return new Image(device, imageData);
+					return new Image(device, imageData);
 			}			
 		}
 

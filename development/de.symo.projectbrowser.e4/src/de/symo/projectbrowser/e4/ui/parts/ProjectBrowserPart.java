@@ -113,7 +113,7 @@ public class ProjectBrowserPart {
 						
 //						OpenContext ctx = new OpenContext();
 //						ctx.open(file);
-						delegateSlectionfoOpening(file);					
+						delegateSelectionforOpening(file);					
 					}
 				}
 			}
@@ -167,7 +167,7 @@ public class ProjectBrowserPart {
 		return ImageDescriptor.createFromURL(url);
 	}
 	
-	private void delegateSlectionfoOpening(final File file) {
+	private void delegateSelectionforOpening(final File file) {
 
 		// get part label
 		String label = getLabel(file.getName());
