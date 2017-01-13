@@ -50,6 +50,17 @@ public class AdapterOfSatori implements IAdapterOfSatori {
 
 		switch (operationArgs.getOperation()) {
 		case CREATE:
+//			if (!checkAndCreateModelOntologySubdirectory(operationArgs.getModelPath())) {
+//				System.out.println("ADASI: Model Ontology directory does not exist and could not be created.");
+//			}
+//			else {
+//				OntologyFile modelOntologyfile = OntologyMgrFactory.eINSTANCE.createOntologyFile();
+//				modelOntologyfile.setPath(operationArgs.getModelPath() + MODELONTOLOGY_SUBDIRECTORY);
+//				modelOntologyfile.setFileName(operationArgs.getModelFileName() + OWL_POSTFIX);
+//				
+//			}
+			break;
+		case OPEN:
 			if (!checkAndCreateModelOntologySubdirectory(operationArgs.getModelPath())) {
 				System.out.println("ADASI: Model Ontology directory does not exist and could not be created.");
 			}
@@ -59,10 +70,9 @@ public class AdapterOfSatori implements IAdapterOfSatori {
 				modelOntologyfile.setFileName(operationArgs.getModelFileName() + OWL_POSTFIX);
 				
 				IOntologyManager modelOntologyManager = oidaService.addOntologyManager(modelOntologyfile, true);
+				
+				oidaBridge.addModelForObservation(operationArgs.getNewEObject(), modelOntologyManager);
 			}
-			break;
-		case OPEN:
-			//oidaBridge.addModelForObservation(operationArgs.getNewEObject(), modelOntologyManager);
 			break;
 		case REMOVE:
 			break;

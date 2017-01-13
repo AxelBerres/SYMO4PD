@@ -29,7 +29,7 @@ import org.eclipse.swt.widgets.Composite;
 import com.google.inject.Injector;
 
 import de.symo.model.editor.registry.ui.UiInjectorProvider;
-import de.symo.service.SymoModelService;
+import de.symo.service.ISymoModelService;
 
 public class SymoEditorPart {
 	
@@ -46,7 +46,7 @@ public class SymoEditorPart {
 	EPartService partService;
 
 	@PostConstruct
-	public void postConstruct(Composite parent, @Optional SymoModelService modelService ) {
+	public void postConstruct(Composite parent, @Optional ISymoModelService modelService) {
 		File file = (File) mPart.getTransientData().get("data");
 		if (file == null) {			
 			// ### Hack
