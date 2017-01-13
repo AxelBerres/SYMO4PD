@@ -4,8 +4,6 @@
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.ide.perspectivestack"/>
     <mainMenu xmi:id="_6wlLicgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.menu">
       <children xsi:type="menu:Menu" xmi:id="_6wlLisgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.menu.file" label="File">
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_FTrGwI7kEeaDgdc5FdvuVQ" elementId="de.symo.application.handledmenuitem.new" label="New"/>
-        <children xsi:type="menu:MenuSeparator" xmi:id="_LqWU8I7kEeaDgdc5FdvuVQ" elementId="de.symo.application.menuseparator.0"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_JD0XkI7kEeaDgdc5FdvuVQ" elementId="de.symo.application.handledmenuitem.save" label="Save" iconURI="platform:/plugin/de.symo.application/icons/16_Save.png" tooltip="Save" mnemonics="Ctrl + S" command="_yLHO8LFoEeahHd75gomQ8w"/>
         <children xsi:type="menu:MenuSeparator" xmi:id="_QlotwI7lEeaDgdc5FdvuVQ" elementId="de.symo.application.menuseparator.2"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_NJ4OAI7kEeaDgdc5FdvuVQ" elementId="de.symo.application.handledmenuitem.exit" label="Exit" iconURI="platform:/plugin/de.symo.application/icons/delete.gif" command="_6cZm0JCGEea8nfDNys_Bag"/>
@@ -28,7 +26,6 @@
   <handlers xmi:id="_UOExMH3NEeOH4sahiLvWWw" elementId="org.eclipse.emf.ecp.e4.application.handler.save" contributionURI="bundleclass://de.symo.application/de.symo.application.commands.SaveHandler" command="_yLHO8LFoEeahHd75gomQ8w"/>
   <handlers xmi:id="_DlNB0H3KEeOH4sahiLvWWw" elementId="de.symo.application.handler.exit" contributionURI="bundleclass://de.symo.application/de.symo.application.commands.AboutHandler" command="_3iN2gLFoEeahHd75gomQ8w"/>
   <handlers xmi:id="_-5ePEJCGEea8nfDNys_Bag" elementId="de.symo.application.handler.exit" contributionURI="bundleclass://de.symo.application/de.symo.application.commands.ExitHandler" command="_6cZm0JCGEea8nfDNys_Bag"/>
-  <handlers xmi:id="_1bb8UNZsEeaBQ-hcUy1gGQ" elementId="de.symo.application.handler.newproject" contributionURI="bundleclass://org.eclipse.emf.ecp.ui.e4/org.eclipse.emf.ecp.ui.e4.handlers.NewProjectHandler" command="_zEZzgNZsEeaBQ-hcUy1gGQ"/>
   <bindingTables xmi:id="_6wlLfsgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.bindingtable" bindingContext="_6wlLecgZEeSyMNYR5xypkQ">
     <bindings xmi:id="_6wlLf8gZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.keybinding.m1q" keySequence="M1+Q"/>
     <bindings xmi:id="_6wlLgsgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.keybinding.m1o" keySequence="M1+O"/>
@@ -43,7 +40,6 @@
   <commands xmi:id="_yLHO8LFoEeahHd75gomQ8w" elementId="de.symo.application.command.save" commandName="Save"/>
   <commands xmi:id="_3iN2gLFoEeahHd75gomQ8w" elementId="de.symo.application.command.about" commandName="About"/>
   <commands xmi:id="_6cZm0JCGEea8nfDNys_Bag" elementId="de.symo.application.command.exit" commandName="Exit"/>
-  <commands xmi:id="_zEZzgNZsEeaBQ-hcUy1gGQ" elementId="de.symo.application.command.newproject" commandName="New Project"/>
   <addons xmi:id="_6wlLcsgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_6wlLc8gZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_6wlLdMgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>

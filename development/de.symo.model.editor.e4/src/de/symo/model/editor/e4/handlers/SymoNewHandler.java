@@ -21,7 +21,7 @@ import de.symo.model.editor.e4.ui.NewSymoFileDialog;
 import de.symo.model.symo.ProjectRepository;
 import de.symo.model.symo.SymoFactory;
 import de.symo.projectbrowser.e4.ui.parts.ProjectBrowserPart;
-import de.symo.service.SymoModelService;
+import de.symo.service.ISymoModelService;
 
 /**
  * 
@@ -30,7 +30,7 @@ import de.symo.service.SymoModelService;
  */
 public class SymoNewHandler {
 	@Inject
-	SymoModelService symoModelService;
+	ISymoModelService symoModelService;
 	
 	public SymoNewHandler() {
 	}

@@ -53,6 +53,7 @@ public class SymoEditorPart {
 			if (mPart.getLabel().equals("Symo")); {
 				mPart.setLabel(UUID.randomUUID().toString());
 			}
+			
 			partService.hidePart(mPart);
 			return;
 		}

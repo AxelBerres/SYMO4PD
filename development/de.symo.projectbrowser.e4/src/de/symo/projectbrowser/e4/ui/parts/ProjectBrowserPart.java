@@ -62,7 +62,6 @@ public class ProjectBrowserPart {
 	
 	@PostConstruct
 	public void createControls(Composite parent, IEclipseContext ctx, EMenuService menuService) {
-
 		projectRoot = ProjectPreference.getProjectBase();
 
 		viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
