@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SYMOService
+Bundle-SymbolicName: de.symo.service;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: SYMO4PD
+Require-Bundle: org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: org.eclipse.emf.ecore
+Export-Package: de.symo.service,
+ de.symo.service.modeleditor.event
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: de.symo.service.Activator
