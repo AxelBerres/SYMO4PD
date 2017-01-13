@@ -7,7 +7,8 @@ Bundle-Vendor: SYMO4PD
 Require-Bundle: org.eclipse.core.runtime,
  de.symo.service,
  oida.ontology.model,
- oida.ontology
+ oida.ontology,
+ oida.bridge
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.emf.ecore

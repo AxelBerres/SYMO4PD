@@ -34,7 +34,8 @@ Require-Bundle: javax.inject;bundle-version="0.0.0",
  de.symo.adasi,
  org.eclipse.equinox.util;bundle-version="1.0.500",
  org.eclipse.equinox.ds;bundle-version="1.4.400",
- org.eclipse.osgi.services;bundle-version="3.5.100"
+ org.eclipse.osgi.services;bundle-version="3.5.100",
+ oida.bridge
 Import-Package: com.google.common.base;version="15.0.0",
  com.google.common.io;version="15.0.0",
  javax.inject;version="1.0.0",

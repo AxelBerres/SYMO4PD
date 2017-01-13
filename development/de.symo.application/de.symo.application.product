@@ -39,6 +39,7 @@
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
       <plugin id="javax.xml"/>
+      <plugin id="oida.bridge"/>
       <plugin id="oida.ontology"/>
       <plugin id="oida.ontology.model"/>
       <plugin id="oida.ontology.model.edit"/>

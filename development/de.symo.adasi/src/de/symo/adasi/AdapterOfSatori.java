@@ -59,11 +59,10 @@ public class AdapterOfSatori implements IAdapterOfSatori {
 				modelOntologyfile.setFileName(operationArgs.getModelFileName() + OWL_POSTFIX);
 				
 				IOntologyManager modelOntologyManager = oidaService.addOntologyManager(modelOntologyfile, true);
-				
-				oidaBridge.addModelForObservation(operationArgs.getNewEObject(), modelOntologyManager);
 			}
 			break;
 		case OPEN:
+			//oidaBridge.addModelForObservation(operationArgs.getNewEObject(), modelOntologyManager);
 			break;
 		case REMOVE:
 			break;
