@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OIDA Model-Changehandler
+Bundle-SymbolicName: de.symo.oida.changehandler;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: SYMO4PD
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: oida.bridge.observerservice.changehandler,
+ org.eclipse.emf.common.notify
