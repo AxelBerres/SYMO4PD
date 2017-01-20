@@ -34,6 +34,7 @@
       <plugin id="de.symo.model"/>
       <plugin id="de.symo.model.edit"/>
       <plugin id="de.symo.model.editor.e4"/>
+      <plugin id="de.symo.oida.changehandler"/>
       <plugin id="de.symo.projectbrowser.e4"/>
       <plugin id="de.symo.service"/>
       <plugin id="javax.annotation"/>
