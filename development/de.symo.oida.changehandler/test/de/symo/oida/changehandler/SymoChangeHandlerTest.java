@@ -10,11 +10,14 @@ import static org.eclipse.emf.common.notify.Notification.REMOVING_ADAPTER;
 import static org.eclipse.emf.common.notify.Notification.RESOLVE;
 import static org.eclipse.emf.common.notify.Notification.SET;
 import static org.eclipse.emf.common.notify.Notification.UNSET;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
+
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,8 +25,12 @@ import de.symo.model.element.ElementFactory;
 import de.symo.model.element.MetaData;
 import de.symo.model.symo.ProjectRepository;
 import de.symo.model.symo.SymoFactory;
+import de.symo.model.symo.SystemElement;
+
 import oida.bridge.observerservice.changehandler.IChangeHandler;
+
 import oida.ontology.manager.IOntologyManager;
+import oida.ontology.owl.manager.OwlOntologyManager;
 import oida.ontology.owl.manager.OwlOntologyManagerFactory;
 import oida.ontologyMgr.OntologyFile;
 import oida.ontologyMgr.OntologyMgrFactory;
@@ -42,13 +49,15 @@ public class SymoChangeHandlerTest {
 	
 	private ProjectRepository projectRepository;
 	
+	IOntologyManager owlOntologyManager;
+	
 	private final static String MODEL_ONTOLOGY_TEST_FILE_NAME="test_model_ontology.owl";
 	
 	@Before
 	public void setUp() throws Exception {
-		symoChangeHandler = new SymoChangeHandler();
 		
-		IOntologyManager owlOntologyManager = new OwlOntologyManagerFactory().getNewManager();
+		
+		owlOntologyManager = new OwlOntologyManagerFactory().getNewManager();
 		
 		testFileEntry = OntologyMgrFactory.eINSTANCE.createOntologyFile();
 		testFileEntry.setPath(OntologyTestHelper.getTestOntologyFilePath());
@@ -56,7 +65,7 @@ public class SymoChangeHandlerTest {
 		
 		owlOntologyManager.createOntology(testFileEntry);
 		
-		symoChangeHandler.setOntologyManager(owlOntologyManager);
+		
 		
 		projectRepository=SymoFactory.eINSTANCE.createProjectRepository();
 		MetaData projectName=ElementFactory.eINSTANCE.createMetaData();
@@ -67,47 +76,7 @@ public class SymoChangeHandlerTest {
 		projectRepository.getMetaData().add(projectName);
 		
 		//TODO Hooking the listener to ARepository Instances should be a standard feature.
-		EContentAdapter adapter = new EContentAdapter() {
-			public void notifyChanged(Notification notification) {
-				super.notifyChanged(notification);
-				
-				switch (notification.getEventType()) {
-				case ADD:
-					symoChangeHandler.handleAdd(notification);
-					break;
-				case ADD_MANY:
-					symoChangeHandler.handleAddMany(notification);
-					break;
-				case MOVE:
-					symoChangeHandler.handleMove(notification);
-					break;
-				case NO_INDEX:
-					symoChangeHandler.handleNoIndex(notification);
-					break;
-				case REMOVE:
-					symoChangeHandler.handleRemove(notification);
-					break;
-				case REMOVE_MANY:
-					symoChangeHandler.handleRemoveMany(notification);
-					break;
-				case REMOVING_ADAPTER:
-					symoChangeHandler.handleRemovingAdapter(notification);
-					break;
-				case RESOLVE:
-					symoChangeHandler.handleResolve(notification);
-					break;
-				case SET:
-					symoChangeHandler.handleSet(notification);
-					break;
-				case UNSET:
-					symoChangeHandler.handleUnset(notification);
-					break;
-				default:
-					System.out.println("Uncovered notification type: " + notification.getEventType());
-					break;
-				}
-			}
-		};
+		EContentAdapter adapter = new SymoContentAdapter(owlOntologyManager);
 		projectRepository.eAdapters().add(adapter);
 	}
 
@@ -117,7 +86,13 @@ public class SymoChangeHandlerTest {
 
 	@Test
 	public void testHandleAdd() {
-		fail("Not yet implemented");
+		SymoFactory symoFactory=SymoFactory.eINSTANCE;
+		
+		SystemElement leftWingSystemElement = symoFactory.createSystemElement();
+		leftWingSystemElement.setName("Left wing");
+		
+		projectRepository.getSystems().add(leftWingSystemElement);
+		assertNotNull(owlOntologyManager.getClass("LeftWing"));
 	}
 
 	@Test
