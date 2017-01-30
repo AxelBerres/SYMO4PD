@@ -30,12 +30,17 @@ public class SymoChangeHandler extends AbstractChangeHandler {
 
 		// Get root container
 		if (notification.getNewValue() instanceof EObject) {
-			EObject rootContainer = ModelHelper.getRootContainer((EObject)notification.getNewValue());
-			String ModelOntologyName = ModelHelper.getElementName(rootContainer);
+			EObject newEObject= (EObject) notification.getNewValue();
+			EObject rootContainer = ModelHelper.getRootContainer(newEObject);
+			String modelOntologyName = ModelHelper.getElementName(rootContainer);
+			String eClassName=newEObject.eClass().getName();
+			String ePackageURI=newEObject.eClass().getEPackage().getNsURI();
 
-			// GetModelManager
+			// GetOntologyManager
+			//getOntologyManager().getClass(, ePackageURI)
 			// GetClass named after the eClass of the eObject
 
+			
 			// GetOntology named after the root container
 			// GetClass
 		}
