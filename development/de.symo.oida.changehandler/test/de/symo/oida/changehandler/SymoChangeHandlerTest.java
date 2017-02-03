@@ -13,11 +13,9 @@ import static org.eclipse.emf.common.notify.Notification.UNSET;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -26,11 +24,8 @@ import de.symo.model.element.MetaData;
 import de.symo.model.symo.ProjectRepository;
 import de.symo.model.symo.SymoFactory;
 import de.symo.model.symo.SystemElement;
-
 import oida.bridge.observerservice.changehandler.IChangeHandler;
-
 import oida.ontology.manager.IOntologyManager;
-import oida.ontology.owl.manager.OwlOntologyManager;
 import oida.ontology.owl.manager.OwlOntologyManagerFactory;
 import oida.ontologyMgr.OntologyFile;
 import oida.ontologyMgr.OntologyMgrFactory;
@@ -43,6 +38,8 @@ import oida.test.util.OntologyTestHelper;
  *
  */
 public class SymoChangeHandlerTest {
+	private final String SYMOCHANGEHANDLER_TESTONTOLOGY_IRI = "http://de.symo/oida/changehandler/test/ontology#";
+	
 	private IChangeHandler symoChangeHandler;
 	
 	private OntologyFile testFileEntry;
@@ -63,9 +60,7 @@ public class SymoChangeHandlerTest {
 		testFileEntry.setPath(OntologyTestHelper.getTestOntologyFilePath());
 		testFileEntry.setFileName(MODEL_ONTOLOGY_TEST_FILE_NAME);
 		
-		owlOntologyManager.createOntology(testFileEntry);
-		
-		
+		owlOntologyManager.createOntology(SYMOCHANGEHANDLER_TESTONTOLOGY_IRI);
 		
 		projectRepository=SymoFactory.eINSTANCE.createProjectRepository();
 		MetaData projectName=ElementFactory.eINSTANCE.createMetaData();
@@ -75,9 +70,50 @@ public class SymoChangeHandlerTest {
 		projectName.setValue("Test project");
 		projectRepository.getMetaData().add(projectName);
 		
+		symoChangeHandler = new SymoChangeHandler();
+		
 		//TODO Hooking the listener to ARepository Instances should be a standard feature.
-		EContentAdapter adapter = new SymoContentAdapter(owlOntologyManager);
-		projectRepository.eAdapters().add(adapter);
+		projectRepository.eAdapters().add(new EContentAdapter() {
+
+			@Override
+			public void notifyChanged(Notification notification) {
+				switch (notification.getEventType()) {
+				case ADD:
+					symoChangeHandler.handleAdd(notification, owlOntologyManager);
+					break;
+				case ADD_MANY:
+					symoChangeHandler.handleAddMany(notification, owlOntologyManager);
+					break;
+				case MOVE:
+					symoChangeHandler.handleMove(notification, owlOntologyManager);
+					break;
+				case NO_INDEX:
+					symoChangeHandler.handleNoIndex(notification, owlOntologyManager);
+					break;
+				case REMOVE:
+					symoChangeHandler.handleRemove(notification, owlOntologyManager);
+					break;
+				case REMOVE_MANY:
+					symoChangeHandler.handleRemoveMany(notification, owlOntologyManager);
+					break;
+				case REMOVING_ADAPTER:
+					symoChangeHandler.handleRemovingAdapter(notification, owlOntologyManager);
+					break;
+				case RESOLVE:
+					symoChangeHandler.handleResolve(notification, owlOntologyManager);
+					break;
+				case SET:
+					symoChangeHandler.handleSet(notification, owlOntologyManager);
+					break;
+				case UNSET:
+					symoChangeHandler.handleUnset(notification, owlOntologyManager);
+					break;
+				default:
+					System.out.println("Uncovered notification type: " + notification.getEventType());
+					break;
+				}
+			}
+		});
 	}
 
 	@After
