@@ -107,8 +107,21 @@ public class SymoEditorPart {
 	}
 	
 	@Persist
-	public void save(MDirtyable dirty) throws IOException {
+	public void save(MDirtyable dirty, @Optional ISymoModelService modelService) throws IOException {
+		File file = (File) mPart.getTransientData().get("data");
+		URI uri = URI.createFileURI(file.toString());		
+		if (uri == null) {
+			return;
+		}
+		
 		resource.save(null);
+		
+		String path = uri.toFileString().substring(0, uri.toFileString().lastIndexOf("\\"));
+		String fileName = uri.toFileString().substring(uri.toFileString().lastIndexOf("\\"));
+		
+		if (modelService != null)
+			modelService.reportModelSavedEvent(resource.getContents().get(0), path, fileName);
+		
 		if (dirty != null) {
 			dirty.setDirty(false);
 		}

@@ -45,6 +45,12 @@ public class SymoModelService extends Observable implements ISymoModelService {
 	}
 	
 	@Override
+	public void reportModelSavedEvent(EObject obj, String modelPath, String fileName) {
+		for (Observer modelObserver : registeredModelObservers)
+			modelObserver.update(this, new BasicModelOperationEventArguments(obj, ModelOperation.SAVE, modelPath, fileName));
+	}
+	
+	@Override
 	public void registerModelObserver(Observer o) {
 		registeredModelObservers.add(o);
 		System.out.println("SYMO4PD Model Service: Model Observer registered: " + o.toString());

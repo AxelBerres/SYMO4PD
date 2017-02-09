@@ -110,15 +110,12 @@ public class ModelProviderHelper {
 	 * @return The generated Name
 	 */
 	public static String getModelElementName(EObject eObject) {
-
 		EAttribute eAttribute = getModelElementNameAttribute(eObject);
-		if (eAttribute != null) {
+		if (eAttribute != null && eObject.eGet(eAttribute) != null) {
 			return eObject.eGet(eAttribute).toString().replace(" ", "_");
-
 		}
 
 		return eObject.toString();
-
 	}
 
 	/**
