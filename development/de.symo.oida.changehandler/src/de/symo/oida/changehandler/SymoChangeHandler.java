@@ -49,7 +49,6 @@ public class SymoChangeHandler extends AbstractChangeHandler {
 
 			OntologyClass oCl = generateOntologyClassWithHierarchy(newEObject.eClass(), ontManager);
 			generateOntologyIndividualOfClass(newEObject, oCl, ontManager);
-			
 //			EObject rootContainer = ModelHelper.getRootContainer(newEObject);
 		}
 	}
