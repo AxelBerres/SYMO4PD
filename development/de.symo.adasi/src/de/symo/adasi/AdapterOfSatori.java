@@ -6,10 +6,11 @@ import java.util.Observable;
 import de.symo.service.ISymoModelService;
 import de.symo.service.modeleditor.event.BasicModelOperationEventArguments;
 import oida.bridge.observerservice.IModelObserverService;
+import oida.bridge.observerservice.ModelObserverServiceException;
 import oida.ontology.manager.IOntologyManager;
 import oida.ontology.service.IOIDAOntologyService;
+import oida.ontology.util.OntologyFileUtil;
 import oida.ontologyMgr.OntologyFile;
-import oida.ontologyMgr.OntologyMgrFactory;
 
 /**
  * 
@@ -57,7 +58,6 @@ public class AdapterOfSatori implements IAdapterOfSatori {
 //				OntologyFile modelOntologyfile = OntologyMgrFactory.eINSTANCE.createOntologyFile();
 //				modelOntologyfile.setPath(operationArgs.getModelPath() + MODELONTOLOGY_SUBDIRECTORY);
 //				modelOntologyfile.setFileName(operationArgs.getModelFileName() + OWL_POSTFIX);
-//				
 //			}
 			break;
 		case OPEN:
@@ -65,13 +65,14 @@ public class AdapterOfSatori implements IAdapterOfSatori {
 				System.out.println("ADASI: Model Ontology directory does not exist and could not be created.");
 			}
 			else {
-				OntologyFile modelOntologyfile = OntologyMgrFactory.eINSTANCE.createOntologyFile();
-				modelOntologyfile.setPath(operationArgs.getModelPath() + MODELONTOLOGY_SUBDIRECTORY);
-				modelOntologyfile.setFileName(operationArgs.getModelFileName() + OWL_POSTFIX);
-				
+				OntologyFile modelOntologyfile = OntologyFileUtil.createOntologyFileObject(new File(operationArgs.getModelPath() + MODELONTOLOGY_SUBDIRECTORY + operationArgs.getModelFileName() + OWL_POSTFIX));
 				IOntologyManager modelOntologyManager = oidaService.addOntologyManager(modelOntologyfile, true);
 				
-				oidaBridge.addModelForObservation(operationArgs.getNewEObject(), modelOntologyManager);
+				try {
+					oidaBridge.addModelForObservation(operationArgs.getNewEObject(), modelOntologyManager);
+				} catch (ModelObserverServiceException e) {
+					e.printStackTrace();
+				}
 			}
 			break;
 		case REMOVE:
