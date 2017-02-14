@@ -5,8 +5,7 @@ import java.util.Observable;
 
 import de.symo.service.ISymoModelService;
 import de.symo.service.modeleditor.event.BasicModelOperationEventArguments;
-import oida.bridge.observerservice.IModelObserverService;
-import oida.bridge.observerservice.ModelObserverServiceException;
+import oida.bridge.observerservice.emf.EMFModelObserverService;
 import oida.ontology.manager.IOntologyManager;
 import oida.ontology.service.IOIDAOntologyService;
 import oida.ontology.util.OntologyFileUtil;
@@ -31,12 +30,12 @@ public class AdapterOfSatori implements IAdapterOfSatori {
 	
 	private ISymoModelService modelService;
 	private IOIDAOntologyService oidaService;
-	private IModelObserverService oidaBridge;
+	private EMFModelObserverService oidaBridge;
 	
 	private AdapterOfSatori() {
 	}
 	
-	public void initialize(ISymoModelService modelService, IOIDAOntologyService oidaService, IModelObserverService oidaBridge) {
+	public void initialize(ISymoModelService modelService, IOIDAOntologyService oidaService, EMFModelObserverService oidaBridge) {
 		this.modelService = modelService;
 		this.oidaService = oidaService;
 		this.oidaBridge = oidaBridge;
@@ -66,13 +65,9 @@ public class AdapterOfSatori implements IAdapterOfSatori {
 			}
 			else {
 				OntologyFile modelOntologyfile = OntologyFileUtil.createOntologyFileObject(new File(operationArgs.getModelPath() + MODELONTOLOGY_SUBDIRECTORY + operationArgs.getModelFileName() + OWL_POSTFIX));
-				IOntologyManager modelOntologyManager = oidaService.addOntologyManager(modelOntologyfile, true);
+				IOntologyManager modelOntologyManager = oidaService.getOntologyManager(modelOntologyfile, true);
 				
-				try {
-					oidaBridge.addModelForObservation(operationArgs.getNewEObject(), modelOntologyManager);
-				} catch (ModelObserverServiceException e) {
-					e.printStackTrace();
-				}
+				oidaBridge.addEMFModelForObservation(operationArgs.getNewEObject(), modelOntologyManager);
 			}
 			break;
 		case REMOVE:

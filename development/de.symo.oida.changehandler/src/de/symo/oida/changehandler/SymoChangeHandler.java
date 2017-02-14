@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import de.symo.model.base.ANameItem;
+import de.symo.model.symo.ProjectRepository;
 import de.symo.oida.changehandler.modelhelper.Extractor;
 import de.symo.oida.changehandler.modelhelper.ModelProviderHelper;
 import de.symo.projectbrowser.e4.ui.parts.ProjectBrowserPart;
@@ -17,6 +18,7 @@ import oida.ontology.OntologyClass;
 import oida.ontology.OntologyEntity;
 import oida.ontology.OntologyIndividual;
 import oida.ontology.manager.IOntologyManager;
+import oida.ontology.manager.OntologyManagerException;
 
 /**
  * 
@@ -40,6 +42,12 @@ public class SymoChangeHandler extends AbstractChangeHandler {
 		generateLocalNamespace(ontManager);
 		generateOntologyClasses(modelContainer, ontManager);
 		generateIndividuals(modelContainer, ontManager);
+		
+		try {
+			ontManager.saveOntology();
+		} catch (OntologyManagerException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -133,7 +141,8 @@ public class SymoChangeHandler extends AbstractChangeHandler {
 		namespace = namespace.replace("\\", ".");
 		namespace = namespace.substring(0, namespace.lastIndexOf(".ont."));
 
-		ontologyManager.addNamespace(MODELONT_PREFIX, namespace);
+		if (!ontologyManager.isNamespaceExisting(MODELONT_PREFIX))
+			ontologyManager.addNamespace(MODELONT_PREFIX, namespace);
 	}
 
 	private OntologyClass generateOntologyClassWithHierarchy(EClass eClass, IOntologyManager ontologyManager) {
@@ -201,7 +210,12 @@ public class SymoChangeHandler extends AbstractChangeHandler {
 		for (EObject eObject : comprisedEObjects) {
 			OntologyClass oCl = (OntologyClass)emfToOntologyMap.get(eObject.eClass());
 
-			OntologyIndividual oIn = ontologyManager.createIndividualOfClass(ModelProviderHelper.getModelElementName(eObject), MODELONT_PREFIX, oCl);
+			OntologyIndividual oIn;
+			if (eObject instanceof ProjectRepository)
+				oIn = ontologyManager.createIndividualOfClass("ProjectRepository", MODELONT_PREFIX, oCl);
+			else
+				oIn = ontologyManager.createIndividualOfClass(ModelProviderHelper.getModelElementName(eObject), MODELONT_PREFIX, oCl);
+			
 			emfToOntologyMap.put(eObject, oIn);
 
 			System.out.println("Individual created: '" + oIn.getName() + "'.");
