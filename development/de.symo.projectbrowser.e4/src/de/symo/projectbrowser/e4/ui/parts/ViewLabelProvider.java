@@ -1,7 +1,11 @@
 package de.symo.projectbrowser.e4.ui.parts;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.resource.LocalResourceManager;
@@ -11,6 +15,7 @@ import org.eclipse.swt.graphics.Device;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.ImageData;
 import org.eclipse.swt.program.Program;
+import org.osgi.framework.Bundle;
 
 import com.google.common.io.Files;
 
@@ -42,10 +47,16 @@ public class ViewLabelProvider extends LabelProvider {
 			} else {
 				String ext = Files.getFileExtension(file.getName());
 				
-				ImageData imageData = null;
+				// if unknown use default
+				ImageData imageData = getDefaultFileIcon();
+				
+				
+				
+				// get external program icons
 				if (Program.findProgram(ext) != null)
 					imageData = Program.findProgram(ext).getImageData();
 				
+				// render the icon on the correct device
 				Device device = getResourceManager().getDevice();
 				if ((imageData != null) && (device != null))
 					return new Image(device, imageData);
@@ -69,6 +80,21 @@ public class ViewLabelProvider extends LabelProvider {
 			resourceManager = new LocalResourceManager(JFaceResources.getResources());
 		}
 		return resourceManager;
+	}
+
+	private ImageData getDefaultFileIcon() {
+		
+		ImageData imageData = null;
+		
+		try {
+			Bundle bundle = Platform.getBundle("de.symo.projectbrowser.e4");
+			URL url = bundle.getEntry("icons/16_File.png");
+			InputStream inputStream = url.openConnection().getInputStream();
+			imageData = new ImageData(inputStream);
+		} catch (IOException e) {
+		}
+		
+		return imageData;
 	}
 }
 
