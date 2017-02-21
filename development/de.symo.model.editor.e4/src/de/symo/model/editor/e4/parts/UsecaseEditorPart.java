@@ -27,7 +27,7 @@ import org.eclipse.swt.widgets.Composite;
 
 import com.google.inject.Injector;
 
-import de.symo.model.editor.registry.ui.UiInjectorProvider;
+import de.symo.model.editor.e4.ui.usecase.UsecaseInjectorProvider;
 
 public class UsecaseEditorPart {
 	
@@ -62,7 +62,7 @@ public class UsecaseEditorPart {
 		}
 		
 		// get injector
-		Injector injector = UiInjectorProvider.getInjector();
+		Injector injector = UsecaseInjectorProvider.getInjector();
 
 		// The EditingDomain is needed for context menu and drag and drop
 		EditingDomain editingDomain = injector.getInstance(EditingDomain.class);

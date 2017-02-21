@@ -50,16 +50,16 @@ module de.symo.model.editor.e4.ui.registry {
 			Registry r -> r.name + " [" + r.metaModel + "]"
 			Measurement m -> m.name
 			Constant c-> c.name 
-			Unit u ->  u.name + " " + u.symbol
+			Unit u ->  u.name + " " + "[" + u.symbol + "]"
 		}
 		
 		image {
-			Registry -> "Registry.png"
+			Registry -> "icons\\Registry.png"
 			Constant -> "Constant.png"
 			MetaData -> "Stereotype.gif"
 			Stereotype -> "Stereotype.gif"
 			Unit -> "Unit.gif"
-			Measurement -> "Unit.gif"
+		 	Measurement -> "Unit.gif"
 		}
 	}	
 }

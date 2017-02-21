@@ -11,7 +11,7 @@ import de.symo.model.editor.e4.ui.SymoEditorView
 module de.symo.model.editor.e4.symo.ui {	
 		
 	parts {
-		viewpart de.symo.model.editor.e4.symo.ui {
+		viewpart de.symo.model.editor.e4.ui.symo {
 			viewname "Symo"
 			viewclass SymoEditorView
 		}

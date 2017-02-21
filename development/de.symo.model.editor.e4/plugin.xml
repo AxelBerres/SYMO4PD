@@ -12,23 +12,23 @@
          point="org.eclipse.ui.views">
       <view
             category="org.eclipse.emf.parsley"
+            class="de.symo.model.editor.e4.ui.registry.RegistryExecutableExtensionFactory:de.symo.model.editor.e4.ui.RegistryEditorView"
+            id="de.symo.model.editor.e4.ui.registry"
+            name="Registry"
+            restorable="true">
+      </view>
+      <view
+            category="org.eclipse.emf.parsley"
             class="de.symo.model.editor.e4.symo.ui.UiExecutableExtensionFactory:de.symo.model.editor.e4.ui.SymoEditorView"
-            id="de.symo.model.editor.e4.symo.ui"
+            id="de.symo.model.editor.e4.ui.symo"
             name="Symo"
             restorable="true">
       </view>
       <view
             category="org.eclipse.emf.parsley"
-            class="de.symo.model.editor.registry.ui.UiExecutableExtensionFactory:de.symo.model.editor.e4.ui.UseCaseEditorView"
-            id="de.symo.model.editor.registry.ui"
+            class="de.symo.model.editor.e4.ui.usecase.UsecaseExecutableExtensionFactory:de.symo.model.editor.e4.ui.UseCaseEditorView"
+            id="de.symo.model.editor.e4.ui.usecase"
             name="Usecase"
-            restorable="true">
-      </view>
-      <view
-            category="org.eclipse.emf.parsley"
-            class="de.symo.model.editor.e4.ui.registry.RegistryExecutableExtensionFactory:de.symo.model.editor.e4.ui.RegistryEditorView"
-            id="de.symo.model.editor.e4.ui.registry"
-            name="Registry"
             restorable="true">
       </view>
    </extension>

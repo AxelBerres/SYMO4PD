@@ -28,7 +28,8 @@ import org.eclipse.swt.widgets.Composite;
 
 import com.google.inject.Injector;
 
-import de.symo.model.editor.registry.ui.UiInjectorProvider;
+import de.symo.model.editor.e4.symo.ui.UiInjectorProvider;
+
 import de.symo.service.ISymoModelService;
 
 public class SymoEditorPart {
