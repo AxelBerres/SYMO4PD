@@ -17,7 +17,7 @@ import oida.ontologyMgr.OntologyFile;
  * @since 2017-01-10
  */
 public class AdapterOfSatori implements IAdapterOfSatori {
-	private final String MODELONTOLOGY_SUBDIRECTORY = "\\ont\\";
+	private final String MODELONTOLOGY_SUBDIRECTORY = "\\ont";
 	private final String OWL_POSTFIX = ".owl";
 	
 	private static AdapterOfSatori instance;
