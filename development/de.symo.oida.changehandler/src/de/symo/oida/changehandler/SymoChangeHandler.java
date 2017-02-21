@@ -42,7 +42,7 @@ public class SymoChangeHandler extends AbstractChangeHandler {
 		generateLocalNamespace(ontManager);
 		generateOntologyClasses(modelContainer, ontManager);
 		generateIndividuals(modelContainer, ontManager);
-		
+
 		try {
 			ontManager.saveOntology();
 		} catch (OntologyManagerException e) {
@@ -57,7 +57,7 @@ public class SymoChangeHandler extends AbstractChangeHandler {
 
 			OntologyClass oCl = generateOntologyClassWithHierarchy(newEObject.eClass(), ontManager);
 			generateOntologyIndividualOfClass(newEObject, oCl, ontManager);
-//			EObject rootContainer = ModelHelper.getRootContainer(newEObject);
+			// EObject rootContainer = ModelHelper.getRootContainer(newEObject);
 		}
 	}
 
@@ -114,7 +114,7 @@ public class SymoChangeHandler extends AbstractChangeHandler {
 		}
 		if (notification.getNotifier() instanceof ANameItem) {
 			EObject notifier = (EObject)notification.getNotifier();
-			
+
 			OntologyIndividual oIn = (OntologyIndividual)emfToOntologyMap.get(notifier);
 			ontManager.renameEntity(oIn, ((ANameItem)notifier).getName());
 		}
@@ -135,7 +135,7 @@ public class SymoChangeHandler extends AbstractChangeHandler {
 
 	private void generateLocalNamespace(IOntologyManager ontologyManager) {
 		String namespace = SYMO_MODELONT_NS;
-		String filePath = ontologyManager.getOntology().getOntologyEntry().getPath();
+		String filePath = ontologyManager.getOntology().getOntologyFile().getPath();
 
 		namespace = namespace + filePath.substring(ProjectBrowserPart.getProjectRoot().getAbsolutePath().length() + 1);
 		namespace = namespace.replace("\\", ".");
@@ -215,26 +215,11 @@ public class SymoChangeHandler extends AbstractChangeHandler {
 				oIn = ontologyManager.createIndividualOfClass("ProjectRepository", MODELONT_PREFIX, oCl);
 			else
 				oIn = ontologyManager.createIndividualOfClass(ModelProviderHelper.getModelElementName(eObject), MODELONT_PREFIX, oCl);
-			
+
 			emfToOntologyMap.put(eObject, oIn);
 
 			System.out.println("Individual created: '" + oIn.getName() + "'.");
 		}
-
-		// URI individualURI = OntologyHelper.generateURI(targetOntology,
-		// renamer.getEObjectName(eObject));
-		//
-		// if (!ontologyModel.containsIndividual(individualURI)) {
-		// URI classURI = OntologyHelper.generateURI(targetOntology,
-		// renamer.getEClassName(eObject.eClass()));
-		// if (!ontologyModel.isClassExisting(classURI)) {
-		// ontologyModel.addOntClass(classURI);
-		// }
-		// OntClass ontologyClass = ontologyModel
-		// .getOntologyClass(classURI);
-		// ontologyModel.addIndividual(individualURI, ontologyClass);
-		//
-		// }
 	}
 	//
 	// // Create properties between individuals
