@@ -51,22 +51,6 @@ public class AdapterOfSatori implements IAdapterOfSatori {
 		System.out.println(operationArgs.getOperation().toString() + ": " + operationArgs.getNewEObject().toString());
 
 		switch (operationArgs.getOperation()) {
-		case CREATE:
-			// if
-			// (!checkAndCreateModelOntologySubdirectory(operationArgs.getModelPath()))
-			// {
-			// System.out.println("ADASI: Model Ontology directory does not
-			// exist and could not be created.");
-			// }
-			// else {
-			// OntologyFile modelOntologyfile =
-			// OntologyMgrFactory.eINSTANCE.createOntologyFile();
-			// modelOntologyfile.setPath(operationArgs.getModelPath() +
-			// MODELONTOLOGY_SUBDIRECTORY);
-			// modelOntologyfile.setFileName(operationArgs.getModelFileName() +
-			// OWL_POSTFIX);
-			// }
-			break;
 		case OPEN:
 			if (!checkAndCreateModelOntologySubdirectory(operationArgs.getModelPath())) {
 				System.out.println("ADASI: Model Ontology directory does not exist and could not be created.");
