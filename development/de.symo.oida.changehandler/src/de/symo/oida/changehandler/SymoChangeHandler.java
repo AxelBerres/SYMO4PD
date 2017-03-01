@@ -220,76 +220,52 @@ public class SymoChangeHandler extends AbstractChangeHandler {
 
 			System.out.println("Individual created: '" + oIn.getName() + "'.");
 		}
+
+//		// Create properties between individuals
+//		for (EObject eObject : comprisedEObjects) {
+//			OntologyIndividual currentIndividual = emfToOntologyMap.get(eObject);
+//			//URI individualURI = OntologyHelper.generateURI(targetOntology, renamer.getEObjectName(eObject));
+//
+//			for (EStructuralFeature eStructuralFeature : eObject.eClass().getEAllStructuralFeatures()) {
+//
+//				if (eStructuralFeature instanceof EReference) {
+//					EReference eReference = (EReference)eStructuralFeature;
+//
+//					URI objectPropertyURI = OntologyHelper.generateURI(targetOntology, renamer.getEStructuralFeatureName(eReference));
+//					Object referenceTargetObject = eObject.eGet(eReference);
+//					// Handle reference with cardinality greater 1
+//					if (referenceTargetObject instanceof EList) {
+//						EList<EObject> referenceObjectList = (EList<EObject>)referenceTargetObject;
+//						for (EObject targetEObject : referenceObjectList) {
+//							URI targetIndividualURI = OntologyHelper.generateURI(targetOntology, renamer.getEObjectName(targetEObject));
+//							
+//							ontologyModel.addObjectPropertyInstance(individualURI, objectPropertyURI, targetIndividualURI);
+//						}
+//					}
+//					// Handle reference with cardinality 1
+//					else if (referenceTargetObject instanceof EObject) {
+//						EObject referenceEObject = (EObject)referenceTargetObject;
+//						URI targetIndividualURI = OntologyHelper.generateURI(targetOntology, renamer.getEObjectName(referenceEObject));
+//
+//						ontologyModel.addObjectPropertyInstance(individualURI, objectPropertyURI, targetIndividualURI);
+//					}
+//				}
+//				// Handle attribute
+//				else if (eStructuralFeature instanceof EAttribute) {
+//					EAttribute eAttribute = (EAttribute)eStructuralFeature;
+//					Object eAttributeValue = "";
+//					if (eObject.eGet(eAttribute) != null) {
+//						eAttributeValue = eObject.eGet(eAttribute);
+//					}
+//
+//					URI datatypePropertyURI = OntologyHelper.generateURI(targetOntology, renamer.getEStructuralFeatureName(eAttribute));
+//
+//					Literal literal = ontologyModel.getOntologyModel().createTypedLiteral(eAttributeValue);
+//					// ontologyModel.addDatatypePropertyInstance(individualURI,
+//					// datatypePropertyURI, eAttributeValue);
+//					ontologyModel.addDatatypePropertyInstance(individualURI, datatypePropertyURI, literal);
+//				}
+//			}
+//		}
 	}
-	//
-	// // Create properties between individuals
-	// for (EObject eObject : comprisedEObjects) {
-	//
-	// URI individualURI = OntologyHelper.generateURI(targetOntology,
-	// renamer.getEObjectName(eObject));
-	//
-	// for (EStructuralFeature eStructuralFeature : eObject.eClass()
-	// .getEAllStructuralFeatures()) {
-	//
-	// if (eStructuralFeature instanceof EReference) {
-	// EReference eReference = (EReference) eStructuralFeature;
-	//
-	// URI objectPropertyURI = OntologyHelper.generateURI(
-	// targetOntology,
-	// renamer.getEStructuralFeatureName(eReference));
-	// Object referenceTargetObject = eObject.eGet(eReference);
-	// // Handle reference with cardinality greater 1
-	// if (referenceTargetObject instanceof EList) {
-	// @SuppressWarnings("unchecked")
-	// EList<EObject> referenceObjectList = (EList<EObject>)
-	// referenceTargetObject;
-	// for (EObject targetEObject : referenceObjectList) {
-	// URI targetIndividualURI = OntologyHelper
-	// .generateURI(targetOntology, renamer
-	// .getEObjectName(targetEObject));
-	//
-	// ontologyModel.addObjectPropertyInstance(
-	// individualURI, objectPropertyURI,
-	// targetIndividualURI);
-	//
-	// }
-	// }
-	// // Handle reference with cardinality 1
-	// else if (referenceTargetObject instanceof EObject) {
-	// EObject referenceEObject = (EObject) referenceTargetObject;
-	// URI targetIndividualURI = OntologyHelper.generateURI(
-	// targetOntology,
-	// renamer.getEObjectName(referenceEObject));
-	//
-	// ontologyModel.addObjectPropertyInstance(individualURI,
-	// objectPropertyURI, targetIndividualURI);
-	//
-	// }
-	// }
-	// // Handle attribute
-	// else if (eStructuralFeature instanceof EAttribute) {
-	// EAttribute eAttribute = (EAttribute) eStructuralFeature;
-	// Object eAttributeValue = "";
-	// if (eObject.eGet(eAttribute) != null) {
-	// eAttributeValue = eObject.eGet(eAttribute);
-	// }
-	//
-	// URI datatypePropertyURI = OntologyHelper.generateURI(
-	// targetOntology,
-	// renamer.getEStructuralFeatureName(eAttribute));
-	//
-	// Literal literal = ontologyModel.getOntologyModel()
-	// .createTypedLiteral(eAttributeValue);
-	// // ontologyModel.addDatatypePropertyInstance(individualURI,
-	// // datatypePropertyURI, eAttributeValue);
-	// ontologyModel.addDatatypePropertyInstance(individualURI,
-	// datatypePropertyURI, literal);
-	//
-	// }
-	//
-	// }
-	//
-	// }
-	//
-	// }
 }
