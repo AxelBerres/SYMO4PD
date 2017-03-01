@@ -9,6 +9,7 @@ import de.symo.model.element.MetaData
 import de.symo.model.element.Stereotype
 import de.symo.model.element.Measurement
 import de.symo.model.element.Unit
+import de.symo.model.element.Value
 
 /**
  * @since 2016-11-07
@@ -54,12 +55,13 @@ module de.symo.model.editor.e4.ui.registry {
 		}
 		
 		image {
-			Registry -> "icons\\Registry.png"
+			Registry -> "Registry.png"
 			Constant -> "Constant.png"
-			MetaData -> "Stereotype.gif"
+			MetaData -> "MetaData.gif"
 			Stereotype -> "Stereotype.gif"
 			Unit -> "Unit.gif"
 		 	Measurement -> "Unit.gif"
+		 	Value -> "Value.gif"
 		}
 	}	
 }
