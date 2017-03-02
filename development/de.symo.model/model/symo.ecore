@@ -7,7 +7,7 @@
   </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/OCL/Import"/>
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ProjectRepository" eSuperTypes="symo_element.ecore#//ARepository">
+  <eClassifiers xsi:type="ecore:EClass" name="ProjectRepository" eSuperTypes="symo_element.ecore#//ARepository symo_base.ecore#//ANameItem">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A project repository stores systems. "/>
       <details key="source" value="premise.ecore#ProjectRepository"/>

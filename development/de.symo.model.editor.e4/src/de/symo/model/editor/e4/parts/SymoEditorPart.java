@@ -28,8 +28,7 @@ import org.eclipse.swt.widgets.Composite;
 
 import com.google.inject.Injector;
 
-import de.symo.model.editor.e4.symo.ui.UiInjectorProvider;
-
+import de.symo.model.editor.e4.ui.symo.SymoInjectorProvider;
 import de.symo.service.ISymoModelService;
 
 public class SymoEditorPart {
@@ -65,7 +64,7 @@ public class SymoEditorPart {
 		}
 		
 		// get injector
-		Injector injector = UiInjectorProvider.getInjector();
+		Injector injector = SymoInjectorProvider.getInjector();
 
 		// The EditingDomain is needed for context menu and drag and drop
 		EditingDomain editingDomain = injector.getInstance(EditingDomain.class);

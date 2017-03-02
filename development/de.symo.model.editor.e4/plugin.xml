@@ -19,9 +19,9 @@
       </view>
       <view
             category="org.eclipse.emf.parsley"
-            class="de.symo.model.editor.e4.symo.ui.UiExecutableExtensionFactory:de.symo.model.editor.e4.ui.SymoEditorView"
+            class="de.symo.model.editor.e4.ui.symo.SymoExecutableExtensionFactory:de.symo.model.editor.e4.ui.SymoEditorView"
             id="de.symo.model.editor.e4.ui.symo"
-            name="Symo"
+            name="System model"
             restorable="true">
       </view>
       <view

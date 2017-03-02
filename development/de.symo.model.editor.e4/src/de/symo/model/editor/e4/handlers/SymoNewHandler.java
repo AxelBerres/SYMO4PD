@@ -54,10 +54,13 @@ public class SymoNewHandler {
 	}
 
 	private void createSymo(final String symoName) {
+		
+		// create symo file and set repository name
 		String prjRepo = symoName + ".symo";		
 		ProjectRepository prj = SymoFactory.eINSTANCE.createProjectRepository();
+		prj.setName(symoName);
 
-		// ### FIXME HACK
+		// ### FIXME HACK to get the correct folder
 		File folder = ProjectBrowserPart.getSelection();
 		if (folder == null) {
 			Shell shell = new Shell(SWT.SHELL_TRIM);
