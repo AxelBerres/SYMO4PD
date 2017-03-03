@@ -5,7 +5,7 @@ import org.osgi.framework.BundleContext;
 
 import de.symo.adasi.AdapterOfSatori;
 import de.symo.service.SymoModelService;
-import oida.bridge.observerservice.emf.EMFModelObserverService;
+import oida.model.emf.EMFModelChangeReporter;
 import oida.ontology.service.OIDAOntologyService;
 
 /**
@@ -21,7 +21,7 @@ public class Activator implements BundleActivator {
 		AdapterOfSatori.getInstance().initialize(
 				SymoModelService.getInstance(),
 				OIDAOntologyService.getInstance(),
-				EMFModelObserverService.getInstance());
+				EMFModelChangeReporter.getInstance());
 	}
 
 	@Override
