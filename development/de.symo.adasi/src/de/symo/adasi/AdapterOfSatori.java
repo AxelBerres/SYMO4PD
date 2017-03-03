@@ -3,9 +3,11 @@ package de.symo.adasi;
 import java.io.File;
 import java.util.Observable;
 
+import org.eclipse.emf.ecore.EObject;
+
 import de.symo.service.ISymoModelService;
 import de.symo.service.modeleditor.event.BasicModelOperationEventArguments;
-import oida.bridge.observerservice.emf.EMFModelObserverService;
+import oida.bridge.model.changereporter.IModelChangeReporter;
 import oida.ontology.manager.IOntologyManager;
 import oida.ontology.manager.OntologyManagerException;
 import oida.ontology.service.IOIDAOntologyService;
@@ -32,15 +34,15 @@ public class AdapterOfSatori implements IAdapterOfSatori {
 
 	private ISymoModelService modelService;
 	private IOIDAOntologyService oidaService;
-	private EMFModelObserverService oidaBridge;
+	private IModelChangeReporter<EObject> emfModelChangeReporter;
 
 	private AdapterOfSatori() {
 	}
 
-	public void initialize(ISymoModelService modelService, IOIDAOntologyService oidaService, EMFModelObserverService oidaBridge) {
+	public void initialize(ISymoModelService modelService, IOIDAOntologyService oidaService, IModelChangeReporter<EObject> emfModelChangeReporter) {
 		this.modelService = modelService;
 		this.oidaService = oidaService;
-		this.oidaBridge = oidaBridge;
+		this.emfModelChangeReporter = emfModelChangeReporter;
 
 		this.modelService.registerModelObserver(this);
 	}
@@ -64,7 +66,7 @@ public class AdapterOfSatori implements IAdapterOfSatori {
 						modelOntologyManager.addImportDeclaration(oidaService.getMereology().getOntology());
 					}
 					
-					oidaBridge.addEMFModelForObservation(operationArgs.getNewEObject(), modelOntologyManager);
+					emfModelChangeReporter.addModelForObservation(operationArgs.getNewEObject());
 				} catch (OntologyManagerException e) {
 					e.printStackTrace();
 				}
