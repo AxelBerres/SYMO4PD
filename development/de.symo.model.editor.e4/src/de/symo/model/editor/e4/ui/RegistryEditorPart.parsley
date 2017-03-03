@@ -50,7 +50,7 @@ module de.symo.model.editor.e4.ui.registry {
 		text {
 			Registry r -> r.name + " [" + r.metaModel + "]"
 			Measurement m -> m.name
-			Constant c-> c.name 
+			Constant c-> c.name + " " + c.^value.^value
 			Unit u ->  u.name + " " + "[" + u.symbol + "]"
 		}
 		
