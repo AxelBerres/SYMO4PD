@@ -3,6 +3,11 @@ package de.symo.adasi;
 import java.io.File;
 import java.util.Observable;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
+import org.eclipse.e4.core.di.annotations.Creatable;
+
 import de.symo.service.ISymoModelService;
 import de.symo.service.modeleditor.event.BasicModelOperationEventArguments;
 import oida.bridge.service.IOIDABridge;
@@ -13,30 +18,19 @@ import oida.bridge.service.OIDABridgeException;
  * @author Michael.Shamiyeh
  * @since 2017-01-10
  */
+@Creatable
+@Singleton
 public class AdapterOfSatori implements IAdapterOfSatori {
 	private final String MODELONTOLOGY_SUBDIRECTORY = "\\ont";
 	private final String OWL_POSTFIX = ".owl";
 
-	private ISymoModelService modelService;
-	private IOIDABridge oidaBridge;
-
-	private static AdapterOfSatori instance;
-
-	public static AdapterOfSatori getInstance() {
-		if (instance == null)
-			instance = new AdapterOfSatori();
-
-		return instance;
-	}
+	@Inject ISymoModelService modelService;
+	@Inject IOIDABridge oidaBridge;
 	
-	private AdapterOfSatori() {
-	}
-
-	public void initialize(ISymoModelService modelService, IOIDABridge oidaBridge) {
-		this.modelService = modelService;
-		this.oidaBridge = oidaBridge;
-		
-		this.modelService.registerModelObserver(this);
+	public AdapterOfSatori() {
+		modelService.registerModelObserver(this);
+		oidaBridge.toString();
+		System.out.println("SYMO4PD ADASI: Service registered.");		
 	}
 
 	@Override

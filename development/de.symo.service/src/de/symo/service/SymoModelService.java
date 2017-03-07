@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.inject.Singleton;
+
+import org.eclipse.e4.core.di.annotations.Creatable;
 import org.eclipse.emf.ecore.EObject;
 
 import de.symo.service.modeleditor.event.BasicModelOperationEventArguments;
@@ -16,19 +19,12 @@ import de.symo.service.modeleditor.event.ModelOperation;
  * @since 2017-09-01
  * 
  */
+@Creatable
+@Singleton
 public class SymoModelService extends Observable implements ISymoModelService {
 	private List<Observer> registeredModelObservers = new ArrayList<Observer>();
-	
-	private static SymoModelService instance;
-	
-	public static SymoModelService getInstance() {
-		if (instance == null)
-			instance = new SymoModelService();
-		
-		return instance;
-	}
-	
-	private SymoModelService() {
+
+	public SymoModelService() {
 		System.out.println("SYMO4PD Model Service: Initialized.");
 	}
 	

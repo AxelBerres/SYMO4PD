@@ -4,7 +4,10 @@ Bundle-Name: SYMOService
 Bundle-SymbolicName: de.symo.service;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: SYMO4PD
-Require-Bundle: org.eclipse.core.runtime
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.e4.core.di;bundle-version="1.6.0",
+ org.eclipse.osgi.services;bundle-version="3.5.100",
+ org.eclipse.e4.core.di.annotations
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: org.eclipse.emf.ecore
 Export-Package: de.symo.service,
