@@ -4,5 +4,6 @@ public enum ModelOperation {
 	CREATE,
 	REMOVE,
 	OPEN,
-	SAVE
+	SAVE,
+	CLOSE
 }

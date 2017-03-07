@@ -2,11 +2,10 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="oida.bridge.changehandler">
+         point="oida.bridge.model.changehandler.renamer">
       <client
-            class="de.symo.oida.changehandler.SymoChangeHandler">
+            class="de.symo.oida.renamer.SymoRenamerStrategy">
       </client>
-      <client></client>
    </extension>
 
 </plugin>

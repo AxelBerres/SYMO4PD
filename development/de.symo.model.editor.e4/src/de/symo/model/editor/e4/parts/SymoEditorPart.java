@@ -6,6 +6,7 @@ import java.util.EventObject;
 import java.util.UUID;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 
 import org.eclipse.e4.core.di.annotations.Optional;
@@ -125,5 +126,20 @@ public class SymoEditorPart {
 		if (dirty != null) {
 			dirty.setDirty(false);
 		}
+	}
+	
+	@PreDestroy
+	public void preDestroy(@Optional ISymoModelService modelService) {
+		File file = (File) mPart.getTransientData().get("data");
+		URI uri = URI.createFileURI(file.toString());		
+		if (uri == null) {
+			return;
+		}
+		
+		String path = uri.toFileString().substring(0, uri.toFileString().lastIndexOf("\\"));
+		String fileName = uri.toFileString().substring(uri.toFileString().lastIndexOf("\\"));
+		
+		if (modelService != null)
+			modelService.reportModelClosedEvent(resource.getContents().get(0), path, fileName);
 	}
 }

@@ -3,16 +3,10 @@ package de.symo.adasi;
 import java.io.File;
 import java.util.Observable;
 
-import org.eclipse.emf.ecore.EObject;
-
 import de.symo.service.ISymoModelService;
 import de.symo.service.modeleditor.event.BasicModelOperationEventArguments;
-import oida.bridge.model.changereporter.IModelChangeReporter;
-import oida.ontology.manager.IOntologyManager;
-import oida.ontology.manager.OntologyManagerException;
-import oida.ontology.service.IOIDAOntologyService;
-import oida.ontologyMgr.OntologyFile;
-import oida.util.OIDAUtil;
+import oida.bridge.service.IOIDABridge;
+import oida.bridge.service.OIDABridgeException;
 
 /**
  * 
@@ -23,6 +17,9 @@ public class AdapterOfSatori implements IAdapterOfSatori {
 	private final String MODELONTOLOGY_SUBDIRECTORY = "\\ont";
 	private final String OWL_POSTFIX = ".owl";
 
+	private ISymoModelService modelService;
+	private IOIDABridge oidaBridge;
+
 	private static AdapterOfSatori instance;
 
 	public static AdapterOfSatori getInstance() {
@@ -31,19 +28,14 @@ public class AdapterOfSatori implements IAdapterOfSatori {
 
 		return instance;
 	}
-
-	private ISymoModelService modelService;
-	private IOIDAOntologyService oidaService;
-	private IModelChangeReporter<EObject> emfModelChangeReporter;
-
+	
 	private AdapterOfSatori() {
 	}
 
-	public void initialize(ISymoModelService modelService, IOIDAOntologyService oidaService, IModelChangeReporter<EObject> emfModelChangeReporter) {
+	public void initialize(ISymoModelService modelService, IOIDABridge oidaBridge) {
 		this.modelService = modelService;
-		this.oidaService = oidaService;
-		this.emfModelChangeReporter = emfModelChangeReporter;
-
+		this.oidaBridge = oidaBridge;
+		
 		this.modelService.registerModelObserver(this);
 	}
 
@@ -58,21 +50,20 @@ public class AdapterOfSatori implements IAdapterOfSatori {
 				System.out.println("ADASI: Model Ontology directory does not exist and could not be created.");
 			} else {
 				try {
-					OntologyFile modelOntologyfile = OIDAUtil.getOntologyFile(new File(operationArgs.getModelPath() + MODELONTOLOGY_SUBDIRECTORY + operationArgs.getModelFileName() + OWL_POSTFIX));
-					IOntologyManager modelOntologyManager = oidaService.getOntologyManager(modelOntologyfile, false);
-					
-					if (modelOntologyManager == null) {
-						modelOntologyManager = oidaService.getOntologyManager(modelOntologyfile, true);
-						modelOntologyManager.addImportDeclaration(oidaService.getMereology().getOntology());
-					}
-					
-					emfModelChangeReporter.addModelForObservation(operationArgs.getNewEObject());
-				} catch (OntologyManagerException e) {
+					oidaBridge.addChangeHandler(operationArgs.getNewEObject(), new File(operationArgs.getModelPath() + MODELONTOLOGY_SUBDIRECTORY + operationArgs.getModelFileName() + OWL_POSTFIX));
+				} catch (OIDABridgeException e) {
 					e.printStackTrace();
 				}
 			}
 			break;
 		case REMOVE:
+			System.out.println("ADASI TODO: Remove OIDA Model Ontology!");
+			break;
+		case SAVE:
+			oidaBridge.saveModelOntology(operationArgs.getNewEObject());
+			break;
+		case CLOSE:
+			oidaBridge.removeChangeHandler(operationArgs.getNewEObject());
 			break;
 		default:
 			break;

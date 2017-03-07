@@ -6,12 +6,12 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: SYMO4PD
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: de.symo.projectbrowser.e4.ui.parts,
- oida.bridge.observerservice.changehandler,
+ oida.bridge.model.renamer,
  oida.ontology,
  oida.ontology.manager,
  oida.ontology.owl.manager,
  oida.ontologyMgr,
- oida.test.util,
  org.eclipse.emf.common.notify
 Require-Bundle: de.symo.model;bundle-version="1.0.0",
- org.junit
+ org.junit,
+ org.eclipse.core.runtime;bundle-version="3.12.0"
