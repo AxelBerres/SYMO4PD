@@ -38,9 +38,11 @@ public class ProjectNewFolderHandler {
 	    
 	    // get new folder name and create a folder	    
 	    String folderName = id.getValue();
-	    File folder = new File(file, folderName);
-	    folder.mkdir();
-
+		    if (folderName != null) {
+		    File folder = new File(file, folderName);
+		    folder.mkdir();
+	    }
+	    
 		// ### FIXME HACK
 		ProjectBrowserPart.refresh();
 	}

@@ -29,17 +29,24 @@
     <elements xsi:type="basic:Part" xmi:id="_aRoQ8KTpEea0GYlVIP9ujQ" elementId="de.symo.projectbrowser.e4.ui.part" contributionURI="bundleclass://de.symo.projectbrowser.e4/de.symo.projectbrowser.e4.ui.parts.ProjectBrowserPart" label="ProjectBrowser" iconURI="platform:/plugin/de.symo.projectbrowser.e4/icons/16_Browser.png">
       <menus xsi:type="menu:PopupMenu" xmi:id="_3S840KTuEea0GYlVIP9ujQ" elementId="de.symo.projectbrowser.e4.popupmenu.project">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_GuGYMKTvEea0GYlVIP9ujQ" elementId="de.symo.projectbrowser.e4.handledmenuitem.project.setroot" label="Set Root" iconURI="platform:/plugin/de.symo.projectbrowser.e4/icons/16_Browser.png" command="_xtbVYKTbEea0GYlVIP9ujQ"/>
-        <children xsi:type="menu:MenuSeparator" xmi:id="_613UAKTwEear9b14Lb2Avw" elementId="de.symo.projectbrowser.e4.menuseparator.0"/>
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_g9Z9sKTvEea0GYlVIP9ujQ" elementId="de.symo.projectbrowser.e4.handledmenuitem.project.new" label="New Project" iconURI="platform:/plugin/de.symo.projectbrowser.e4/icons/16_Project_Add.png" command="_m1FiwKTvEea0GYlVIP9ujQ"/>
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_WgpU0KT4EeaUwL2DBkQXsg" elementId="de.symo.projectbrowser.e4.handledmenuitem.project.newfolder" label="New Folder" iconURI="platform:/plugin/de.symo.projectbrowser.e4/icons/16_Folder_Add.png" command="_5VwvAKT3EeaUwL2DBkQXsg"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_B7lboAAZEeexQ42VWz4X2w" elementId="de.symo.projectbrowser.e4.menuseparator.0"/>
+        <children xsi:type="menu:Menu" xmi:id="_nPMRgAAYEeexQ42VWz4X2w" elementId="de.symo.projectbrowser.e4.menu.new" label="New">
+          <children xsi:type="menu:HandledMenuItem" xmi:id="_AZNC4AAZEeexQ42VWz4X2w" elementId="de.symo.projectbrowser.e4.handledmenuitem.project.new" label="Project" iconURI="platform:/plugin/de.symo.projectbrowser.e4/icons/16_Project_Add.png" command="_m1FiwKTvEea0GYlVIP9ujQ"/>
+          <children xsi:type="menu:HandledMenuItem" xmi:id="_A71O0AAZEeexQ42VWz4X2w" elementId="de.symo.projectbrowser.e4.handledmenuitem.project.newfolder" label="Folder" iconURI="platform:/plugin/de.symo.projectbrowser.e4/icons/16_Folder_Add.png" command="_5VwvAKT3EeaUwL2DBkQXsg"/>
+        </children>
         <children xsi:type="menu:Menu" xmi:id="_Whn2IKUBEeaUwL2DBkQXsg" elementId="de.symo.projectbrowser.e4.menu.open" label="Open">
           <children xsi:type="menu:HandledMenuItem" xmi:id="_rvBdcKUAEeaUwL2DBkQXsg" elementId="de.symo.projectbrowser.e4.handledmenuitem.project.opendefault" label="Open With Default" iconURI="platform:/plugin/de.symo.projectbrowser.e4/icons/16_File.png" command="_wD-EcKUAEeaUwL2DBkQXsg"/>
         </children>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_613UAKTwEear9b14Lb2Avw" elementId="de.symo.projectbrowser.e4.menuseparator.1"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_wPk3cAAZEeexQ42VWz4X2w" elementId="de.symo.projectbrowser.e4.handledmenuitem.import" label="Import"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_1EDTEAAZEeexQ42VWz4X2w" elementId="de.symo.projectbrowser.e4.handledmenuitem.export" label="Export"/>
         <children xsi:type="menu:MenuSeparator" xmi:id="_qOgs8KUAEeaUwL2DBkQXsg" elementId="de.symo.projectbrowser.e4.menuseparator.2"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_erYFIKT5EeaUwL2DBkQXsg" elementId="de.symo.projectbrowser.e4.handledmenuitem.project.delete" label="Delete" iconURI="platform:/plugin/de.symo.projectbrowser.e4/icons/16_Delete.png" command="_UXO70KT5EeaUwL2DBkQXsg"/>
       </menus>
       <toolbar xmi:id="_Js6a0KzTEeabQ4AjdOBcUg" elementId="de.symo.projectbrowser.e4.toolbar.0">
         <children xsi:type="menu:HandledToolItem" xmi:id="_KnTmgKzTEeabQ4AjdOBcUg" elementId="de.symo.projectbrowser.e4.handledtoolitem.project.setroot" label="Set Project Root" iconURI="platform:/plugin/de.symo.projectbrowser.e4/icons/16_Browser.png" command="_xtbVYKTbEea0GYlVIP9ujQ"/>
+        <children xsi:type="menu:ToolBarSeparator" xmi:id="_P8UgkAAbEeexQ42VWz4X2w" elementId="de.symo.projectbrowser.e4.toolbarseparator.0"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_KvvjcAAaEeexQ42VWz4X2w" elementId="de.symo.projectbrowser.e4.handledmenuitem.project.new" label="Project" iconURI="platform:/plugin/de.symo.projectbrowser.e4/icons/16_Project_Add.png" command="_m1FiwKTvEea0GYlVIP9ujQ"/>
       </toolbar>
     </elements>
   </fragments>
