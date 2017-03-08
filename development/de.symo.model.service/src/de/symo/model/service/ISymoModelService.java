@@ -1,4 +1,4 @@
-package de.symo.service;
+package de.symo.model.service;
 
 import java.util.Observer;
 

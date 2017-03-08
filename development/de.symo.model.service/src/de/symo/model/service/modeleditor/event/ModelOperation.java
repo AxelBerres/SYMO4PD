@@ -1,4 +1,4 @@
-package de.symo.service.modeleditor.event;
+package de.symo.model.service.modeleditor.event;
 
 public enum ModelOperation {
 	CREATE,

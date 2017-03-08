@@ -1,4 +1,4 @@
-package de.symo.service;
+package de.symo.model.service;
 
 import org.eclipse.e4.core.di.InjectorFactory;
 import org.osgi.framework.BundleActivator;

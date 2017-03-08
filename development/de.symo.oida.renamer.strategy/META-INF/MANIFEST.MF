@@ -1,16 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: OIDA Model-Changehandler
-Bundle-SymbolicName: de.symo.oida.changehandler;singleton:=true
+Bundle-SymbolicName: de.symo.oida.renamer.strategy;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: SYMO4PD
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Import-Package: de.symo.projectbrowser.e4.ui.parts,
- oida.bridge.model.renamer,
- oida.ontology,
- oida.ontology.manager,
- oida.ontology.owl.manager,
- oida.ontologyMgr,
+Import-Package: oida.bridge.model.renamer,
  org.eclipse.emf.common.notify
 Require-Bundle: de.symo.model;bundle-version="1.0.0",
  org.junit,

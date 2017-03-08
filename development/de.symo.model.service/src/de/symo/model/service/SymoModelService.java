@@ -1,4 +1,4 @@
-package de.symo.service;
+package de.symo.model.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,8 +10,8 @@ import javax.inject.Singleton;
 import org.eclipse.e4.core.di.annotations.Creatable;
 import org.eclipse.emf.ecore.EObject;
 
-import de.symo.service.modeleditor.event.BasicModelOperationEventArguments;
-import de.symo.service.modeleditor.event.ModelOperation;
+import de.symo.model.service.modeleditor.event.BasicModelOperationEventArguments;
+import de.symo.model.service.modeleditor.event.ModelOperation;
 
 /**
  * 
