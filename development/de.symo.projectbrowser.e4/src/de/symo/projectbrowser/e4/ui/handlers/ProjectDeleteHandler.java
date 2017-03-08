@@ -17,8 +17,8 @@ import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Shell;
 
+import de.symo.model.service.SymoModelService;
 import de.symo.projectbrowser.e4.ui.parts.ProjectBrowserPart;
-import de.symo.service.SymoModelService;
 
 /**
  * 

@@ -8,8 +8,8 @@ import javax.inject.Singleton;
 
 import org.eclipse.e4.core.di.annotations.Creatable;
 
-import de.symo.service.ISymoModelService;
-import de.symo.service.modeleditor.event.BasicModelOperationEventArguments;
+import de.symo.model.service.ISymoModelService;
+import de.symo.model.service.modeleditor.event.BasicModelOperationEventArguments;
 import oida.bridge.service.IOIDABridge;
 import oida.bridge.service.OIDABridgeException;
 
@@ -28,9 +28,14 @@ public class AdapterOfSatori implements IAdapterOfSatori {
 	@Inject IOIDABridge oidaBridge;
 	
 	public AdapterOfSatori() {
+		System.out.println("SYMO4PD ADASI: Service registered.");
+	}
+	
+	@Override
+	public void initialize() {
 		modelService.registerModelObserver(this);
 		oidaBridge.toString();
-		System.out.println("SYMO4PD ADASI: Service registered.");		
+		System.out.println("SYMO4PD ADASI: Initialized.");
 	}
 
 	@Override

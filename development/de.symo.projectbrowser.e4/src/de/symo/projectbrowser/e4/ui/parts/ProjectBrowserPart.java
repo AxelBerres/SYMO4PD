@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
@@ -34,6 +35,8 @@ import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeItem;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
+
+import de.symo.adasi.IAdapterOfSatori;
 
 public class ProjectBrowserPart {
 
@@ -61,7 +64,7 @@ public class ProjectBrowserPart {
 	private MApplication application;
 	
 	@PostConstruct
-	public void createControls(Composite parent, IEclipseContext ctx, EMenuService menuService) {
+	public void createControls(Composite parent, IEclipseContext ctx, EMenuService menuService, @Optional IAdapterOfSatori adapterOfSatori) {
 		projectRoot = ProjectPreference.getProjectBase();
 
 		viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
@@ -130,6 +133,9 @@ public class ProjectBrowserPart {
 						selection.size() == 1 ? selection.getFirstElement() : selection.toArray());
 			}
 		});
+		
+		if (adapterOfSatori != null)
+			adapterOfSatori.initialize();
 	}
 
 	@Focus

@@ -34,9 +34,9 @@
       <plugin id="de.symo.model"/>
       <plugin id="de.symo.model.edit"/>
       <plugin id="de.symo.model.editor.e4"/>
-      <plugin id="de.symo.oida.changehandler"/>
+      <plugin id="de.symo.model.service"/>
+      <plugin id="de.symo.oida.renamer.strategy"/>
       <plugin id="de.symo.projectbrowser.e4"/>
-      <plugin id="de.symo.service"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
       <plugin id="javax.xml"/>
@@ -150,6 +150,7 @@
    </plugins>
 
    <configurations>
+      <plugin id="de.symo.adasi" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />

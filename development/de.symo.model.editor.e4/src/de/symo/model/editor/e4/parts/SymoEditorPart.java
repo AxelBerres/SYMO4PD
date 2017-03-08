@@ -30,7 +30,7 @@ import org.eclipse.swt.widgets.Composite;
 import com.google.inject.Injector;
 
 import de.symo.model.editor.e4.ui.symo.SymoInjectorProvider;
-import de.symo.service.ISymoModelService;
+import de.symo.model.service.ISymoModelService;
 
 public class SymoEditorPart {
 	
@@ -45,7 +45,7 @@ public class SymoEditorPart {
 	
 	@Inject
 	EPartService partService;
-
+	
 	@PostConstruct
 	public void postConstruct(Composite parent, @Optional ISymoModelService modelService) {
 		File file = (File) mPart.getTransientData().get("data");

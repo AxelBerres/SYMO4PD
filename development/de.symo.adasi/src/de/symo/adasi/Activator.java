@@ -6,6 +6,7 @@ import org.osgi.framework.BundleContext;
 
 public class Activator implements BundleActivator {
 
+	@SuppressWarnings("restriction")
 	@Override
 	public void start(BundleContext context) throws Exception {
 		InjectorFactory.getDefault().addBinding(IAdapterOfSatori.class).implementedBy(AdapterOfSatori.class);
