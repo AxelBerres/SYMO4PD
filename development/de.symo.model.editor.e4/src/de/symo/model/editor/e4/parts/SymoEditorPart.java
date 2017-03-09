@@ -47,9 +47,13 @@ public class SymoEditorPart {
 
 	@Inject
 	EPartService partService;
+	
+	@Inject
+	@Optional
+	private IOIDABridge oidaBridge;
 
 	@PostConstruct
-	public void postConstruct(Composite parent, @Optional IOIDABridge oidaBridge) {
+	public void postConstruct(Composite parent) {
 		File file = (File)mPart.getTransientData().get("data");
 		if (file == null) {
 			// ### Hack
@@ -112,7 +116,7 @@ public class SymoEditorPart {
 	}
 
 	@Persist
-	public void save(MDirtyable dirty, @Optional IOIDABridge oidaBridge) throws IOException {
+	public void save(MDirtyable dirty) throws IOException {
 		File file = (File)mPart.getTransientData().get("data");
 		URI uri = URI.createFileURI(file.toString());
 		if (uri == null) {
@@ -130,7 +134,7 @@ public class SymoEditorPart {
 	}
 
 	@PreDestroy
-	public void preDestroy(@Optional IOIDABridge oidaBridge) {
+	public void preDestroy() {
 		File file = (File)mPart.getTransientData().get("data");
 		URI uri = URI.createFileURI(file.toString());
 		if (uri == null) {
