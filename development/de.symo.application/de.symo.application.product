@@ -29,12 +29,10 @@
       <plugin id="com.google.guava"/>
       <plugin id="com.google.inject"/>
       <plugin id="com.ibm.icu"/>
-      <plugin id="de.symo.adasi"/>
       <plugin id="de.symo.application"/>
       <plugin id="de.symo.model"/>
       <plugin id="de.symo.model.edit"/>
       <plugin id="de.symo.model.editor.e4"/>
-      <plugin id="de.symo.model.service"/>
       <plugin id="de.symo.oida.renamer.strategy"/>
       <plugin id="de.symo.projectbrowser.e4"/>
       <plugin id="javax.annotation"/>
@@ -150,7 +148,6 @@
    </plugins>
 
    <configurations>
-      <plugin id="de.symo.adasi" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
