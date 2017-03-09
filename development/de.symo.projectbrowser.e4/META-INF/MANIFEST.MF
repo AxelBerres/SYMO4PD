@@ -19,8 +19,6 @@ Require-Bundle: org.eclipse.e4.ui.model.workbench;bundle-version="1.2.0.v2016022
  org.eclipse.xtext.util,
  org.eclipse.core.runtime;bundle-version="3.12.0";resolution:=optional,
  org.eclipse.e4.core.di.extensions,
- de.symo.adasi,
  org.eclipse.e4.core.di.annotations
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: de.symo.projectbrowser.e4.ui.parts
-Import-Package: de.symo.model.service

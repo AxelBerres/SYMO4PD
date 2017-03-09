@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_6wlLcMgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.application" bindingContexts="_6wlLecgZEeSyMNYR5xypkQ">
   <children xsi:type="basic:TrimmedWindow" xmi:id="_6wlLccgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.window.main" label="SYMO4PD" iconURI="platform:/plugin/de.symo.application/icons/symo4pd_16.png" width="1600" height="1000">
-    <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.ide.perspectivestack"/>
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="de.symo.application.mainwindow.perspectivestack"/>
     <mainMenu xmi:id="_6wlLicgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.menu">
       <children xsi:type="menu:Menu" xmi:id="_6wlLisgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.menu.file" label="File">
         <children xsi:type="menu:Menu" xmi:id="_6_SuAAAPEee-7pN0XomtRA" elementId="de.symo.application.menu.file.new" label="New"/>
@@ -13,7 +13,7 @@
     </mainMenu>
     <trimBars xmi:id="_6wlLlcgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.trimbar.top">
       <children xsi:type="menu:ToolBar" xmi:id="_6wlLlsgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.toolbar">
-        <children xsi:type="menu:HandledToolItem" xmi:id="_Bib80AAOEeexQ42VWz4X2w" elementId="de.symo.application.handledtoolitem.new" label="New" iconURI="platform:/plugin/de.symo.application/icons/project_new.gif"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Bib80AAOEeexQ42VWz4X2w" elementId="de.symo.application.handledtoolitem.new" label="New" iconURI="platform:/plugin/de.symo.application/icons/project_new.gif" command="_akzzwASxEee2Aur_L7aw6A"/>
         <children xsi:type="menu:HandledToolItem" xmi:id="_MMP04K2gEea-scV-LdCPUw" elementId="de.symo.application.handledtoolitem.save" label="Save" iconURI="platform:/plugin/de.symo.application/icons/16_Save.png" command="_yLHO8LFoEeahHd75gomQ8w"/>
       </children>
       <children xsi:type="menu:ToolControl" xmi:id="_-FGGEH8SEea1vc9SY93ecw" elementId="de.symo.application.e4.toolcontrol.spacer" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
@@ -42,6 +42,7 @@
   <commands xmi:id="_yLHO8LFoEeahHd75gomQ8w" elementId="de.symo.application.command.save" commandName="Save"/>
   <commands xmi:id="_3iN2gLFoEeahHd75gomQ8w" elementId="de.symo.application.command.about" commandName="About"/>
   <commands xmi:id="_6cZm0JCGEea8nfDNys_Bag" elementId="de.symo.application.command.exit" commandName="Exit"/>
+  <commands xmi:id="_akzzwASxEee2Aur_L7aw6A" elementId="de.symo.application.command.new" commandName="New"/>
   <addons xmi:id="_6wlLcsgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_6wlLc8gZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_6wlLdMgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>

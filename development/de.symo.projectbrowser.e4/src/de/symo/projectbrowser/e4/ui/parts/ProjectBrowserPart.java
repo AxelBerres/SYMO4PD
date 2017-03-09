@@ -9,7 +9,6 @@ import javax.inject.Inject;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.e4.core.contexts.IEclipseContext;
-import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
@@ -35,8 +34,6 @@ import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeItem;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
-
-import de.symo.adasi.IAdapterOfSatori;
 
 public class ProjectBrowserPart {
 
@@ -64,7 +61,7 @@ public class ProjectBrowserPart {
 	private MApplication application;
 	
 	@PostConstruct
-	public void createControls(Composite parent, IEclipseContext ctx, EMenuService menuService, @Optional IAdapterOfSatori adapterOfSatori) {
+	public void createControls(Composite parent, IEclipseContext ctx, EMenuService menuService) {
 		projectRoot = ProjectPreference.getProjectBase();
 
 		viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
@@ -102,20 +99,23 @@ public class ProjectBrowserPart {
 		viewer.addDoubleClickListener(new IDoubleClickListener() {
 			@Override
 			public void doubleClick(DoubleClickEvent event) {
-				TreeViewer viewer = (TreeViewer) event.getViewer();
-				IStructuredSelection thisSelection = (IStructuredSelection) event.getSelection();
-				Object selectedNode = thisSelection.getFirstElement();
-				if (selectedNode instanceof File) {
-					File file = (File) selectedNode;
-					if(file.isDirectory() == true) {
-						viewer.setExpandedState(selectedNode, !viewer.getExpandedState(selectedNode));
-					} else {
-						// ToDo open registered editor
-						System.out.println("Try to open " + file.getName());
-						
-//						OpenContext ctx = new OpenContext();
-//						ctx.open(file);
-						delegateSelectionforOpening(file);					
+				if (event.getSelection() instanceof IStructuredSelection) {
+					TreeViewer viewer = (TreeViewer) event.getViewer();
+					IStructuredSelection thisSelection = (IStructuredSelection) event.getSelection();
+					Object selectedNode = thisSelection.getFirstElement();
+					
+					if (selectedNode instanceof File) {
+						File file = (File) selectedNode;
+						if(file.isDirectory() == true) {
+							viewer.setExpandedState(selectedNode, !viewer.getExpandedState(selectedNode));
+						} else {
+							// ToDo open registered editor
+							System.out.println("Try to open " + file.getName());
+							
+//							OpenContext ctx = new OpenContext();
+//							ctx.open(file);
+							delegateSelectionforOpening(file);					
+						}
 					}
 				}
 			}
@@ -133,9 +133,6 @@ public class ProjectBrowserPart {
 						selection.size() == 1 ? selection.getFirstElement() : selection.toArray());
 			}
 		});
-		
-		if (adapterOfSatori != null)
-			adapterOfSatori.initialize();
 	}
 
 	@Focus
@@ -175,7 +172,7 @@ public class ProjectBrowserPart {
 	private void delegateSelectionforOpening(final File file) {
 
 		// get part label
-		String label = getLabel(file.getName());
+		//String label = getLabel(file.getName());
 		
 		// Add to editor part stack
 		MPartStack editorStack = (MPartStack) modelService.find("de.symo.application.partstack.projects.editors", application);
@@ -206,37 +203,29 @@ public class ProjectBrowserPart {
 		}
 
 		// Create the part and set the transient input data
-		part = modelService.createModelElement(MPart.class);
-		part = getEditorPart(part, ext);
-		part.setCloseable(true);
-		part.setLabel(label);
-		part.getTags().add(EPartService.REMOVE_ON_HIDE_TAG);
+		part = getEditorPart(ext);
 		part.getTransientData().put("data", file);
-
-		// Add to editor part stack
-		editorStack.getChildren().add(part);
 
 		// Show
 		partService.showPart(part, PartState.ACTIVATE);
 	}
-	
-	
-	private String getLabel(final String fileName) {
 
-		// handle null
-        if (fileName == null) {
-        	return "Registry";
-        }
-
-        // Get position of last '.'.
-        int pos = fileName.lastIndexOf(".");
-        if (pos == -1) {
-        	return fileName;
-        } 
-
-       	return fileName.substring(0, pos);
-	}
-	
+//	private String getLabel(final String fileName) {
+//
+//		// handle null
+//        if (fileName == null) {
+//        	return "Registry";
+//        }
+//
+//        // Get position of last '.'.
+//        int pos = fileName.lastIndexOf(".");
+//        if (pos == -1) {
+//        	return fileName;
+//        } 
+//
+//       	return fileName.substring(0, pos);
+//	}
+//	
 	
 	/**
 	 * @param fileName
@@ -254,23 +243,17 @@ public class ProjectBrowserPart {
 		return ext;
 	}
 	
-	private MPart getEditorPart(MPart part, final String extension) {
+	private MPart getEditorPart(final String extension) {
 		
-		if (extension.equals("registry") == true) {
-			part.setElementId("de.symo.model.editor.registry.tree");
-			part.setContributionURI("bundleclass://de.symo.model.editor.e4/" + "de.symo.model.editor.e4.parts.RegistryEditorPart");			
-		}
+		if (extension.equals("registry"))
+			return partService.createPart("de.symo.model.editor.e4.partdescriptor.registryeditorpart");
 
-		if (extension.equals("usecase") == true) {
-			part.setElementId("de.symo.model.editor.usecase.tree");
-			part.setContributionURI("bundleclass://de.symo.model.editor.e4/" + "de.symo.model.editor.e4.parts.UsecaseEditorPart");			
-		}
+		if (extension.equals("usecase"))
+			return partService.createPart("de.symo.model.editor.e4.partdescriptor.usecaseeditor");
 
-		if (extension.equals("symo") == true) {
-			part.setElementId("de.symo.model.editor.e4.ui.symo");
-			part.setContributionURI("bundleclass://de.symo.model.editor.e4/" + "de.symo.model.editor.e4.parts.SymoEditorPart");			
-		}
-
-		return part;
+		if (extension.equals("symo"))
+			return partService.createPart("de.symo.model.editor.e4.partdescriptor.symomodeleditor");
+		
+		return modelService.createModelElement(MPart.class);
 	}
 }

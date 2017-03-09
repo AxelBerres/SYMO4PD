@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.e4.core.di.annotations.Execute;
+import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -21,7 +22,8 @@ import de.symo.model.editor.e4.ui.NewSymoFileDialog;
 import de.symo.model.symo.ProjectRepository;
 import de.symo.model.symo.SymoFactory;
 import de.symo.projectbrowser.e4.ui.parts.ProjectBrowserPart;
-import de.symo.model.service.ISymoModelService;
+import oida.bridge.service.IOIDABridge;
+import oida.bridge.service.OIDABridgeException;
 
 /**
  * 
@@ -30,7 +32,8 @@ import de.symo.model.service.ISymoModelService;
  */
 public class SymoNewHandler {
 	@Inject
-	ISymoModelService symoModelService;
+	@Optional
+	IOIDABridge oidaBridge;
 	
 	public SymoNewHandler() {
 	}
@@ -84,7 +87,12 @@ public class SymoNewHandler {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		symoModelService.reportModelCreatedEvent(prj, folder.toString(), prjRepo);
+
+		try {
+			if (oidaBridge != null)
+				oidaBridge.invokeModelObservation(prj, folder);
+		} catch (OIDABridgeException e) {
+			e.printStackTrace();
+		}
 	}
 }

@@ -49,7 +49,7 @@ public class UsecaseEditorPart {
 		File file = (File) mPart.getTransientData().get("data");
 		if (file == null) {			
 			// ### Hack
-			if (mPart.getLabel().equals("Usecase")); {
+			if (mPart.getLabel().equals("Usecase")) {
 				mPart.setLabel(UUID.randomUUID().toString());
 			}
 			partService.hidePart(mPart);

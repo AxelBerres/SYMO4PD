@@ -49,7 +49,7 @@ public class RegistryEditorPart {
 		File file = (File) mPart.getTransientData().get("data");
 		if (file == null) {			
 			// ### Hack
-			if (mPart.getLabel().equals("Registry")); {
+			if (mPart.getLabel().equals("Registry")) {
 				mPart.setLabel(UUID.randomUUID().toString());
 			}
 			

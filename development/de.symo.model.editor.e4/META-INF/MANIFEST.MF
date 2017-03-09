@@ -18,12 +18,13 @@ Require-Bundle: org.eclipse.core.runtime,
  de.symo.model;bundle-version="1.0.0",
  de.symo.model.edit;bundle-version="1.0.0",
  org.eclipse.ui.workbench,
- de.symo.projectbrowser.e4;bundle-version="1.0.0"
-Import-Package: de.symo.model.service,
- javax.inject;version="1.0.0",
+ de.symo.projectbrowser.e4;bundle-version="1.0.0",
+ oida.bridge;resolution:=optional
+Import-Package: javax.inject;version="1.0.0",
  org.apache.commons.logging,
  org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: www.dlr.de/FT-SSY
 Bundle-Activator: de.symo.model.editor.e4.Activator
 Bundle-ActivationPolicy: lazy
+Export-Package: de.symo.model.editor.e4.ui.api

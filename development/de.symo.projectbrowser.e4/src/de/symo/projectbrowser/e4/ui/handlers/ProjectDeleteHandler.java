@@ -17,7 +17,6 @@ import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Shell;
 
-import de.symo.model.service.SymoModelService;
 import de.symo.projectbrowser.e4.ui.parts.ProjectBrowserPart;
 
 /**
@@ -28,7 +27,7 @@ import de.symo.projectbrowser.e4.ui.parts.ProjectBrowserPart;
 public class ProjectDeleteHandler {
 
 	@Execute
-	public void execute(@Optional @Named(IServiceConstants.ACTIVE_SELECTION) Object selection, @Optional SymoModelService modelService, Shell shell) {
+	public void execute(@Optional @Named(IServiceConstants.ACTIVE_SELECTION) Object selection, Shell shell) {
 
 		// check selection
 		if ((selection instanceof File) == false) {

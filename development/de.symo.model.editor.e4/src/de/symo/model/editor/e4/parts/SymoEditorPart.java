@@ -30,55 +30,56 @@ import org.eclipse.swt.widgets.Composite;
 import com.google.inject.Injector;
 
 import de.symo.model.editor.e4.ui.symo.SymoInjectorProvider;
-import de.symo.model.service.ISymoModelService;
+import oida.bridge.service.IOIDABridge;
 
 public class SymoEditorPart {
-	
+
 	private TreeFormComposite treeFormComposite;
 	private Resource resource;
-	
+
 	@Inject
 	MDirtyable dirty;
-	
+
 	@Inject
 	MPart mPart;
-	
+
 	@Inject
 	EPartService partService;
-	
+
 	@PostConstruct
-	public void postConstruct(Composite parent, @Optional ISymoModelService modelService) {
-		File file = (File) mPart.getTransientData().get("data");
-		if (file == null) {			
+	public void postConstruct(Composite parent, @Optional IOIDABridge oidaBridge) {
+		File file = (File)mPart.getTransientData().get("data");
+		if (file == null) {
 			// ### Hack
-			if (mPart.getLabel().equals("Symo")); {
+			if (mPart.getLabel().equals("Symo"))
+			{
 				mPart.setLabel(UUID.randomUUID().toString());
 			}
-			
+
 			partService.hidePart(mPart);
 			return;
 		}
 
-		URI uri = URI.createFileURI(file.toString());		
+		URI uri = URI.createFileURI(file.toString());
 		if (uri == null) {
 			return;
 		}
-		
+
 		// get injector
 		Injector injector = SymoInjectorProvider.getInjector();
 
 		// The EditingDomain is needed for context menu and drag and drop
 		EditingDomain editingDomain = injector.getInstance(EditingDomain.class);
 		ResourceLoader resourceLoader = injector.getInstance(ResourceLoader.class);
-		
+
 		// load the resource
 		resource = resourceLoader.getResource(editingDomain, uri).getResource();
 		resource.getContents().size();
-		
+
 		// create the tree form
 		TreeFormFactory treeFromFactory = injector.getInstance(TreeFormFactory.class);
-		treeFormComposite = treeFromFactory.createTreeFormComposite(parent, SWT.NONE);		
-		
+		treeFormComposite = treeFromFactory.createTreeFormComposite(parent, SWT.NONE);
+
 		// inject viewer context menu and drag and drop helper
 		ViewerContextMenuHelper conextMenuHelper = injector.getInstance(ViewerContextMenuHelper.class);
 		ViewerDragAndDropHelper dragAndDrop = injector.getInstance(ViewerDragAndDropHelper.class);
@@ -86,60 +87,57 @@ public class SymoEditorPart {
 		StructuredViewer viewer = treeFormComposite.getViewer();
 		conextMenuHelper.addViewerContextMenu(viewer, editingDomain);
 		dragAndDrop.addDragAndDrop(viewer, editingDomain);
-		
+
 		// update the tree from composite
 		treeFormComposite.update(resource);
 
 		// add command stack listener for saving
 		editingDomain.getCommandStack().addCommandStackListener(new CommandStackListener() {
-			
+
 			@Override
 			public void commandStackChanged(EventObject event) {
 				if (dirty != null)
 					dirty.setDirty(true);
 			}
 		});
-		
+
 		String path = uri.toFileString().substring(0, uri.toFileString().lastIndexOf("\\"));
-		String fileName = uri.toFileString().substring(uri.toFileString().lastIndexOf("\\"));
-		
-		if (modelService != null)
-			modelService.reportModelOpenedEvent(resource.getContents().get(0), path, fileName);
+
+//		try {
+//			if (oidaBridge != null)
+//				oidaBridge.invokeModelObservation(resource.getContents().get(0), new File(path));
+//		} catch (OIDABridgeException e) {
+//			e.printStackTrace();
+//		}
 	}
-	
+
 	@Persist
-	public void save(MDirtyable dirty, @Optional ISymoModelService modelService) throws IOException {
-		File file = (File) mPart.getTransientData().get("data");
-		URI uri = URI.createFileURI(file.toString());		
+	public void save(MDirtyable dirty, @Optional IOIDABridge oidaBridge) throws IOException {
+		File file = (File)mPart.getTransientData().get("data");
+		URI uri = URI.createFileURI(file.toString());
 		if (uri == null) {
 			return;
 		}
-		
+
 		resource.save(null);
-		
-		String path = uri.toFileString().substring(0, uri.toFileString().lastIndexOf("\\"));
-		String fileName = uri.toFileString().substring(uri.toFileString().lastIndexOf("\\"));
-		
-		if (modelService != null)
-			modelService.reportModelSavedEvent(resource.getContents().get(0), path, fileName);
-		
+
+		if (oidaBridge != null)
+			oidaBridge.saveModelOntology(resource.getContents().get(0));
+
 		if (dirty != null) {
 			dirty.setDirty(false);
 		}
 	}
-	
+
 	@PreDestroy
-	public void preDestroy(@Optional ISymoModelService modelService) {
-		File file = (File) mPart.getTransientData().get("data");
-		URI uri = URI.createFileURI(file.toString());		
+	public void preDestroy(@Optional IOIDABridge oidaBridge) {
+		File file = (File)mPart.getTransientData().get("data");
+		URI uri = URI.createFileURI(file.toString());
 		if (uri == null) {
 			return;
 		}
-		
-		String path = uri.toFileString().substring(0, uri.toFileString().lastIndexOf("\\"));
-		String fileName = uri.toFileString().substring(uri.toFileString().lastIndexOf("\\"));
-		
-		if (modelService != null)
-			modelService.reportModelClosedEvent(resource.getContents().get(0), path, fileName);
+
+		if (oidaBridge != null)
+			oidaBridge.saveModelOntology(resource.getContents().get(0));
 	}
 }

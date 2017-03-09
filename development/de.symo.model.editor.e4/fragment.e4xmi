@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_8WGA4K_WEeaRTJNyxte8wA">
-  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_GGDNIK_ZEeaRTJNyxte8wA" featurename="children" parentElementId="de.symo.application.partstack.projects.editors">
-    <elements xsi:type="basic:Part" xmi:id="_LXbQ8LFqEeahHd75gomQ8w" elementId="de.symo.model.editor.registry.tree" contributionURI="bundleclass://de.symo.model.editor.e4/de.symo.model.editor.e4.parts.RegistryEditorPart" label="Registry" iconURI="platform:/plugin/de.symo.model.edit/icons/custom/obj16/Registry.png" closeable="true"/>
-    <elements xsi:type="basic:Part" xmi:id="_bW6McLFqEeahHd75gomQ8w" elementId="de.symo.model.editor.usecase.tree" toBeRendered="false" visible="false" contributionURI="bundleclass://de.symo.model.editor.e4/de.symo.model.editor.e4.parts.UsecaseEditorPart" label="Usecase" iconURI="platform:/plugin/de.symo.model.edit/icons/full/obj16/UseCaseRepository.gif" closeable="true"/>
-  </fragments>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_8WGA4K_WEeaRTJNyxte8wA">
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_rdDf0K_ZEeaRTJNyxte8wA" featurename="commands" parentElementId="de.symo.application.e4.application">
     <elements xsi:type="commands:Command" xmi:id="_xfnI8LFqEeahHd75gomQ8w" elementId="de.symo.model.editor.registry.command.new" commandName="New Registry"/>
     <elements xsi:type="commands:Command" xmi:id="_0WSbILFqEeahHd75gomQ8w" elementId="de.symo.model.editor.usecase.command.new" commandName="New Usecase"/>
@@ -20,5 +16,12 @@
       <children xsi:type="menu:HandledMenuItem" xmi:id="_Z0hXMLFrEeahHd75gomQ8w" elementId="de.symo.model.editor.e4.new.handledmenuitem.newusecase" label="New Usecase" iconURI="platform:/plugin/de.symo.model.edit/icons/full/obj16/UseCaseRepository.gif" command="_0WSbILFqEeahHd75gomQ8w"/>
       <children xsi:type="menu:HandledMenuItem" xmi:id="_ElxsELFsEeahHd75gomQ8w" elementId="de.symo.model.editor.e4.new.handledmenuitem.newsystem" label="New System" iconURI="platform:/plugin/de.symo.model.edit/icons/full/obj16/ProjectRepository.gif" command="_ybo24LFrEeahHd75gomQ8w"/>
     </elements>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_BXt9YASqEee2Aur_L7aw6A" featurename="descriptors" parentElementId="de.symo.application.e4.application">
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_PPBrcASqEee2Aur_L7aw6A" elementId="de.symo.model.editor.e4.partdescriptor.symomodeleditor" label="Model Editor" iconURI="platform:/plugin/de.symo.model.edit/icons/full/obj16/ProjectRepository.gif" allowMultiple="true" category="editorPart" closeable="true" dirtyable="true" contributionURI="bundleclass://de.symo.model.editor.e4/de.symo.model.editor.e4.parts.SymoEditorPart">
+      <tags>removeOnHide</tags>
+    </elements>
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_xVpOoASuEee2Aur_L7aw6A" elementId="de.symo.model.editor.e4.partdescriptor.registryeditorpart" label="Registry Editor" iconURI="platform:/plugin/de.symo.model.edit/icons/custom/obj16/Registry.png" allowMultiple="true" category="editorPart" closeable="true" dirtyable="true" contributionURI="bundleclass://de.symo.model.editor.e4/de.symo.model.editor.e4.parts.RegistryEditorPart"/>
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_7QnqAASuEee2Aur_L7aw6A" elementId="de.symo.model.editor.e4.partdescriptor.usecaseeditor" label="Usecase Editor" iconURI="platform:/plugin/de.symo.model.edit/icons/full/obj16/UseCaseRepository.gif" allowMultiple="true" category="editorPart" closeable="true" dirtyable="true" contributionURI="bundleclass://de.symo.model.editor.e4/de.symo.model.editor.e4.parts.UsecaseEditorPart"/>
   </fragments>
 </fragment:ModelFragments>
