@@ -172,7 +172,7 @@ public class ProjectBrowserPart {
 	private void delegateSelectionforOpening(final File file) {
 
 		// get part label
-		//String label = getLabel(file.getName());
+		String label = getLabel(file.getName());
 		
 		// Add to editor part stack
 		MPartStack editorStack = (MPartStack) modelService.find("de.symo.application.partstack.projects.editors", application);
@@ -204,28 +204,29 @@ public class ProjectBrowserPart {
 
 		// Create the part and set the transient input data
 		part = getEditorPart(ext);
+		part.setLabel(label);
 		part.getTransientData().put("data", file);
 
 		// Show
 		partService.showPart(part, PartState.ACTIVATE);
 	}
 
-//	private String getLabel(final String fileName) {
-//
-//		// handle null
-//        if (fileName == null) {
-//        	return "Registry";
-//        }
-//
-//        // Get position of last '.'.
-//        int pos = fileName.lastIndexOf(".");
-//        if (pos == -1) {
-//        	return fileName;
-//        } 
-//
-//       	return fileName.substring(0, pos);
-//	}
-//	
+	private String getLabel(final String fileName) {
+
+		// handle null
+        if (fileName == null) {
+        	return "Registry";
+        }
+
+        // Get position of last '.'.
+        int pos = fileName.lastIndexOf(".");
+        if (pos == -1) {
+        	return fileName;
+        } 
+
+       	return fileName.substring(0, pos);
+	}
+	
 	
 	/**
 	 * @param fileName
