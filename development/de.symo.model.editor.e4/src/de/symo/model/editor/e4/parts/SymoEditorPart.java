@@ -31,9 +31,11 @@ import com.google.inject.Injector;
 
 import de.symo.model.editor.e4.ui.symo.SymoInjectorProvider;
 import oida.bridge.service.IOIDABridge;
+import oida.bridge.service.OIDABridgeException;
 
 public class SymoEditorPart {
-
+	private final String OIDA_SUBDIRECTORY = "\\ont\\";
+	
 	private TreeFormComposite treeFormComposite;
 	private Resource resource;
 
@@ -101,14 +103,12 @@ public class SymoEditorPart {
 			}
 		});
 
-		String path = uri.toFileString().substring(0, uri.toFileString().lastIndexOf("\\"));
-
-//		try {
-//			if (oidaBridge != null)
-//				oidaBridge.invokeModelObservation(resource.getContents().get(0), new File(path));
-//		} catch (OIDABridgeException e) {
-//			e.printStackTrace();
-//		}
+		try {
+			if (oidaBridge != null)
+				oidaBridge.invokeModelObservation(resource.getContents().get(0), new File(file.getParent() + OIDA_SUBDIRECTORY), file.getName());
+		} catch (OIDABridgeException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Persist

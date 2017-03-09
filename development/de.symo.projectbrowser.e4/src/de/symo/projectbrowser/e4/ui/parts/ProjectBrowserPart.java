@@ -35,6 +35,11 @@ import org.eclipse.swt.widgets.TreeItem;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
+/**
+ * 
+ * @author Axel Berres, Michael Shamiyeh
+ *
+ */
 public class ProjectBrowserPart {
 
 	private static final String ICONS_FOLDER = "icons/16_Folder.png";
@@ -233,7 +238,6 @@ public class ProjectBrowserPart {
 	 * @return
 	 */
 	private String getExtension(final String fileName) {
-		
         // Get position of last '.'.
         int pos = fileName.lastIndexOf(".");
         if (pos == -1) {
@@ -244,8 +248,7 @@ public class ProjectBrowserPart {
 		return ext;
 	}
 	
-	private MPart getEditorPart(final String extension) {
-		
+	private MPart getEditorPart(final String extension) {		
 		if (extension.equals("registry"))
 			return partService.createPart("de.symo.model.editor.e4.partdescriptor.registryeditorpart");
 

@@ -3,12 +3,9 @@ package de.symo.model.editor.e4.handlers;
 import java.io.File;
 import java.io.IOException;
 
-import javax.inject.Inject;
-
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.e4.core.di.annotations.Execute;
-import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -22,19 +19,13 @@ import de.symo.model.editor.e4.ui.NewSymoFileDialog;
 import de.symo.model.symo.ProjectRepository;
 import de.symo.model.symo.SymoFactory;
 import de.symo.projectbrowser.e4.ui.parts.ProjectBrowserPart;
-import oida.bridge.service.IOIDABridge;
-import oida.bridge.service.OIDABridgeException;
 
 /**
  * 
- * @author Axel Berres, Michael Shamiyeh
+ * @author Axel Berres
  * 
  */
 public class SymoNewHandler {
-	@Inject
-	@Optional
-	IOIDABridge oidaBridge;
-	
 	public SymoNewHandler() {
 	}
 
@@ -57,7 +48,6 @@ public class SymoNewHandler {
 	}
 
 	private void createSymo(final String symoName) {
-		
 		// create symo file and set repository name
 		String prjRepo = symoName + ".symo";		
 		ProjectRepository prj = SymoFactory.eINSTANCE.createProjectRepository();
@@ -85,13 +75,6 @@ public class SymoNewHandler {
 		try {
 			resource.save(null);
 		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		try {
-			if (oidaBridge != null)
-				oidaBridge.invokeModelObservation(prj, folder);
-		} catch (OIDABridgeException e) {
 			e.printStackTrace();
 		}
 	}
