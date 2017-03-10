@@ -23,6 +23,9 @@ import org.eclipse.emf.parsley.composite.TreeFormFactory;
 import org.eclipse.emf.parsley.edit.ui.dnd.ViewerDragAndDropHelper;
 import org.eclipse.emf.parsley.menus.ViewerContextMenuHelper;
 import org.eclipse.emf.parsley.resource.ResourceLoader;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
@@ -104,6 +107,15 @@ public class SymoEditorPart {
 			public void commandStackChanged(EventObject event) {
 				if (dirty != null)
 					dirty.setDirty(true);
+			}
+		});
+		
+		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
+			@Override
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (oidaBridge != null) {
+					oidaBridge.reportModelSelectionChanged(resource.getContents().get(0), ((StructuredSelection)event.getSelection()).getFirstElement());
+				}
 			}
 		});
 
