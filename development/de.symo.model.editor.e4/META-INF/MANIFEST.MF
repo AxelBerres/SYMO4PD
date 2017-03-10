@@ -19,7 +19,7 @@ Require-Bundle: org.eclipse.core.runtime,
  de.symo.model.edit;bundle-version="1.0.0",
  org.eclipse.ui.workbench,
  de.symo.projectbrowser.e4;bundle-version="1.0.0",
- oida.bridge;resolution:=optional
+ oida.bridge
 Import-Package: javax.inject;version="1.0.0",
  org.apache.commons.logging,
  org.apache.log4j
