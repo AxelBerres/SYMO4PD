@@ -2,9 +2,15 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="oida.bridge.model.changehandler.renamer">
+         point="oida.bridge.model.renamerstrategy">
       <client
-            class="de.symo.oida.renamer.SymoRenamerStrategy">
+            class="de.symo.oida.strategy.renamer.SymoRenamerStrategy">
+      </client>
+   </extension>
+   <extension
+         point="oida.bridge.model.structuringstrategy">
+      <client
+            class="de.symo.oida.strategy.structuring.SymoStructuringStrategy">
       </client>
    </extension>
 
