@@ -46,6 +46,7 @@
       <plugin id="oida.ontology.model.edit"/>
       <plugin id="oida.ontology.owl"/>
       <plugin id="oida.ontology.ui.e4"/>
+      <plugin id="oida.util"/>
       <plugin id="org.antlr.runtime"/>
       <plugin id="org.apache.ant"/>
       <plugin id="org.apache.batik.css"/>

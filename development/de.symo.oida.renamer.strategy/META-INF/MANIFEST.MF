@@ -6,6 +6,8 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: SYMO4PD
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: oida.bridge.model.renamer,
+ oida.bridge.service,
+ oida.ontology.service,
  org.eclipse.emf.common.notify
 Require-Bundle: de.symo.model;bundle-version="1.0.0",
  org.junit,
