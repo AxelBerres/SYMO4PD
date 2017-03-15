@@ -1,10 +1,12 @@
 package de.symo.oida.strategy.structuring;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 
 import de.symo.model.base.BasePackage;
+import de.symo.model.symo.SymoPackage;
 import oida.bridge.model.renamer.IStructuringStrategy;
-import oida.ontology.OntologyObjectProperty;
+import oida.bridge.service.IOIDABridge.OntologyObjectProperties;
 
 /**
  * 
@@ -33,8 +35,13 @@ public class SymoStructuringStrategy implements IStructuringStrategy {
 	}
 
 	@Override
-	public OntologyObjectProperty determineObjectPropertyRelation(EObject newValue) {
-		// TODO Auto-generated method stub
+	public OntologyObjectProperties determineObjectPropertyRelation(EStructuralFeature feature) {
+		if (feature == SymoPackage.eINSTANCE.getSystemElement_Children())
+			return OntologyObjectProperties.HAS_PART;
+		
+		if (feature == SymoPackage.eINSTANCE.getSystemElement_Parameters())
+			return OntologyObjectProperties.HAS_PARAMETER;
+		
 		return null;
 	}
 }
