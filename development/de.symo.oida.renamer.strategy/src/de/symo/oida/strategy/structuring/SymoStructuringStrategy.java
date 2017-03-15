@@ -4,6 +4,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import de.symo.model.base.BasePackage;
 import oida.bridge.model.renamer.IStructuringStrategy;
+import oida.ontology.OntologyObjectProperty;
 
 /**
  * 
@@ -29,5 +30,11 @@ public class SymoStructuringStrategy implements IStructuringStrategy {
 			return StructuringAdvice.RENAME_INDIVIDUAL;
 		
 		return StructuringAdvice.CHANGE_DATATYPEPROPERTY;
+	}
+
+	@Override
+	public OntologyObjectProperty determineObjectPropertyRelation(EObject newValue) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
