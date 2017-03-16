@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_6wlLcMgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.application" bindingContexts="_6wlLecgZEeSyMNYR5xypkQ">
   <children xsi:type="basic:TrimmedWindow" xmi:id="_6wlLccgZEeSyMNYR5xypkQ" elementId="de.symo.application.e4.window.main" label="SYMO4PD" iconURI="platform:/plugin/de.symo.application/icons/symo4pd_16.png" width="1600" height="1000">
-    <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="de.symo.application.mainwindow.perspectivestack"/>
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="de.symo.application.mainwindow.perspectivestack">
+      <children xsi:type="advanced:Perspective" xmi:id="_seDpAApeEeepYbfRV01uyg" elementId="de.symo.application.perspective.modeling" label="Modeling" iconURI="platform:/plugin/de.symo.application/icons/16_Browser.png">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_hSzcEApfEeepYbfRV01uyg" elementId="de.symo.application.partsashcontainer.projectbrowsereditorsash" horizontal="true">
+          <children xsi:type="basic:PartStack" xmi:id="_nF0jkApfEeepYbfRV01uyg" elementId="de.symo.application.partstack.navigatorstack" containerData="25"/>
+          <children xsi:type="basic:PartSashContainer" xmi:id="_pa7ZwApfEeepYbfRV01uyg" elementId="de.symo.application.partsashcontainer.editoradditionssash" containerData="75" horizontal="true">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_uM3ewApfEeepYbfRV01uyg" elementId="de.symo.application.partsashcontainer.editorsash" containerData="70">
+              <children xsi:type="basic:PartStack" xmi:id="__2SMgApfEeepYbfRV01uyg" elementId="de.symo.application.partstack.editorstack">
+                <tags>editorPart</tags>
+                <tags>NoAutoCollapse</tags>
+              </children>
+              <children xsi:type="basic:PartStack" xmi:id="_AQYHgApgEeepYbfRV01uyg" elementId="de.symo.application.partstack.bottomeditorstack"/>
+            </children>
+            <children xsi:type="basic:PartStack" xmi:id="_tOcusApfEeepYbfRV01uyg" elementId="de.symo.application.partstack.additionsstack" containerData="30"/>
+          </children>
+        </children>
+      </children>
+    </children>
     <mainMenu xmi:id="_6wlLicgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.menu">
       <children xsi:type="menu:Menu" xmi:id="_6wlLisgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.menu.file" label="File">
         <children xsi:type="menu:Menu" xmi:id="_6_SuAAAPEee-7pN0XomtRA" elementId="de.symo.application.menu.file.new" label="New"/>

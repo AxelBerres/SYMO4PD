@@ -40,7 +40,9 @@
       <plugin id="javax.servlet"/>
       <plugin id="javax.xml"/>
       <plugin id="oida.bridge"/>
+      <plugin id="oida.bridge.model"/>
       <plugin id="oida.bridge.recommender.name"/>
+      <plugin id="oida.bridge.ui.e4"/>
       <plugin id="oida.ontology"/>
       <plugin id="oida.ontology.model"/>
       <plugin id="oida.ontology.model.edit"/>
