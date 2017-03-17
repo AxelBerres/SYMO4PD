@@ -8,6 +8,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: oida.bridge.model.renamer,
  oida.bridge.service,
  oida.ontology.service,
+ oida.util.constants,
  org.eclipse.emf.common.notify
 Require-Bundle: de.symo.model;bundle-version="1.0.0",
  org.junit,
