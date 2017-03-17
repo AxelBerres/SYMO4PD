@@ -1,5 +1,8 @@
 package de.symo.oida.strategy.renamer;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -9,9 +12,14 @@ import de.symo.model.element.Parameter;
 import de.symo.model.element.Value;
 import de.symo.model.symo.ProjectRepository;
 import oida.bridge.model.renamer.IRenamerStrategy;
+import oida.util.constants.StringConstants;
 
+/**
+ * 
+ * @author Michael Shamiyeh, Martin Glas
+ *
+ */
 public class SymoRenamerStrategy implements IRenamerStrategy {
-
 	@Override
 	public String getEObjectName(EObject eObject) {
 		if (eObject instanceof ProjectRepository)
@@ -25,12 +33,23 @@ public class SymoRenamerStrategy implements IRenamerStrategy {
 			Parameter parameter = (Parameter)valueItem.eContainer();
 			
 			String name = generateANameItemName(parameter);
-			name = name + "_Value";
+			name = name + StringConstants.UNDERSCORE + "Value";
 			
 			return name;
 		}
 		
 		return "NoNameFound";
+	}
+	
+	@Override
+	public List<EObject> getNameRelevantObjectsForEObject(EObject eObject) {
+		List<EObject> relevantObject = new ArrayList<EObject>();
+		
+		if (eObject instanceof Value) {
+			relevantObject.add(eObject.eContainer());
+		}
+		
+		return relevantObject;
 	}
 
 	@Override
@@ -45,14 +64,14 @@ public class SymoRenamerStrategy implements IRenamerStrategy {
 	}
 	
 	private String generateANameItemName(ANameItem namedItem) {
-		String fullName = namedItem.eClass().getName() + "_";
+		String fullName = namedItem.eClass().getName() + StringConstants.UNDERSCORE;
 		
 		if (namedItem.getName() == null || namedItem.getName().isEmpty())
 			fullName = fullName + "UnnamedItem";
 		else
 			fullName = fullName + namedItem.getName();
 		
-		fullName = fullName.replaceAll(" ", "");
+		fullName = fullName.replaceAll(StringConstants.SPACE, StringConstants.EMPTY);
 
 		return fullName;
 	}
