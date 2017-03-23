@@ -7,7 +7,7 @@
           <children xsi:type="basic:PartStack" xmi:id="_nF0jkApfEeepYbfRV01uyg" elementId="de.symo.application.partstack.navigatorstack" containerData="25"/>
           <children xsi:type="basic:PartSashContainer" xmi:id="_pa7ZwApfEeepYbfRV01uyg" elementId="de.symo.application.partsashcontainer.editoradditionssash" containerData="75" horizontal="true">
             <children xsi:type="basic:PartSashContainer" xmi:id="_uM3ewApfEeepYbfRV01uyg" elementId="de.symo.application.partsashcontainer.editorsash" containerData="70">
-              <children xsi:type="basic:PartStack" xmi:id="__2SMgApfEeepYbfRV01uyg" elementId="de.symo.application.partstack.editorstack">
+              <children xsi:type="basic:PartStack" xmi:id="__2SMgApfEeepYbfRV01uyg" elementId="de.symo.application.partstack.projects.editors" accessibilityPhrase="">
                 <tags>editorPart</tags>
                 <tags>NoAutoCollapse</tags>
               </children>
