@@ -180,7 +180,7 @@ public class ProjectBrowserPart {
 		String label = getLabel(file.getName());
 		
 		// Add to editor part stack
-		MPartStack editorStack = (MPartStack) modelService.find("de.symo.application.partstack.projects.editors", application);
+		MPartStack editorStack = (MPartStack)modelService.find("de.symo.application.partstack.projects.editors", application);
 
 		// if the file is already open don't open a new editor
 		MPart part = null;

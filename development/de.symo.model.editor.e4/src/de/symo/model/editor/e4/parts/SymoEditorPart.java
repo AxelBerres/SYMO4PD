@@ -11,11 +11,16 @@ import javax.inject.Inject;
 
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Persist;
+import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.model.application.ui.MDirtyable;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
+import org.eclipse.e4.ui.model.application.ui.basic.MPartStack;
+import org.eclipse.e4.ui.workbench.modeling.EModelService;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
+import org.eclipse.e4.ui.workbench.modeling.EPartService.PartState;
 import org.eclipse.emf.common.command.CommandStackListener;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.parsley.composite.TreeFormComposite;
@@ -35,6 +40,7 @@ import com.google.inject.Injector;
 import de.symo.model.editor.e4.ui.symo.SymoInjectorProvider;
 import oida.bridge.service.IOIDABridge;
 import oida.bridge.service.OIDABridgeException;
+import oida.bridge.ui.e4.part.RecommendationsViewPart;
 
 public class SymoEditorPart {
 	private final String OIDA_SUBDIRECTORY = "\\ont\\";
@@ -47,9 +53,15 @@ public class SymoEditorPart {
 
 	@Inject
 	MPart mPart;
+	
+	@Inject
+	MApplication app;
 
 	@Inject
 	EPartService partService;
+
+	@Inject
+	EModelService modelService;
 	
 	@Inject
 	@Optional
@@ -114,14 +126,22 @@ public class SymoEditorPart {
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				if (oidaBridge != null) {
-					oidaBridge.reportModelSelectionChanged(resource.getContents().get(0), ((StructuredSelection)event.getSelection()).getFirstElement());
+					oidaBridge.reportModelSelectionChanged(resource.getContents().get(0), (EObject)((StructuredSelection)event.getSelection()).getFirstElement());
 				}
 			}
 		});
 
 		try {
-			if (oidaBridge != null)
+			if (oidaBridge != null) {
 				oidaBridge.invokeModelObservation(resource.getContents().get(0), new File(file.getParent() + OIDA_SUBDIRECTORY), file.getName());
+				MPart oidaRecommendationPart = partService.createPart(RecommendationsViewPart.PART_ID);
+				MPartStack partStack = (MPartStack)modelService.find("de.symo.application.partstack.additionsstack", app);
+				
+				if (partStack != null && oidaRecommendationPart != null) {
+					partStack.getChildren().add(oidaRecommendationPart);
+					partService.showPart(oidaRecommendationPart, PartState.ACTIVATE);
+				}
+			}
 		} catch (OIDABridgeException e) {
 			e.printStackTrace();
 		}

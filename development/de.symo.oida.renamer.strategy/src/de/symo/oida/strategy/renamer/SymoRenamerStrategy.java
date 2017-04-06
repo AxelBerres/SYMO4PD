@@ -26,7 +26,7 @@ public class SymoRenamerStrategy implements IRenamerStrategy {
 			return "ProjectRepository";
 		
 		if (eObject instanceof ANameItem)
-			return generateANameItemName((ANameItem)eObject);
+			return ((ANameItem)eObject).getName(); // generateANameItemName((ANameItem)eObject);
 		
 		if (eObject instanceof Value) {
 			Value valueItem = (Value)eObject;
