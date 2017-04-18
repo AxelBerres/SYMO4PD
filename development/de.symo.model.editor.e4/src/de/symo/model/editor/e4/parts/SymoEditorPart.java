@@ -18,6 +18,7 @@ import org.eclipse.e4.ui.model.application.ui.basic.MPartStack;
 import org.eclipse.e4.ui.workbench.modeling.EModelService;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.e4.ui.workbench.modeling.EPartService.PartState;
+import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.emf.common.command.CommandStackListener;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -40,6 +41,7 @@ import com.google.inject.Injector;
 import de.symo.model.editor.e4.ui.symo.SymoInjectorProvider;
 import oida.bridge.service.IOIDABridge;
 import oida.bridge.service.OIDABridgeException;
+import oida.bridge.ui.e4.part.MappingViewPart;
 import oida.bridge.ui.e4.part.PrimaryRecommendationsViewPart;
 import oida.bridge.ui.e4.part.SecondaryRecommendationsViewPart;
 
@@ -69,7 +71,7 @@ public class SymoEditorPart {
 	private IOIDABridge oidaBridge;
 
 	@PostConstruct
-	public void postConstruct(Composite parent) {
+	public void postConstruct(Composite parent, ESelectionService selectionService) {
 		File file = (File)mPart.getTransientData().get("data");
 		if (file == null) {
 			// ### Hack
@@ -126,6 +128,8 @@ public class SymoEditorPart {
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
+				selectionService.setSelection(event.getSelection());
+				
 				if (oidaBridge != null) {
 					oidaBridge.reportModelSelectionChanged(resource.getContents().get(0), (EObject)((StructuredSelection)event.getSelection()).getFirstElement());
 				}
@@ -137,11 +141,16 @@ public class SymoEditorPart {
 				oidaBridge.invokeModelObservation(resource.getContents().get(0), new File(file.getParent() + OIDA_SUBDIRECTORY), file.getName());
 				MPart oidaPrimaryRecommendationPart = partService.createPart(PrimaryRecommendationsViewPart.PART_ID);
 				MPart oidaSecondaryRecommendationPart = partService.createPart(SecondaryRecommendationsViewPart.PART_ID);
-				MPartStack partStack = (MPartStack)modelService.find("de.symo.application.partstack.bottomeditorstack", app);
+				MPart mappingPart = partService.createPart(MappingViewPart.PART_ID);
 				
-				if (partStack != null && oidaPrimaryRecommendationPart != null) {
-					partStack.getChildren().add(oidaPrimaryRecommendationPart);
-					partStack.getChildren().add(oidaSecondaryRecommendationPart);
+				MPartStack bottomPartStack = (MPartStack)modelService.find("de.symo.application.partstack.bottomeditorstack", app);
+				MPartStack additionsPartStack = (MPartStack)modelService.find("de.symo.application.partstack.additionsstack", app);
+				
+				if (bottomPartStack != null && oidaPrimaryRecommendationPart != null) {
+					bottomPartStack.getChildren().add(oidaPrimaryRecommendationPart);
+					bottomPartStack.getChildren().add(oidaSecondaryRecommendationPart);
+					additionsPartStack.getChildren().add(mappingPart);
+					partService.showPart(mappingPart, PartState.ACTIVATE);
 					partService.showPart(oidaPrimaryRecommendationPart, PartState.ACTIVATE);
 				}
 			}
