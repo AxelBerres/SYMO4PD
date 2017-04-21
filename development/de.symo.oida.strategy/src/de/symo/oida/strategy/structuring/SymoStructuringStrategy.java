@@ -1,11 +1,10 @@
 package de.symo.oida.strategy.structuring;
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import de.symo.model.base.BasePackage;
 import de.symo.model.symo.SymoPackage;
-import oida.bridge.model.renamer.IStructuringStrategy;
+import oida.bridge.model.strategy.IStructuringStrategy;
 import oida.bridge.service.IOIDABridge.OntologyObjectProperties;
 
 /**
@@ -21,15 +20,18 @@ public class SymoStructuringStrategy implements IStructuringStrategy {
 	}
 
 	@Override
-	public StructuringAdvice determineStructuringAdviceAfterCreate(EObject createdModelElement) {
+	public StructuringAdvice determineStructuringAdviceAfterCreate(Object createdModelElement) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public StructuringAdvice determineStructuringAdviceAfterSet(EAttribute changedAttribute) {
-		if (changedAttribute == BasePackage.eINSTANCE.getANameItem_Name())
+		if (changedAttribute == BasePackage.eINSTANCE.getADataItem_Id())
 			return StructuringAdvice.RENAME_INDIVIDUAL;
+		
+		if (changedAttribute == BasePackage.eINSTANCE.getANameItem_Name())
+			return StructuringAdvice.CHANGE_NAMEANNOTATION;
 		
 		return StructuringAdvice.CHANGE_DATATYPEPROPERTY;
 	}

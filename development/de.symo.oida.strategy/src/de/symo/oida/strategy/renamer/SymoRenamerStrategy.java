@@ -7,11 +7,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import de.symo.model.base.ADataItem;
 import de.symo.model.base.ANameItem;
 import de.symo.model.element.Parameter;
 import de.symo.model.element.Value;
 import de.symo.model.symo.ProjectRepository;
-import oida.bridge.model.renamer.IRenamerStrategy;
+import oida.bridge.model.strategy.IRenamerStrategy;
 import oida.util.constants.StringConstants;
 
 /**
@@ -21,15 +22,26 @@ import oida.util.constants.StringConstants;
  */
 public class SymoRenamerStrategy implements IRenamerStrategy {
 	@Override
-	public String getEObjectName(EObject eObject) {
-		if (eObject instanceof ProjectRepository)
+	public String getObjectID(Object object) {
+		if (object instanceof ADataItem)
+			return ((ADataItem)object).getId();
+		
+		if (object instanceof ProjectRepository)
 			return "ProjectRepository";
 		
-		if (eObject instanceof ANameItem)
-			return ((ANameItem)eObject).getName(); // generateANameItemName((ANameItem)eObject);
+		return "NoIDFound";
+	}
+	
+	@Override
+	public String getObjectName(Object object) {
+		if (object instanceof ProjectRepository)
+			return "ProjectRepository";
 		
-		if (eObject instanceof Value) {
-			Value valueItem = (Value)eObject;
+		if (object instanceof ANameItem)
+			return ((ANameItem)object).getName(); // generateANameItemName((ANameItem)eObject);
+		
+		if (object instanceof Value) {
+			Value valueItem = (Value)object;
 			Parameter parameter = (Parameter)valueItem.eContainer();
 			
 			String name = generateANameItemName(parameter);
@@ -42,11 +54,11 @@ public class SymoRenamerStrategy implements IRenamerStrategy {
 	}
 	
 	@Override
-	public List<EObject> getNameRelevantObjectsForEObject(EObject eObject) {
-		List<EObject> relevantObject = new ArrayList<EObject>();
+	public List<Object> getNameRelevantObjectsForObject(Object object) {
+		List<Object> relevantObject = new ArrayList<Object>();
 		
-		if (eObject instanceof Value) {
-			relevantObject.add(eObject.eContainer());
+		if (object instanceof Value) {
+			relevantObject.add(((EObject)object).eContainer());
 		}
 		
 		return relevantObject;
