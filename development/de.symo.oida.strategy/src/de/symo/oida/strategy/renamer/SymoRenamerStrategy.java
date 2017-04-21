@@ -3,16 +3,14 @@ package de.symo.oida.strategy.renamer;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 
 import de.symo.model.base.ADataItem;
 import de.symo.model.base.ANameItem;
 import de.symo.model.element.Parameter;
 import de.symo.model.element.Value;
 import de.symo.model.symo.ProjectRepository;
-import oida.bridge.model.strategy.IRenamerStrategy;
+import oida.bridge.model.strategy.emf.EMFRenamerStrategy;
 import oida.util.constants.StringConstants;
 
 /**
@@ -20,7 +18,7 @@ import oida.util.constants.StringConstants;
  * @author Michael Shamiyeh, Martin Glas
  *
  */
-public class SymoRenamerStrategy implements IRenamerStrategy {
+public class SymoRenamerStrategy extends EMFRenamerStrategy {
 	@Override
 	public String getObjectID(Object object) {
 		if (object instanceof ADataItem)
@@ -62,17 +60,6 @@ public class SymoRenamerStrategy implements IRenamerStrategy {
 		}
 		
 		return relevantObject;
-	}
-
-	@Override
-	public String getEStructuralFeatureName(EStructuralFeature eStructuralFeature) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getEClassName(EClass eClass) {
-		return eClass.getName();
 	}
 	
 	private String generateANameItemName(ANameItem namedItem) {
