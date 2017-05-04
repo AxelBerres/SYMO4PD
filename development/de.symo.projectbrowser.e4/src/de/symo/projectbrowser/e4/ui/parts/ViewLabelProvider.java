@@ -46,15 +46,18 @@ public class ViewLabelProvider extends LabelProvider {
 				return getResourceManager().createImage(directoryImage);
 			} else {
 				String ext = Files.getFileExtension(file.getName());
-				
-				// if unknown use default
-				ImageData imageData = getDefaultFileIcon();
-				
-				
-				
+
+				ImageData imageData = getFileIcon(ext);
+
 				// get external program icons
 				if (Program.findProgram(ext) != null)
 					imageData = Program.findProgram(ext).getImageData();
+
+				// if unknown use default
+				if (imageData == null) {
+					imageData = getDefaultFileIcon();
+				}
+				
 				
 				// render the icon on the correct device
 				Device device = getResourceManager().getDevice();
@@ -94,6 +97,37 @@ public class ViewLabelProvider extends LabelProvider {
 		} catch (IOException e) {
 		}
 		
+		return imageData;
+	}
+	
+	private ImageData getFileIcon(final String ext) {
+		
+		ImageData imageData = null;
+
+		URL url = null;
+		Bundle bundle = Platform.getBundle("de.symo.projectbrowser.e4");
+		
+		try {		
+			if (ext.equals("owl")) {
+				url = bundle.getEntry("icons/Ontology.png");
+			}
+			if (ext.equals("registry")) {
+				url = bundle.getEntry("icons/Registry.gif");
+			}
+			if (ext.equals("symo")) {
+				url = bundle.getEntry("icons/SystemRepository.gif");
+			}
+			if (ext.equals("usecase")) {
+				url = bundle.getEntry("icons/UseCaseRepository.gif");
+			}
+
+			if (url != null) {
+				InputStream inputStream = url.openConnection().getInputStream();
+				imageData = new ImageData(inputStream);
+			}
+		} catch (IOException e) {
+		}
+	
 		return imageData;
 	}
 }
