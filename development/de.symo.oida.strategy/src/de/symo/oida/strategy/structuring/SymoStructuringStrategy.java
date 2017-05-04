@@ -1,10 +1,14 @@
 package de.symo.oida.strategy.structuring;
 import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import de.symo.model.base.BasePackage;
+import de.symo.model.element.ElementPackage;
+import de.symo.model.registry.RegistryPackage;
 import de.symo.model.symo.SymoPackage;
-import oida.bridge.model.strategy.IStructuringStrategy;
+import de.symo.model.usecase.UsecasePackage;
+import oida.bridge.model.emf.strategy.EMFStructuringStrategy;
 import oida.bridge.service.IOIDABridge.OntologyObjectProperties;
 
 /**
@@ -13,10 +17,11 @@ import oida.bridge.service.IOIDABridge.OntologyObjectProperties;
  * @since 2017-03-13
  *
  */
-public class SymoStructuringStrategy implements IStructuringStrategy {
+public class SymoStructuringStrategy extends EMFStructuringStrategy {
 
-	public SymoStructuringStrategy() {
-		// TODO Auto-generated constructor stub
+	@Override
+	protected EPackage[] getEMFPackageInformation() {
+		return new EPackage[]{ SymoPackage.eINSTANCE, RegistryPackage.eINSTANCE, ElementPackage.eINSTANCE, BasePackage.eINSTANCE, UsecasePackage.eINSTANCE };
 	}
 
 	@Override

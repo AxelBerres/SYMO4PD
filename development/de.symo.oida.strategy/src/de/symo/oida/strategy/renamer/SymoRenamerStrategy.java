@@ -10,7 +10,7 @@ import de.symo.model.base.ANameItem;
 import de.symo.model.element.Parameter;
 import de.symo.model.element.Value;
 import de.symo.model.symo.ProjectRepository;
-import oida.bridge.model.strategy.emf.EMFRenamerStrategy;
+import oida.bridge.model.emf.strategy.EMFRenamerStrategy;
 import oida.util.constants.StringConstants;
 
 /**
@@ -73,5 +73,10 @@ public class SymoRenamerStrategy extends EMFRenamerStrategy {
 		fullName = fullName.replaceAll(StringConstants.SPACE, StringConstants.EMPTY);
 
 		return fullName;
+	}
+
+	@Override
+	public String getMetaModelName() {
+		return "SYMO4PDMetaModel";
 	}
 }
