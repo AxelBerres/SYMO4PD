@@ -29,37 +29,59 @@ public class ProjectDeleteHandler {
 	@Execute
 	public void execute(@Optional @Named(IServiceConstants.ACTIVE_SELECTION) Object selection, Shell shell) {
 
-		// check selection
-		if ((selection instanceof File) == false) {
+		// check input arguments
+		if (selection == null || shell == null) {
 			return;
 		}
 
-		boolean result = MessageDialog.openConfirm(shell, "Confirm", "Please confirm");
+		// put the selection into an array
+		Object objects[] = null;
+		if (selection.getClass().isArray()) {
+			objects = (Object [])selection;
+		} else {
+			objects = new Object[1];
+			objects[0] = selection;
+		}
+
+		int count = objects.length;
+		String msg = " file";
+		if (count > 1)    msg = msg +"s";
+		
+		boolean result = MessageDialog.openConfirm(shell, "Confirm", "Please confirm deletion of " + count + msg);
 		if (result == false) {
 			return;
 		}
 
-		// convert file to path and delete 
-		File file = (File) selection;
-		Path path = FileSystems.getDefault().getPath(file.toString());
+		// delete files
+		for (int i = 0; i < count; i++) {
+		
+			// check selection
+			if ((objects[i] instanceof File) == false) {
+				continue;
+			}
 
-		try {
-			Files.walkFileTree(path, new SimpleFileVisitor<Path>() {
-
-				@Override
-				public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-					Files.delete(file);
-					return FileVisitResult.CONTINUE;
-				}
-
-				@Override
-				public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
-					Files.delete(dir);
-					return FileVisitResult.CONTINUE;
-				}
-			});
-		} catch (IOException e) {
-			e.printStackTrace();
+			// convert file to path and delete 
+			File file = (File) objects[i];
+			Path path = FileSystems.getDefault().getPath(file.toString());
+	
+			try {
+				Files.walkFileTree(path, new SimpleFileVisitor<Path>() {
+	
+					@Override
+					public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+						Files.delete(file);
+						return FileVisitResult.CONTINUE;
+					}
+	
+					@Override
+					public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+						Files.delete(dir);
+						return FileVisitResult.CONTINUE;
+					}
+				});
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 
 		// ### FIXME HACK
