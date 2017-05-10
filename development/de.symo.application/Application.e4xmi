@@ -40,6 +40,9 @@
         <tags>glue</tags>
       </children>
     </trimBars>
+    <trimBars xmi:id="_Ss_l8DVkEee2Yb9g_LH5sA" elementId="de.symo.application.trimbar.status" side="Bottom">
+      <children xsi:type="menu:ToolBar" xmi:id="_UW9NYDVkEee2Yb9g_LH5sA" elementId="de.symo.application.statusbar"/>
+    </trimBars>
   </children>
   <handlers xmi:id="_UOExMH3NEeOH4sahiLvWWw" elementId="org.eclipse.emf.ecp.e4.application.handler.save" contributionURI="bundleclass://de.symo.application/de.symo.application.commands.SaveHandler" command="_yLHO8LFoEeahHd75gomQ8w"/>
   <handlers xmi:id="_DlNB0H3KEeOH4sahiLvWWw" elementId="de.symo.application.handler.exit" contributionURI="bundleclass://de.symo.application/de.symo.application.commands.AboutHandler" command="_3iN2gLFoEeahHd75gomQ8w"/>
