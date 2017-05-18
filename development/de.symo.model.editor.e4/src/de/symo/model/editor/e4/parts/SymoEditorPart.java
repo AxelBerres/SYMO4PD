@@ -41,7 +41,7 @@ import com.google.inject.Injector;
 import de.symo.model.editor.e4.ui.symo.SymoInjectorProvider;
 import oida.bridge.service.IOIDABridge;
 import oida.bridge.service.OIDABridgeException;
-import oida.bridge.ui.e4.part.ClassEqualsMappingsViewPart;
+import oida.bridge.ui.e4.part.ClassEquivalenceMappingsViewPart;
 import oida.bridge.ui.e4.part.PrimaryRecommendationsViewPart;
 
 public class SymoEditorPart {
