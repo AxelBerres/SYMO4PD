@@ -41,9 +41,8 @@ import com.google.inject.Injector;
 import de.symo.model.editor.e4.ui.symo.SymoInjectorProvider;
 import oida.bridge.service.IOIDABridge;
 import oida.bridge.service.OIDABridgeException;
-import oida.bridge.ui.e4.part.MappingViewPart;
+import oida.bridge.ui.e4.part.ClassEqualsMappingsViewPart;
 import oida.bridge.ui.e4.part.PrimaryRecommendationsViewPart;
-import oida.bridge.ui.e4.part.SecondaryRecommendationsViewPart;
 
 public class SymoEditorPart {
 	private final String OIDA_SUBDIRECTORY = "\\ont\\";
@@ -140,17 +139,15 @@ public class SymoEditorPart {
 			if (oidaBridge != null) {
 				oidaBridge.invokeModelObservation(resource.getContents().get(0), new File(file.getParent() + OIDA_SUBDIRECTORY), file.getName());
 				MPart oidaPrimaryRecommendationPart = partService.createPart(PrimaryRecommendationsViewPart.PART_ID);
-				MPart oidaSecondaryRecommendationPart = partService.createPart(SecondaryRecommendationsViewPart.PART_ID);
-				MPart mappingPart = partService.createPart(MappingViewPart.PART_ID);
+				//MPart mappingPart = partService.createPart(ClassEqualsMappingsViewPart.PART_ID);
 				
 				MPartStack bottomPartStack = (MPartStack)modelService.find("de.symo.application.partstack.bottomeditorstack", app);
 				MPartStack additionsPartStack = (MPartStack)modelService.find("de.symo.application.partstack.additionsstack", app);
 				
 				if (bottomPartStack != null && oidaPrimaryRecommendationPart != null) {
 					bottomPartStack.getChildren().add(oidaPrimaryRecommendationPart);
-					bottomPartStack.getChildren().add(oidaSecondaryRecommendationPart);
-					additionsPartStack.getChildren().add(mappingPart);
-					partService.showPart(mappingPart, PartState.ACTIVATE);
+					//additionsPartStack.getChildren().add(mappingPart);
+					//partService.showPart(mappingPart, PartState.ACTIVATE);
 					partService.showPart(oidaPrimaryRecommendationPart, PartState.ACTIVATE);
 				}
 			}
