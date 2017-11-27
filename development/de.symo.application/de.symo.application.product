@@ -9,6 +9,8 @@
    <launcherArgs>
       <programArgs>-clearPersistedState
       </programArgs>
+      <vmArgs>-Dosgi.framework.extensions=org.eclipse.fx.osgi
+      </vmArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>
    </launcherArgs>
@@ -16,7 +18,6 @@
    <windowImages/>
 
    <launcher>
-      <solaris/>
       <win useIco="false">
          <bmp/>
       </win>
@@ -28,6 +29,8 @@
    <plugins>
       <plugin id="com.google.guava"/>
       <plugin id="com.google.inject"/>
+      <plugin id="com.google.inject.assistedinject" fragment="true"/>
+      <plugin id="com.google.inject.multibindings" fragment="true"/>
       <plugin id="com.ibm.icu"/>
       <plugin id="de.symo.application"/>
       <plugin id="de.symo.model"/>
@@ -51,6 +54,7 @@
       <plugin id="oida.ontology.model.edit"/>
       <plugin id="oida.ontology.owl"/>
       <plugin id="oida.ontology.ui.e4"/>
+      <plugin id="oida.ontology.util"/>
       <plugin id="oida.util"/>
       <plugin id="org.antlr.runtime"/>
       <plugin id="org.apache.ant"/>
@@ -139,6 +143,19 @@
       <plugin id="org.eclipse.equinox.transforms.hook" fragment="true"/>
       <plugin id="org.eclipse.equinox.util"/>
       <plugin id="org.eclipse.equinox.weaving.hook" fragment="true"/>
+      <plugin id="org.eclipse.fx.javafx"/>
+      <plugin id="org.eclipse.fx.osgi" fragment="true"/>
+      <plugin id="org.eclipse.gef4.common"/>
+      <plugin id="org.eclipse.gef4.fx"/>
+      <plugin id="org.eclipse.gef4.fx.swt"/>
+      <plugin id="org.eclipse.gef4.geometry"/>
+      <plugin id="org.eclipse.gef4.geometry.convert.fx"/>
+      <plugin id="org.eclipse.gef4.graph"/>
+      <plugin id="org.eclipse.gef4.layout"/>
+      <plugin id="org.eclipse.gef4.mvc"/>
+      <plugin id="org.eclipse.gef4.mvc.fx"/>
+      <plugin id="org.eclipse.gef4.zest.fx"/>
+      <plugin id="org.eclipse.gef4.zest.fx.jface"/>
       <plugin id="org.eclipse.help"/>
       <plugin id="org.eclipse.jdt.core"/>
       <plugin id="org.eclipse.jdt.debug"/>
@@ -185,6 +202,10 @@
    </plugins>
 
    <configurations>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
    </configurations>
 
