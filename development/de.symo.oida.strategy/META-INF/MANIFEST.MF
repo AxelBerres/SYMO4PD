@@ -5,13 +5,11 @@ Bundle-SymbolicName: de.symo.oida.strategy;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: SYMO4PD
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Import-Package: oida.bridge.model.strategy,
- oida.bridge.model.emf.strategy,
+Import-Package: oida.bridge.model.emf.strategy,
+ oida.bridge.model.strategy,
  oida.bridge.service,
- oida.ontology.service,
  oida.util.constants,
  org.eclipse.emf.common.notify
 Require-Bundle: de.symo.model;bundle-version="1.0.0",
  org.junit,
- org.eclipse.core.runtime;bundle-version="3.12.0",
- oida.ontology.model
+ org.eclipse.core.runtime;bundle-version="3.12.0"
