@@ -85,6 +85,7 @@ public class ProjectDeleteHandler {
 		}
 
 		// ### FIXME HACK
+		// should be fixed by a model change listener
 		ProjectBrowserPart.refresh();
 	}	
 }
